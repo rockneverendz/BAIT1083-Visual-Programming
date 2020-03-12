@@ -102,9 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -118,6 +118,609 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3d-design.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-anchor-point.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agenda-with-bookmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ai-file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\align-center.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\align-to-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\align-tool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\align-top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\align-to-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anchor-point.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-and-a-dot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\artboard-with-paint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\artist-sketchbook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attachment-clip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bended-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bend-tool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blackboard-with-chalk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blank-sheet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\break-apart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\browser-grid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\browser-window.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brush-and-pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brush-stroke.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\butt-cap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calligraphy-signature.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera-shutter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel-sticker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\capital-letters.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cd-record.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\center-align.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\center-object.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\center-paragraph.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circular-points.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circular-ruler.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cmyk-keys.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\color-dropper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\color-samples.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\combine-squares.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\compass-for-drawing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\convert-point-tool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crop-tool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross-arrows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cube-design.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cube-side.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cut-out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dart-board.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\designing-tool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desktop-application.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desktop-lamp-with-desk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\different-shaped-buttons.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\digital-brush.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dimensions.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\distribute-to-center.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\divide-tool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\double-paper-clipbord.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\double-pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drawing-crayon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drop-with-shine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\duplicate-cursors.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\electric-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empty-bucket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empty-paper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\envelope-with-paper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\erase-lines.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exclude-squares.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\expand-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\expand-document.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\expand-object.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favourite-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fi-file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fill-bucket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fit-hands.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\five-fingers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flip-object.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\focus-square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fonts-folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fw-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gel-tube.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graphic-file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graphics-layouts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grid-layout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hand-over-tablet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hexagonal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\horizontal-tablet-with-pen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ink-and-feather.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\internet-browser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\intersect-desing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invert-tool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\join-files-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keyboard-with-wire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\laptop-with-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\large-ruler.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lasso-tool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left-alignment-paragraph.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\line-and-marker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\liner-pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\line-swirl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magic-wand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnetism-pointing-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\main-file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-studying.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marker-point.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu-list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus-element-back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus-element-front.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\miter-join.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monitor-and-pen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monitor-levels.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mouse-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mouse-clicker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move-folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\multiple-arrows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\multiple-files.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\multiple-images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no-spray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notepad-and-pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\office-clip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\office-notepad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\office-pin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open-paint-bucket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open-round-scissors.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paint-brush-stroke.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paint-brush-tool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paint-brush-with-drop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paint-brush-with-drops.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paint-drops-on-rectangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\painting-airbrush.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paint-spot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paint-tool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paint-tube-with-drop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paper-and-pen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paragraph-aligment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pattern-tool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil-drawing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil-with-eraser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pen-crop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pen-pencil-and-eraser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pen-point.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\piece-of-paper-folded.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plastic-cutter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus-and-minus-square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pointin-tool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printing-document.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\projecting-cap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ps-file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\puzzle-piece.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rectangle-ruler.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove-ancho-point.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resize-text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\responsive-devices.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right-paragraph.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rotate-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\round-cap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\round-join.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\round-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rubber-eraser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ruler-and-pen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ruler-and-pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ruler-and-set-square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sample-color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scale-squares.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\school-pen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\school-writing-tool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\select-tool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sharpener.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\slice-tool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smartphone-tablet-and-television.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spatula.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spray-can.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\square-composition.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\square-image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\square-pattern.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\square-window.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\strikethrough-text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\strip-mark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\surgeon-scalpel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sync-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\target-in-page.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text-font.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text-tool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text-tool-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text-tool-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\three-brushes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\three-rings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\three-squares.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\triangle-and-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\two-paint-brusher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unite-squares.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\university-building.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-profile-in-a-square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vector-software.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vintage-color-palette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vintage-reading-glasses.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\visible-status.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\writing-feather.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\writing-text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom-len.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom-out-magnifier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move-folder-reflected.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
