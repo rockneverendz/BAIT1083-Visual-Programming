@@ -1,3 +1,2 @@
-﻿Public Class Form1
-
+﻿Public Class Form_StonksLib
 End Class
