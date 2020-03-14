@@ -66,6 +66,7 @@ Partial Class BookList
         '
         Me.SplitContainer_BookList.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainer_BookList.FixedPanel = System.Windows.Forms.FixedPanel.Panel2
+        Me.SplitContainer_BookList.IsSplitterFixed = True
         Me.SplitContainer_BookList.Location = New System.Drawing.Point(0, 0)
         Me.SplitContainer_BookList.Name = "SplitContainer_BookList"
         '
@@ -95,7 +96,7 @@ Partial Class BookList
         Me.SplitContainer_BookList.Panel2.Controls.Add(Me.Label_ID)
         Me.SplitContainer_BookList.Panel2MinSize = 200
         Me.SplitContainer_BookList.Size = New System.Drawing.Size(816, 464)
-        Me.SplitContainer_BookList.SplitterDistance = 611
+        Me.SplitContainer_BookList.SplitterDistance = 612
         Me.SplitContainer_BookList.TabIndex = 3
         '
         'ListView1
@@ -315,11 +316,14 @@ Partial Class BookList
         'ToolStrip_BookDetails
         '
         Me.ToolStrip_BookDetails.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.ToolStrip_BookDetails.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ToolStrip_BookDetails.AutoToolTip = False
+        Me.ToolStrip_BookDetails.Image = Global.BAIT1083_Visual_Programming.My.Resources.Resources.baseline_keyboard_arrow_right_black_18dp
+        Me.ToolStrip_BookDetails.Margin = New System.Windows.Forms.Padding(5, 1, 5, 2)
         Me.ToolStrip_BookDetails.Name = "ToolStrip_BookDetails"
-        Me.ToolStrip_BookDetails.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
-        Me.ToolStrip_BookDetails.Size = New System.Drawing.Size(96, 22)
+        Me.ToolStrip_BookDetails.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.ToolStrip_BookDetails.Size = New System.Drawing.Size(102, 22)
         Me.ToolStrip_BookDetails.Text = "Book Details"
+        Me.ToolStrip_BookDetails.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         '
         'ToolStrip_ProgressBar
         '

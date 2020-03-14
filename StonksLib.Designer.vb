@@ -57,7 +57,7 @@ Partial Class Form_StonksLib
         '
         Me.ToolStrip_Book.AutoToolTip = False
         Me.ToolStrip_Book.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewBookToolStripMenuItem, Me.BookListToolStripMenuItem})
-        Me.ToolStrip_Book.Image = Global.BAIT1083_Visual_Programming.My.Resources.Resources.agenda_with_bookmark
+        Me.ToolStrip_Book.Image = Global.BAIT1083_Visual_Programming.My.Resources.Resources.baseline_book_black_18dp
         Me.ToolStrip_Book.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ToolStrip_Book.Margin = New System.Windows.Forms.Padding(5, 1, 5, 2)
         Me.ToolStrip_Book.Name = "ToolStrip_Book"
@@ -68,19 +68,19 @@ Partial Class Form_StonksLib
         'NewBookToolStripMenuItem
         '
         Me.NewBookToolStripMenuItem.Name = "NewBookToolStripMenuItem"
-        Me.NewBookToolStripMenuItem.Size = New System.Drawing.Size(128, 22)
+        Me.NewBookToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.NewBookToolStripMenuItem.Text = "New Book"
         '
         'BookListToolStripMenuItem
         '
         Me.BookListToolStripMenuItem.Name = "BookListToolStripMenuItem"
-        Me.BookListToolStripMenuItem.Size = New System.Drawing.Size(128, 22)
+        Me.BookListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.BookListToolStripMenuItem.Text = "Book List"
         '
         'ToolStrip_Checkout
         '
         Me.ToolStrip_Checkout.AutoToolTip = False
-        Me.ToolStrip_Checkout.Image = Global.BAIT1083_Visual_Programming.My.Resources.Resources.move_folder
+        Me.ToolStrip_Checkout.Image = Global.BAIT1083_Visual_Programming.My.Resources.Resources.baseline_vertical_align_top_black_18dp
         Me.ToolStrip_Checkout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ToolStrip_Checkout.Margin = New System.Windows.Forms.Padding(5, 1, 5, 2)
         Me.ToolStrip_Checkout.Name = "ToolStrip_Checkout"
@@ -91,7 +91,7 @@ Partial Class Form_StonksLib
         'ToolStrip_Return
         '
         Me.ToolStrip_Return.AutoToolTip = False
-        Me.ToolStrip_Return.Image = Global.BAIT1083_Visual_Programming.My.Resources.Resources.move_folder_reflected
+        Me.ToolStrip_Return.Image = Global.BAIT1083_Visual_Programming.My.Resources.Resources.baseline_vertical_align_bottom_black_18dp
         Me.ToolStrip_Return.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ToolStrip_Return.Margin = New System.Windows.Forms.Padding(5, 1, 5, 2)
         Me.ToolStrip_Return.Name = "ToolStrip_Return"
@@ -114,7 +114,7 @@ Partial Class Form_StonksLib
         '
         Me.ToolStrip_Patron.AutoToolTip = False
         Me.ToolStrip_Patron.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewPatronToolStripMenuItem, Me.PatronListToolStripMenuItem})
-        Me.ToolStrip_Patron.Image = Global.BAIT1083_Visual_Programming.My.Resources.Resources.user_profile_in_a_square
+        Me.ToolStrip_Patron.Image = Global.BAIT1083_Visual_Programming.My.Resources.Resources.baseline_people_black_18dp
         Me.ToolStrip_Patron.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ToolStrip_Patron.Margin = New System.Windows.Forms.Padding(5, 1, 5, 2)
         Me.ToolStrip_Patron.Name = "ToolStrip_Patron"
@@ -124,8 +124,9 @@ Partial Class Form_StonksLib
         '
         'NewPatronToolStripMenuItem
         '
+        Me.NewPatronToolStripMenuItem.Image = Global.BAIT1083_Visual_Programming.My.Resources.Resources.baseline_person_add_black_18dp
         Me.NewPatronToolStripMenuItem.Name = "NewPatronToolStripMenuItem"
-        Me.NewPatronToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
+        Me.NewPatronToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.NewPatronToolStripMenuItem.Text = "New Patron"
         '
         'PatronListToolStripMenuItem
@@ -173,7 +174,7 @@ Partial Class Form_StonksLib
         '
         Me.ToolStrip_Profile.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
         Me.ToolStrip_Profile.AutoToolTip = False
-        Me.ToolStrip_Profile.Image = Global.BAIT1083_Visual_Programming.My.Resources.Resources.dart_board
+        Me.ToolStrip_Profile.Image = Global.BAIT1083_Visual_Programming.My.Resources.Resources.baseline_person_black_18dp
         Me.ToolStrip_Profile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ToolStrip_Profile.Margin = New System.Windows.Forms.Padding(5, 1, 5, 2)
         Me.ToolStrip_Profile.Name = "ToolStrip_Profile"
