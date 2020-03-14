@@ -73,6 +73,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="User Controls\BookList.Designer.vb">
+      <DependentUpon>BookList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\BookList.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="StonksLib.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="User Controls\BookList.resx">
+      <DependentUpon>BookList.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StonksLib.resx">
       <DependentUpon>StonksLib.vb</DependentUpon>
     </EmbeddedResource>
