@@ -731,6 +731,44 @@
   <ItemGroup>
     <None Include="Resources\Design App UI Icon Pack\move-folder-reflected.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Material Design Icon Pack\baseline_book_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Material Design Icon Pack\baseline_face_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Material Design Icon Pack\baseline_no_meeting_room_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Material Design Icon Pack\baseline_people_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Material Design Icon Pack\baseline_people_outline_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Material Design Icon Pack\baseline_person_add_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Material Design Icon Pack\baseline_person_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Material Design Icon Pack\baseline_person_outline_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Material Design Icon Pack\baseline_settings_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Material Design Icon Pack\baseline_vertical_align_bottom_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Material Design Icon Pack\baseline_vertical_align_top_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_keyboard_arrow_left_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_keyboard_arrow_right_black_18dp.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
