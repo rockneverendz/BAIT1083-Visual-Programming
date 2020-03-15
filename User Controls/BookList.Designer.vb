@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class BookList
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class BookList
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.SplitContainer_BookList = New System.Windows.Forms.SplitContainer()
         Me.ListView1 = New System.Windows.Forms.ListView()
@@ -51,15 +51,15 @@ Partial Class BookList
         Me.Label_Title = New System.Windows.Forms.Label()
         Me.TextBox_ID = New System.Windows.Forms.TextBox()
         Me.Label_ID = New System.Windows.Forms.Label()
-        Me.ToolStrip_Footer = New System.Windows.Forms.ToolStrip()
-        Me.ToolStrip_BookDetails = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStrip_ProgressBar = New System.Windows.Forms.ToolStripProgressBar()
-        Me.ToolStrip_Status = New System.Windows.Forms.ToolStripLabel()
+        Me.MenuStrip_Footer = New System.Windows.Forms.MenuStrip()
+        Me.Footer_BookDetails = New System.Windows.Forms.ToolStripButton()
+        Me.Footer_ProgressBar = New System.Windows.Forms.ToolStripProgressBar()
+        Me.Footer_Status = New System.Windows.Forms.ToolStripLabel()
         CType(Me.SplitContainer_BookList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer_BookList.Panel1.SuspendLayout()
         Me.SplitContainer_BookList.Panel2.SuspendLayout()
         Me.SplitContainer_BookList.SuspendLayout()
-        Me.ToolStrip_Footer.SuspendLayout()
+        Me.MenuStrip_Footer.SuspendLayout()
         Me.SuspendLayout()
         '
         'SplitContainer_BookList
@@ -95,7 +95,7 @@ Partial Class BookList
         Me.SplitContainer_BookList.Panel2.Controls.Add(Me.TextBox_ID)
         Me.SplitContainer_BookList.Panel2.Controls.Add(Me.Label_ID)
         Me.SplitContainer_BookList.Panel2MinSize = 200
-        Me.SplitContainer_BookList.Size = New System.Drawing.Size(816, 464)
+        Me.SplitContainer_BookList.Size = New System.Drawing.Size(816, 462)
         Me.SplitContainer_BookList.SplitterDistance = 612
         Me.SplitContainer_BookList.TabIndex = 3
         '
@@ -106,7 +106,7 @@ Partial Class BookList
         Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(0, 0)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(612, 464)
+        Me.ListView1.Size = New System.Drawing.Size(612, 462)
         Me.ListView1.TabIndex = 3
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -302,41 +302,40 @@ Partial Class BookList
         Me.Label_ID.TabIndex = 0
         Me.Label_ID.Text = "ID"
         '
-        'ToolStrip_Footer
+        'MenuStrip_Footer
         '
-        Me.ToolStrip_Footer.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ToolStrip_Footer.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.ToolStrip_Footer.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStrip_BookDetails, Me.ToolStrip_ProgressBar, Me.ToolStrip_Status})
-        Me.ToolStrip_Footer.Location = New System.Drawing.Point(0, 464)
-        Me.ToolStrip_Footer.Name = "ToolStrip_Footer"
-        Me.ToolStrip_Footer.Size = New System.Drawing.Size(816, 25)
-        Me.ToolStrip_Footer.TabIndex = 4
-        Me.ToolStrip_Footer.Text = "ToolStrip1"
+        Me.MenuStrip_Footer.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.MenuStrip_Footer.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Footer_BookDetails, Me.Footer_ProgressBar, Me.Footer_Status})
+        Me.MenuStrip_Footer.Location = New System.Drawing.Point(0, 462)
+        Me.MenuStrip_Footer.Name = "MenuStrip_Footer"
+        Me.MenuStrip_Footer.Size = New System.Drawing.Size(816, 27)
+        Me.MenuStrip_Footer.TabIndex = 5
+        Me.MenuStrip_Footer.Text = "MenuStrip1"
         '
-        'ToolStrip_BookDetails
+        'Footer_BookDetails
         '
-        Me.ToolStrip_BookDetails.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.ToolStrip_BookDetails.AutoToolTip = False
-        Me.ToolStrip_BookDetails.Image = Global.BAIT1083_Visual_Programming.My.Resources.Resources.baseline_keyboard_arrow_right_black_18dp
-        Me.ToolStrip_BookDetails.Margin = New System.Windows.Forms.Padding(5, 1, 5, 2)
-        Me.ToolStrip_BookDetails.Name = "ToolStrip_BookDetails"
-        Me.ToolStrip_BookDetails.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.ToolStrip_BookDetails.Size = New System.Drawing.Size(102, 22)
-        Me.ToolStrip_BookDetails.Text = "Book Details"
-        Me.ToolStrip_BookDetails.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.Footer_BookDetails.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.Footer_BookDetails.AutoToolTip = False
+        Me.Footer_BookDetails.Image = Global.BAIT1083_Visual_Programming.My.Resources.Resources.baseline_keyboard_arrow_right_black_18dp
+        Me.Footer_BookDetails.Margin = New System.Windows.Forms.Padding(5, 1, 5, 2)
+        Me.Footer_BookDetails.Name = "Footer_BookDetails"
+        Me.Footer_BookDetails.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.Footer_BookDetails.Size = New System.Drawing.Size(102, 20)
+        Me.Footer_BookDetails.Text = "Book Details"
+        Me.Footer_BookDetails.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         '
-        'ToolStrip_ProgressBar
+        'Footer_ProgressBar
         '
-        Me.ToolStrip_ProgressBar.AutoSize = False
-        Me.ToolStrip_ProgressBar.Name = "ToolStrip_ProgressBar"
-        Me.ToolStrip_ProgressBar.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
-        Me.ToolStrip_ProgressBar.Size = New System.Drawing.Size(100, 15)
+        Me.Footer_ProgressBar.AutoSize = False
+        Me.Footer_ProgressBar.Name = "Footer_ProgressBar"
+        Me.Footer_ProgressBar.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
+        Me.Footer_ProgressBar.Size = New System.Drawing.Size(100, 15)
         '
-        'ToolStrip_Status
+        'Footer_Status
         '
-        Me.ToolStrip_Status.Name = "ToolStrip_Status"
-        Me.ToolStrip_Status.Size = New System.Drawing.Size(39, 22)
-        Me.ToolStrip_Status.Text = "Status"
+        Me.Footer_Status.Name = "Footer_Status"
+        Me.Footer_Status.Size = New System.Drawing.Size(39, 20)
+        Me.Footer_Status.Text = "Status"
         '
         'BookList
         '
@@ -344,7 +343,7 @@ Partial Class BookList
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.Controls.Add(Me.SplitContainer_BookList)
-        Me.Controls.Add(Me.ToolStrip_Footer)
+        Me.Controls.Add(Me.MenuStrip_Footer)
         Me.Name = "BookList"
         Me.Size = New System.Drawing.Size(816, 489)
         Me.SplitContainer_BookList.Panel1.ResumeLayout(False)
@@ -352,8 +351,8 @@ Partial Class BookList
         Me.SplitContainer_BookList.Panel2.PerformLayout()
         CType(Me.SplitContainer_BookList, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer_BookList.ResumeLayout(False)
-        Me.ToolStrip_Footer.ResumeLayout(False)
-        Me.ToolStrip_Footer.PerformLayout()
+        Me.MenuStrip_Footer.ResumeLayout(False)
+        Me.MenuStrip_Footer.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -388,8 +387,8 @@ Partial Class BookList
     Friend WithEvents Label_Title As Label
     Friend WithEvents TextBox_ID As TextBox
     Friend WithEvents Label_ID As Label
-    Friend WithEvents ToolStrip_Footer As ToolStrip
-    Friend WithEvents ToolStrip_BookDetails As ToolStripButton
-    Friend WithEvents ToolStrip_ProgressBar As ToolStripProgressBar
-    Friend WithEvents ToolStrip_Status As ToolStripLabel
+    Friend WithEvents MenuStrip_Footer As MenuStrip
+    Friend WithEvents Footer_BookDetails As ToolStripButton
+    Friend WithEvents Footer_ProgressBar As ToolStripProgressBar
+    Friend WithEvents Footer_Status As ToolStripLabel
 End Class

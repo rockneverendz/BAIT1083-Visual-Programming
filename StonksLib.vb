@@ -1,10 +1,10 @@
 ﻿Public Class Form_StonksLib
-    Private Sub ToolStrip_Button_Click(sender As Object, e As EventArgs) Handles ToolStrip_Checkout.Click, ToolStrip_BookList.Click
+    Private Sub ToolStrip_Button_Click(sender As Object, e As EventArgs) Handles Menu_Checkout.Click, Menu_BookList.Click
         Dim New_Control As UserControl
 
-        If (sender.Equals(ToolStrip_BookList)) Then
+        If (sender.Equals(Menu_BookList)) Then
             New_Control = New BAIT1083_Visual_Programming.BookList()
-        ElseIf (sender.Equals(ToolStrip_Checkout)) Then
+        ElseIf (sender.Equals(Menu_Checkout)) Then
             New_Control = New BAIT1083_Visual_Programming.Checkout()
         Else
             'User should not reach here'
