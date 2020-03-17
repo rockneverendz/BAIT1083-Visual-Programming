@@ -2,7 +2,7 @@
   <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\LibDB.mdf;Integrated Security=True" SettingsObjectName="BAIT1083_Visual_Programming.My.MySettings" SettingsPropertyName="LibDBConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.AdminLib" Member="AdminLibs">
     <Type Name="AdminLib">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Admin_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>

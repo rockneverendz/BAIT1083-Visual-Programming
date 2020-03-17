@@ -161,7 +161,7 @@ Partial Public Class AdminLib
 	
 	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
 	
-	Private _Id As Integer
+	Private _Admin_ID As Integer
 	
 	Private _Name As String
 	
@@ -174,9 +174,9 @@ Partial Public Class AdminLib
     End Sub
     Partial Private Sub OnCreated()
     End Sub
-    Partial Private Sub OnIdChanging(value As Integer)
+    Partial Private Sub OnAdmin_IDChanging(value As Integer)
     End Sub
-    Partial Private Sub OnIdChanged()
+    Partial Private Sub OnAdmin_IDChanged()
     End Sub
     Partial Private Sub OnNameChanging(value As String)
     End Sub
@@ -193,19 +193,19 @@ Partial Public Class AdminLib
 		OnCreated
 	End Sub
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property Id() As Integer
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Admin_ID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property Admin_ID() As Integer
 		Get
-			Return Me._Id
+			Return Me._Admin_ID
 		End Get
 		Set
-			If ((Me._Id = value)  _
+			If ((Me._Admin_ID = value)  _
 						= false) Then
-				Me.OnIdChanging(value)
+				Me.OnAdmin_IDChanging(value)
 				Me.SendPropertyChanging
-				Me._Id = value
-				Me.SendPropertyChanged("Id")
-				Me.OnIdChanged
+				Me._Admin_ID = value
+				Me.SendPropertyChanged("Admin_ID")
+				Me.OnAdmin_IDChanged
 			End If
 		End Set
 	End Property
