@@ -107,6 +107,12 @@
     <Compile Include="User Controls\Checkout.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="User Controls\NewBook.Designer.vb">
+      <DependentUpon>NewBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\NewBook.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="User Controls\BookList.resx">
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\Checkout.resx">
       <DependentUpon>Checkout.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\NewBook.resx">
+      <DependentUpon>NewBook.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
