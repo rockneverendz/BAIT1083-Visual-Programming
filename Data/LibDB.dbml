@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LibDB" Class="LibDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\LibDB.mdf;Integrated Security=True" SettingsObjectName="BAIT1083_Visual_Programming.My.MySettings" SettingsPropertyName="LibDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AdminLib" Member="AdminLibs">
+    <Type Name="AdminLib">
+      <Column Name="Admin_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RoomBooking" Member="RoomBookings">
+    <Type Name="RoomBooking">
+      <Column Name="Patron_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Room_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Date_Time" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CheckIn_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CheckOut_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Patron_RoomBooking" Member="Patron" ThisKey="Patron_ID" OtherKey="Patron_ID" Type="Patron" IsForeignKey="true" />
+      <Association Name="Room_RoomBooking" Member="Room" ThisKey="Room_ID" OtherKey="Room_Id" Type="Room" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Book" Member="Books">
+    <Type Name="Book">
+      <Column Name="Book_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Book_title" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Author" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Category" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Publication" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Year_Publish" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Copies" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Call_no" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Barcode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Book_Copy" Member="Copies1" ThisKey="Book_Id" OtherKey="Book_ID" Type="Copy" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CheckOut" Member="CheckOuts">
+    <Type Name="CheckOut">
+      <Column Name="Chk_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Patron_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Copy_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Issue_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Due_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="CheckOut_Return" Member="Returns" ThisKey="Chk_ID" OtherKey="Chk_ID" Type="Return" />
+      <Association Name="Copy_CheckOut" Member="Copy" ThisKey="Copy_ID" OtherKey="Copy_ID" Type="Copy" IsForeignKey="true" />
+      <Association Name="Patron_CheckOut" Member="Patron" ThisKey="Patron_ID" OtherKey="Patron_ID" Type="Patron" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Copies" Member="Copies">
+    <Type Name="Copy">
+      <Column Name="Copy_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Book_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Barcode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Copy_CheckOut" Member="CheckOuts" ThisKey="Copy_ID" OtherKey="Copy_ID" Type="CheckOut" />
+      <Association Name="Book_Copy" Member="Book" ThisKey="Book_ID" OtherKey="Book_Id" Type="Book" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Patron" Member="Patrons">
+    <Type Name="Patron">
+      <Column Name="Patron_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Course" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PhoneNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Patron_RoomBooking" Member="RoomBookings" ThisKey="Patron_ID" OtherKey="Patron_ID" Type="RoomBooking" />
+      <Association Name="Patron_CheckOut" Member="CheckOuts" ThisKey="Patron_ID" OtherKey="Patron_ID" Type="CheckOut" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Return]" Member="Returns">
+    <Type Name="Return">
+      <Column Name="Rtn_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Rtn_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Fine_Amount" Type="System.Decimal" DbType="SmallMoney" CanBeNull="true" />
+      <Column Name="Chk_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="CheckOut_Return" Member="CheckOut" ThisKey="Chk_ID" OtherKey="Chk_ID" Type="CheckOut" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Room" Member="Rooms">
+    <Type Name="Room">
+      <Column Name="Room_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Size" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Room_RoomBooking" Member="RoomBookings" ThisKey="Room_Id" OtherKey="Room_ID" Type="RoomBooking" />
+    </Type>
+  </Table>
+</Database>
