@@ -831,12 +831,6 @@
     <None Include="Resources\baseline_keyboard_arrow_right_black_18dp.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="LibDB.mdf" />
-    <Content Include="LibDB_log.ldf">
-      <DependentUpon>LibDB.mdf</DependentUpon>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
