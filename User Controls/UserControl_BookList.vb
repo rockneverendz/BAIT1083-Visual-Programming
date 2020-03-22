@@ -1,4 +1,4 @@
-﻿Public Class BookList
+﻿Public Class UserControl_BookList
     Private Sub ToolStrip_BookDetails_Click(sender As Object, e As EventArgs) Handles Footer_BookDetails.Click
         If (SplitContainer_BookList.Panel2Collapsed) Then
             SplitContainer_BookList.Panel2Collapsed = False

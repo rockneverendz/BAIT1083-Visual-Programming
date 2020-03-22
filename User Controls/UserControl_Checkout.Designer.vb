@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Checkout
+Partial Class UserControl_Checkout
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.

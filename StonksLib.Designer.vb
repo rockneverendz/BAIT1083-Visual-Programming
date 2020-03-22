@@ -23,7 +23,7 @@ Partial Class Form_StonksLib
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel_Main = New System.Windows.Forms.Panel()
-        Me.Form_Control = New BAIT1083_Visual_Programming.BookList()
+        Me.Form_Control = New BAIT1083_Visual_Programming.UserControl_BookList()
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.Menu_Checkout = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_Return = New System.Windows.Forms.ToolStripMenuItem()
@@ -211,7 +211,7 @@ Partial Class Form_StonksLib
 
     End Sub
     Friend WithEvents Panel_Main As Panel
-    Friend WithEvents Form_Control As BookList
+    Friend WithEvents Form_Control As UserControl_BookList
     Friend WithEvents MenuStrip As MenuStrip
     Friend WithEvents Menu_Checkout As ToolStripMenuItem
     Friend WithEvents Menu_Return As ToolStripMenuItem

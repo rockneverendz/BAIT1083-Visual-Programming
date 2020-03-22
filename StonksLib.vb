@@ -3,9 +3,9 @@
         Dim New_Control As UserControl
 
         If (sender.Equals(Menu_BookList)) Then
-            New_Control = New BAIT1083_Visual_Programming.BookList()
+            New_Control = New BAIT1083_Visual_Programming.UserControl_BookList()
         ElseIf (sender.Equals(Menu_Checkout)) Then
-            New_Control = New BAIT1083_Visual_Programming.Checkout()
+            New_Control = New BAIT1083_Visual_Programming.UserControl_Checkout()
         Else
             'User should not reach here'
             New_Control = New UserControl()

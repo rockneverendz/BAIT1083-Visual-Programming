@@ -92,10 +92,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="User Controls\BookList.Designer.vb">
-      <DependentUpon>BookList.vb</DependentUpon>
+    <Compile Include="User Controls\UserControl_BookList.Designer.vb">
+      <DependentUpon>UserControl_BookList.vb</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\BookList.vb">
+    <Compile Include="User Controls\UserControl_BookList.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="StonksLib.vb">
@@ -132,22 +132,22 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="User Controls\Checkout.Designer.vb">
-      <DependentUpon>Checkout.vb</DependentUpon>
+    <Compile Include="User Controls\UserControl_Checkout.Designer.vb">
+      <DependentUpon>UserControl_Checkout.vb</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\Checkout.vb">
+    <Compile Include="User Controls\UserControl_Checkout.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\NewBook.Designer.vb">
-      <DependentUpon>NewBook.vb</DependentUpon>
+    <Compile Include="User Controls\UserControl_NewBook.Designer.vb">
+      <DependentUpon>UserControl_NewBook.vb</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\NewBook.vb">
+    <Compile Include="User Controls\UserControl_NewBook.vb">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="User Controls\BookList.resx">
-      <DependentUpon>BookList.vb</DependentUpon>
+    <EmbeddedResource Include="User Controls\UserControl_BookList.resx">
+      <DependentUpon>UserControl_BookList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StonksLib.resx">
       <DependentUpon>StonksLib.vb</DependentUpon>
@@ -161,11 +161,11 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\Checkout.resx">
-      <DependentUpon>Checkout.vb</DependentUpon>
+    <EmbeddedResource Include="User Controls\UserControl_Checkout.resx">
+      <DependentUpon>UserControl_Checkout.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\NewBook.resx">
-      <DependentUpon>NewBook.vb</DependentUpon>
+    <EmbeddedResource Include="User Controls\UserControl_NewBook.resx">
+      <DependentUpon>UserControl_NewBook.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
