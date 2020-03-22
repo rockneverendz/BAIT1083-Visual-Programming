@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LibDB" Class="LibDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\LibDB.mdf;Integrated Security=True" SettingsObjectName="BAIT1083_Visual_Programming.My.MySettings" SettingsPropertyName="LibDBConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Data\LibDB.mdf;Integrated Security=True" SettingsObjectName="BAIT1083_Visual_Programming.My.MySettings" SettingsPropertyName="LibDBConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.AdminLib" Member="AdminLibs">
     <Type Name="AdminLib">
       <Column Name="Admin_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -25,10 +25,9 @@
       <Column Name="Author" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Category" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Publication" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Year_Publish" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Year_Publish" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Copies" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Call_no" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Barcode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Association Name="Book_Copy" Member="Copies1" ThisKey="Book_Id" OtherKey="Book_ID" Type="Copy" />
     </Type>
   </Table>
@@ -36,12 +35,20 @@
     <Type Name="CheckOut">
       <Column Name="Chk_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Patron_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Copy_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Issue_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Due_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Association Name="CheckOut_Return" Member="Returns" ThisKey="Chk_ID" OtherKey="Chk_ID" Type="Return" />
-      <Association Name="Copy_CheckOut" Member="Copy" ThisKey="Copy_ID" OtherKey="Copy_ID" Type="Copy" IsForeignKey="true" />
+      <Column Name="Issue_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Due_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Rtn_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CheckOut_CheckOutList" Member="CheckOutLists" ThisKey="Chk_ID" OtherKey="Chk_ID" Type="CheckOutList" />
       <Association Name="Patron_CheckOut" Member="Patron" ThisKey="Patron_ID" OtherKey="Patron_ID" Type="Patron" IsForeignKey="true" />
+      <Association Name="Return_CheckOut" Member="Return" ThisKey="Rtn_ID" OtherKey="Rtn_ID" Type="Return" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CheckOutList" Member="CheckOutLists">
+    <Type Name="CheckOutList">
+      <Column Name="Chk_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Copy_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="CheckOut_CheckOutList" Member="CheckOut" ThisKey="Chk_ID" OtherKey="Chk_ID" Type="CheckOut" IsForeignKey="true" />
+      <Association Name="Copy_CheckOutList" Member="Copy" ThisKey="Copy_ID" OtherKey="Copy_ID" Type="Copy" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Copies" Member="Copies">
@@ -49,8 +56,7 @@
       <Column Name="Copy_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Book_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Barcode" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Copy_CheckOut" Member="CheckOuts" ThisKey="Copy_ID" OtherKey="Copy_ID" Type="CheckOut" />
+      <Association Name="Copy_CheckOutList" Member="CheckOutLists" ThisKey="Copy_ID" OtherKey="Copy_ID" Type="CheckOutList" />
       <Association Name="Book_Copy" Member="Book" ThisKey="Book_ID" OtherKey="Book_Id" Type="Book" IsForeignKey="true" />
     </Type>
   </Table>
@@ -71,8 +77,7 @@
       <Column Name="Rtn_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Rtn_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="Fine_Amount" Type="System.Decimal" DbType="SmallMoney" CanBeNull="true" />
-      <Column Name="Chk_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="CheckOut_Return" Member="CheckOut" ThisKey="Chk_ID" OtherKey="Chk_ID" Type="CheckOut" IsForeignKey="true" />
+      <Association Name="Return_CheckOut" Member="CheckOuts" ThisKey="Rtn_ID" OtherKey="Rtn_ID" Type="CheckOut" />
     </Type>
   </Table>
   <Table Name="dbo.Room" Member="Rooms">

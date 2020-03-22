@@ -55,6 +55,12 @@ Partial Public Class LibDBDataContext
     End Sub
   Partial Private Sub DeleteCheckOut(instance As CheckOut)
     End Sub
+  Partial Private Sub InsertCheckOutList(instance As CheckOutList)
+    End Sub
+  Partial Private Sub UpdateCheckOutList(instance As CheckOutList)
+    End Sub
+  Partial Private Sub DeleteCheckOutList(instance As CheckOutList)
+    End Sub
   Partial Private Sub InsertCopy(instance As Copy)
     End Sub
   Partial Private Sub UpdateCopy(instance As Copy)
@@ -127,6 +133,12 @@ Partial Public Class LibDBDataContext
 	Public ReadOnly Property CheckOuts() As System.Data.Linq.Table(Of CheckOut)
 		Get
 			Return Me.GetTable(Of CheckOut)
+		End Get
+	End Property
+	
+	Public ReadOnly Property CheckOutLists() As System.Data.Linq.Table(Of CheckOutList)
+		Get
+			Return Me.GetTable(Of CheckOutList)
 		End Get
 	End Property
 	
@@ -497,13 +509,11 @@ Partial Public Class Book
 	
 	Private _Publication As String
 	
-	Private _Year_Publish As System.Nullable(Of Date)
+	Private _Year_Publish As System.Nullable(Of Integer)
 	
 	Private _Copies As System.Nullable(Of Integer)
 	
 	Private _Call_no As String
-	
-	Private _Barcode As String
 	
 	Private _Copies1 As EntitySet(Of Copy)
 	
@@ -534,7 +544,7 @@ Partial Public Class Book
     End Sub
     Partial Private Sub OnPublicationChanged()
     End Sub
-    Partial Private Sub OnYear_PublishChanging(value As System.Nullable(Of Date))
+    Partial Private Sub OnYear_PublishChanging(value As System.Nullable(Of Integer))
     End Sub
     Partial Private Sub OnYear_PublishChanged()
     End Sub
@@ -545,10 +555,6 @@ Partial Public Class Book
     Partial Private Sub OnCall_noChanging(value As String)
     End Sub
     Partial Private Sub OnCall_noChanged()
-    End Sub
-    Partial Private Sub OnBarcodeChanging(value As String)
-    End Sub
-    Partial Private Sub OnBarcodeChanged()
     End Sub
     #End Region
 	
@@ -639,8 +645,8 @@ Partial Public Class Book
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Year_Publish", DbType:="DateTime")>  _
-	Public Property Year_Publish() As System.Nullable(Of Date)
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Year_Publish", DbType:="Int")>  _
+	Public Property Year_Publish() As System.Nullable(Of Integer)
 		Get
 			Return Me._Year_Publish
 		End Get
@@ -683,22 +689,6 @@ Partial Public Class Book
 				Me._Call_no = value
 				Me.SendPropertyChanged("Call_no")
 				Me.OnCall_noChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Barcode", DbType:="VarChar(MAX)")>  _
-	Public Property Barcode() As String
-		Get
-			Return Me._Barcode
-		End Get
-		Set
-			If (String.Equals(Me._Barcode, value) = false) Then
-				Me.OnBarcodeChanging(value)
-				Me.SendPropertyChanging
-				Me._Barcode = value
-				Me.SendPropertyChanged("Barcode")
-				Me.OnBarcodeChanged
 			End If
 		End Set
 	End Property
@@ -752,17 +742,17 @@ Partial Public Class CheckOut
 	
 	Private _Patron_ID As Integer
 	
-	Private _Copy_ID As Integer
-	
 	Private _Issue_Date As Date
 	
 	Private _Due_Date As Date
 	
-	Private _Returns As EntitySet(Of [Return])
+	Private _Rtn_ID As System.Nullable(Of Integer)
 	
-	Private _Copy As EntityRef(Of Copy)
+	Private _CheckOutLists As EntitySet(Of CheckOutList)
 	
 	Private _Patron As EntityRef(Of Patron)
+	
+	Private _Return As EntityRef(Of [Return])
 	
     #Region "Extensibility Method Definitions"
     Partial Private Sub OnLoaded()
@@ -779,10 +769,6 @@ Partial Public Class CheckOut
     End Sub
     Partial Private Sub OnPatron_IDChanged()
     End Sub
-    Partial Private Sub OnCopy_IDChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnCopy_IDChanged()
-    End Sub
     Partial Private Sub OnIssue_DateChanging(value As Date)
     End Sub
     Partial Private Sub OnIssue_DateChanged()
@@ -791,13 +777,17 @@ Partial Public Class CheckOut
     End Sub
     Partial Private Sub OnDue_DateChanged()
     End Sub
+    Partial Private Sub OnRtn_IDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnRtn_IDChanged()
+    End Sub
     #End Region
 	
 	Public Sub New()
 		MyBase.New
-		Me._Returns = New EntitySet(Of [Return])(AddressOf Me.attach_Returns, AddressOf Me.detach_Returns)
-		Me._Copy = CType(Nothing, EntityRef(Of Copy))
+		Me._CheckOutLists = New EntitySet(Of CheckOutList)(AddressOf Me.attach_CheckOutLists, AddressOf Me.detach_CheckOutLists)
 		Me._Patron = CType(Nothing, EntityRef(Of Patron))
+		Me._Return = CType(Nothing, EntityRef(Of [Return]))
 		OnCreated
 	End Sub
 	
@@ -838,27 +828,7 @@ Partial Public Class CheckOut
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Copy_ID", DbType:="Int NOT NULL")>  _
-	Public Property Copy_ID() As Integer
-		Get
-			Return Me._Copy_ID
-		End Get
-		Set
-			If ((Me._Copy_ID = value)  _
-						= false) Then
-				If Me._Copy.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnCopy_IDChanging(value)
-				Me.SendPropertyChanging
-				Me._Copy_ID = value
-				Me.SendPropertyChanged("Copy_ID")
-				Me.OnCopy_IDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Issue_Date", DbType:="DateTime NOT NULL")>  _
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Issue_Date", DbType:="Date NOT NULL")>  _
 	Public Property Issue_Date() As Date
 		Get
 			Return Me._Issue_Date
@@ -875,7 +845,7 @@ Partial Public Class CheckOut
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Due_Date", DbType:="DateTime NOT NULL")>  _
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Due_Date", DbType:="Date NOT NULL")>  _
 	Public Property Due_Date() As Date
 		Get
 			Return Me._Due_Date
@@ -892,41 +862,32 @@ Partial Public Class CheckOut
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="CheckOut_Return", Storage:="_Returns", ThisKey:="Chk_ID", OtherKey:="Chk_ID")>  _
-	Public Property Returns() As EntitySet(Of [Return])
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Rtn_ID", DbType:="Int")>  _
+	Public Property Rtn_ID() As System.Nullable(Of Integer)
 		Get
-			Return Me._Returns
+			Return Me._Rtn_ID
 		End Get
 		Set
-			Me._Returns.Assign(value)
+			If (Me._Rtn_ID.Equals(value) = false) Then
+				If Me._Return.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnRtn_IDChanging(value)
+				Me.SendPropertyChanging
+				Me._Rtn_ID = value
+				Me.SendPropertyChanged("Rtn_ID")
+				Me.OnRtn_IDChanged
+			End If
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Copy_CheckOut", Storage:="_Copy", ThisKey:="Copy_ID", OtherKey:="Copy_ID", IsForeignKey:=true)>  _
-	Public Property Copy() As Copy
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="CheckOut_CheckOutList", Storage:="_CheckOutLists", ThisKey:="Chk_ID", OtherKey:="Chk_ID")>  _
+	Public Property CheckOutLists() As EntitySet(Of CheckOutList)
 		Get
-			Return Me._Copy.Entity
+			Return Me._CheckOutLists
 		End Get
 		Set
-			Dim previousValue As Copy = Me._Copy.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._Copy.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._Copy.Entity = Nothing
-					previousValue.CheckOuts.Remove(Me)
-				End If
-				Me._Copy.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.CheckOuts.Add(Me)
-					Me._Copy_ID = value.Copy_ID
-				Else
-					Me._Copy_ID = CType(Nothing, Integer)
-				End If
-				Me.SendPropertyChanged("Copy")
-			End If
+			Me._CheckOutLists.Assign(value)
 		End Set
 	End Property
 	
@@ -958,6 +919,34 @@ Partial Public Class CheckOut
 		End Set
 	End Property
 	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Return_CheckOut", Storage:="_Return", ThisKey:="Rtn_ID", OtherKey:="Rtn_ID", IsForeignKey:=true)>  _
+	Public Property [Return]() As [Return]
+		Get
+			Return Me._Return.Entity
+		End Get
+		Set
+			Dim previousValue As [Return] = Me._Return.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._Return.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._Return.Entity = Nothing
+					previousValue.CheckOuts.Remove(Me)
+				End If
+				Me._Return.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.CheckOuts.Add(Me)
+					Me._Rtn_ID = value.Rtn_ID
+				Else
+					Me._Rtn_ID = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("[Return]")
+			End If
+		End Set
+	End Property
+	
 	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
 	
 	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
@@ -976,14 +965,167 @@ Partial Public Class CheckOut
 		End If
 	End Sub
 	
-	Private Sub attach_Returns(ByVal entity As [Return])
+	Private Sub attach_CheckOutLists(ByVal entity As CheckOutList)
 		Me.SendPropertyChanging
 		entity.CheckOut = Me
 	End Sub
 	
-	Private Sub detach_Returns(ByVal entity As [Return])
+	Private Sub detach_CheckOutLists(ByVal entity As CheckOutList)
 		Me.SendPropertyChanging
 		entity.CheckOut = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.CheckOutList")>  _
+Partial Public Class CheckOutList
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _Chk_ID As Integer
+	
+	Private _Copy_ID As Integer
+	
+	Private _CheckOut As EntityRef(Of CheckOut)
+	
+	Private _Copy As EntityRef(Of Copy)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnChk_IDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnChk_IDChanged()
+    End Sub
+    Partial Private Sub OnCopy_IDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnCopy_IDChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._CheckOut = CType(Nothing, EntityRef(Of CheckOut))
+		Me._Copy = CType(Nothing, EntityRef(Of Copy))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Chk_ID", DbType:="Int NOT NULL", IsPrimaryKey:=true)>  _
+	Public Property Chk_ID() As Integer
+		Get
+			Return Me._Chk_ID
+		End Get
+		Set
+			If ((Me._Chk_ID = value)  _
+						= false) Then
+				If Me._CheckOut.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnChk_IDChanging(value)
+				Me.SendPropertyChanging
+				Me._Chk_ID = value
+				Me.SendPropertyChanged("Chk_ID")
+				Me.OnChk_IDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Copy_ID", DbType:="Int NOT NULL", IsPrimaryKey:=true)>  _
+	Public Property Copy_ID() As Integer
+		Get
+			Return Me._Copy_ID
+		End Get
+		Set
+			If ((Me._Copy_ID = value)  _
+						= false) Then
+				If Me._Copy.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnCopy_IDChanging(value)
+				Me.SendPropertyChanging
+				Me._Copy_ID = value
+				Me.SendPropertyChanged("Copy_ID")
+				Me.OnCopy_IDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="CheckOut_CheckOutList", Storage:="_CheckOut", ThisKey:="Chk_ID", OtherKey:="Chk_ID", IsForeignKey:=true)>  _
+	Public Property CheckOut() As CheckOut
+		Get
+			Return Me._CheckOut.Entity
+		End Get
+		Set
+			Dim previousValue As CheckOut = Me._CheckOut.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._CheckOut.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._CheckOut.Entity = Nothing
+					previousValue.CheckOutLists.Remove(Me)
+				End If
+				Me._CheckOut.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.CheckOutLists.Add(Me)
+					Me._Chk_ID = value.Chk_ID
+				Else
+					Me._Chk_ID = CType(Nothing, Integer)
+				End If
+				Me.SendPropertyChanged("CheckOut")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Copy_CheckOutList", Storage:="_Copy", ThisKey:="Copy_ID", OtherKey:="Copy_ID", IsForeignKey:=true)>  _
+	Public Property Copy() As Copy
+		Get
+			Return Me._Copy.Entity
+		End Get
+		Set
+			Dim previousValue As Copy = Me._Copy.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._Copy.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._Copy.Entity = Nothing
+					previousValue.CheckOutLists.Remove(Me)
+				End If
+				Me._Copy.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.CheckOutLists.Add(Me)
+					Me._Copy_ID = value.Copy_ID
+				Else
+					Me._Copy_ID = CType(Nothing, Integer)
+				End If
+				Me.SendPropertyChanged("Copy")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
 	End Sub
 End Class
 
@@ -999,9 +1141,7 @@ Partial Public Class Copy
 	
 	Private _Status As String
 	
-	Private _Barcode As System.Nullable(Of Integer)
-	
-	Private _CheckOuts As EntitySet(Of CheckOut)
+	Private _CheckOutLists As EntitySet(Of CheckOutList)
 	
 	Private _Book As EntityRef(Of Book)
 	
@@ -1024,15 +1164,11 @@ Partial Public Class Copy
     End Sub
     Partial Private Sub OnStatusChanged()
     End Sub
-    Partial Private Sub OnBarcodeChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnBarcodeChanged()
-    End Sub
     #End Region
 	
 	Public Sub New()
 		MyBase.New
-		Me._CheckOuts = New EntitySet(Of CheckOut)(AddressOf Me.attach_CheckOuts, AddressOf Me.detach_CheckOuts)
+		Me._CheckOutLists = New EntitySet(Of CheckOutList)(AddressOf Me.attach_CheckOutLists, AddressOf Me.detach_CheckOutLists)
 		Me._Book = CType(Nothing, EntityRef(Of Book))
 		OnCreated
 	End Sub
@@ -1090,29 +1226,13 @@ Partial Public Class Copy
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Barcode", DbType:="Int")>  _
-	Public Property Barcode() As System.Nullable(Of Integer)
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Copy_CheckOutList", Storage:="_CheckOutLists", ThisKey:="Copy_ID", OtherKey:="Copy_ID")>  _
+	Public Property CheckOutLists() As EntitySet(Of CheckOutList)
 		Get
-			Return Me._Barcode
+			Return Me._CheckOutLists
 		End Get
 		Set
-			If (Me._Barcode.Equals(value) = false) Then
-				Me.OnBarcodeChanging(value)
-				Me.SendPropertyChanging
-				Me._Barcode = value
-				Me.SendPropertyChanged("Barcode")
-				Me.OnBarcodeChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Copy_CheckOut", Storage:="_CheckOuts", ThisKey:="Copy_ID", OtherKey:="Copy_ID")>  _
-	Public Property CheckOuts() As EntitySet(Of CheckOut)
-		Get
-			Return Me._CheckOuts
-		End Get
-		Set
-			Me._CheckOuts.Assign(value)
+			Me._CheckOutLists.Assign(value)
 		End Set
 	End Property
 	
@@ -1162,12 +1282,12 @@ Partial Public Class Copy
 		End If
 	End Sub
 	
-	Private Sub attach_CheckOuts(ByVal entity As CheckOut)
+	Private Sub attach_CheckOutLists(ByVal entity As CheckOutList)
 		Me.SendPropertyChanging
 		entity.Copy = Me
 	End Sub
 	
-	Private Sub detach_CheckOuts(ByVal entity As CheckOut)
+	Private Sub detach_CheckOutLists(ByVal entity As CheckOutList)
 		Me.SendPropertyChanging
 		entity.Copy = Nothing
 	End Sub
@@ -1403,9 +1523,7 @@ Partial Public Class [Return]
 	
 	Private _Fine_Amount As System.Nullable(Of Decimal)
 	
-	Private _Chk_ID As Integer
-	
-	Private _CheckOut As EntityRef(Of CheckOut)
+	Private _CheckOuts As EntitySet(Of CheckOut)
 	
     #Region "Extensibility Method Definitions"
     Partial Private Sub OnLoaded()
@@ -1426,15 +1544,11 @@ Partial Public Class [Return]
     End Sub
     Partial Private Sub OnFine_AmountChanged()
     End Sub
-    Partial Private Sub OnChk_IDChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnChk_IDChanged()
-    End Sub
     #End Region
 	
 	Public Sub New()
 		MyBase.New
-		Me._CheckOut = CType(Nothing, EntityRef(Of CheckOut))
+		Me._CheckOuts = New EntitySet(Of CheckOut)(AddressOf Me.attach_CheckOuts, AddressOf Me.detach_CheckOuts)
 		OnCreated
 	End Sub
 	
@@ -1487,51 +1601,13 @@ Partial Public Class [Return]
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Chk_ID", DbType:="Int NOT NULL")>  _
-	Public Property Chk_ID() As Integer
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Return_CheckOut", Storage:="_CheckOuts", ThisKey:="Rtn_ID", OtherKey:="Rtn_ID")>  _
+	Public Property CheckOuts() As EntitySet(Of CheckOut)
 		Get
-			Return Me._Chk_ID
+			Return Me._CheckOuts
 		End Get
 		Set
-			If ((Me._Chk_ID = value)  _
-						= false) Then
-				If Me._CheckOut.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnChk_IDChanging(value)
-				Me.SendPropertyChanging
-				Me._Chk_ID = value
-				Me.SendPropertyChanged("Chk_ID")
-				Me.OnChk_IDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="CheckOut_Return", Storage:="_CheckOut", ThisKey:="Chk_ID", OtherKey:="Chk_ID", IsForeignKey:=true)>  _
-	Public Property CheckOut() As CheckOut
-		Get
-			Return Me._CheckOut.Entity
-		End Get
-		Set
-			Dim previousValue As CheckOut = Me._CheckOut.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._CheckOut.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._CheckOut.Entity = Nothing
-					previousValue.Returns.Remove(Me)
-				End If
-				Me._CheckOut.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.Returns.Add(Me)
-					Me._Chk_ID = value.Chk_ID
-				Else
-					Me._Chk_ID = CType(Nothing, Integer)
-				End If
-				Me.SendPropertyChanged("CheckOut")
-			End If
+			Me._CheckOuts.Assign(value)
 		End Set
 	End Property
 	
@@ -1551,6 +1627,16 @@ Partial Public Class [Return]
 					= false) Then
 			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
 		End If
+	End Sub
+	
+	Private Sub attach_CheckOuts(ByVal entity As CheckOut)
+		Me.SendPropertyChanging
+		entity.[Return] = Me
+	End Sub
+	
+	Private Sub detach_CheckOuts(ByVal entity As CheckOut)
+		Me.SendPropertyChanging
+		entity.[Return] = Nothing
 	End Sub
 End Class
 
