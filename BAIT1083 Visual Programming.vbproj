@@ -92,6 +92,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Data\LibDB.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LibDB.dbml</DependentUpon>
+    </Compile>
     <Compile Include="User Controls\UserControl_BookList.Designer.vb">
       <DependentUpon>UserControl_BookList.vb</DependentUpon>
     </Compile>
@@ -104,11 +109,6 @@
     <Compile Include="StonksLib.Designer.vb">
       <DependentUpon>StonksLib.vb</DependentUpon>
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Data\LibDB.designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LibDB.dbml</DependentUpon>
     </Compile>
     <Compile Include="Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>

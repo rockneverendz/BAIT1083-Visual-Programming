@@ -8,4 +8,26 @@
             Footer_BookDetails.Image = Global.BAIT1083_Visual_Programming.My.Resources.Resources.baseline_keyboard_arrow_left_black_18dp
         End If
     End Sub
+
+    Private Sub UserControl_BookList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim db As New LibDBDataContext()
+        For Each book In db.Books
+            Dim row() As String = {
+                book.Book_Id,
+                book.Book_title,
+                book.Author,
+                book.Category,
+                book.Publication,
+                book.Year_Publish,
+                book.Copies,
+                book.Call_no
+            }
+            ListView_Book.Items.Add(New ListViewItem(row))
+        Next
+    End Sub
+
+
+
+
+
 End Class

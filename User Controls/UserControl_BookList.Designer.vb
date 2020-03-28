@@ -23,7 +23,7 @@ Partial Class UserControl_BookList
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.SplitContainer_BookList = New System.Windows.Forms.SplitContainer()
-        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.ListView_Book = New System.Windows.Forms.ListView()
         Me.ID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Title = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Author = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -32,7 +32,6 @@ Partial Class UserControl_BookList
         Me.Year_Publish = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Copies = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Call_no = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ISBN = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.TextBox_ISBN = New System.Windows.Forms.TextBox()
         Me.Label_ISBN = New System.Windows.Forms.Label()
         Me.TextBox_CallNo = New System.Windows.Forms.TextBox()
@@ -72,7 +71,7 @@ Partial Class UserControl_BookList
         '
         'SplitContainer_BookList.Panel1
         '
-        Me.SplitContainer_BookList.Panel1.Controls.Add(Me.ListView1)
+        Me.SplitContainer_BookList.Panel1.Controls.Add(Me.ListView_Book)
         '
         'SplitContainer_BookList.Panel2
         '
@@ -99,17 +98,17 @@ Partial Class UserControl_BookList
         Me.SplitContainer_BookList.SplitterDistance = 612
         Me.SplitContainer_BookList.TabIndex = 3
         '
-        'ListView1
+        'ListView_Book
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ID, Me.Title, Me.Author, Me.Category, Me.Publication, Me.Year_Publish, Me.Copies, Me.Call_no, Me.ISBN})
-        Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(0, 0)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(612, 462)
-        Me.ListView1.TabIndex = 3
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        Me.ListView1.View = System.Windows.Forms.View.Details
+        Me.ListView_Book.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ID, Me.Title, Me.Author, Me.Category, Me.Publication, Me.Year_Publish, Me.Copies, Me.Call_no})
+        Me.ListView_Book.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ListView_Book.HideSelection = False
+        Me.ListView_Book.Location = New System.Drawing.Point(0, 0)
+        Me.ListView_Book.Name = "ListView_Book"
+        Me.ListView_Book.Size = New System.Drawing.Size(612, 462)
+        Me.ListView_Book.TabIndex = 3
+        Me.ListView_Book.UseCompatibleStateImageBehavior = False
+        Me.ListView_Book.View = System.Windows.Forms.View.Details
         '
         'ID
         '
@@ -148,11 +147,6 @@ Partial Class UserControl_BookList
         '
         Me.Call_no.Text = "Call number"
         Me.Call_no.Width = 90
-        '
-        'ISBN
-        '
-        Me.ISBN.Text = "ISBN"
-        Me.ISBN.Width = 120
         '
         'TextBox_ISBN
         '
@@ -337,14 +331,14 @@ Partial Class UserControl_BookList
         Me.Footer_Status.Size = New System.Drawing.Size(39, 20)
         Me.Footer_Status.Text = "Status"
         '
-        'BookList
+        'UserControl_BookList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.Controls.Add(Me.SplitContainer_BookList)
         Me.Controls.Add(Me.MenuStrip_Footer)
-        Me.Name = "BookList"
+        Me.Name = "UserControl_BookList"
         Me.Size = New System.Drawing.Size(816, 489)
         Me.SplitContainer_BookList.Panel1.ResumeLayout(False)
         Me.SplitContainer_BookList.Panel2.ResumeLayout(False)
@@ -359,7 +353,7 @@ Partial Class UserControl_BookList
     End Sub
 
     Friend WithEvents SplitContainer_BookList As SplitContainer
-    Friend WithEvents ListView1 As ListView
+    Friend WithEvents ListView_Book As ListView
     Friend WithEvents ID As ColumnHeader
     Friend WithEvents Title As ColumnHeader
     Friend WithEvents Author As ColumnHeader
@@ -368,7 +362,6 @@ Partial Class UserControl_BookList
     Friend WithEvents Year_Publish As ColumnHeader
     Friend WithEvents Copies As ColumnHeader
     Friend WithEvents Call_no As ColumnHeader
-    Friend WithEvents ISBN As ColumnHeader
     Friend WithEvents TextBox_ISBN As TextBox
     Friend WithEvents Label_ISBN As Label
     Friend WithEvents TextBox_CallNo As TextBox
