@@ -102,8 +102,11 @@ Partial Class UserControl_BookList
         '
         Me.ListView_Book.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ID, Me.Title, Me.Author, Me.Category, Me.Publication, Me.Year_Publish, Me.Copies, Me.Call_no})
         Me.ListView_Book.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ListView_Book.FullRowSelect = True
+        Me.ListView_Book.GridLines = True
         Me.ListView_Book.HideSelection = False
         Me.ListView_Book.Location = New System.Drawing.Point(0, 0)
+        Me.ListView_Book.MultiSelect = False
         Me.ListView_Book.Name = "ListView_Book"
         Me.ListView_Book.Size = New System.Drawing.Size(612, 462)
         Me.ListView_Book.TabIndex = 3
