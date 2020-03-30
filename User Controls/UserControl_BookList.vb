@@ -12,6 +12,8 @@
 
     Private Sub UserControl_BookList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim db As New LibDBDataContext()
+
+        'Get all book on the database and insert them onto ListView
         For Each book In db.Books
             Dim row() As String = {
                 book.Book_Id,
@@ -23,21 +25,29 @@
                 book.Copies,
                 book.Call_no
             }
-            ListView_Book.Items.Add(New ListViewItem(row))
+
+            'Insert integers on tag for sorting later
+            Dim lvi = New ListViewItem(row)
+            lvi.SubItems(0).Tag = book.Book_Id
+            lvi.SubItems(6).Tag = book.Copies
+
+            ListView_Book.Items.Add(lvi)
         Next
     End Sub
 
     Private Sub ListView_Book_ColumnClick(sender As Object, e As ColumnClickEventArgs) Handles ListView_Book.ColumnClick
-        ListView_Book.ListViewItemSorter = New ListViewItemComparer(e.Column)
+        If e.Column = 0 Or e.Column = 6 Then
+            'Sort by Integer
+            ListView_Book.ListViewItemSorter = New ListViewSubItemsCompareTag(e.Column)
+        Else
+            'Sort by String
+            ListView_Book.ListViewItemSorter = New ListViewSubItemsCompareText(e.Column)
+        End If
     End Sub
 End Class
-Class ListViewItemComparer : Implements IComparer
+Class ListViewSubItemsCompareText : Implements IComparer
 
     ReadOnly col As Integer
-
-    Public Sub New()
-        col = 0
-    End Sub
 
     Public Sub New(col As Integer)
         Me.col = col
@@ -47,6 +57,21 @@ Class ListViewItemComparer : Implements IComparer
         Return String.Compare(
             DirectCast(x, ListViewItem).SubItems(col).Text,
             DirectCast(y, ListViewItem).SubItems(col).Text
+        )
+    End Function
+End Class
+
+Class ListViewSubItemsCompareTag : Implements IComparer
+
+    ReadOnly col As Integer
+
+    Public Sub New(col As Integer)
+        Me.col = col
+    End Sub
+
+    Public Function Compare(x As Object, y As Object) As Integer Implements IComparer.Compare
+        Return DirectCast(DirectCast(x, ListViewItem).SubItems(col).Tag, Integer).CompareTo(
+            DirectCast(DirectCast(y, ListViewItem).SubItems(col).Tag, Integer)
         )
     End Function
 End Class
