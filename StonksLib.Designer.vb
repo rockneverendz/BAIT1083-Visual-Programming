@@ -23,14 +23,13 @@ Partial Class Form_StonksLib
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel_Main = New System.Windows.Forms.Panel()
-        Me.Form_Control = New BAIT1083_Visual_Programming.UserControl_BookList()
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
-        Me.Menu_Checkout = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Menu_Return = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Menu_Room = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_Book = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_NewBook = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_BookList = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Menu_Checkout = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Menu_Return = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Menu_Room = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_Patron = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_NewPatron = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_PatronList = New System.Windows.Forms.ToolStripMenuItem()
@@ -39,28 +38,17 @@ Partial Class Form_StonksLib
         Me.Menu_LibrarianList = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_Log = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_Profile = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Panel_Main.SuspendLayout()
         Me.MenuStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel_Main
         '
         Me.Panel_Main.AutoSize = True
-        Me.Panel_Main.Controls.Add(Me.Form_Control)
         Me.Panel_Main.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel_Main.Location = New System.Drawing.Point(0, 27)
         Me.Panel_Main.Name = "Panel_Main"
         Me.Panel_Main.Size = New System.Drawing.Size(800, 423)
         Me.Panel_Main.TabIndex = 5
-        '
-        'Form_Control
-        '
-        Me.Form_Control.AutoSize = True
-        Me.Form_Control.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Form_Control.Location = New System.Drawing.Point(0, 0)
-        Me.Form_Control.Name = "Form_Control"
-        Me.Form_Control.Size = New System.Drawing.Size(800, 423)
-        Me.Form_Control.TabIndex = 6
         '
         'MenuStrip
         '
@@ -70,6 +58,29 @@ Partial Class Form_StonksLib
         Me.MenuStrip.Size = New System.Drawing.Size(800, 27)
         Me.MenuStrip.TabIndex = 6
         Me.MenuStrip.Text = "MenuStrip1"
+        '
+        'Menu_Book
+        '
+        Me.Menu_Book.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Menu_NewBook, Me.Menu_BookList})
+        Me.Menu_Book.Image = Global.BAIT1083_Visual_Programming.My.Resources.Resources.baseline_book_black_18dp
+        Me.Menu_Book.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Menu_Book.Margin = New System.Windows.Forms.Padding(5, 1, 5, 2)
+        Me.Menu_Book.Name = "Menu_Book"
+        Me.Menu_Book.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.Menu_Book.Size = New System.Drawing.Size(64, 20)
+        Me.Menu_Book.Text = "&Book"
+        '
+        'Menu_NewBook
+        '
+        Me.Menu_NewBook.Name = "Menu_NewBook"
+        Me.Menu_NewBook.Size = New System.Drawing.Size(128, 22)
+        Me.Menu_NewBook.Text = "New Book"
+        '
+        'Menu_BookList
+        '
+        Me.Menu_BookList.Name = "Menu_BookList"
+        Me.Menu_BookList.Size = New System.Drawing.Size(128, 22)
+        Me.Menu_BookList.Text = "Book List"
         '
         'Menu_Checkout
         '
@@ -101,29 +112,6 @@ Partial Class Form_StonksLib
         Me.Menu_Room.Size = New System.Drawing.Size(69, 20)
         Me.Menu_Room.Text = "R&oom"
         '
-        'Menu_Book
-        '
-        Me.Menu_Book.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Menu_NewBook, Me.Menu_BookList})
-        Me.Menu_Book.Image = Global.BAIT1083_Visual_Programming.My.Resources.Resources.baseline_book_black_18dp
-        Me.Menu_Book.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Menu_Book.Margin = New System.Windows.Forms.Padding(5, 1, 5, 2)
-        Me.Menu_Book.Name = "Menu_Book"
-        Me.Menu_Book.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Menu_Book.Size = New System.Drawing.Size(64, 20)
-        Me.Menu_Book.Text = "&Book"
-        '
-        'Menu_NewBook
-        '
-        Me.Menu_NewBook.Name = "Menu_NewBook"
-        Me.Menu_NewBook.Size = New System.Drawing.Size(180, 22)
-        Me.Menu_NewBook.Text = "New Book"
-        '
-        'Menu_BookList
-        '
-        Me.Menu_BookList.Name = "Menu_BookList"
-        Me.Menu_BookList.Size = New System.Drawing.Size(180, 22)
-        Me.Menu_BookList.Text = "Book List"
-        '
         'Menu_Patron
         '
         Me.Menu_Patron.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Menu_NewPatron, Me.Menu_PatronList})
@@ -139,13 +127,13 @@ Partial Class Form_StonksLib
         '
         Me.Menu_NewPatron.Image = Global.BAIT1083_Visual_Programming.My.Resources.Resources.baseline_person_add_black_18dp
         Me.Menu_NewPatron.Name = "Menu_NewPatron"
-        Me.Menu_NewPatron.Size = New System.Drawing.Size(180, 22)
+        Me.Menu_NewPatron.Size = New System.Drawing.Size(136, 22)
         Me.Menu_NewPatron.Text = "New Patron"
         '
         'Menu_PatronList
         '
         Me.Menu_PatronList.Name = "Menu_PatronList"
-        Me.Menu_PatronList.Size = New System.Drawing.Size(180, 22)
+        Me.Menu_PatronList.Size = New System.Drawing.Size(136, 22)
         Me.Menu_PatronList.Text = "Patron List"
         '
         'Menu_Librarian
@@ -162,13 +150,13 @@ Partial Class Form_StonksLib
         'Menu_NewLibrarian
         '
         Me.Menu_NewLibrarian.Name = "Menu_NewLibrarian"
-        Me.Menu_NewLibrarian.Size = New System.Drawing.Size(180, 22)
+        Me.Menu_NewLibrarian.Size = New System.Drawing.Size(147, 22)
         Me.Menu_NewLibrarian.Text = "New Librarian"
         '
         'Menu_LibrarianList
         '
         Me.Menu_LibrarianList.Name = "Menu_LibrarianList"
-        Me.Menu_LibrarianList.Size = New System.Drawing.Size(180, 22)
+        Me.Menu_LibrarianList.Size = New System.Drawing.Size(147, 22)
         Me.Menu_LibrarianList.Text = "Librarian List"
         '
         'Menu_Log
@@ -202,8 +190,6 @@ Partial Class Form_StonksLib
         Me.MainMenuStrip = Me.MenuStrip
         Me.Name = "Form_StonksLib"
         Me.Text = "StonksLib"
-        Me.Panel_Main.ResumeLayout(False)
-        Me.Panel_Main.PerformLayout()
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
         Me.ResumeLayout(False)
@@ -211,7 +197,6 @@ Partial Class Form_StonksLib
 
     End Sub
     Friend WithEvents Panel_Main As Panel
-    Friend WithEvents Form_Control As UserControl_BookList
     Friend WithEvents MenuStrip As MenuStrip
     Friend WithEvents Menu_Checkout As ToolStripMenuItem
     Friend WithEvents Menu_Return As ToolStripMenuItem

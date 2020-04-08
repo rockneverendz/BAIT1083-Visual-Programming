@@ -7,7 +7,7 @@ Namespace My
     ' NetworkAvailabilityChanged: Raised when the network connection is connected or disconnected.
     Partial Friend Class MyApplication
         Private Sub MyApplication_Startup(sender As Object, e As ApplicationServices.StartupEventArgs) Handles Me.Startup
-            Dim path As String = AppDomain.CurrentDomain.BaseDirectory.Replace("bin\debug\", "")
+            Dim path As String = AppDomain.CurrentDomain.BaseDirectory.Replace("bin\Debug\", "")
             AppDomain.CurrentDomain.SetData("DataDirectory", path)
 
         End Sub

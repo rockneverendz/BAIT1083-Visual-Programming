@@ -843,11 +843,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data\LibDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Data\LibDB.mdf" />
     <Content Include="Data\LibDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>LibDB.mdf</DependentUpon>
     </Content>
   </ItemGroup>
