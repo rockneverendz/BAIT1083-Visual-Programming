@@ -97,6 +97,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LibDB.dbml</DependentUpon>
     </Compile>
+    <Compile Include="User Controls\UserControl_BookDetails.Designer.vb">
+      <DependentUpon>UserControl_BookDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UserControl_BookDetails.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="User Controls\UserControl_BookList.Designer.vb">
       <DependentUpon>UserControl_BookList.vb</DependentUpon>
     </Compile>
@@ -146,6 +152,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="User Controls\UserControl_BookDetails.resx">
+      <DependentUpon>UserControl_BookDetails.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Controls\UserControl_BookList.resx">
       <DependentUpon>UserControl_BookList.vb</DependentUpon>
     </EmbeddedResource>
