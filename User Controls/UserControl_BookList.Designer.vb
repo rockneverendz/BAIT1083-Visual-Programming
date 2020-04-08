@@ -32,8 +32,6 @@ Partial Class UserControl_BookList
         Me.Year_Publish = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Copies = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Call_no = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.TextBox_ISBN = New System.Windows.Forms.TextBox()
-        Me.Label_ISBN = New System.Windows.Forms.Label()
         Me.TextBox_CallNo = New System.Windows.Forms.TextBox()
         Me.Label_CallNo = New System.Windows.Forms.Label()
         Me.TextBox_Copies = New System.Windows.Forms.TextBox()
@@ -75,8 +73,6 @@ Partial Class UserControl_BookList
         '
         'SplitContainer_BookList.Panel2
         '
-        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.TextBox_ISBN)
-        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.Label_ISBN)
         Me.SplitContainer_BookList.Panel2.Controls.Add(Me.TextBox_CallNo)
         Me.SplitContainer_BookList.Panel2.Controls.Add(Me.Label_CallNo)
         Me.SplitContainer_BookList.Panel2.Controls.Add(Me.TextBox_Copies)
@@ -151,26 +147,8 @@ Partial Class UserControl_BookList
         Me.Call_no.Text = "Call number"
         Me.Call_no.Width = 90
         '
-        'TextBox_ISBN
-        '
-        Me.TextBox_ISBN.Enabled = False
-        Me.TextBox_ISBN.Location = New System.Drawing.Point(87, 214)
-        Me.TextBox_ISBN.Name = "TextBox_ISBN"
-        Me.TextBox_ISBN.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_ISBN.TabIndex = 17
-        '
-        'Label_ISBN
-        '
-        Me.Label_ISBN.AutoSize = True
-        Me.Label_ISBN.Location = New System.Drawing.Point(42, 217)
-        Me.Label_ISBN.Name = "Label_ISBN"
-        Me.Label_ISBN.Size = New System.Drawing.Size(32, 13)
-        Me.Label_ISBN.TabIndex = 16
-        Me.Label_ISBN.Text = "ISBN"
-        '
         'TextBox_CallNo
         '
-        Me.TextBox_CallNo.Enabled = False
         Me.TextBox_CallNo.Location = New System.Drawing.Point(87, 188)
         Me.TextBox_CallNo.Name = "TextBox_CallNo"
         Me.TextBox_CallNo.Size = New System.Drawing.Size(100, 20)
@@ -187,7 +165,6 @@ Partial Class UserControl_BookList
         '
         'TextBox_Copies
         '
-        Me.TextBox_Copies.Enabled = False
         Me.TextBox_Copies.Location = New System.Drawing.Point(87, 162)
         Me.TextBox_Copies.Name = "TextBox_Copies"
         Me.TextBox_Copies.Size = New System.Drawing.Size(100, 20)
@@ -284,7 +261,6 @@ Partial Class UserControl_BookList
         '
         'TextBox_ID
         '
-        Me.TextBox_ID.Enabled = False
         Me.TextBox_ID.Location = New System.Drawing.Point(87, 6)
         Me.TextBox_ID.Name = "TextBox_ID"
         Me.TextBox_ID.Size = New System.Drawing.Size(100, 20)
@@ -317,8 +293,8 @@ Partial Class UserControl_BookList
         Me.Footer_BookDetails.Margin = New System.Windows.Forms.Padding(5, 1, 5, 2)
         Me.Footer_BookDetails.Name = "Footer_BookDetails"
         Me.Footer_BookDetails.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Footer_BookDetails.Size = New System.Drawing.Size(102, 20)
-        Me.Footer_BookDetails.Text = "Book Details"
+        Me.Footer_BookDetails.Size = New System.Drawing.Size(72, 20)
+        Me.Footer_BookDetails.Text = "Search"
         Me.Footer_BookDetails.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         '
         'Footer_ProgressBar
@@ -365,8 +341,6 @@ Partial Class UserControl_BookList
     Friend WithEvents Year_Publish As ColumnHeader
     Friend WithEvents Copies As ColumnHeader
     Friend WithEvents Call_no As ColumnHeader
-    Friend WithEvents TextBox_ISBN As TextBox
-    Friend WithEvents Label_ISBN As Label
     Friend WithEvents TextBox_CallNo As TextBox
     Friend WithEvents Label_CallNo As Label
     Friend WithEvents TextBox_Copies As TextBox
