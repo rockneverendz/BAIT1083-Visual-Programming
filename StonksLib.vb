@@ -1,11 +1,13 @@
 ﻿Public Class Form_StonksLib
-    Private Sub ToolStrip_Button_Click(sender As Object, e As EventArgs) Handles Menu_Checkout.Click, Menu_BookList.Click
+    Private Sub ToolStrip_Button_Click(sender As Object, e As EventArgs) Handles Menu_Checkout.Click, Menu_BookList.Click, Menu_Room.Click
         Dim New_Control As UserControl
 
         If (sender.Equals(Menu_BookList)) Then
             New_Control = New BAIT1083_Visual_Programming.UserControl_BookList()
         ElseIf (sender.Equals(Menu_Checkout)) Then
             New_Control = New BAIT1083_Visual_Programming.UserControl_Checkout()
+        ElseIf (sender.Equals(Menu_Room)) Then
+            New_Control = New BAIT1083_Visual_Programming.UserControl_RoomBooking()
         Else
             'User should not reach here'
             New_Control = New UserControl()
@@ -16,4 +18,5 @@
         New_Control.AutoSize = True
         New_Control.Dock = System.Windows.Forms.DockStyle.Fill
     End Sub
+
 End Class
