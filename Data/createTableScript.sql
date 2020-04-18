@@ -57,9 +57,9 @@ CREATE TABLE [dbo].[Room] (
 CREATE TABLE [dbo].[RoomBooking] (
     [Patron_ID]     INT      NOT NULL,
     [Room_ID]       INT      NOT NULL,
-    [Date_Time]     DATETIME NOT NULL,
-    [CheckIn_Date]  DATETIME NULL,
-    [CheckOut_Date] DATETIME NULL,
+    [Date_Time]     DATE NOT NULL,
+    [CheckIn_Date]  VARCHAR(50) NULL,
+    [CheckOut_Date] VARCHAR(50) NULL,
     CONSTRAINT [RoomBooking_ID] PRIMARY KEY CLUSTERED ([Patron_ID] ASC, [Room_ID] ASC, [Date_Time] ASC),
     CONSTRAINT [FK_RoomBooking_Patron] FOREIGN KEY ([Patron_ID]) REFERENCES [dbo].[Patron] ([Patron_ID]),
     CONSTRAINT [FK_RoomBooking_Room] FOREIGN KEY ([Room_ID]) REFERENCES [dbo].[Room] ([Room_Id])

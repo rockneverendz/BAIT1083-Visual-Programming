@@ -305,45 +305,45 @@ INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1029, 1050)
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1030, 1010)
 
 /*Insert RoomBooking*/
-INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1001, 1001, N'2019-05-14 08:50:26', N'2019-05-14 09:00:00', N'2019-05-14 11:00:00')
-INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1001, 1001, N'2019-10-02 09:50:26', N'2019-10-02 10:00:00', N'2019-10-02 12:00:00')
-INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1001, 1006, N'2019-08-28 23:25:45', N'2019-08-28 11:30:00', N'2019-08-28 13:30:00')
-INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1001, 1008, N'2020-02-24 16:20:17', N'2020-02-24 16:30:00', N'2020-02-24 18:30:00')
+INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1001, 1001, N'2019-05-14', N'09:00:00', N'11:00:00')
+INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1001, 1001, N'2019-10-02', N'10:00:00', N'12:00:00')
+INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1001, 1006, N'2019-08-28', N'11:30:00', N'13:30:00')
+INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1001, 1008, N'2020-02-24', N'16:30:00', N'18:30:00')
 
-INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1002, 1002, N'2020-03-21 15:02:59', N'2020-03-21 15:30:00', N'2020-03-21 17:30:00')
-INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1002, 1010, N'2020-02-17 16:53:25', N'2020-02-17 17:00:00', N'2020-02-17 19:00:00')
+INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1002, 1002, N'2020-03-21', N'15:30:00', N'17:30:00')
+INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1002, 1010, N'2020-02-17', N'17:00:00', N'19:00:00')
 
-INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1003, 1020, N'2020-02-09 09:57:23', N'2020-02-09 10:00:00', N'2020-02-09 11:00:00')
+INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1003, 1020, N'2020-02-09', N'10:00:00', N'11:00:00')
 
-INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1004, 1002, N'2019-09-22 08:03:48', N'2019-09-22 08:30:00', N'2019-09-22 10:30:00')
-INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1004, 1003, N'2019-04-17 08:53:59', N'2019-04-17 09:00:00', N'2019-04-17 11:00:00')
+INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1004, 1002, N'2019-09-22', N'08:30:00', N'10:30:00')
+INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1004, 1003, N'2019-04-17', N'09:00:00', N'11:00:00')
 
-INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1005, 1001, N'2020-01-16 12:10:18', N'2020-01-16 12:30:00', N'2020-01-16 14:30:00')
-INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1005, 1019, N'2019-07-21 14:24:17', N'2019-07-21 14:30:00', N'2019-07-21 16:30:00')
-INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1005, 1019, N'2019-08-11 15:45:13', N'2019-08-11 16:00:00', N'2019-08-11 18:00:00')
+INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1005, 1001, N'2020-01-16', N'12:30:00', N'14:30:00')
+INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1005, 1019, N'2019-07-21', N'14:30:00', N'16:30:00')
+INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1005, 1019, N'2019-08-11', N'16:00:00', N'18:00:00')
 
-INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1006, 1015, N'2020-03-18 08:02:27', N'2020-03-18 08:30:00', N'2020-03-18 10:30:00')
+INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1006, 1015, N'2020-03-18', N'08:30:00', N'10:30:00')
 
-INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1007, 1016, N'2019-04-05 10:36:45', N'2019-04-05 11:00:00', N'2019-04-05 13:00:00')
+INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1007, 1016, N'2019-04-05', N'11:00:00', N'13:00:00')
 
-INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1008, 1017, N'2019-07-14 13:55:29', N'2019-07-14 14:00:00', N'2019-07-14 16:00:00')
-INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1008, 1018, N'2019-07-15 11:42:06', N'2019-07-15 12:00:00', N'2019-07-15 14:00:00')
+INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1008, 1017, N'2019-07-14', N'14:00:00', N'16:00:00')
+INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1008, 1018, N'2019-07-15', N'12:00:00', N'14:00:00')
 
-INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1009, 1001, N'2019-04-10 16:58:44', N'2019-04-10 17:00:00', N'2019-04-10 19:00:00')
-INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1009, 1019, N'2019-04-02 11:16:10', N'2019-04-02 11:30:00', N'2019-04-02 13:30:00')
+INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1009, 1001, N'2019-04-10', N'17:00:00', N'19:00:00')
+INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1009, 1019, N'2019-04-02', N'11:30:00', N'13:30:00')
 
-INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1010, 1004, N'2019-12-19 13:02:00', N'2019-12-19 13:30:00', N'2019-12-19 15:30:00')
+INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1010, 1004, N'2019-12-19', N'13:30:00', N'15:30:00')
 
-INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1011, 1004, N'2019-10-28 17:18:41', N'2019-10-28 17:30:00', N'2019-10-28 19:30:00')
-INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1011, 1005, N'2020-03-09 08:38:18', N'2020-03-09 09:00:00', N'2020-03-09 11:00:00')
-INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1011, 1006, N'2020-02-08 15:37:38', N'2020-02-08 16:00:00', N'2020-02-08 18:00:00')
+INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1011, 1004, N'2019-10-28', N'17:30:00', N'19:30:00')
+INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1011, 1005, N'2020-03-09', N'09:00:00', N'11:00:00')
+INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1011, 1006, N'2020-02-08', N'16:00:00', N'18:00:00')
 
-INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1012, 1007, N'2019-05-05 11:04:47', N'2019-05-05 11:00:00', N'2019-05-05 13:00:00')
-INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1012, 1007, N'2019-11-25 10:46:37', N'2019-11-25 11:00:00', N'2019-11-25 13:00:00')
+INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1012, 1007, N'2019-05-05', N'11:00:00', N'13:00:00')
+INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1012, 1007, N'2019-11-25', N'11:00:00', N'13:00:00')
 
-INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1013, 1001, N'2019-04-09 11:10:16', N'2019-04-09 11:30:00', N'2019-04-09 13:30:00')
-INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1013, 1002, N'2019-10-05 13:57:46', N'2019-10-05 14:00:00', N'2019-10-05 16:00:00')
-INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1013, 1020, N'2019-12-13 12:55:15', N'2019-12-13 13:00:00', N'2019-12-13 15:00:00')
+INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1013, 1001, N'2019-04-09', N'11:30:00', N'13:30:00')
+INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1013, 1002, N'2019-10-05', N'14:00:00', N'16:00:00')
+INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [Date_Time], [CheckIn_Date], [CheckOut_Date]) VALUES (1013, 1020, N'2019-12-13', N'13:00:00', N'15:00:00')
 
 /*Insert Return*/
 /*In Progress...*/
