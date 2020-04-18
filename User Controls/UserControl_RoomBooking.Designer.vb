@@ -72,15 +72,12 @@ Partial Class UserControl_RoomBooking
 		Me.time600 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.time630 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.time700 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-		Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+		Me.dtpSearch = New System.Windows.Forms.DateTimePicker()
 		Me.Label7 = New System.Windows.Forms.Label()
-		Me.btnSearchSchedule = New System.Windows.Forms.Button()
-		Me.dgvTest = New System.Windows.Forms.DataGridView()
 		CType(Me.RoomBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RoomBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel2.SuspendLayout()
 		Me.Panel1.SuspendLayout()
-		CType(Me.dgvTest, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'ContextMenuStrip1
@@ -421,12 +418,12 @@ Partial Class UserControl_RoomBooking
 		Me.time700.Text = "7.00 PM"
 		Me.time700.Width = 70
 		'
-		'DateTimePicker2
+		'dtpSearch
 		'
-		Me.DateTimePicker2.Location = New System.Drawing.Point(137, 394)
-		Me.DateTimePicker2.Name = "DateTimePicker2"
-		Me.DateTimePicker2.Size = New System.Drawing.Size(200, 22)
-		Me.DateTimePicker2.TabIndex = 5
+		Me.dtpSearch.Location = New System.Drawing.Point(137, 394)
+		Me.dtpSearch.Name = "dtpSearch"
+		Me.dtpSearch.Size = New System.Drawing.Size(200, 22)
+		Me.dtpSearch.TabIndex = 5
 		'
 		'Label7
 		'
@@ -437,43 +434,21 @@ Partial Class UserControl_RoomBooking
 		Me.Label7.TabIndex = 6
 		Me.Label7.Text = "Search by Date:"
 		'
-		'btnSearchSchedule
-		'
-		Me.btnSearchSchedule.Location = New System.Drawing.Point(343, 394)
-		Me.btnSearchSchedule.Name = "btnSearchSchedule"
-		Me.btnSearchSchedule.Size = New System.Drawing.Size(75, 23)
-		Me.btnSearchSchedule.TabIndex = 18
-		Me.btnSearchSchedule.Text = "Search"
-		Me.btnSearchSchedule.UseVisualStyleBackColor = True
-		'
-		'dgvTest
-		'
-		Me.dgvTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.dgvTest.Location = New System.Drawing.Point(1091, 8)
-		Me.dgvTest.Name = "dgvTest"
-		Me.dgvTest.RowHeadersWidth = 51
-		Me.dgvTest.RowTemplate.Height = 24
-		Me.dgvTest.Size = New System.Drawing.Size(307, 375)
-		Me.dgvTest.TabIndex = 19
-		'
 		'UserControl_RoomBooking
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.Controls.Add(Me.dgvTest)
-		Me.Controls.Add(Me.btnSearchSchedule)
 		Me.Controls.Add(Me.Label7)
-		Me.Controls.Add(Me.DateTimePicker2)
+		Me.Controls.Add(Me.dtpSearch)
 		Me.Controls.Add(Me.Panel2)
 		Me.Controls.Add(Me.Panel1)
 		Me.Name = "UserControl_RoomBooking"
-		Me.Size = New System.Drawing.Size(1410, 603)
+		Me.Size = New System.Drawing.Size(1097, 603)
 		CType(Me.RoomBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RoomBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel2.ResumeLayout(False)
 		Me.Panel2.PerformLayout()
 		Me.Panel1.ResumeLayout(False)
-		CType(Me.dgvTest, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -527,8 +502,6 @@ Partial Class UserControl_RoomBooking
 	Friend WithEvents btnSearchStudent As Button
 	Friend WithEvents Splitter1 As Splitter
 	Friend WithEvents Panel1 As Panel
-	Friend WithEvents DateTimePicker2 As DateTimePicker
+	Friend WithEvents dtpSearch As DateTimePicker
 	Friend WithEvents Label7 As Label
-	Friend WithEvents btnSearchSchedule As Button
-	Friend WithEvents dgvTest As DataGridView
 End Class
