@@ -285,9 +285,9 @@ Partial Public Class RoomBooking
 	
 	Private _Date_Time As Date
 	
-	Private _CheckIn_Date As System.Nullable(Of Date)
+	Private _CheckIn_Date As String
 	
-	Private _CheckOut_Date As System.Nullable(Of Date)
+	Private _CheckOut_Date As String
 	
 	Private _Patron As EntityRef(Of Patron)
 	
@@ -312,11 +312,11 @@ Partial Public Class RoomBooking
     End Sub
     Partial Private Sub OnDate_TimeChanged()
     End Sub
-    Partial Private Sub OnCheckIn_DateChanging(value As System.Nullable(Of Date))
+    Partial Private Sub OnCheckIn_DateChanging(value As String)
     End Sub
     Partial Private Sub OnCheckIn_DateChanged()
     End Sub
-    Partial Private Sub OnCheckOut_DateChanging(value As System.Nullable(Of Date))
+    Partial Private Sub OnCheckOut_DateChanging(value As String)
     End Sub
     Partial Private Sub OnCheckOut_DateChanged()
     End Sub
@@ -369,7 +369,7 @@ Partial Public Class RoomBooking
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Date_Time", DbType:="DateTime NOT NULL", IsPrimaryKey:=true)>  _
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Date_Time", DbType:="Date NOT NULL", IsPrimaryKey:=true)>  _
 	Public Property Date_Time() As Date
 		Get
 			Return Me._Date_Time
@@ -386,13 +386,13 @@ Partial Public Class RoomBooking
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CheckIn_Date", DbType:="DateTime")>  _
-	Public Property CheckIn_Date() As System.Nullable(Of Date)
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CheckIn_Date", DbType:="VarChar(50)")>  _
+	Public Property CheckIn_Date() As String
 		Get
 			Return Me._CheckIn_Date
 		End Get
 		Set
-			If (Me._CheckIn_Date.Equals(value) = false) Then
+			If (String.Equals(Me._CheckIn_Date, value) = false) Then
 				Me.OnCheckIn_DateChanging(value)
 				Me.SendPropertyChanging
 				Me._CheckIn_Date = value
@@ -402,13 +402,13 @@ Partial Public Class RoomBooking
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CheckOut_Date", DbType:="DateTime")>  _
-	Public Property CheckOut_Date() As System.Nullable(Of Date)
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CheckOut_Date", DbType:="VarChar(50)")>  _
+	Public Property CheckOut_Date() As String
 		Get
 			Return Me._CheckOut_Date
 		End Get
 		Set
-			If (Me._CheckOut_Date.Equals(value) = false) Then
+			If (String.Equals(Me._CheckOut_Date, value) = false) Then
 				Me.OnCheckOut_DateChanging(value)
 				Me.SendPropertyChanging
 				Me._CheckOut_Date = value
