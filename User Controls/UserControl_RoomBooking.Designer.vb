@@ -50,27 +50,16 @@ Partial Class UserControl_RoomBooking
 		Me.lstAvailabilityChart = New System.Windows.Forms.ListView()
 		Me.RoomID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.time800 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-		Me.time830 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.time900 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-		Me.time930 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.time1000 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-		Me.time1030 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.time1100 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-		Me.time1130 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.time1200 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-		Me.time1230 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.time100 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-		Me.time130 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.time200 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-		Me.time230 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.time300 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-		Me.time330 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.time400 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-		Me.time430 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.time500 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-		Me.time530 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.time600 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-		Me.time630 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.time700 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.dtpSearch = New System.Windows.Forms.DateTimePicker()
 		Me.Label7 = New System.Windows.Forms.Label()
@@ -287,7 +276,7 @@ Partial Class UserControl_RoomBooking
 		'lstAvailabilityChart
 		'
 		Me.lstAvailabilityChart.BackColor = System.Drawing.SystemColors.ControlLight
-		Me.lstAvailabilityChart.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.RoomID, Me.time800, Me.time830, Me.time900, Me.time930, Me.time1000, Me.time1030, Me.time1100, Me.time1130, Me.time1200, Me.time1230, Me.time100, Me.time130, Me.time200, Me.time230, Me.time300, Me.time330, Me.time400, Me.time430, Me.time500, Me.time530, Me.time600, Me.time630, Me.time700})
+		Me.lstAvailabilityChart.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.RoomID, Me.time800, Me.time900, Me.time1000, Me.time1100, Me.time1200, Me.time100, Me.time200, Me.time300, Me.time400, Me.time500, Me.time600, Me.time700})
 		Me.lstAvailabilityChart.GridLines = True
 		Me.lstAvailabilityChart.HideSelection = False
 		Me.lstAvailabilityChart.Location = New System.Drawing.Point(3, 3)
@@ -301,121 +290,78 @@ Partial Class UserControl_RoomBooking
 		'RoomID
 		'
 		Me.RoomID.Text = "Room Number"
-		Me.RoomID.Width = 119
+		Me.RoomID.Width = 100
 		'
 		'time800
 		'
 		Me.time800.Text = "8.00 AM"
+		Me.time800.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		Me.time800.Width = 70
-		'
-		'time830
-		'
-		Me.time830.Text = "8.30 AM"
-		Me.time830.Width = 70
 		'
 		'time900
 		'
 		Me.time900.Text = "9.00 AM"
+		Me.time900.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		Me.time900.Width = 70
-		'
-		'time930
-		'
-		Me.time930.Text = "9.30 AM"
-		Me.time930.Width = 70
 		'
 		'time1000
 		'
 		Me.time1000.Text = "10.00 AM"
+		Me.time1000.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		Me.time1000.Width = 70
-		'
-		'time1030
-		'
-		Me.time1030.Text = "10.30 AM"
-		Me.time1030.Width = 70
 		'
 		'time1100
 		'
 		Me.time1100.Text = "11.00 AM"
+		Me.time1100.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		Me.time1100.Width = 70
-		'
-		'time1130
-		'
-		Me.time1130.Text = "11.30 AM"
-		Me.time1130.Width = 70
 		'
 		'time1200
 		'
 		Me.time1200.Text = "12.00 PM"
+		Me.time1200.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		Me.time1200.Width = 70
-		'
-		'time1230
-		'
-		Me.time1230.Text = "12.30 PM"
-		Me.time1230.Width = 70
 		'
 		'time100
 		'
 		Me.time100.Text = "1.00 PM"
+		Me.time100.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		Me.time100.Width = 70
-		'
-		'time130
-		'
-		Me.time130.Text = "1.30 PM"
-		Me.time130.Width = 70
 		'
 		'time200
 		'
 		Me.time200.Text = "2.00 PM"
+		Me.time200.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		Me.time200.Width = 70
-		'
-		'time230
-		'
-		Me.time230.Text = "2.30 PM"
-		Me.time230.Width = 70
 		'
 		'time300
 		'
 		Me.time300.Text = "3.00 PM"
+		Me.time300.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		Me.time300.Width = 70
-		'
-		'time330
-		'
-		Me.time330.Text = "3.30 PM"
-		Me.time330.Width = 70
 		'
 		'time400
 		'
 		Me.time400.Text = "4.00 PM"
+		Me.time400.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		Me.time400.Width = 70
-		'
-		'time430
-		'
-		Me.time430.Text = "4.30 PM"
-		Me.time430.Width = 70
 		'
 		'time500
 		'
 		Me.time500.Text = "5.00 PM"
+		Me.time500.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		Me.time500.Width = 70
-		'
-		'time530
-		'
-		Me.time530.Text = "5.30 PM"
-		Me.time530.Width = 70
 		'
 		'time600
 		'
 		Me.time600.Text = "6.00 PM"
+		Me.time600.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		Me.time600.Width = 70
-		'
-		'time630
-		'
-		Me.time630.Text = "6.30 PM"
-		Me.time630.Width = 70
 		'
 		'time700
 		'
 		Me.time700.Text = "7.00 PM"
+		Me.time700.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		Me.time700.Width = 70
 		'
 		'dtpSearch
@@ -474,27 +420,16 @@ Partial Class UserControl_RoomBooking
 	Friend WithEvents lstAvailabilityChart As ListView
 	Friend WithEvents RoomID As ColumnHeader
 	Friend WithEvents time800 As ColumnHeader
-	Friend WithEvents time830 As ColumnHeader
 	Friend WithEvents time900 As ColumnHeader
-	Friend WithEvents time930 As ColumnHeader
 	Friend WithEvents time1000 As ColumnHeader
-	Friend WithEvents time1030 As ColumnHeader
 	Friend WithEvents time1100 As ColumnHeader
-	Friend WithEvents time1130 As ColumnHeader
 	Friend WithEvents time1200 As ColumnHeader
-	Friend WithEvents time1230 As ColumnHeader
 	Friend WithEvents time100 As ColumnHeader
-	Friend WithEvents time130 As ColumnHeader
 	Friend WithEvents time200 As ColumnHeader
-	Friend WithEvents time230 As ColumnHeader
 	Friend WithEvents time300 As ColumnHeader
-	Friend WithEvents time330 As ColumnHeader
 	Friend WithEvents time400 As ColumnHeader
-	Friend WithEvents time430 As ColumnHeader
 	Friend WithEvents time500 As ColumnHeader
-	Friend WithEvents time530 As ColumnHeader
 	Friend WithEvents time600 As ColumnHeader
-	Friend WithEvents time630 As ColumnHeader
 	Friend WithEvents time700 As ColumnHeader
 	Friend WithEvents Label6 As Label
 	Friend WithEvents lblName As Label

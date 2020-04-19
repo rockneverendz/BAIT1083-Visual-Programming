@@ -23,8 +23,9 @@
 	Private Sub SearchRoomByDate(searchDate As Date)
 		Using db As New LibDBDataContext()
 
+			Dim counter As Integer = 0
 			Dim flag As Boolean = False
-			Dim time() As String = {"8:00 AM", "8:30 AM", "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM", "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM", "3:00 PM", "3:30 PM", "4:00 PM", "4:30 PM", "5:00 PM", "5:30 PM", "6:00 PM", "6:30 PM", "7:00 PM"}
+			Dim time() As String = {"8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM"}
 
 			'Loop Room ID from 1 to 20		ROWS
 			For Each room In db.Rooms
@@ -46,35 +47,31 @@
 				'	Else 
 				'		Green
 
+				'Loop Time column
+				For Each t In time
+					counter += 1
 
-				If GetRoomBooking(searchDate, room) Is Nothing Then
-					'Loop Time column
-					For Each t In time
-						lvi.SubItems.Add("").BackColor = Color.Green
-					Next
-				Else
-					'Loop Time column
-					For Each t In time
-						If GetRoomBooking(searchDate, room).CheckIn_Date.Equals(t) Then
-							lvi.SubItems.Add("").BackColor = Color.DodgerBlue
-							lvi.SubItems.Add("").BackColor = Color.DodgerBlue
-						Else
-							lvi.SubItems.Add("").BackColor = Color.Green
-						End If
+					If flag.Equals(True) Then
+						lvi.SubItems.Add(counter).BackColor = Color.DodgerBlue
+						flag = False
+					ElseIf IsNothing(GetRoomBooking(searchDate, room, t)) Then
+						lvi.SubItems.Add(counter).BackColor = Color.Green
+					Else
+						lvi.SubItems.Add(counter).BackColor = Color.DodgerBlue
+						flag = True
+					End If
+				Next
 
-
-					Next
-				End If
 			Next
 
 		End Using
 	End Sub
 
-	Private Function GetRoomBooking(searchDate As Date, room As Room) As RoomBooking
+	Private Function GetRoomBooking(searchDate As Date, room As Room, time As String) As RoomBooking
 		Using db As New LibDBDataContext()
 			Try
 				'To get the roombooking that is match with the selected date
-				Dim roombooked As RoomBooking = db.RoomBookings.First(Function(o) o.Room_ID = room.Room_Id And o.Date_Time.Day = searchDate.Day And o.Date_Time.Month = searchDate.Month And o.Date_Time.Year = searchDate.Year)
+				Dim roombooked As RoomBooking = db.RoomBookings.First(Function(o) o.Room_ID = room.Room_Id And o.Date_Time.Day = searchDate.Day And o.Date_Time.Month = searchDate.Month And o.Date_Time.Year = searchDate.Year And o.CheckIn_Date.Equals(time))
 
 				GetRoomBooking = roombooked
 			Catch ex As Exception
@@ -86,23 +83,7 @@
 	Private Sub UserControl_RoomBooking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 		Using db As New LibDBDataContext()
-
 			SearchRoomByDate(Today)
-
-
-			'Dim item1 As ListViewItem = lstAvailabilityChart.Items.Add("R1001")
-			''Disable default style or color for the subitems
-			'item1.UseItemStyleForSubItems = False
-			''Add color to subitems
-			'item1.SubItems.Add("").BackColor = Color.Green
-			'item1.SubItems.Add("").BackColor = Color.Green
-
-			'Dim item2 As ListViewItem = lstAvailabilityChart.Items.Add("R1002")
-			''Disable default style or color for the subitems
-			'item2.UseItemStyleForSubItems = False
-			''Add color to subitems
-			'item2.SubItems.Add("").BackColor = Color.Green
-			'item2.SubItems.Add("").BackColor = Color.Green
 		End Using
 	End Sub
 
