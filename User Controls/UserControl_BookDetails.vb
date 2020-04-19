@@ -12,7 +12,9 @@
             TextBox_Copies.Text = book.Copies
             TextBox_CallNo.Text = book.Call_no
 
-            Dim copies = database.Copies.Where(Function(o) o.Book_ID = bookID)
+            Dim copies = From c In database.Copies
+                         Where c.Book_ID = bookID
+                         Order By c.Copy_ID
 
             For Each copy In copies
 
@@ -28,6 +30,18 @@
                 ListView_Copies.Items.Add(lvi)
             Next
 
+            Dim history = From co In database.CheckOuts
+                          Join col In database.CheckOutLists On co.Chk_ID Equals col.Chk_ID
+                          Join c In database.Copies On col.Copy_ID Equals c.Copy_ID
+                          Where c.Book_ID = bookID
+                          Order By co.Due_Date Descending
+                          Select New HistoryModel(c.Copy_ID, co.Chk_ID, co.Issue_Date, co.Due_Date)
+
+            For Each record In history
+                Dim listViewItem = New ListViewItem(record.ToStringArray)
+                ListView_History.Items.Add(listViewItem)
+            Next
+
         End Using
     End Sub
 
@@ -39,4 +53,23 @@
         BookList.AutoSize = True
         BookList.Dock = System.Windows.Forms.DockStyle.Fill
     End Sub
+
+    Private Class HistoryModel
+        Public Sub New(Copy_ID As Integer, Chk_ID As Integer, Issue_Date As Date, Due_Date As Date)
+            Me.Copy_ID = Copy_ID
+            Me.Chk_ID = Chk_ID
+            Me.Issue_Date = Issue_Date
+            Me.Due_Date = Due_Date
+        End Sub
+
+        Public Function ToStringArray() As String()
+            Return {Copy_ID, Chk_ID, Issue_Date, Due_Date}
+        End Function
+
+        Public Property Copy_ID As Integer
+        Public Property Chk_ID As Integer
+        Public Property Issue_Date As Date
+        Public Property Due_Date As Date
+    End Class
+
 End Class

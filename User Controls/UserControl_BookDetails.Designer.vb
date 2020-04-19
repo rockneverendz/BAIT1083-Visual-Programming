@@ -47,8 +47,6 @@ Partial Class UserControl_BookDetails
         Me.ListView_Copies = New System.Windows.Forms.ListView()
         Me.Copies_Copy_ID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Copies_Status = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Copies_Due_Date = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Copies_Chk_ID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel_History = New System.Windows.Forms.Panel()
         Me.RadioButton_Select = New System.Windows.Forms.RadioButton()
         Me.RadioButton_All = New System.Windows.Forms.RadioButton()
@@ -58,7 +56,6 @@ Partial Class UserControl_BookDetails
         Me.History_Chk_ID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.History_Issue_Date = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.History_Due_Date = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.History_Rtn_Date = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         CType(Me.SplitContainer_Checkout, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer_Checkout.Panel1.SuspendLayout()
         Me.SplitContainer_Checkout.Panel2.SuspendLayout()
@@ -364,7 +361,7 @@ Partial Class UserControl_BookDetails
         Me.ListView_Copies.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ListView_Copies.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Copies_Copy_ID, Me.Copies_Status, Me.Copies_Due_Date, Me.Copies_Chk_ID})
+        Me.ListView_Copies.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Copies_Copy_ID, Me.Copies_Status})
         Me.ListView_Copies.HideSelection = False
         Me.ListView_Copies.Location = New System.Drawing.Point(15, 38)
         Me.ListView_Copies.Margin = New System.Windows.Forms.Padding(5)
@@ -382,16 +379,6 @@ Partial Class UserControl_BookDetails
         '
         Me.Copies_Status.Text = "Status"
         Me.Copies_Status.Width = 120
-        '
-        'Copies_Due_Date
-        '
-        Me.Copies_Due_Date.Text = "Due Date"
-        Me.Copies_Due_Date.Width = 120
-        '
-        'Copies_Chk_ID
-        '
-        Me.Copies_Chk_ID.Text = "Checkout ID"
-        Me.Copies_Chk_ID.Width = 120
         '
         'Panel_History
         '
@@ -447,7 +434,7 @@ Partial Class UserControl_BookDetails
         Me.ListView_History.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ListView_History.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.History_Copy_ID, Me.History_Chk_ID, Me.History_Issue_Date, Me.History_Due_Date, Me.History_Rtn_Date})
+        Me.ListView_History.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.History_Copy_ID, Me.History_Chk_ID, Me.History_Issue_Date, Me.History_Due_Date})
         Me.ListView_History.HideSelection = False
         Me.ListView_History.Location = New System.Drawing.Point(15, 38)
         Me.ListView_History.Margin = New System.Windows.Forms.Padding(5)
@@ -475,11 +462,6 @@ Partial Class UserControl_BookDetails
         '
         Me.History_Due_Date.Text = "Due Date"
         Me.History_Due_Date.Width = 120
-        '
-        'History_Rtn_Date
-        '
-        Me.History_Rtn_Date.Text = "Return Date"
-        Me.History_Rtn_Date.Width = 120
         '
         'UserControl_BookDetails
         '
@@ -534,11 +516,8 @@ Partial Class UserControl_BookDetails
     Friend WithEvents RadioButton_All As RadioButton
     Friend WithEvents Copies_Copy_ID As ColumnHeader
     Friend WithEvents Copies_Status As ColumnHeader
-    Friend WithEvents Copies_Due_Date As ColumnHeader
-    Friend WithEvents Copies_Chk_ID As ColumnHeader
     Friend WithEvents History_Copy_ID As ColumnHeader
     Friend WithEvents History_Chk_ID As ColumnHeader
     Friend WithEvents History_Issue_Date As ColumnHeader
     Friend WithEvents History_Due_Date As ColumnHeader
-    Friend WithEvents History_Rtn_Date As ColumnHeader
 End Class
