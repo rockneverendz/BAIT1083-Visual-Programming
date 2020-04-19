@@ -35,15 +35,13 @@ Partial Class UserControl_RoomBooking
 		Me.Label6 = New System.Windows.Forms.Label()
 		Me.txtPatronID = New System.Windows.Forms.TextBox()
 		Me.Label1 = New System.Windows.Forms.Label()
-		Me.TextBox2 = New System.Windows.Forms.TextBox()
-		Me.TextBox1 = New System.Windows.Forms.TextBox()
+		Me.txtPax = New System.Windows.Forms.TextBox()
 		Me.Label2 = New System.Windows.Forms.Label()
 		Me.btnReset = New System.Windows.Forms.Button()
 		Me.btnSubmit = New System.Windows.Forms.Button()
 		Me.Label5 = New System.Windows.Forms.Label()
-		Me.cmbEndTime = New System.Windows.Forms.ComboBox()
 		Me.cmbStartTime = New System.Windows.Forms.ComboBox()
-		Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+		Me.dtpAddDate = New System.Windows.Forms.DateTimePicker()
 		Me.Label4 = New System.Windows.Forms.Label()
 		Me.Label3 = New System.Windows.Forms.Label()
 		Me.Panel1 = New System.Windows.Forms.Panel()
@@ -63,6 +61,8 @@ Partial Class UserControl_RoomBooking
 		Me.time700 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.dtpSearch = New System.Windows.Forms.DateTimePicker()
 		Me.Label7 = New System.Windows.Forms.Label()
+		Me.txtEndTime = New System.Windows.Forms.TextBox()
+		Me.txtRmID = New System.Windows.Forms.TextBox()
 		CType(Me.RoomBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RoomBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel2.SuspendLayout()
@@ -98,21 +98,21 @@ Partial Class UserControl_RoomBooking
 		'Panel2
 		'
 		Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+		Me.Panel2.Controls.Add(Me.txtRmID)
+		Me.Panel2.Controls.Add(Me.txtEndTime)
 		Me.Panel2.Controls.Add(Me.btnSearchStudent)
 		Me.Panel2.Controls.Add(Me.Splitter1)
 		Me.Panel2.Controls.Add(Me.lblName)
 		Me.Panel2.Controls.Add(Me.Label6)
 		Me.Panel2.Controls.Add(Me.txtPatronID)
 		Me.Panel2.Controls.Add(Me.Label1)
-		Me.Panel2.Controls.Add(Me.TextBox2)
-		Me.Panel2.Controls.Add(Me.TextBox1)
+		Me.Panel2.Controls.Add(Me.txtPax)
 		Me.Panel2.Controls.Add(Me.Label2)
 		Me.Panel2.Controls.Add(Me.btnReset)
 		Me.Panel2.Controls.Add(Me.btnSubmit)
 		Me.Panel2.Controls.Add(Me.Label5)
-		Me.Panel2.Controls.Add(Me.cmbEndTime)
 		Me.Panel2.Controls.Add(Me.cmbStartTime)
-		Me.Panel2.Controls.Add(Me.DateTimePicker1)
+		Me.Panel2.Controls.Add(Me.dtpAddDate)
 		Me.Panel2.Controls.Add(Me.Label4)
 		Me.Panel2.Controls.Add(Me.Label3)
 		Me.Panel2.Location = New System.Drawing.Point(3, 435)
@@ -170,19 +170,14 @@ Partial Class UserControl_RoomBooking
 		Me.Label1.TabIndex = 12
 		Me.Label1.Text = "Student ID"
 		'
-		'TextBox2
+		'txtPax
 		'
-		Me.TextBox2.Location = New System.Drawing.Point(794, 30)
-		Me.TextBox2.Name = "TextBox2"
-		Me.TextBox2.Size = New System.Drawing.Size(265, 22)
-		Me.TextBox2.TabIndex = 11
-		'
-		'TextBox1
-		'
-		Me.TextBox1.Location = New System.Drawing.Point(503, 30)
-		Me.TextBox1.Name = "TextBox1"
-		Me.TextBox1.Size = New System.Drawing.Size(253, 22)
-		Me.TextBox1.TabIndex = 10
+		Me.txtPax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.txtPax.Location = New System.Drawing.Point(794, 29)
+		Me.txtPax.Name = "txtPax"
+		Me.txtPax.ReadOnly = True
+		Me.txtPax.Size = New System.Drawing.Size(265, 22)
+		Me.txtPax.TabIndex = 11
 		'
 		'Label2
 		'
@@ -220,31 +215,24 @@ Partial Class UserControl_RoomBooking
 		Me.Label5.TabIndex = 5
 		Me.Label5.Text = "Number of Pax"
 		'
-		'cmbEndTime
-		'
-		Me.cmbEndTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.cmbEndTime.FormattingEnabled = True
-		Me.cmbEndTime.Location = New System.Drawing.Point(938, 84)
-		Me.cmbEndTime.Name = "cmbEndTime"
-		Me.cmbEndTime.Size = New System.Drawing.Size(121, 24)
-		Me.cmbEndTime.TabIndex = 4
-		'
 		'cmbStartTime
 		'
 		Me.cmbStartTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.cmbStartTime.FormattingEnabled = True
-		Me.cmbStartTime.Items.AddRange(New Object() {"Start Time", "8.00 AM", "8.30 AM", "9.00 AM", "9.30 AM", "10.00 AM", "10.30 AM", "11.00 AM", "11.30 AM", "12.00 PM", "12.30 PM", "1.00 PM", "1.30 PM", "2.00 PM", "2.30 PM", "3.00 PM", "3.30 PM", "4.00 PM", "4.30 PM", "5.00 PM", "5.30 PM", "6.00 PM"})
+		Me.cmbStartTime.Items.AddRange(New Object() {"8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM"})
 		Me.cmbStartTime.Location = New System.Drawing.Point(794, 84)
 		Me.cmbStartTime.Name = "cmbStartTime"
 		Me.cmbStartTime.Size = New System.Drawing.Size(121, 24)
 		Me.cmbStartTime.TabIndex = 3
 		'
-		'DateTimePicker1
+		'dtpAddDate
 		'
-		Me.DateTimePicker1.Location = New System.Drawing.Point(503, 86)
-		Me.DateTimePicker1.Name = "DateTimePicker1"
-		Me.DateTimePicker1.Size = New System.Drawing.Size(253, 22)
-		Me.DateTimePicker1.TabIndex = 2
+		Me.dtpAddDate.Location = New System.Drawing.Point(503, 86)
+		Me.dtpAddDate.MinDate = New Date(2020, 4, 19, 20, 17, 14, 0)
+		Me.dtpAddDate.Name = "dtpAddDate"
+		Me.dtpAddDate.Size = New System.Drawing.Size(253, 22)
+		Me.dtpAddDate.TabIndex = 2
+		Me.dtpAddDate.Value = New Date(2020, 4, 19, 20, 17, 14, 0)
 		'
 		'Label4
 		'
@@ -380,6 +368,22 @@ Partial Class UserControl_RoomBooking
 		Me.Label7.TabIndex = 6
 		Me.Label7.Text = "Search by Date:"
 		'
+		'txtEndTime
+		'
+		Me.txtEndTime.Location = New System.Drawing.Point(935, 84)
+		Me.txtEndTime.Name = "txtEndTime"
+		Me.txtEndTime.ReadOnly = True
+		Me.txtEndTime.Size = New System.Drawing.Size(124, 22)
+		Me.txtEndTime.TabIndex = 19
+		'
+		'txtRmID
+		'
+		Me.txtRmID.Location = New System.Drawing.Point(503, 29)
+		Me.txtRmID.Name = "txtRmID"
+		Me.txtRmID.ReadOnly = True
+		Me.txtRmID.Size = New System.Drawing.Size(253, 22)
+		Me.txtRmID.TabIndex = 20
+		'
 		'UserControl_RoomBooking
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -406,15 +410,13 @@ Partial Class UserControl_RoomBooking
 	Friend WithEvents ContextMenuStrip3 As ContextMenuStrip
 	Friend WithEvents txtPatronID As TextBox
 	Friend WithEvents Label1 As Label
-	Friend WithEvents TextBox2 As TextBox
-	Friend WithEvents TextBox1 As TextBox
+	Friend WithEvents txtPax As TextBox
 	Friend WithEvents Label2 As Label
 	Friend WithEvents btnReset As Button
 	Friend WithEvents btnSubmit As Button
 	Friend WithEvents Label5 As Label
-	Friend WithEvents cmbEndTime As ComboBox
 	Friend WithEvents cmbStartTime As ComboBox
-	Friend WithEvents DateTimePicker1 As DateTimePicker
+	Friend WithEvents dtpAddDate As DateTimePicker
 	Friend WithEvents Label4 As Label
 	Friend WithEvents Label3 As Label
 	Friend WithEvents lstAvailabilityChart As ListView
@@ -439,4 +441,6 @@ Partial Class UserControl_RoomBooking
 	Friend WithEvents Panel1 As Panel
 	Friend WithEvents dtpSearch As DateTimePicker
 	Friend WithEvents Label7 As Label
+	Friend WithEvents txtEndTime As TextBox
+	Friend WithEvents txtRmID As TextBox
 End Class
