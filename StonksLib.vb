@@ -10,7 +10,7 @@
     End Sub
 
     'TODO: Add instance into each class so we don't have to construct them everytime.
-    Private Sub ToolStrip_Button_Click(sender As Object, e As EventArgs) Handles Menu_Checkout.Click, Menu_BookList.Click
+    Private Sub ToolStrip_Button_Click(sender As Object, e As EventArgs) Handles Menu_Checkout.Click, Menu_BookList.Click, Menu_Room.Click
         Dim UserControls() As UserControl
 
         If (sender.Equals(Menu_BookList)) Then
@@ -29,6 +29,10 @@
 
         ElseIf (sender.Equals(Menu_Checkout)) Then
             UserControls = {New BAIT1083_Visual_Programming.UserControl_Checkout()}
+
+        ElseIf (sender.Equals(Menu_Room)) Then
+            UserControls = {New BAIT1083_Visual_Programming.UserControl_RoomBooking()}
+
         Else
             'User should not reach here'
             UserControls = {New UserControl()}

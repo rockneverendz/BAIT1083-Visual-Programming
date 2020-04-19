@@ -83,9 +83,7 @@ Partial Class UserControl_BookDetails
         '
         'Button_Cancel
         '
-        Me.Button_Cancel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button_Cancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button_Cancel.Location = New System.Drawing.Point(182, 452)
         Me.Button_Cancel.Margin = New System.Windows.Forms.Padding(5)
         Me.Button_Cancel.Name = "Button_Cancel"
@@ -313,6 +311,7 @@ Partial Class UserControl_BookDetails
         '
         'Button_Update
         '
+        Me.Button_Update.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button_Update.Location = New System.Drawing.Point(97, 452)
         Me.Button_Update.Margin = New System.Windows.Forms.Padding(5)
         Me.Button_Update.Name = "Button_Update"

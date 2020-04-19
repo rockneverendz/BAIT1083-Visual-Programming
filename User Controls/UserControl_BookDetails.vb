@@ -36,5 +36,7 @@
     Private Sub Button_Cancel_Click(sender As Object, e As EventArgs) Handles Button_Cancel.Click
         Me.Hide()
         BookList.Show()
+        BookList.AutoSize = True
+        BookList.Dock = System.Windows.Forms.DockStyle.Fill
     End Sub
 End Class

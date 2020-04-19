@@ -57,11 +57,8 @@
         BookDetails.Fill(ListView_Book.SelectedItems(0).SubItems(0).Tag)
         Me.Hide()
         BookDetails.Show()
-        'Dim BookDetails = New BAIT1083_Visual_Programming.UserControl_BookDetails()
-        'Dim BookDetails = New BAIT1083_Visual_Programming.UserControl_BookDetails()
-        'Panel_BookDetails.Controls.Add(BookDetails)
-        'Panel_BookDetails.Show()
-        'bookDetails.Dock = System.Windows.Forms.DockStyle.Fill
+        BookDetails.AutoSize = True
+        BookDetails.Dock = System.Windows.Forms.DockStyle.Fill
     End Sub
 End Class
 Class ListViewSubItemsCompareText : Implements IComparer
