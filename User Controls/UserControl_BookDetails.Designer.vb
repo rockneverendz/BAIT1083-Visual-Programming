@@ -320,7 +320,7 @@ Partial Class UserControl_BookDetails
         'TableLayoutPanel_CheckoutDetails
         '
         Me.TableLayoutPanel_CheckoutDetails.ColumnCount = 1
-        Me.TableLayoutPanel_CheckoutDetails.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.TableLayoutPanel_CheckoutDetails.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel_CheckoutDetails.Controls.Add(Me.Panel_Copies, 0, 0)
         Me.TableLayoutPanel_CheckoutDetails.Controls.Add(Me.Panel_History, 0, 1)
         Me.TableLayoutPanel_CheckoutDetails.Dock = System.Windows.Forms.DockStyle.Fill
@@ -329,7 +329,6 @@ Partial Class UserControl_BookDetails
         Me.TableLayoutPanel_CheckoutDetails.RowCount = 2
         Me.TableLayoutPanel_CheckoutDetails.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel_CheckoutDetails.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel_CheckoutDetails.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel_CheckoutDetails.Size = New System.Drawing.Size(540, 490)
         Me.TableLayoutPanel_CheckoutDetails.TabIndex = 0
         '
