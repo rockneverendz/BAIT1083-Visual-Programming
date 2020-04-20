@@ -135,6 +135,12 @@
     <Compile Include="StonksLib.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="User Controls\UserControl_PatronList.Designer.vb">
+      <DependentUpon>UserControl_PatronList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UserControl_PatronList.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="User Controls\UserControl_BookList.Designer.vb">
       <DependentUpon>UserControl_BookList.vb</DependentUpon>
     </Compile>
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StonksLib.resx">
       <DependentUpon>StonksLib.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UserControl_PatronList.resx">
+      <DependentUpon>UserControl_PatronList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\UserControl_BookList.resx">
       <DependentUpon>UserControl_BookList.vb</DependentUpon>
