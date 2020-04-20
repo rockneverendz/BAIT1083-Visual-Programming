@@ -1,5 +1,9 @@
 ﻿Public Class UserControl_BookDetails
+
+    Dim bookID As Integer
+
     Public Sub Fill(bookID As Integer)
+        Me.bookID = bookID
         Using database As New LibDBDataContext()
             Dim book = database.Books.First(Function(o) o.Book_Id = bookID)
 
@@ -54,6 +58,38 @@
         BookList.Dock = System.Windows.Forms.DockStyle.Fill
     End Sub
 
+    Private Sub Button_Update_Click(sender As Object, e As EventArgs) Handles Button_Update.Click
+
+        If MessageBox.Show(
+                "Confirm Update?",
+                "Update Record",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Question
+            ) = DialogResult.OK Then
+
+            UpdateBook()
+
+            'Tell BookList to update the List
+            BookList.UpdateList()
+
+        End If
+    End Sub
+
+    Private Sub UpdateBook()
+        Using database As New LibDBDataContext()
+            Dim book = database.Books.First(Function(o) o.Book_Id = bookID)
+
+            book.Book_title = TextBox_Title.Text
+            book.Author = TextBox_Author.Text
+            book.Category = TextBox_Category.Text
+            book.Publication = TextBox_Publication.Text
+            book.Year_Publish = TextBox_YearPublish.Text
+            book.Call_no = TextBox_CallNo.Text
+
+            database.SubmitChanges()
+        End Using
+    End Sub
+
     Private Class HistoryModel
         Public Sub New(Copy_ID As Integer, Chk_ID As Integer, Issue_Date As Date, Due_Date As Date)
             Me.Copy_ID = Copy_ID
@@ -71,5 +107,4 @@
         Public Property Issue_Date As Date
         Public Property Due_Date As Date
     End Class
-
 End Class

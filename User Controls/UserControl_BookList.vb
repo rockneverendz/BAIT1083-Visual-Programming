@@ -6,6 +6,15 @@
 
         ' Add any initialization after the InitializeComponent() call.
         '' Retrive data from database
+        UpdateList()
+    End Sub
+
+    Public Sub UpdateList()
+
+        'Clears all items on the list
+        ListView_Book.Items.Clear()
+
+        'Add items back to the list 
         Using database As New LibDBDataContext()
             'Get all book on the database and insert them onto ListView
             For Each book In database.Books
