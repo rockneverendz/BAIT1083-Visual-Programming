@@ -44,7 +44,7 @@ Partial Class UserControl_ReturnBook
         Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(28, 47)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(642, 166)
+        Me.ListView1.Size = New System.Drawing.Size(751, 166)
         Me.ListView1.TabIndex = 0
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -54,20 +54,20 @@ Partial Class UserControl_ReturnBook
         Me.ListView2.HideSelection = False
         Me.ListView2.Location = New System.Drawing.Point(28, 259)
         Me.ListView2.Name = "ListView2"
-        Me.ListView2.Size = New System.Drawing.Size(534, 118)
+        Me.ListView2.Size = New System.Drawing.Size(643, 118)
         Me.ListView2.TabIndex = 1
         Me.ListView2.UseCompatibleStateImageBehavior = False
         '
         'txtFeesPaid
         '
-        Me.txtFeesPaid.Location = New System.Drawing.Point(571, 259)
+        Me.txtFeesPaid.Location = New System.Drawing.Point(677, 259)
         Me.txtFeesPaid.Name = "txtFeesPaid"
         Me.txtFeesPaid.Size = New System.Drawing.Size(102, 20)
         Me.txtFeesPaid.TabIndex = 3
         '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(460, 405)
+        Me.btnClose.Location = New System.Drawing.Point(569, 394)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(102, 23)
         Me.btnClose.TabIndex = 4
@@ -76,7 +76,7 @@ Partial Class UserControl_ReturnBook
         '
         'btnReturn
         '
-        Me.btnReturn.Location = New System.Drawing.Point(571, 405)
+        Me.btnReturn.Location = New System.Drawing.Point(677, 394)
         Me.btnReturn.Name = "btnReturn"
         Me.btnReturn.Size = New System.Drawing.Size(102, 23)
         Me.btnReturn.TabIndex = 5
@@ -87,7 +87,7 @@ Partial Class UserControl_ReturnBook
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(568, 243)
+        Me.Label1.Location = New System.Drawing.Point(674, 243)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(57, 13)
         Me.Label1.TabIndex = 6
@@ -151,7 +151,7 @@ Partial Class UserControl_ReturnBook
         Me.Controls.Add(Me.ListView2)
         Me.Controls.Add(Me.ListView1)
         Me.Name = "UserControl_ReturnBook"
-        Me.Size = New System.Drawing.Size(702, 454)
+        Me.Size = New System.Drawing.Size(808, 429)
         CType(Me.txtFeesPaid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
