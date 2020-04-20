@@ -147,6 +147,12 @@
     <Compile Include="User Controls\UserControl_NewBook.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="User Controls\UserControl_RBookingHistory.Designer.vb">
+      <DependentUpon>UserControl_RBookingHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UserControl_RBookingHistory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="User Controls\UserControl_RoomBooking.Designer.vb">
       <DependentUpon>UserControl_RoomBooking.vb</DependentUpon>
     </Compile>
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\UserControl_NewBook.resx">
       <DependentUpon>UserControl_NewBook.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UserControl_RBookingHistory.resx">
+      <DependentUpon>UserControl_RBookingHistory.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\UserControl_RoomBooking.resx">
       <DependentUpon>UserControl_RoomBooking.vb</DependentUpon>
