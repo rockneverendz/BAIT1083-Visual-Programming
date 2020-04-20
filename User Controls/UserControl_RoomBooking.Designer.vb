@@ -29,6 +29,8 @@ Partial Class UserControl_RoomBooking
 		Me.RoomBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
 		Me.ContextMenuStrip3 = New System.Windows.Forms.ContextMenuStrip(Me.components)
 		Me.Panel2 = New System.Windows.Forms.Panel()
+		Me.txtRmID = New System.Windows.Forms.TextBox()
+		Me.txtEndTime = New System.Windows.Forms.TextBox()
 		Me.btnSearchStudent = New System.Windows.Forms.Button()
 		Me.Splitter1 = New System.Windows.Forms.Splitter()
 		Me.lblName = New System.Windows.Forms.Label()
@@ -61,8 +63,6 @@ Partial Class UserControl_RoomBooking
 		Me.time700 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.dtpSearch = New System.Windows.Forms.DateTimePicker()
 		Me.Label7 = New System.Windows.Forms.Label()
-		Me.txtEndTime = New System.Windows.Forms.TextBox()
-		Me.txtRmID = New System.Windows.Forms.TextBox()
 		CType(Me.RoomBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RoomBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel2.SuspendLayout()
@@ -119,6 +119,22 @@ Partial Class UserControl_RoomBooking
 		Me.Panel2.Name = "Panel2"
 		Me.Panel2.Size = New System.Drawing.Size(1082, 165)
 		Me.Panel2.TabIndex = 4
+		'
+		'txtRmID
+		'
+		Me.txtRmID.Location = New System.Drawing.Point(503, 29)
+		Me.txtRmID.Name = "txtRmID"
+		Me.txtRmID.ReadOnly = True
+		Me.txtRmID.Size = New System.Drawing.Size(253, 22)
+		Me.txtRmID.TabIndex = 20
+		'
+		'txtEndTime
+		'
+		Me.txtEndTime.Location = New System.Drawing.Point(935, 84)
+		Me.txtEndTime.Name = "txtEndTime"
+		Me.txtEndTime.ReadOnly = True
+		Me.txtEndTime.Size = New System.Drawing.Size(124, 22)
+		Me.txtEndTime.TabIndex = 19
 		'
 		'btnSearchStudent
 		'
@@ -219,7 +235,7 @@ Partial Class UserControl_RoomBooking
 		'
 		Me.cmbStartTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.cmbStartTime.FormattingEnabled = True
-		Me.cmbStartTime.Items.AddRange(New Object() {"8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM"})
+		Me.cmbStartTime.Items.AddRange(New Object() {"8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM"})
 		Me.cmbStartTime.Location = New System.Drawing.Point(794, 84)
 		Me.cmbStartTime.Name = "cmbStartTime"
 		Me.cmbStartTime.Size = New System.Drawing.Size(121, 24)
@@ -368,26 +384,11 @@ Partial Class UserControl_RoomBooking
 		Me.Label7.TabIndex = 6
 		Me.Label7.Text = "Search by Date:"
 		'
-		'txtEndTime
-		'
-		Me.txtEndTime.Location = New System.Drawing.Point(935, 84)
-		Me.txtEndTime.Name = "txtEndTime"
-		Me.txtEndTime.ReadOnly = True
-		Me.txtEndTime.Size = New System.Drawing.Size(124, 22)
-		Me.txtEndTime.TabIndex = 19
-		'
-		'txtRmID
-		'
-		Me.txtRmID.Location = New System.Drawing.Point(503, 29)
-		Me.txtRmID.Name = "txtRmID"
-		Me.txtRmID.ReadOnly = True
-		Me.txtRmID.Size = New System.Drawing.Size(253, 22)
-		Me.txtRmID.TabIndex = 20
-		'
 		'UserControl_RoomBooking
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.AutoSize = True
 		Me.Controls.Add(Me.Label7)
 		Me.Controls.Add(Me.dtpSearch)
 		Me.Controls.Add(Me.Panel2)
