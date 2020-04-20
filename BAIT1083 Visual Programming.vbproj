@@ -824,6 +824,12 @@
       <DependentUpon>LibDB.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\LibBackground.jpg" />
+    <None Include="Resources\imageedit_4_7602996586.png" />
+    <None Include="Resources\circle-cropped.png" />
+    <None Include="Resources\background2.jpg" />
+    <None Include="Resources\Background.jpg" />
+    <None Include="Resources\STONKS.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

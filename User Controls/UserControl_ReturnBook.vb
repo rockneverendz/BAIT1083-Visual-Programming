@@ -1,10 +1,38 @@
 ﻿Public Class UserControl_ReturnBook
-    Private Sub NumericUpDown_Weeks_ValueChanged(sender As Object, e As EventArgs)
+    Public Sub New()
 
-    End Sub
+        ' This call is required by the designer.
+        InitializeComponent()
 
-    Private Sub DateTimePicker_DueDate_ValueChanged(sender As Object, e As EventArgs)
+        ' Add any initialization after the InitializeComponent() call.
+        '' Retrive data from database
+        Using database As New LibDBDataContext()
 
+            ' Dim rs = From co In database.CheckOuts
+            ' Dim checkOut() As CheckOut = rs.ToArray
+            'Dim rs = From co In database.CheckOuts
+            '         Join c In database.Copies
+            '         Join b In database.Books On b.Book_Id Equals c.Book_ID
+            '             Dim checkOut() As CheckOut = rs.ToArray
+            'Select b.Book_title, co.Issue_Date, co.Due_Date
+            'For Each bkReturn In checkOut
+            '    Dim row() As String = {
+            '        bkReturn.
+            '    }
+
+            'For Each ReturnBook In rs
+            '    Dim row() As String = {
+            '        CheckOut.
+            '    }
+
+            '    'Insert integers on tag for sorting later
+            '    Dim lvi = New ListViewItem(row)
+            '    lvi.SubItems(0).Tag = Book.Book_Id
+            '    lvi.SubItems(6).Tag = Book.Copies
+
+            '    ListView_Book.Items.Add(lvi)
+            'Next
+        End Using
     End Sub
 
 

@@ -22,45 +22,72 @@ Partial Class UserControl_ReturnBook
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.ListView1 = New System.Windows.Forms.ListView()
-        Me.ListView2 = New System.Windows.Forms.ListView()
+        Me.lstItem = New System.Windows.Forms.ListView()
+        Me.Book_Id = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Issue_Date = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Due_Date = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Daily_Late_Fee = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Owing = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.lstReturnNotes = New System.Windows.Forms.ListView()
         Me.txtFeesPaid = New System.Windows.Forms.NumericUpDown()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.btnReturn = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Book_Id = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Issue_Date = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Due_Date = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.lblCopyID = New System.Windows.Forms.Label()
+        Me.Copy_ID = New System.Windows.Forms.TextBox()
         CType(Me.txtFeesPaid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'ListView1
+        'lstItem
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Book_Id, Me.Issue_Date, Me.Due_Date, Me.ColumnHeader1, Me.ColumnHeader2})
-        Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(28, 47)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(751, 166)
-        Me.ListView1.TabIndex = 0
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        Me.ListView1.View = System.Windows.Forms.View.Details
+        Me.lstItem.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Book_Id, Me.Issue_Date, Me.Due_Date, Me.Daily_Late_Fee, Me.Owing})
+        Me.lstItem.HideSelection = False
+        Me.lstItem.Location = New System.Drawing.Point(28, 94)
+        Me.lstItem.Name = "lstItem"
+        Me.lstItem.Size = New System.Drawing.Size(751, 166)
+        Me.lstItem.TabIndex = 0
+        Me.lstItem.UseCompatibleStateImageBehavior = False
+        Me.lstItem.View = System.Windows.Forms.View.Details
         '
-        'ListView2
+        'Book_Id
         '
-        Me.ListView2.HideSelection = False
-        Me.ListView2.Location = New System.Drawing.Point(28, 259)
-        Me.ListView2.Name = "ListView2"
-        Me.ListView2.Size = New System.Drawing.Size(643, 118)
-        Me.ListView2.TabIndex = 1
-        Me.ListView2.UseCompatibleStateImageBehavior = False
+        Me.Book_Id.Text = "Title"
+        Me.Book_Id.Width = 340
+        '
+        'Issue_Date
+        '
+        Me.Issue_Date.Text = "Borrow Date"
+        Me.Issue_Date.Width = 100
+        '
+        'Due_Date
+        '
+        Me.Due_Date.Text = "Due Date"
+        Me.Due_Date.Width = 100
+        '
+        'Daily_Late_Fee
+        '
+        Me.Daily_Late_Fee.Text = "Daily Late Fee"
+        Me.Daily_Late_Fee.Width = 100
+        '
+        'Owing
+        '
+        Me.Owing.Text = "Owing"
+        Me.Owing.Width = 110
+        '
+        'lstReturnNotes
+        '
+        Me.lstReturnNotes.HideSelection = False
+        Me.lstReturnNotes.Location = New System.Drawing.Point(28, 291)
+        Me.lstReturnNotes.Name = "lstReturnNotes"
+        Me.lstReturnNotes.Size = New System.Drawing.Size(643, 86)
+        Me.lstReturnNotes.TabIndex = 1
+        Me.lstReturnNotes.UseCompatibleStateImageBehavior = False
         '
         'txtFeesPaid
         '
-        Me.txtFeesPaid.Location = New System.Drawing.Point(677, 259)
+        Me.txtFeesPaid.Location = New System.Drawing.Point(677, 291)
         Me.txtFeesPaid.Name = "txtFeesPaid"
         Me.txtFeesPaid.Size = New System.Drawing.Size(102, 20)
         Me.txtFeesPaid.TabIndex = 3
@@ -87,7 +114,7 @@ Partial Class UserControl_ReturnBook
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(674, 243)
+        Me.Label1.Location = New System.Drawing.Point(674, 275)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(57, 13)
         Me.Label1.TabIndex = 6
@@ -97,7 +124,7 @@ Partial Class UserControl_ReturnBook
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(25, 243)
+        Me.Label3.Location = New System.Drawing.Point(25, 275)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(82, 13)
         Me.Label3.TabIndex = 8
@@ -107,59 +134,53 @@ Partial Class UserControl_ReturnBook
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(25, 31)
+        Me.Label4.Location = New System.Drawing.Point(25, 78)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(31, 13)
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "Item"
         '
-        'Book_Id
+        'lblCopyID
         '
-        Me.Book_Id.Text = "Title"
-        Me.Book_Id.Width = 240
+        Me.lblCopyID.AutoSize = True
+        Me.lblCopyID.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCopyID.Location = New System.Drawing.Point(28, 35)
+        Me.lblCopyID.Name = "lblCopyID"
+        Me.lblCopyID.Size = New System.Drawing.Size(56, 13)
+        Me.lblCopyID.TabIndex = 10
+        Me.lblCopyID.Text = "Copy ID:"
         '
-        'Issue_Date
+        'Copy_ID
         '
-        Me.Issue_Date.Text = "Borrow Date"
-        Me.Issue_Date.Width = 100
-        '
-        'Due_Date
-        '
-        Me.Due_Date.Text = "Due Date"
-        Me.Due_Date.Width = 100
-        '
-        'ColumnHeader1
-        '
-        Me.ColumnHeader1.Text = "Daily Late Fee"
-        Me.ColumnHeader1.Width = 100
-        '
-        'ColumnHeader2
-        '
-        Me.ColumnHeader2.Text = "Owing"
-        Me.ColumnHeader2.Width = 100
+        Me.Copy_ID.Location = New System.Drawing.Point(90, 32)
+        Me.Copy_ID.Name = "Copy_ID"
+        Me.Copy_ID.Size = New System.Drawing.Size(100, 20)
+        Me.Copy_ID.TabIndex = 0
         '
         'UserControl_ReturnBook
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.Copy_ID)
+        Me.Controls.Add(Me.lblCopyID)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnReturn)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.txtFeesPaid)
-        Me.Controls.Add(Me.ListView2)
-        Me.Controls.Add(Me.ListView1)
+        Me.Controls.Add(Me.lstReturnNotes)
+        Me.Controls.Add(Me.lstItem)
         Me.Name = "UserControl_ReturnBook"
-        Me.Size = New System.Drawing.Size(808, 429)
+        Me.Size = New System.Drawing.Size(800, 423)
         CType(Me.txtFeesPaid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents ListView1 As ListView
-    Friend WithEvents ListView2 As ListView
+    Friend WithEvents lstItem As ListView
+    Friend WithEvents lstReturnNotes As ListView
     Friend WithEvents txtFeesPaid As NumericUpDown
     Friend WithEvents btnClose As Button
     Friend WithEvents btnReturn As Button
@@ -169,6 +190,8 @@ Partial Class UserControl_ReturnBook
     Friend WithEvents Book_Id As ColumnHeader
     Friend WithEvents Issue_Date As ColumnHeader
     Friend WithEvents Due_Date As ColumnHeader
-    Friend WithEvents ColumnHeader1 As ColumnHeader
-    Friend WithEvents ColumnHeader2 As ColumnHeader
+    Friend WithEvents Daily_Late_Fee As ColumnHeader
+    Friend WithEvents Owing As ColumnHeader
+    Friend WithEvents lblCopyID As Label
+    Friend WithEvents Copy_ID As TextBox
 End Class
