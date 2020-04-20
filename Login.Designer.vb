@@ -22,75 +22,96 @@ Partial Class Login
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtUsername = New System.Windows.Forms.TextBox()
-        Me.txtPassword = New System.Windows.Forms.TextBox()
-        Me.btnLogin = New System.Windows.Forms.Button()
-        Me.lblMessage = New System.Windows.Forms.Label()
-        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.Label_Username = New System.Windows.Forms.Label()
+        Me.Label_Password = New System.Windows.Forms.Label()
+        Me.TextBox_Username = New System.Windows.Forms.TextBox()
+        Me.TextBox_Passowrd = New System.Windows.Forms.TextBox()
+        Me.Button_Login = New System.Windows.Forms.Button()
+        Me.Panel_Login = New System.Windows.Forms.Panel()
+        Me.Label_Message = New System.Windows.Forms.Label()
+        Me.Panel_Login.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Label1
+        'Label_Username
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(214, 217)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(95, 18)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Username: "
+        Me.Label_Username.AutoSize = True
+        Me.Label_Username.BackColor = System.Drawing.SystemColors.Control
+        Me.Label_Username.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Username.Location = New System.Drawing.Point(6, 18)
+        Me.Label_Username.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label_Username.Name = "Label_Username"
+        Me.Label_Username.Size = New System.Drawing.Size(95, 18)
+        Me.Label_Username.TabIndex = 0
+        Me.Label_Username.Text = "Username: "
         '
-        'Label2
+        'Label_Password
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(216, 255)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(93, 18)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Password: "
+        Me.Label_Password.AutoSize = True
+        Me.Label_Password.BackColor = System.Drawing.SystemColors.Control
+        Me.Label_Password.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Password.Location = New System.Drawing.Point(8, 52)
+        Me.Label_Password.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label_Password.Name = "Label_Password"
+        Me.Label_Password.Size = New System.Drawing.Size(93, 18)
+        Me.Label_Password.TabIndex = 1
+        Me.Label_Password.Text = "Password: "
         '
-        'txtUsername
+        'TextBox_Username
         '
-        Me.txtUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsername.Location = New System.Drawing.Point(313, 217)
-        Me.txtUsername.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.Size = New System.Drawing.Size(180, 24)
-        Me.txtUsername.TabIndex = 2
+        Me.TextBox_Username.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_Username.Location = New System.Drawing.Point(111, 15)
+        Me.TextBox_Username.Margin = New System.Windows.Forms.Padding(5)
+        Me.TextBox_Username.Name = "TextBox_Username"
+        Me.TextBox_Username.Size = New System.Drawing.Size(180, 24)
+        Me.TextBox_Username.TabIndex = 2
         '
-        'txtPassword
+        'TextBox_Passowrd
         '
-        Me.txtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPassword.Location = New System.Drawing.Point(313, 252)
-        Me.txtPassword.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPassword.Size = New System.Drawing.Size(180, 24)
-        Me.txtPassword.TabIndex = 3
-        Me.txtPassword.UseSystemPasswordChar = True
+        Me.TextBox_Passowrd.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_Passowrd.Location = New System.Drawing.Point(111, 49)
+        Me.TextBox_Passowrd.Margin = New System.Windows.Forms.Padding(5)
+        Me.TextBox_Passowrd.Name = "TextBox_Passowrd"
+        Me.TextBox_Passowrd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TextBox_Passowrd.Size = New System.Drawing.Size(180, 24)
+        Me.TextBox_Passowrd.TabIndex = 3
+        Me.TextBox_Passowrd.UseSystemPasswordChar = True
         '
-        'btnLogin
+        'Button_Login
         '
-        Me.btnLogin.Location = New System.Drawing.Point(313, 286)
-        Me.btnLogin.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnLogin.Name = "btnLogin"
-        Me.btnLogin.Size = New System.Drawing.Size(94, 33)
-        Me.btnLogin.TabIndex = 4
-        Me.btnLogin.Text = "Login"
-        Me.btnLogin.UseVisualStyleBackColor = True
+        Me.Button_Login.Location = New System.Drawing.Point(111, 83)
+        Me.Button_Login.Margin = New System.Windows.Forms.Padding(5)
+        Me.Button_Login.Name = "Button_Login"
+        Me.Button_Login.Size = New System.Drawing.Size(94, 33)
+        Me.Button_Login.TabIndex = 4
+        Me.Button_Login.Text = "Login"
+        Me.Button_Login.UseVisualStyleBackColor = True
         '
-        'lblMessage
+        'Panel_Login
         '
-        Me.lblMessage.AutoSize = True
-        Me.lblMessage.Location = New System.Drawing.Point(67, 173)
-        Me.lblMessage.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lblMessage.Name = "lblMessage"
-        Me.lblMessage.Size = New System.Drawing.Size(0, 13)
-        Me.lblMessage.TabIndex = 5
+        Me.Panel_Login.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Panel_Login.BackColor = System.Drawing.Color.Transparent
+        Me.Panel_Login.Controls.Add(Me.Label_Username)
+        Me.Panel_Login.Controls.Add(Me.TextBox_Username)
+        Me.Panel_Login.Controls.Add(Me.Label_Password)
+        Me.Panel_Login.Controls.Add(Me.TextBox_Passowrd)
+        Me.Panel_Login.Controls.Add(Me.Button_Login)
+        Me.Panel_Login.Controls.Add(Me.Label_Message)
+        Me.Panel_Login.Location = New System.Drawing.Point(241, 202)
+        Me.Panel_Login.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel_Login.Name = "Panel_Login"
+        Me.Panel_Login.Padding = New System.Windows.Forms.Padding(10)
+        Me.Panel_Login.Size = New System.Drawing.Size(306, 152)
+        Me.Panel_Login.TabIndex = 6
+        '
+        'Label_Message
+        '
+        Me.Label_Message.AutoSize = True
+        Me.Label_Message.BackColor = System.Drawing.SystemColors.Control
+        Me.Label_Message.Location = New System.Drawing.Point(108, 124)
+        Me.Label_Message.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label_Message.Name = "Label_Message"
+        Me.Label_Message.Size = New System.Drawing.Size(0, 13)
+        Me.Label_Message.TabIndex = 5
         '
         'Login
         '
@@ -99,25 +120,21 @@ Partial Class Login
         Me.BackgroundImage = Global.BAIT1083_Visual_Programming.My.Resources.Resources.LibBackground
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(784, 384)
-        Me.Controls.Add(Me.lblMessage)
-        Me.Controls.Add(Me.btnLogin)
-        Me.Controls.Add(Me.txtPassword)
-        Me.Controls.Add(Me.txtUsername)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Panel_Login)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Login"
         Me.Text = "Login"
+        Me.Panel_Login.ResumeLayout(False)
+        Me.Panel_Login.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents txtUsername As TextBox
-    Friend WithEvents txtPassword As TextBox
-    Friend WithEvents btnLogin As Button
-    Friend WithEvents lblMessage As Label
-    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents Label_Username As Label
+    Friend WithEvents Label_Password As Label
+    Friend WithEvents TextBox_Username As TextBox
+    Friend WithEvents TextBox_Passowrd As TextBox
+    Friend WithEvents Button_Login As Button
+    Friend WithEvents Panel_Login As Panel
+    Friend WithEvents Label_Message As Label
 End Class

@@ -1,31 +1,21 @@
 ﻿Public Class Login
-    Dim db As New LibDBDataContext()
+    Dim database As New LibDBDataContext()
 
-    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Button_Login_Click(sender As Object, e As EventArgs) Handles Button_Login.Click
+        Dim username As String = TextBox_Username.Text
+        Dim password As String = TextBox_Passowrd.Text
 
-
-
-
-    End Sub
-
-    Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-        Dim username As String = txtUsername.Text
-        Dim password As String = txtPassword.Text
-
-
-        Dim chkUser = From a In db.AdminLibs
+        Dim chkUser = From a In database.AdminLibs
                       Where a.Name.Contains(username) And
-                              a.Password.Contains(password)
+                          a.Password.Contains(password)
 
         If chkUser.Any() Then
-            lblMessage.Text = "Successfully logged in!"
+            Label_Message.Text = "Successfully logged in!"
             Form_StonksLib.Show()
 
         Else
-            lblMessage.Text = "Invalid user name or password!"
+            Label_Message.Text = "Invalid user name or password!"
         End If
 
     End Sub
-
-
 End Class
