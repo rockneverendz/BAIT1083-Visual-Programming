@@ -30,6 +30,8 @@ Partial Class Form_StonksLib
         Me.Menu_Checkout = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_Return = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_Room = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Menu_NewRoomBooking = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Menu_ViewBookingHistory = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_Patron = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_NewPatron = New System.Windows.Forms.ToolStripMenuItem()
         Me.Menu_PatronList = New System.Windows.Forms.ToolStripMenuItem()
@@ -104,6 +106,7 @@ Partial Class Form_StonksLib
         '
         'Menu_Room
         '
+        Me.Menu_Room.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Menu_NewRoomBooking, Me.Menu_ViewBookingHistory})
         Me.Menu_Room.Image = Global.BAIT1083_Visual_Programming.My.Resources.Resources.cube_design
         Me.Menu_Room.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Menu_Room.Margin = New System.Windows.Forms.Padding(5, 1, 5, 2)
@@ -111,6 +114,18 @@ Partial Class Form_StonksLib
         Me.Menu_Room.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Menu_Room.Size = New System.Drawing.Size(69, 20)
         Me.Menu_Room.Text = "R&oom"
+        '
+        'Menu_NewRoomBooking
+        '
+        Me.Menu_NewRoomBooking.Name = "Menu_NewRoomBooking"
+        Me.Menu_NewRoomBooking.Size = New System.Drawing.Size(187, 22)
+        Me.Menu_NewRoomBooking.Text = "New Room Booking"
+        '
+        'Menu_ViewBookingHistory
+        '
+        Me.Menu_ViewBookingHistory.Name = "Menu_ViewBookingHistory"
+        Me.Menu_ViewBookingHistory.Size = New System.Drawing.Size(187, 22)
+        Me.Menu_ViewBookingHistory.Text = "View Booking History"
         '
         'Menu_Patron
         '
@@ -212,6 +227,6 @@ Partial Class Form_StonksLib
     Friend WithEvents Menu_LibrarianList As ToolStripMenuItem
     Friend WithEvents Menu_Log As ToolStripMenuItem
     Friend WithEvents Menu_Profile As ToolStripMenuItem
-	Friend WithEvents Menu_NewRoomBooking As ToolStripMenuItem
-	Friend WithEvents Menu_BookingHistory As ToolStripMenuItem
+    Friend WithEvents Menu_NewRoomBooking As ToolStripMenuItem
+    Friend WithEvents Menu_ViewBookingHistory As ToolStripMenuItem
 End Class

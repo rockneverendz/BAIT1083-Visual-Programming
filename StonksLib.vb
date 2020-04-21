@@ -10,7 +10,12 @@
     End Sub
 
     'TODO: Add instance into each class so we don't have to construct them everytime.
-    Private Sub ToolStrip_Button_Click(sender As Object, e As EventArgs) Handles Menu_BookList.Click, Menu_Checkout.Click, Menu_Return.Click, Menu_Room.Click, Menu_PatronList.Click
+    Private Sub ToolStrip_Button_Click(sender As Object, e As EventArgs) Handles _
+        Menu_BookList.Click,
+        Menu_Checkout.Click,
+        Menu_Return.Click,
+        Menu_ViewBookingHistory.Click, Menu_NewRoomBooking.Click,
+        Menu_PatronList.Click
 
         Dim UserControls() As UserControl
 
@@ -38,9 +43,15 @@
         ElseIf (sender.Equals(Menu_Room)) Then
             UserControls = {New BAIT1083_Visual_Programming.UserControl_RoomBooking()}
 
+        ElseIf (sender.Equals(Menu_NewRoomBooking)) Then
+            UserControls = {New BAIT1083_Visual_Programming.UserControl_RoomBooking()}
+
+        ElseIf (sender.Equals(Menu_ViewBookingHistory)) Then
+            UserControls = {New BAIT1083_Visual_Programming.UserControl_RBookingHistory()}
+
         ElseIf (sender.Equals(Menu_PatronList)) Then
             UserControls = {New BAIT1083_Visual_Programming.UserControl_PatronList()}
-            
+
         Else
             'User should not reach here'
             UserControls = {New UserControl()}
