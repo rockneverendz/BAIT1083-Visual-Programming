@@ -6,7 +6,9 @@
 			Try
 				Dim patronID As Integer = Integer.Parse(txtPatronID.Text)
 
-				Dim patron As Patron = db.Patrons.FirstOrDefault(Function(e) e.Patron_ID.Equals(patronID))
+				Dim patron As Patron = db.Patrons.FirstOrDefault(
+					Function(e) e.Patron_ID.Equals(patronID)
+				)
 
 				If IsNothing(patron) Then
 					lblName.Text = ""
@@ -22,6 +24,7 @@
 	End Sub
 
 	Private Sub SearchRoomByDate(searchDate As Date)
+		lstAvailabilityChart.Items.Clear()
 		Using db As New LibDBDataContext()
 
 			'Dim counter As Integer = 0
@@ -72,7 +75,13 @@
 		Using db As New LibDBDataContext()
 			Try
 				'To get the roombooking that is match with the selected date
-				Dim roombooked As RoomBooking = db.RoomBookings.First(Function(o) o.Room_ID = room.Room_Id And o.Date_Time.Day = searchDate.Day And o.Date_Time.Month = searchDate.Month And o.Date_Time.Year = searchDate.Year And o.CheckIn_Date.Equals(time))
+				Dim roombooked As RoomBooking = db.RoomBookings.First(
+						Function(o) o.Room_ID = room.Room_Id And
+						o.Date_Time.Day = searchDate.Day And
+						o.Date_Time.Month = searchDate.Month And
+						o.Date_Time.Year = searchDate.Year And
+						o.CheckIn_Date.Equals(time)
+					)
 
 				GetRoomBooking = roombooked
 			Catch ex As Exception
@@ -83,6 +92,8 @@
 
 	Private Sub UserControl_RoomBooking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 		SearchRoomByDate(Today)
+		dtpAddDate.MinDate = Today
+
 	End Sub
 
 	Private Sub btnSearchStudent_Click(sender As Object, e As EventArgs) Handles btnSearchStudent.Click
@@ -90,23 +101,12 @@
 	End Sub
 
 	Private Sub dtpSearch_ValueChanged(sender As Object, e As EventArgs) Handles dtpSearch.ValueChanged
-		lstAvailabilityChart.Items.Clear()
 		SearchRoomByDate(dtpSearch.Value)
+
 	End Sub
 
 	Private Sub cmbStartTime_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbStartTime.SelectedIndexChanged
-
-		'Time array index over thus i made this thing...
-		If cmbStartTime.SelectedItem.ToString.Equals("6:00 PM") Then
-			txtEndTime.Text = "8:00 PM"
-		ElseIf cmbStartTime.SelectedItem.ToString.Equals("7:00 PM") Then
-			txtEndTime.Text = "9:00 PM"
-		Else
-			txtEndTime.Text = time(cmbStartTime.SelectedIndex + 2)
-		End If
-
-
-
+		txtEndTime.Text = time(cmbStartTime.SelectedIndex + 2)
 	End Sub
 
 	Private Sub lstAvailabilityChart_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstAvailabilityChart.SelectedIndexChanged
@@ -115,7 +115,9 @@
 				'When the room is selected in availability chart 
 				'display Room id And room size to textbox
 				Dim selectedRoomID As String = lstAvailabilityChart.Items(lstAvailabilityChart.FocusedItem.Index).SubItems(0).Text.Substring(1, 4)
-				Dim selectedRoom As Room = db.Rooms.FirstOrDefault(Function(r) r.Room_Id.Equals(selectedRoomID))
+				Dim selectedRoom As Room = db.Rooms.FirstOrDefault(
+						Function(r) r.Room_Id.Equals(selectedRoomID)
+					)
 
 				txtRmID.Text = "R" & selectedRoom.Room_Id
 				txtPax.Text = selectedRoom.Size
@@ -146,11 +148,13 @@
 				db.RoomBookings.InsertOnSubmit(rb)
 				db.SubmitChanges()
 
+				SearchRoomByDate(dateValue)
+
 				MessageBox.Show("The room booking details has been successfully added!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
 			Catch ex As Exception
 				Console.WriteLine(ex.Message)
-				db.SubmitChanges()
+				MessageBox.Show("Some error has occur due to invalid input or the student has been registered the room booking detail duplicate is not allowed", "An Error has occur!", MessageBoxButtons.OK, MessageBoxIcon.Error)
 			End Try
 
 		End Using

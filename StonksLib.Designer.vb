@@ -212,4 +212,6 @@ Partial Class Form_StonksLib
     Friend WithEvents Menu_LibrarianList As ToolStripMenuItem
     Friend WithEvents Menu_Log As ToolStripMenuItem
     Friend WithEvents Menu_Profile As ToolStripMenuItem
+	Friend WithEvents Menu_NewRoomBooking As ToolStripMenuItem
+	Friend WithEvents Menu_BookingHistory As ToolStripMenuItem
 End Class
