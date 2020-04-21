@@ -101,6 +101,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LibDB.dbml</DependentUpon>
     </Compile>
+    <Compile Include="User Controls\UserControl_BookDetails.Designer.vb">
+      <DependentUpon>UserControl_BookDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UserControl_BookDetails.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
@@ -129,6 +135,12 @@
     <Compile Include="StonksLib.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="User Controls\UserControl_PatronList.Designer.vb">
+      <DependentUpon>UserControl_PatronList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UserControl_PatronList.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="User Controls\UserControl_BookList.Designer.vb">
       <DependentUpon>UserControl_BookList.vb</DependentUpon>
     </Compile>
@@ -151,6 +163,10 @@
       <DependentUpon>UserControl_RBookingHistory.vb</DependentUpon>
     </Compile>
     <Compile Include="User Controls\UserControl_RBookingHistory.vb">
+    <Compile Include="User Controls\UserControl_ReturnBook.Designer.vb">
+      <DependentUpon>UserControl_ReturnBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UserControl_ReturnBook.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="User Controls\UserControl_RoomBooking.Designer.vb">
@@ -161,6 +177,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="User Controls\UserControl_BookDetails.resx">
+      <DependentUpon>UserControl_BookDetails.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +192,9 @@
     <EmbeddedResource Include="StonksLib.resx">
       <DependentUpon>StonksLib.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UserControl_PatronList.resx">
+      <DependentUpon>UserControl_PatronList.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Controls\UserControl_BookList.resx">
       <DependentUpon>UserControl_BookList.vb</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +206,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\UserControl_RBookingHistory.resx">
       <DependentUpon>UserControl_RBookingHistory.vb</DependentUpon>
+    <EmbeddedResource Include="User Controls\UserControl_ReturnBook.resx">
+      <DependentUpon>UserControl_ReturnBook.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\UserControl_RoomBooking.resx">
       <DependentUpon>UserControl_RoomBooking.vb</DependentUpon>
@@ -820,6 +844,12 @@
     <Content Include="Data\LibDB_log.ldf">
       <DependentUpon>LibDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\LibBackground.jpg" />
+    <None Include="Resources\imageedit_4_7602996586.png" />
+    <None Include="Resources\circle-cropped.png" />
+    <None Include="Resources\background2.jpg" />
+    <None Include="Resources\Background.jpg" />
+    <None Include="Resources\STONKS.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

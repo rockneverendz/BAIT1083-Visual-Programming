@@ -23,7 +23,7 @@ Partial Class UserControl_BookList
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.SplitContainer_BookList = New System.Windows.Forms.SplitContainer()
-        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.ListView_Book = New System.Windows.Forms.ListView()
         Me.ID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Title = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Author = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -32,9 +32,6 @@ Partial Class UserControl_BookList
         Me.Year_Publish = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Copies = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Call_no = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ISBN = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.TextBox_ISBN = New System.Windows.Forms.TextBox()
-        Me.Label_ISBN = New System.Windows.Forms.Label()
         Me.TextBox_CallNo = New System.Windows.Forms.TextBox()
         Me.Label_CallNo = New System.Windows.Forms.Label()
         Me.TextBox_Copies = New System.Windows.Forms.TextBox()
@@ -52,8 +49,7 @@ Partial Class UserControl_BookList
         Me.TextBox_ID = New System.Windows.Forms.TextBox()
         Me.Label_ID = New System.Windows.Forms.Label()
         Me.MenuStrip_Footer = New System.Windows.Forms.MenuStrip()
-        Me.Footer_BookDetails = New System.Windows.Forms.ToolStripButton()
-        Me.Footer_ProgressBar = New System.Windows.Forms.ToolStripProgressBar()
+        Me.Footer_BookList = New System.Windows.Forms.ToolStripButton()
         Me.Footer_Status = New System.Windows.Forms.ToolStripLabel()
         CType(Me.SplitContainer_BookList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer_BookList.Panel1.SuspendLayout()
@@ -72,44 +68,46 @@ Partial Class UserControl_BookList
         '
         'SplitContainer_BookList.Panel1
         '
-        Me.SplitContainer_BookList.Panel1.Controls.Add(Me.ListView1)
+        Me.SplitContainer_BookList.Panel1.Controls.Add(Me.ListView_Book)
         '
         'SplitContainer_BookList.Panel2
         '
-        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.TextBox_ISBN)
-        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.Label_ISBN)
-        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.TextBox_CallNo)
-        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.Label_CallNo)
-        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.TextBox_Copies)
-        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.Label_Copies)
-        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.TextBox_YearPublish)
-        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.Label_YearPublish)
-        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.TextBox_Publication)
-        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.Label_Publication)
-        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.TextBox_Category)
-        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.Label_Category)
-        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.TextBox_Author)
-        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.Label_Author)
-        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.TextBox_Title)
-        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.Label_Title)
-        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.TextBox_ID)
         Me.SplitContainer_BookList.Panel2.Controls.Add(Me.Label_ID)
+        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.TextBox_ID)
+        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.Label_Title)
+        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.TextBox_Title)
+        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.Label_Author)
+        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.TextBox_Author)
+        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.Label_Category)
+        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.TextBox_Category)
+        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.Label_Publication)
+        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.TextBox_Publication)
+        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.Label_YearPublish)
+        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.TextBox_YearPublish)
+        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.Label_Copies)
+        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.TextBox_Copies)
+        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.Label_CallNo)
+        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.TextBox_CallNo)
+        Me.SplitContainer_BookList.Panel2.Padding = New System.Windows.Forms.Padding(10)
         Me.SplitContainer_BookList.Panel2MinSize = 200
         Me.SplitContainer_BookList.Size = New System.Drawing.Size(816, 462)
         Me.SplitContainer_BookList.SplitterDistance = 612
         Me.SplitContainer_BookList.TabIndex = 3
         '
-        'ListView1
+        'ListView_Book
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ID, Me.Title, Me.Author, Me.Category, Me.Publication, Me.Year_Publish, Me.Copies, Me.Call_no, Me.ISBN})
-        Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(0, 0)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(612, 462)
-        Me.ListView1.TabIndex = 3
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        Me.ListView1.View = System.Windows.Forms.View.Details
+        Me.ListView_Book.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ID, Me.Title, Me.Author, Me.Category, Me.Publication, Me.Year_Publish, Me.Copies, Me.Call_no})
+        Me.ListView_Book.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ListView_Book.FullRowSelect = True
+        Me.ListView_Book.GridLines = True
+        Me.ListView_Book.HideSelection = False
+        Me.ListView_Book.Location = New System.Drawing.Point(0, 0)
+        Me.ListView_Book.MultiSelect = False
+        Me.ListView_Book.Name = "ListView_Book"
+        Me.ListView_Book.Size = New System.Drawing.Size(612, 462)
+        Me.ListView_Book.TabIndex = 3
+        Me.ListView_Book.UseCompatibleStateImageBehavior = False
+        Me.ListView_Book.View = System.Windows.Forms.View.Details
         '
         'ID
         '
@@ -149,32 +147,10 @@ Partial Class UserControl_BookList
         Me.Call_no.Text = "Call number"
         Me.Call_no.Width = 90
         '
-        'ISBN
-        '
-        Me.ISBN.Text = "ISBN"
-        Me.ISBN.Width = 120
-        '
-        'TextBox_ISBN
-        '
-        Me.TextBox_ISBN.Enabled = False
-        Me.TextBox_ISBN.Location = New System.Drawing.Point(87, 214)
-        Me.TextBox_ISBN.Name = "TextBox_ISBN"
-        Me.TextBox_ISBN.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_ISBN.TabIndex = 17
-        '
-        'Label_ISBN
-        '
-        Me.Label_ISBN.AutoSize = True
-        Me.Label_ISBN.Location = New System.Drawing.Point(42, 217)
-        Me.Label_ISBN.Name = "Label_ISBN"
-        Me.Label_ISBN.Size = New System.Drawing.Size(32, 13)
-        Me.Label_ISBN.TabIndex = 16
-        Me.Label_ISBN.Text = "ISBN"
-        '
         'TextBox_CallNo
         '
-        Me.TextBox_CallNo.Enabled = False
-        Me.TextBox_CallNo.Location = New System.Drawing.Point(87, 188)
+        Me.TextBox_CallNo.Location = New System.Drawing.Point(85, 225)
+        Me.TextBox_CallNo.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_CallNo.Name = "TextBox_CallNo"
         Me.TextBox_CallNo.Size = New System.Drawing.Size(100, 20)
         Me.TextBox_CallNo.TabIndex = 15
@@ -182,7 +158,8 @@ Partial Class UserControl_BookList
         'Label_CallNo
         '
         Me.Label_CallNo.AutoSize = True
-        Me.Label_CallNo.Location = New System.Drawing.Point(32, 191)
+        Me.Label_CallNo.Location = New System.Drawing.Point(33, 228)
+        Me.Label_CallNo.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_CallNo.Name = "Label_CallNo"
         Me.Label_CallNo.Size = New System.Drawing.Size(42, 13)
         Me.Label_CallNo.TabIndex = 14
@@ -190,8 +167,8 @@ Partial Class UserControl_BookList
         '
         'TextBox_Copies
         '
-        Me.TextBox_Copies.Enabled = False
-        Me.TextBox_Copies.Location = New System.Drawing.Point(87, 162)
+        Me.TextBox_Copies.Location = New System.Drawing.Point(85, 195)
+        Me.TextBox_Copies.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_Copies.Name = "TextBox_Copies"
         Me.TextBox_Copies.Size = New System.Drawing.Size(100, 20)
         Me.TextBox_Copies.TabIndex = 13
@@ -199,7 +176,8 @@ Partial Class UserControl_BookList
         'Label_Copies
         '
         Me.Label_Copies.AutoSize = True
-        Me.Label_Copies.Location = New System.Drawing.Point(35, 165)
+        Me.Label_Copies.Location = New System.Drawing.Point(36, 198)
+        Me.Label_Copies.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_Copies.Name = "Label_Copies"
         Me.Label_Copies.Size = New System.Drawing.Size(39, 13)
         Me.Label_Copies.TabIndex = 12
@@ -207,7 +185,8 @@ Partial Class UserControl_BookList
         '
         'TextBox_YearPublish
         '
-        Me.TextBox_YearPublish.Location = New System.Drawing.Point(87, 136)
+        Me.TextBox_YearPublish.Location = New System.Drawing.Point(85, 165)
+        Me.TextBox_YearPublish.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_YearPublish.Name = "TextBox_YearPublish"
         Me.TextBox_YearPublish.Size = New System.Drawing.Size(100, 20)
         Me.TextBox_YearPublish.TabIndex = 11
@@ -215,7 +194,8 @@ Partial Class UserControl_BookList
         'Label_YearPublish
         '
         Me.Label_YearPublish.AutoSize = True
-        Me.Label_YearPublish.Location = New System.Drawing.Point(8, 139)
+        Me.Label_YearPublish.Location = New System.Drawing.Point(9, 168)
+        Me.Label_YearPublish.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_YearPublish.Name = "Label_YearPublish"
         Me.Label_YearPublish.Size = New System.Drawing.Size(66, 13)
         Me.Label_YearPublish.TabIndex = 10
@@ -223,7 +203,8 @@ Partial Class UserControl_BookList
         '
         'TextBox_Publication
         '
-        Me.TextBox_Publication.Location = New System.Drawing.Point(87, 110)
+        Me.TextBox_Publication.Location = New System.Drawing.Point(85, 135)
+        Me.TextBox_Publication.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_Publication.Name = "TextBox_Publication"
         Me.TextBox_Publication.Size = New System.Drawing.Size(100, 20)
         Me.TextBox_Publication.TabIndex = 9
@@ -231,7 +212,8 @@ Partial Class UserControl_BookList
         'Label_Publication
         '
         Me.Label_Publication.AutoSize = True
-        Me.Label_Publication.Location = New System.Drawing.Point(15, 113)
+        Me.Label_Publication.Location = New System.Drawing.Point(16, 138)
+        Me.Label_Publication.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_Publication.Name = "Label_Publication"
         Me.Label_Publication.Size = New System.Drawing.Size(59, 13)
         Me.Label_Publication.TabIndex = 8
@@ -239,7 +221,8 @@ Partial Class UserControl_BookList
         '
         'TextBox_Category
         '
-        Me.TextBox_Category.Location = New System.Drawing.Point(87, 84)
+        Me.TextBox_Category.Location = New System.Drawing.Point(85, 105)
+        Me.TextBox_Category.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_Category.Name = "TextBox_Category"
         Me.TextBox_Category.Size = New System.Drawing.Size(100, 20)
         Me.TextBox_Category.TabIndex = 7
@@ -247,7 +230,8 @@ Partial Class UserControl_BookList
         'Label_Category
         '
         Me.Label_Category.AutoSize = True
-        Me.Label_Category.Location = New System.Drawing.Point(25, 87)
+        Me.Label_Category.Location = New System.Drawing.Point(26, 108)
+        Me.Label_Category.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_Category.Name = "Label_Category"
         Me.Label_Category.Size = New System.Drawing.Size(49, 13)
         Me.Label_Category.TabIndex = 6
@@ -255,7 +239,8 @@ Partial Class UserControl_BookList
         '
         'TextBox_Author
         '
-        Me.TextBox_Author.Location = New System.Drawing.Point(87, 58)
+        Me.TextBox_Author.Location = New System.Drawing.Point(85, 75)
+        Me.TextBox_Author.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_Author.Name = "TextBox_Author"
         Me.TextBox_Author.Size = New System.Drawing.Size(100, 20)
         Me.TextBox_Author.TabIndex = 5
@@ -263,7 +248,8 @@ Partial Class UserControl_BookList
         'Label_Author
         '
         Me.Label_Author.AutoSize = True
-        Me.Label_Author.Location = New System.Drawing.Point(36, 61)
+        Me.Label_Author.Location = New System.Drawing.Point(37, 78)
+        Me.Label_Author.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_Author.Name = "Label_Author"
         Me.Label_Author.Size = New System.Drawing.Size(38, 13)
         Me.Label_Author.TabIndex = 4
@@ -271,7 +257,8 @@ Partial Class UserControl_BookList
         '
         'TextBox_Title
         '
-        Me.TextBox_Title.Location = New System.Drawing.Point(87, 32)
+        Me.TextBox_Title.Location = New System.Drawing.Point(85, 45)
+        Me.TextBox_Title.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_Title.Name = "TextBox_Title"
         Me.TextBox_Title.Size = New System.Drawing.Size(100, 20)
         Me.TextBox_Title.TabIndex = 3
@@ -279,7 +266,8 @@ Partial Class UserControl_BookList
         'Label_Title
         '
         Me.Label_Title.AutoSize = True
-        Me.Label_Title.Location = New System.Drawing.Point(47, 35)
+        Me.Label_Title.Location = New System.Drawing.Point(48, 48)
+        Me.Label_Title.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_Title.Name = "Label_Title"
         Me.Label_Title.Size = New System.Drawing.Size(27, 13)
         Me.Label_Title.TabIndex = 2
@@ -287,8 +275,8 @@ Partial Class UserControl_BookList
         '
         'TextBox_ID
         '
-        Me.TextBox_ID.Enabled = False
-        Me.TextBox_ID.Location = New System.Drawing.Point(87, 6)
+        Me.TextBox_ID.Location = New System.Drawing.Point(85, 15)
+        Me.TextBox_ID.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_ID.Name = "TextBox_ID"
         Me.TextBox_ID.Size = New System.Drawing.Size(100, 20)
         Me.TextBox_ID.TabIndex = 1
@@ -296,7 +284,8 @@ Partial Class UserControl_BookList
         'Label_ID
         '
         Me.Label_ID.AutoSize = True
-        Me.Label_ID.Location = New System.Drawing.Point(56, 9)
+        Me.Label_ID.Location = New System.Drawing.Point(57, 18)
+        Me.Label_ID.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_ID.Name = "Label_ID"
         Me.Label_ID.Size = New System.Drawing.Size(18, 13)
         Me.Label_ID.TabIndex = 0
@@ -305,46 +294,38 @@ Partial Class UserControl_BookList
         'MenuStrip_Footer
         '
         Me.MenuStrip_Footer.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.MenuStrip_Footer.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Footer_BookDetails, Me.Footer_ProgressBar, Me.Footer_Status})
+        Me.MenuStrip_Footer.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Footer_BookList, Me.Footer_Status})
         Me.MenuStrip_Footer.Location = New System.Drawing.Point(0, 462)
         Me.MenuStrip_Footer.Name = "MenuStrip_Footer"
         Me.MenuStrip_Footer.Size = New System.Drawing.Size(816, 27)
         Me.MenuStrip_Footer.TabIndex = 5
         Me.MenuStrip_Footer.Text = "MenuStrip1"
         '
-        'Footer_BookDetails
+        'Footer_BookList
         '
-        Me.Footer_BookDetails.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.Footer_BookDetails.AutoToolTip = False
-        Me.Footer_BookDetails.Image = Global.BAIT1083_Visual_Programming.My.Resources.Resources.baseline_keyboard_arrow_right_black_18dp
-        Me.Footer_BookDetails.Margin = New System.Windows.Forms.Padding(5, 1, 5, 2)
-        Me.Footer_BookDetails.Name = "Footer_BookDetails"
-        Me.Footer_BookDetails.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Footer_BookDetails.Size = New System.Drawing.Size(102, 20)
-        Me.Footer_BookDetails.Text = "Book Details"
-        Me.Footer_BookDetails.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        '
-        'Footer_ProgressBar
-        '
-        Me.Footer_ProgressBar.AutoSize = False
-        Me.Footer_ProgressBar.Name = "Footer_ProgressBar"
-        Me.Footer_ProgressBar.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
-        Me.Footer_ProgressBar.Size = New System.Drawing.Size(100, 15)
+        Me.Footer_BookList.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.Footer_BookList.AutoToolTip = False
+        Me.Footer_BookList.Image = Global.BAIT1083_Visual_Programming.My.Resources.Resources.baseline_keyboard_arrow_right_black_18dp
+        Me.Footer_BookList.Margin = New System.Windows.Forms.Padding(5, 1, 5, 2)
+        Me.Footer_BookList.Name = "Footer_BookList"
+        Me.Footer_BookList.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.Footer_BookList.Size = New System.Drawing.Size(72, 20)
+        Me.Footer_BookList.Text = "Search"
+        Me.Footer_BookList.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         '
         'Footer_Status
         '
         Me.Footer_Status.Name = "Footer_Status"
-        Me.Footer_Status.Size = New System.Drawing.Size(39, 20)
-        Me.Footer_Status.Text = "Status"
+        Me.Footer_Status.Size = New System.Drawing.Size(0, 20)
         '
-        'BookList
+        'UserControl_BookList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.Controls.Add(Me.SplitContainer_BookList)
         Me.Controls.Add(Me.MenuStrip_Footer)
-        Me.Name = "BookList"
+        Me.Name = "UserControl_BookList"
         Me.Size = New System.Drawing.Size(816, 489)
         Me.SplitContainer_BookList.Panel1.ResumeLayout(False)
         Me.SplitContainer_BookList.Panel2.ResumeLayout(False)
@@ -359,7 +340,7 @@ Partial Class UserControl_BookList
     End Sub
 
     Friend WithEvents SplitContainer_BookList As SplitContainer
-    Friend WithEvents ListView1 As ListView
+    Friend WithEvents ListView_Book As ListView
     Friend WithEvents ID As ColumnHeader
     Friend WithEvents Title As ColumnHeader
     Friend WithEvents Author As ColumnHeader
@@ -368,9 +349,6 @@ Partial Class UserControl_BookList
     Friend WithEvents Year_Publish As ColumnHeader
     Friend WithEvents Copies As ColumnHeader
     Friend WithEvents Call_no As ColumnHeader
-    Friend WithEvents ISBN As ColumnHeader
-    Friend WithEvents TextBox_ISBN As TextBox
-    Friend WithEvents Label_ISBN As Label
     Friend WithEvents TextBox_CallNo As TextBox
     Friend WithEvents Label_CallNo As Label
     Friend WithEvents TextBox_Copies As TextBox
@@ -388,7 +366,6 @@ Partial Class UserControl_BookList
     Friend WithEvents TextBox_ID As TextBox
     Friend WithEvents Label_ID As Label
     Friend WithEvents MenuStrip_Footer As MenuStrip
-    Friend WithEvents Footer_BookDetails As ToolStripButton
-    Friend WithEvents Footer_ProgressBar As ToolStripProgressBar
+    Friend WithEvents Footer_BookList As ToolStripButton
     Friend WithEvents Footer_Status As ToolStripLabel
 End Class
