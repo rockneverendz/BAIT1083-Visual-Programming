@@ -11,7 +11,7 @@
 
     'TODO: Add instance into each class so we don't have to construct them everytime.
     Private Sub ToolStrip_Button_Click(sender As Object, e As EventArgs) Handles _
-        Menu_BookList.Click,
+        Menu_NewBook.Click, Menu_BookList.Click,
         Menu_Checkout.Click,
         Menu_Return.Click,
         Menu_NewRoomBooking.Click, Menu_ViewBookingHistory.Click,
@@ -19,18 +19,19 @@
 
         Dim UserControls() As UserControl
 
-        If (sender.Equals(Menu_BookList)) Then
+        If (sender.Equals(Menu_NewBook)) Then
+            UserControls = {New BAIT1083_Visual_Programming.UserControl_NewBook()}
+
+        ElseIf (sender.Equals(Menu_BookList)) Then
 
             ' BookList is the first control
             ' BookDetails is be second control which requires parameters from BookList
             Dim bookList As UserControl_BookList = New BAIT1083_Visual_Programming.UserControl_BookList()
             Dim bookDetails As UserControl_BookDetails = New BAIT1083_Visual_Programming.UserControl_BookDetails()
-            ' Dim bookReturn As UserControl_ReturnBook = New BAIT1083_Visual_Programming.UserControl_ReturnBook()'
             ' BookList needs a reference to BookDetails to pass down value.
             ' Both need reference to each other to show and hide each other.
             bookList.BookDetails() = bookDetails
             bookDetails.BookList() = bookList
-            ' bookDetails.BookList() = bookList'
 
             UserControls = {bookList, bookDetails}
 
