@@ -18,4 +18,11 @@
         End If
 
     End Sub
+
+    Private Sub TextBox_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox_Username.KeyDown, TextBox_Passowrd.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Button_Login_Click(Button_Login, EventArgs.Empty)
+        End If
+    End Sub
+
 End Class
