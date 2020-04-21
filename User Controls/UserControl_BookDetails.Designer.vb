@@ -29,14 +29,11 @@ Partial Class UserControl_BookDetails
         Me.Label_Title = New System.Windows.Forms.Label()
         Me.Label_CallNo = New System.Windows.Forms.Label()
         Me.TextBox_Title = New System.Windows.Forms.TextBox()
-        Me.TextBox_Copies = New System.Windows.Forms.TextBox()
         Me.Label_Author = New System.Windows.Forms.Label()
         Me.Label_Copies = New System.Windows.Forms.Label()
         Me.TextBox_Author = New System.Windows.Forms.TextBox()
-        Me.TextBox_YearPublish = New System.Windows.Forms.TextBox()
         Me.Label_Category = New System.Windows.Forms.Label()
         Me.Label_YearPublish = New System.Windows.Forms.Label()
-        Me.TextBox_Category = New System.Windows.Forms.TextBox()
         Me.TextBox_Publication = New System.Windows.Forms.TextBox()
         Me.Label_Publication = New System.Windows.Forms.Label()
         Me.SplitContainer_Checkout = New System.Windows.Forms.SplitContainer()
@@ -56,6 +53,11 @@ Partial Class UserControl_BookDetails
         Me.History_Chk_ID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.History_Issue_Date = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.History_Due_Date = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.NumericUpDown_Copies = New System.Windows.Forms.NumericUpDown()
+        Me.NumericUpDown_YearPublish = New System.Windows.Forms.NumericUpDown()
+        Me.ComboBox_Category = New System.Windows.Forms.ComboBox()
+        Me.Copies_Chkout_ID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Copies_Due_Date = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         CType(Me.SplitContainer_Checkout, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer_Checkout.Panel1.SuspendLayout()
         Me.SplitContainer_Checkout.Panel2.SuspendLayout()
@@ -63,6 +65,8 @@ Partial Class UserControl_BookDetails
         Me.TableLayoutPanel_CheckoutDetails.SuspendLayout()
         Me.Panel_Copies.SuspendLayout()
         Me.Panel_History.SuspendLayout()
+        CType(Me.NumericUpDown_Copies, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown_YearPublish, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label_ID
@@ -71,7 +75,7 @@ Partial Class UserControl_BookDetails
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label_ID.AutoSize = True
-        Me.Label_ID.Location = New System.Drawing.Point(99, 18)
+        Me.Label_ID.Location = New System.Drawing.Point(63, 18)
         Me.Label_ID.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_ID.Name = "Label_ID"
         Me.Label_ID.Size = New System.Drawing.Size(18, 13)
@@ -94,11 +98,11 @@ Partial Class UserControl_BookDetails
         Me.TextBox_ID.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox_ID.Location = New System.Drawing.Point(127, 15)
+        Me.TextBox_ID.Location = New System.Drawing.Point(91, 15)
         Me.TextBox_ID.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_ID.Name = "TextBox_ID"
         Me.TextBox_ID.ReadOnly = True
-        Me.TextBox_ID.Size = New System.Drawing.Size(130, 20)
+        Me.TextBox_ID.Size = New System.Drawing.Size(166, 20)
         Me.TextBox_ID.TabIndex = 34
         '
         'TextBox_CallNo
@@ -106,10 +110,10 @@ Partial Class UserControl_BookDetails
         Me.TextBox_CallNo.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox_CallNo.Location = New System.Drawing.Point(127, 225)
+        Me.TextBox_CallNo.Location = New System.Drawing.Point(91, 225)
         Me.TextBox_CallNo.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_CallNo.Name = "TextBox_CallNo"
-        Me.TextBox_CallNo.Size = New System.Drawing.Size(130, 20)
+        Me.TextBox_CallNo.Size = New System.Drawing.Size(166, 20)
         Me.TextBox_CallNo.TabIndex = 48
         '
         'Label_Title
@@ -118,7 +122,7 @@ Partial Class UserControl_BookDetails
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label_Title.AutoSize = True
-        Me.Label_Title.Location = New System.Drawing.Point(90, 48)
+        Me.Label_Title.Location = New System.Drawing.Point(54, 48)
         Me.Label_Title.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_Title.Name = "Label_Title"
         Me.Label_Title.Size = New System.Drawing.Size(27, 13)
@@ -131,7 +135,7 @@ Partial Class UserControl_BookDetails
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label_CallNo.AutoSize = True
-        Me.Label_CallNo.Location = New System.Drawing.Point(75, 228)
+        Me.Label_CallNo.Location = New System.Drawing.Point(39, 228)
         Me.Label_CallNo.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_CallNo.Name = "Label_CallNo"
         Me.Label_CallNo.Size = New System.Drawing.Size(42, 13)
@@ -143,23 +147,11 @@ Partial Class UserControl_BookDetails
         Me.TextBox_Title.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox_Title.Location = New System.Drawing.Point(127, 45)
+        Me.TextBox_Title.Location = New System.Drawing.Point(91, 45)
         Me.TextBox_Title.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_Title.Name = "TextBox_Title"
-        Me.TextBox_Title.Size = New System.Drawing.Size(130, 20)
+        Me.TextBox_Title.Size = New System.Drawing.Size(166, 20)
         Me.TextBox_Title.TabIndex = 36
-        '
-        'TextBox_Copies
-        '
-        Me.TextBox_Copies.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox_Copies.Location = New System.Drawing.Point(127, 195)
-        Me.TextBox_Copies.Margin = New System.Windows.Forms.Padding(5)
-        Me.TextBox_Copies.Name = "TextBox_Copies"
-        Me.TextBox_Copies.ReadOnly = True
-        Me.TextBox_Copies.Size = New System.Drawing.Size(130, 20)
-        Me.TextBox_Copies.TabIndex = 46
         '
         'Label_Author
         '
@@ -167,7 +159,7 @@ Partial Class UserControl_BookDetails
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label_Author.AutoSize = True
-        Me.Label_Author.Location = New System.Drawing.Point(79, 78)
+        Me.Label_Author.Location = New System.Drawing.Point(43, 78)
         Me.Label_Author.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_Author.Name = "Label_Author"
         Me.Label_Author.Size = New System.Drawing.Size(38, 13)
@@ -180,7 +172,7 @@ Partial Class UserControl_BookDetails
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label_Copies.AutoSize = True
-        Me.Label_Copies.Location = New System.Drawing.Point(78, 198)
+        Me.Label_Copies.Location = New System.Drawing.Point(42, 197)
         Me.Label_Copies.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_Copies.Name = "Label_Copies"
         Me.Label_Copies.Size = New System.Drawing.Size(39, 13)
@@ -192,22 +184,11 @@ Partial Class UserControl_BookDetails
         Me.TextBox_Author.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox_Author.Location = New System.Drawing.Point(127, 75)
+        Me.TextBox_Author.Location = New System.Drawing.Point(91, 75)
         Me.TextBox_Author.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_Author.Name = "TextBox_Author"
-        Me.TextBox_Author.Size = New System.Drawing.Size(130, 20)
+        Me.TextBox_Author.Size = New System.Drawing.Size(166, 20)
         Me.TextBox_Author.TabIndex = 38
-        '
-        'TextBox_YearPublish
-        '
-        Me.TextBox_YearPublish.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox_YearPublish.Location = New System.Drawing.Point(127, 165)
-        Me.TextBox_YearPublish.Margin = New System.Windows.Forms.Padding(5)
-        Me.TextBox_YearPublish.Name = "TextBox_YearPublish"
-        Me.TextBox_YearPublish.Size = New System.Drawing.Size(130, 20)
-        Me.TextBox_YearPublish.TabIndex = 44
         '
         'Label_Category
         '
@@ -215,7 +196,7 @@ Partial Class UserControl_BookDetails
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label_Category.AutoSize = True
-        Me.Label_Category.Location = New System.Drawing.Point(68, 108)
+        Me.Label_Category.Location = New System.Drawing.Point(32, 108)
         Me.Label_Category.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_Category.Name = "Label_Category"
         Me.Label_Category.Size = New System.Drawing.Size(49, 13)
@@ -228,33 +209,22 @@ Partial Class UserControl_BookDetails
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label_YearPublish.AutoSize = True
-        Me.Label_YearPublish.Location = New System.Drawing.Point(51, 168)
+        Me.Label_YearPublish.Location = New System.Drawing.Point(15, 167)
         Me.Label_YearPublish.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_YearPublish.Name = "Label_YearPublish"
         Me.Label_YearPublish.Size = New System.Drawing.Size(66, 13)
         Me.Label_YearPublish.TabIndex = 43
         Me.Label_YearPublish.Text = "Year Publish"
         '
-        'TextBox_Category
-        '
-        Me.TextBox_Category.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox_Category.Location = New System.Drawing.Point(127, 105)
-        Me.TextBox_Category.Margin = New System.Windows.Forms.Padding(5)
-        Me.TextBox_Category.Name = "TextBox_Category"
-        Me.TextBox_Category.Size = New System.Drawing.Size(130, 20)
-        Me.TextBox_Category.TabIndex = 40
-        '
         'TextBox_Publication
         '
         Me.TextBox_Publication.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox_Publication.Location = New System.Drawing.Point(127, 135)
+        Me.TextBox_Publication.Location = New System.Drawing.Point(91, 135)
         Me.TextBox_Publication.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_Publication.Name = "TextBox_Publication"
-        Me.TextBox_Publication.Size = New System.Drawing.Size(130, 20)
+        Me.TextBox_Publication.Size = New System.Drawing.Size(166, 20)
         Me.TextBox_Publication.TabIndex = 42
         '
         'Label_Publication
@@ -263,7 +233,7 @@ Partial Class UserControl_BookDetails
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label_Publication.AutoSize = True
-        Me.Label_Publication.Location = New System.Drawing.Point(58, 138)
+        Me.Label_Publication.Location = New System.Drawing.Point(22, 138)
         Me.Label_Publication.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_Publication.Name = "Label_Publication"
         Me.Label_Publication.Size = New System.Drawing.Size(59, 13)
@@ -279,6 +249,7 @@ Partial Class UserControl_BookDetails
         '
         'SplitContainer_Checkout.Panel1
         '
+        Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.ComboBox_Category)
         Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.Label_ID)
         Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.TextBox_ID)
         Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.Label_Title)
@@ -286,13 +257,12 @@ Partial Class UserControl_BookDetails
         Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.Label_Author)
         Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.TextBox_Author)
         Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.Label_Category)
-        Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.TextBox_Category)
         Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.Label_Publication)
         Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.TextBox_Publication)
         Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.Label_YearPublish)
-        Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.TextBox_YearPublish)
+        Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.NumericUpDown_YearPublish)
         Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.Label_Copies)
-        Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.TextBox_Copies)
+        Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.NumericUpDown_Copies)
         Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.Label_CallNo)
         Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.TextBox_CallNo)
         Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.Button_Update)
@@ -360,7 +330,7 @@ Partial Class UserControl_BookDetails
         Me.ListView_Copies.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ListView_Copies.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Copies_Copy_ID, Me.Copies_Status})
+        Me.ListView_Copies.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Copies_Copy_ID, Me.Copies_Status, Me.Copies_Chkout_ID, Me.Copies_Due_Date})
         Me.ListView_Copies.HideSelection = False
         Me.ListView_Copies.Location = New System.Drawing.Point(15, 38)
         Me.ListView_Copies.Margin = New System.Windows.Forms.Padding(5)
@@ -462,6 +432,59 @@ Partial Class UserControl_BookDetails
         Me.History_Due_Date.Text = "Due Date"
         Me.History_Due_Date.Width = 120
         '
+        'NumericUpDown_Copies
+        '
+        Me.NumericUpDown_Copies.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NumericUpDown_Copies.Location = New System.Drawing.Point(91, 195)
+        Me.NumericUpDown_Copies.Margin = New System.Windows.Forms.Padding(5)
+        Me.NumericUpDown_Copies.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
+        Me.NumericUpDown_Copies.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDown_Copies.Name = "NumericUpDown_Copies"
+        Me.NumericUpDown_Copies.ReadOnly = True
+        Me.NumericUpDown_Copies.Size = New System.Drawing.Size(166, 20)
+        Me.NumericUpDown_Copies.TabIndex = 51
+        Me.NumericUpDown_Copies.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left
+        Me.NumericUpDown_Copies.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'NumericUpDown_YearPublish
+        '
+        Me.NumericUpDown_YearPublish.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NumericUpDown_YearPublish.Location = New System.Drawing.Point(91, 165)
+        Me.NumericUpDown_YearPublish.Margin = New System.Windows.Forms.Padding(5)
+        Me.NumericUpDown_YearPublish.Maximum = New Decimal(New Integer() {3000, 0, 0, 0})
+        Me.NumericUpDown_YearPublish.Minimum = New Decimal(New Integer() {1000, 0, 0, 0})
+        Me.NumericUpDown_YearPublish.Name = "NumericUpDown_YearPublish"
+        Me.NumericUpDown_YearPublish.Size = New System.Drawing.Size(166, 20)
+        Me.NumericUpDown_YearPublish.TabIndex = 52
+        Me.NumericUpDown_YearPublish.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left
+        Me.NumericUpDown_YearPublish.Value = New Decimal(New Integer() {2000, 0, 0, 0})
+        '
+        'ComboBox_Category
+        '
+        Me.ComboBox_Category.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ComboBox_Category.FormattingEnabled = True
+        Me.ComboBox_Category.Location = New System.Drawing.Point(91, 105)
+        Me.ComboBox_Category.Margin = New System.Windows.Forms.Padding(5)
+        Me.ComboBox_Category.Name = "ComboBox_Category"
+        Me.ComboBox_Category.Size = New System.Drawing.Size(166, 21)
+        Me.ComboBox_Category.TabIndex = 53
+        '
+        'Copies_Chkout_ID
+        '
+        Me.Copies_Chkout_ID.Text = "Checkout ID"
+        Me.Copies_Chkout_ID.Width = 120
+        '
+        'Copies_Due_Date
+        '
+        Me.Copies_Due_Date.Text = "Due Date"
+        Me.Copies_Due_Date.Width = 120
+        '
         'UserControl_BookDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -481,6 +504,8 @@ Partial Class UserControl_BookDetails
         Me.Panel_Copies.PerformLayout()
         Me.Panel_History.ResumeLayout(False)
         Me.Panel_History.PerformLayout()
+        CType(Me.NumericUpDown_Copies, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown_YearPublish, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -492,14 +517,11 @@ Partial Class UserControl_BookDetails
     Friend WithEvents Label_Title As Label
     Friend WithEvents Label_CallNo As Label
     Friend WithEvents TextBox_Title As TextBox
-    Friend WithEvents TextBox_Copies As TextBox
     Friend WithEvents Label_Author As Label
     Friend WithEvents Label_Copies As Label
     Friend WithEvents TextBox_Author As TextBox
-    Friend WithEvents TextBox_YearPublish As TextBox
     Friend WithEvents Label_Category As Label
     Friend WithEvents Label_YearPublish As Label
-    Friend WithEvents TextBox_Category As TextBox
     Friend WithEvents TextBox_Publication As TextBox
     Friend WithEvents Label_Publication As Label
     Friend WithEvents SplitContainer_Checkout As SplitContainer
@@ -519,4 +541,9 @@ Partial Class UserControl_BookDetails
     Friend WithEvents History_Chk_ID As ColumnHeader
     Friend WithEvents History_Issue_Date As ColumnHeader
     Friend WithEvents History_Due_Date As ColumnHeader
+    Friend WithEvents NumericUpDown_Copies As NumericUpDown
+    Friend WithEvents NumericUpDown_YearPublish As NumericUpDown
+    Friend WithEvents ComboBox_Category As ComboBox
+    Friend WithEvents Copies_Chkout_ID As ColumnHeader
+    Friend WithEvents Copies_Due_Date As ColumnHeader
 End Class

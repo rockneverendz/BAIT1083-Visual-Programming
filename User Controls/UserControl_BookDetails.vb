@@ -3,37 +3,50 @@
     Dim bookID As Integer
 
     Public Sub Fill(bookID As Integer)
+
+        ' Clear the list
+        ListView_Copies.Items.Clear()
+        ListView_History.Items.Clear()
+
         Me.bookID = bookID
         Using database As New LibDBDataContext()
-            Dim book = database.Books.First(Function(o) o.Book_Id = bookID)
 
+            ' Get the book details
+            Dim book = database.Books.First(Function(o) o.Book_Id = bookID)
             TextBox_ID.Text = book.Book_Id
             TextBox_Title.Text = book.Book_title
             TextBox_Author.Text = book.Author
-            TextBox_Category.Text = book.Category
+            ComboBox_Category.Text = book.Category
             TextBox_Publication.Text = book.Publication
-            TextBox_YearPublish.Text = book.Year_Publish
-            TextBox_Copies.Text = book.Copies
+            NumericUpDown_YearPublish.Value = book.Year_Publish
+            NumericUpDown_Copies.Value = book.Copies
             TextBox_CallNo.Text = book.Call_no
 
+            ' Get the copies (of the book) details and insert into listView
             Dim copies = From c In database.Copies
                          Where c.Book_ID = bookID
                          Order By c.Copy_ID
 
             For Each copy In copies
 
-                Dim row() As String = {
-                    copy.Copy_ID,
-                    copy.Status
-                }
+                Dim row(4) As String
+                Dim checkout_ID = copy.CheckOut_ID
 
-                'Insert integers on tag for sorting later
+                If IsNothing(checkout_ID) Then
+                    row = {copy.Copy_ID, copy.Status, "", ""}
+                Else
+                    Dim duedate = database.CheckOuts.First(Function(o) o.Chk_ID = checkout_ID).Due_Date
+                    row = {copy.Copy_ID, copy.Status, copy.CheckOut_ID, duedate}
+                End If
+
+                ' Insert integers on tag for sorting later
                 Dim lvi = New ListViewItem(row)
                 lvi.SubItems(0).Tag = copy.Copy_ID
 
                 ListView_Copies.Items.Add(lvi)
             Next
 
+            ' Get the history (of the book) and insert into listView
             Dim history = From co In database.CheckOuts
                           Join col In database.CheckOutLists On co.Chk_ID Equals col.Chk_ID
                           Join c In database.Copies On col.Copy_ID Equals c.Copy_ID
@@ -81,9 +94,9 @@
 
             book.Book_title = TextBox_Title.Text
             book.Author = TextBox_Author.Text
-            book.Category = TextBox_Category.Text
+            book.Category = ComboBox_Category.Text
             book.Publication = TextBox_Publication.Text
-            book.Year_Publish = TextBox_YearPublish.Text
+            book.Year_Publish = NumericUpDown_YearPublish.Value
             book.Call_no = TextBox_CallNo.Text
 
             database.SubmitChanges()
