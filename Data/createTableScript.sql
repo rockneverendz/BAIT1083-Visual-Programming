@@ -1,11 +1,11 @@
 /*WARNING!!! RUNNING THIS SCRIPT WILL DELETE ALL YOUR EXISTING DATA!*/
 DROP TABLE [dbo].[CheckOutList];
+DROP TABLE [dbo].[Copies];
 DROP TABLE [dbo].[CheckOut];
 DROP TABLE [dbo].[Return];
 DROP TABLE [dbo].[RoomBooking];
-DROP TABLE [dbo].[Copies];
-DROP TABLE [dbo].[Book];
 DROP TABLE [dbo].[Room];
+DROP TABLE [dbo].[Book];
 DROP TABLE [dbo].[Patron];
 DROP TABLE [dbo].[AdminLib];
 
@@ -37,17 +37,6 @@ CREATE TABLE [dbo].[Book] (
     [Copies]       INT           NULL,
     [Call_no]      VARCHAR (MAX) NULL,
     PRIMARY KEY CLUSTERED ([Book_Id] ASC)
-);
-
-/*Barcode is Copy_ID*/
-CREATE TABLE [dbo].[Copies] (
-    [Copy_ID] INT          IDENTITY (1000, 1) NOT NULL,
-    [Book_ID] INT          NOT NULL,
-    [Status]  VARCHAR (50) NULL,
-    [CheckOut_ID] INT NULL, 
-    PRIMARY KEY CLUSTERED ([Copy_ID] ASC),
-    CONSTRAINT [FK_Copies_Book] FOREIGN KEY ([Book_ID]) REFERENCES [dbo].[Book] ([Book_Id]),
-	CONSTRAINT [FK_Copies_CheckOut] FOREIGN KEY ([CheckOut_ID]) REFERENCES [dbo].[CheckOut] ([Chk_ID])
 );
 
 CREATE TABLE [dbo].[Room] (
@@ -85,6 +74,17 @@ CREATE TABLE [dbo].[CheckOut] (
     CONSTRAINT [PK_CheckOut] PRIMARY KEY CLUSTERED ([Chk_ID] ASC)
 );
 
+/*Barcode is Copy_ID*/
+CREATE TABLE [dbo].[Copies] (
+    [Copy_ID] INT          IDENTITY (1000, 1) NOT NULL,
+    [Book_ID] INT          NOT NULL,
+    [Status]  VARCHAR (50) NULL,
+    [CheckOut_ID] INT NULL, 
+    PRIMARY KEY CLUSTERED ([Copy_ID] ASC),
+    CONSTRAINT [FK_Copies_Book] FOREIGN KEY ([Book_ID]) REFERENCES [dbo].[Book] ([Book_Id]),
+	CONSTRAINT [FK_Copies_CheckOut] FOREIGN KEY ([CheckOut_ID]) REFERENCES [dbo].[CheckOut] ([Chk_ID])
+);
+
 CREATE TABLE [dbo].[CheckOutList] (
     [Chk_ID]  INT NOT NULL,
     [Copy_ID] INT NOT NULL,
@@ -92,6 +92,3 @@ CREATE TABLE [dbo].[CheckOutList] (
     CONSTRAINT [FK_Chk_ID] FOREIGN KEY ([Chk_ID]) REFERENCES [dbo].[CheckOut] ([Chk_ID]),
     CONSTRAINT [FK_Copy_ID] FOREIGN KEY ([Copy_ID]) REFERENCES [dbo].[Copies] ([Copy_ID])
 );
-
-
-
