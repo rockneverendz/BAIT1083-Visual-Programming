@@ -36,7 +36,9 @@ Partial Class UserControl_Profile
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnConfirm = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TextBox1
@@ -81,9 +83,9 @@ Partial Class UserControl_Profile
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(228, 75)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(66, 16)
+        Me.Label1.Size = New System.Drawing.Size(23, 16)
         Me.Label1.TabIndex = 4
-        Me.Label1.Text = "AdminID"
+        Me.Label1.Text = "ID"
         '
         'Label2
         '
@@ -173,10 +175,22 @@ Partial Class UserControl_Profile
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
-        Me.Panel1.Location = New System.Drawing.Point(194, 58)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Location = New System.Drawing.Point(194, 13)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(403, 342)
+        Me.Panel1.Size = New System.Drawing.Size(403, 387)
         Me.Panel1.TabIndex = 12
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(33, 24)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(135, 24)
+        Me.Label6.TabIndex = 0
+        Me.Label6.Text = "Admin Profile"
         '
         'UserControl_Profile
         '
@@ -195,6 +209,8 @@ Partial Class UserControl_Profile
         Me.Size = New System.Drawing.Size(800, 423)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -214,4 +230,5 @@ Partial Class UserControl_Profile
     Friend WithEvents btnCancel As Button
     Friend WithEvents btnConfirm As Button
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label6 As Label
 End Class

@@ -4,5 +4,6 @@
         GroupBox1.BackColor = Color.FromArgb(100, 192, 192, 192)
         Label1.BackColor = Color.FromArgb(100, 192, 192, 192)
         Label2.BackColor = Color.FromArgb(100, 192, 192, 192)
+        Label6.BackColor = Color.FromArgb(100, 192, 192, 192)
     End Sub
 End Class
