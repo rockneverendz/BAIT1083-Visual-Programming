@@ -22,475 +22,291 @@ Partial Class UserControl_Checkout
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.SplitContainer_Checkout = New System.Windows.Forms.SplitContainer()
-        Me.Button_Search = New System.Windows.Forms.Button()
-        Me.TextBox_PatronID = New System.Windows.Forms.TextBox()
-        Me.Label_Patron = New System.Windows.Forms.Label()
-        Me.TableLayoutPanel_CheckoutDetails = New System.Windows.Forms.TableLayoutPanel()
-        Me.Panel_Current = New System.Windows.Forms.Panel()
-        Me.ListView_Current = New System.Windows.Forms.ListView()
-        Me.Label_Current = New System.Windows.Forms.Label()
-        Me.Panel_New = New System.Windows.Forms.Panel()
-        Me.ListView_New = New System.Windows.Forms.ListView()
-        Me.Label_New = New System.Windows.Forms.Label()
-        Me.Panel_Confirmation = New System.Windows.Forms.Panel()
-        Me.Label_Weeks = New System.Windows.Forms.Label()
-        Me.NumericUpDown_Weeks = New System.Windows.Forms.NumericUpDown()
-        Me.Button_Confirm = New System.Windows.Forms.Button()
-        Me.Button_Clear = New System.Windows.Forms.Button()
-        Me.Label_DueDate = New System.Windows.Forms.Label()
-        Me.Label_Duration = New System.Windows.Forms.Label()
-        Me.Label_ID = New System.Windows.Forms.Label()
-        Me.TextBox_ID = New System.Windows.Forms.TextBox()
-        Me.Label_Name = New System.Windows.Forms.Label()
-        Me.TextBox_Name = New System.Windows.Forms.TextBox()
-        Me.Label_Course = New System.Windows.Forms.Label()
-        Me.TextBox_Course = New System.Windows.Forms.TextBox()
-        Me.Label_PhoneNo = New System.Windows.Forms.Label()
-        Me.TextBox_PhoneNo = New System.Windows.Forms.TextBox()
-        Me.Label_Address = New System.Windows.Forms.Label()
-        Me.TextBox_Address = New System.Windows.Forms.TextBox()
-        Me.Label_Email = New System.Windows.Forms.Label()
-        Me.TextBox_Email = New System.Windows.Forms.TextBox()
-        Me.TextBox_DueDate = New System.Windows.Forms.TextBox()
-        CType(Me.SplitContainer_Checkout, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SplitContainer_Checkout.Panel1.SuspendLayout()
-        Me.SplitContainer_Checkout.Panel2.SuspendLayout()
-        Me.SplitContainer_Checkout.SuspendLayout()
-        Me.TableLayoutPanel_CheckoutDetails.SuspendLayout()
-        Me.Panel_Current.SuspendLayout()
-        Me.Panel_New.SuspendLayout()
-        Me.Panel_Confirmation.SuspendLayout()
-        CType(Me.NumericUpDown_Weeks, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.ListView2 = New System.Windows.Forms.ListView()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label3 = New System.Windows.Forms.Label()
+        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SplitContainer1.Panel1.SuspendLayout()
+        Me.SplitContainer1.Panel2.SuspendLayout()
+        Me.SplitContainer1.SuspendLayout()
+        Me.TableLayoutPanel1.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'SplitContainer_Checkout
+        'SplitContainer1
         '
-        Me.SplitContainer_Checkout.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SplitContainer_Checkout.IsSplitterFixed = True
-        Me.SplitContainer_Checkout.Location = New System.Drawing.Point(0, 0)
-        Me.SplitContainer_Checkout.Name = "SplitContainer_Checkout"
+        Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainer1.IsSplitterFixed = True
+        Me.SplitContainer1.Location = New System.Drawing.Point(0, 0)
+        Me.SplitContainer1.Name = "SplitContainer1"
         '
-        'SplitContainer_Checkout.Panel1
+        'SplitContainer1.Panel1
         '
-        Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.Label_Patron)
-        Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.TextBox_PatronID)
-        Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.Button_Search)
-        Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.Label_ID)
-        Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.TextBox_ID)
-        Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.Label_Name)
-        Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.TextBox_Name)
-        Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.Label_Course)
-        Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.TextBox_Course)
-        Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.Label_PhoneNo)
-        Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.TextBox_PhoneNo)
-        Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.Label_Address)
-        Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.TextBox_Address)
-        Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.Label_Email)
-        Me.SplitContainer_Checkout.Panel1.Controls.Add(Me.TextBox_Email)
-        Me.SplitContainer_Checkout.Panel1.Padding = New System.Windows.Forms.Padding(10)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.TextBox1)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.Label1)
+        Me.SplitContainer1.Panel1.Padding = New System.Windows.Forms.Padding(10)
         '
-        'SplitContainer_Checkout.Panel2
+        'SplitContainer1.Panel2
         '
-        Me.SplitContainer_Checkout.Panel2.Controls.Add(Me.TableLayoutPanel_CheckoutDetails)
-        Me.SplitContainer_Checkout.Size = New System.Drawing.Size(816, 490)
-        Me.SplitContainer_Checkout.SplitterDistance = 272
-        Me.SplitContainer_Checkout.TabIndex = 0
+        Me.SplitContainer1.Panel2.Controls.Add(Me.TableLayoutPanel1)
+        Me.SplitContainer1.Size = New System.Drawing.Size(816, 490)
+        Me.SplitContainer1.SplitterDistance = 272
+        Me.SplitContainer1.TabIndex = 0
         '
-        'Button_Search
+        'TextBox1
         '
-        Me.Button_Search.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button_Search.Location = New System.Drawing.Point(182, 68)
-        Me.Button_Search.Margin = New System.Windows.Forms.Padding(5)
-        Me.Button_Search.Name = "Button_Search"
-        Me.Button_Search.Size = New System.Drawing.Size(75, 23)
-        Me.Button_Search.TabIndex = 6
-        Me.Button_Search.Text = "Search"
-        Me.Button_Search.UseVisualStyleBackColor = True
-        '
-        'TextBox_PatronID
-        '
-        Me.TextBox_PatronID.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.TextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox_PatronID.Location = New System.Drawing.Point(15, 38)
-        Me.TextBox_PatronID.Margin = New System.Windows.Forms.Padding(5)
-        Me.TextBox_PatronID.Name = "TextBox_PatronID"
-        Me.TextBox_PatronID.Size = New System.Drawing.Size(242, 20)
-        Me.TextBox_PatronID.TabIndex = 1
+        Me.TextBox1.Location = New System.Drawing.Point(15, 38)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(5)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(242, 20)
+        Me.TextBox1.TabIndex = 1
         '
-        'Label_Patron
+        'Label1
         '
-        Me.Label_Patron.AutoSize = True
-        Me.Label_Patron.Location = New System.Drawing.Point(15, 15)
-        Me.Label_Patron.Margin = New System.Windows.Forms.Padding(5)
-        Me.Label_Patron.Name = "Label_Patron"
-        Me.Label_Patron.Size = New System.Drawing.Size(52, 13)
-        Me.Label_Patron.TabIndex = 0
-        Me.Label_Patron.Text = "Patron ID"
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(15, 15)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(52, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Patron ID"
         '
-        'TableLayoutPanel_CheckoutDetails
+        'TableLayoutPanel1
         '
-        Me.TableLayoutPanel_CheckoutDetails.AutoSize = True
-        Me.TableLayoutPanel_CheckoutDetails.ColumnCount = 1
-        Me.TableLayoutPanel_CheckoutDetails.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel_CheckoutDetails.Controls.Add(Me.Panel_Current, 0, 0)
-        Me.TableLayoutPanel_CheckoutDetails.Controls.Add(Me.Panel_New, 0, 1)
-        Me.TableLayoutPanel_CheckoutDetails.Controls.Add(Me.Panel_Confirmation, 0, 2)
-        Me.TableLayoutPanel_CheckoutDetails.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel_CheckoutDetails.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel_CheckoutDetails.Name = "TableLayoutPanel_CheckoutDetails"
-        Me.TableLayoutPanel_CheckoutDetails.RowCount = 3
-        Me.TableLayoutPanel_CheckoutDetails.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33332!))
-        Me.TableLayoutPanel_CheckoutDetails.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334!))
-        Me.TableLayoutPanel_CheckoutDetails.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334!))
-        Me.TableLayoutPanel_CheckoutDetails.Size = New System.Drawing.Size(540, 490)
-        Me.TableLayoutPanel_CheckoutDetails.TabIndex = 0
+        Me.TableLayoutPanel1.ColumnCount = 1
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.TableLayoutPanel1.Controls.Add(Me.Panel1, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Panel2, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.Panel3, 0, 2)
+        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 3
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(540, 490)
+        Me.TableLayoutPanel1.TabIndex = 0
         '
-        'Panel_Current
+        'Panel1
         '
-        Me.Panel_Current.AutoSize = True
-        Me.Panel_Current.Controls.Add(Me.ListView_Current)
-        Me.Panel_Current.Controls.Add(Me.Label_Current)
-        Me.Panel_Current.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel_Current.Location = New System.Drawing.Point(0, 0)
-        Me.Panel_Current.Margin = New System.Windows.Forms.Padding(0)
-        Me.Panel_Current.Name = "Panel_Current"
-        Me.Panel_Current.Padding = New System.Windows.Forms.Padding(10)
-        Me.Panel_Current.Size = New System.Drawing.Size(540, 163)
-        Me.Panel_Current.TabIndex = 0
+        Me.Panel1.AutoSize = True
+        Me.Panel1.Controls.Add(Me.ListView1)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Padding = New System.Windows.Forms.Padding(10)
+        Me.Panel1.Size = New System.Drawing.Size(540, 163)
+        Me.Panel1.TabIndex = 0
         '
-        'ListView_Current
+        'ListView1
         '
-        Me.ListView_Current.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ListView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ListView_Current.HideSelection = False
-        Me.ListView_Current.Location = New System.Drawing.Point(15, 38)
-        Me.ListView_Current.Margin = New System.Windows.Forms.Padding(5)
-        Me.ListView_Current.Name = "ListView_Current"
-        Me.ListView_Current.Size = New System.Drawing.Size(510, 110)
-        Me.ListView_Current.TabIndex = 3
-        Me.ListView_Current.UseCompatibleStateImageBehavior = False
-        Me.ListView_Current.View = System.Windows.Forms.View.Details
+        Me.ListView1.HideSelection = False
+        Me.ListView1.Location = New System.Drawing.Point(15, 38)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(5)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(510, 110)
+        Me.ListView1.TabIndex = 3
+        Me.ListView1.UseCompatibleStateImageBehavior = False
         '
-        'Label_Current
+        'Label2
         '
-        Me.Label_Current.AutoSize = True
-        Me.Label_Current.Location = New System.Drawing.Point(15, 15)
-        Me.Label_Current.Margin = New System.Windows.Forms.Padding(5)
-        Me.Label_Current.Name = "Label_Current"
-        Me.Label_Current.Size = New System.Drawing.Size(123, 13)
-        Me.Label_Current.TabIndex = 2
-        Me.Label_Current.Text = "Parton Current Borrowed"
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(15, 15)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(123, 13)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Parton Current Borrowed"
         '
-        'Panel_New
+        'Panel2
         '
-        Me.Panel_New.AutoSize = True
-        Me.Panel_New.Controls.Add(Me.ListView_New)
-        Me.Panel_New.Controls.Add(Me.Label_New)
-        Me.Panel_New.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel_New.Location = New System.Drawing.Point(0, 163)
-        Me.Panel_New.Margin = New System.Windows.Forms.Padding(0)
-        Me.Panel_New.Name = "Panel_New"
-        Me.Panel_New.Padding = New System.Windows.Forms.Padding(10)
-        Me.Panel_New.Size = New System.Drawing.Size(540, 163)
-        Me.Panel_New.TabIndex = 1
+        Me.Panel2.AutoSize = True
+        Me.Panel2.Controls.Add(Me.ListView2)
+        Me.Panel2.Controls.Add(Me.Label4)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(0, 163)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Padding = New System.Windows.Forms.Padding(10)
+        Me.Panel2.Size = New System.Drawing.Size(540, 163)
+        Me.Panel2.TabIndex = 1
         '
-        'ListView_New
+        'ListView2
         '
-        Me.ListView_New.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.ListView2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ListView_New.HideSelection = False
-        Me.ListView_New.Location = New System.Drawing.Point(15, 38)
-        Me.ListView_New.Margin = New System.Windows.Forms.Padding(5)
-        Me.ListView_New.Name = "ListView_New"
-        Me.ListView_New.Size = New System.Drawing.Size(510, 110)
-        Me.ListView_New.TabIndex = 4
-        Me.ListView_New.UseCompatibleStateImageBehavior = False
-        Me.ListView_New.View = System.Windows.Forms.View.Details
+        Me.ListView2.HideSelection = False
+        Me.ListView2.Location = New System.Drawing.Point(15, 38)
+        Me.ListView2.Margin = New System.Windows.Forms.Padding(5)
+        Me.ListView2.Name = "ListView2"
+        Me.ListView2.Size = New System.Drawing.Size(510, 110)
+        Me.ListView2.TabIndex = 4
+        Me.ListView2.UseCompatibleStateImageBehavior = False
         '
-        'Label_New
+        'Label4
         '
-        Me.Label_New.AutoSize = True
-        Me.Label_New.Location = New System.Drawing.Point(15, 15)
-        Me.Label_New.Margin = New System.Windows.Forms.Padding(5)
-        Me.Label_New.Name = "Label_New"
-        Me.Label_New.Size = New System.Drawing.Size(62, 13)
-        Me.Label_New.TabIndex = 3
-        Me.Label_New.Text = "Borrow Cart"
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(15, 15)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(62, 13)
+        Me.Label4.TabIndex = 3
+        Me.Label4.Text = "Borrow Cart"
         '
-        'Panel_Confirmation
+        'Panel3
         '
-        Me.Panel_Confirmation.AutoSize = True
-        Me.Panel_Confirmation.Controls.Add(Me.Label_Duration)
-        Me.Panel_Confirmation.Controls.Add(Me.NumericUpDown_Weeks)
-        Me.Panel_Confirmation.Controls.Add(Me.Label_Weeks)
-        Me.Panel_Confirmation.Controls.Add(Me.Label_DueDate)
-        Me.Panel_Confirmation.Controls.Add(Me.TextBox_DueDate)
-        Me.Panel_Confirmation.Controls.Add(Me.Button_Confirm)
-        Me.Panel_Confirmation.Controls.Add(Me.Button_Clear)
-        Me.Panel_Confirmation.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel_Confirmation.Location = New System.Drawing.Point(0, 326)
-        Me.Panel_Confirmation.Margin = New System.Windows.Forms.Padding(0)
-        Me.Panel_Confirmation.Name = "Panel_Confirmation"
-        Me.Panel_Confirmation.Padding = New System.Windows.Forms.Padding(10)
-        Me.Panel_Confirmation.Size = New System.Drawing.Size(540, 164)
-        Me.Panel_Confirmation.TabIndex = 2
+        Me.Panel3.AutoSize = True
+        Me.Panel3.Controls.Add(Me.Label6)
+        Me.Panel3.Controls.Add(Me.NumericUpDown1)
+        Me.Panel3.Controls.Add(Me.Button2)
+        Me.Panel3.Controls.Add(Me.Button1)
+        Me.Panel3.Controls.Add(Me.Label5)
+        Me.Panel3.Controls.Add(Me.DateTimePicker1)
+        Me.Panel3.Controls.Add(Me.Label3)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel3.Location = New System.Drawing.Point(0, 326)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Padding = New System.Windows.Forms.Padding(10)
+        Me.Panel3.Size = New System.Drawing.Size(540, 164)
+        Me.Panel3.TabIndex = 2
         '
-        'Label_Weeks
+        'Label6
         '
-        Me.Label_Weeks.AutoSize = True
-        Me.Label_Weeks.Location = New System.Drawing.Point(62, 40)
-        Me.Label_Weeks.Margin = New System.Windows.Forms.Padding(5)
-        Me.Label_Weeks.Name = "Label_Weeks"
-        Me.Label_Weeks.Size = New System.Drawing.Size(47, 13)
-        Me.Label_Weeks.TabIndex = 7
-        Me.Label_Weeks.Text = "Week(s)"
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(62, 40)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(47, 13)
+        Me.Label6.TabIndex = 7
+        Me.Label6.Text = "Week(s)"
         '
-        'NumericUpDown_Weeks
+        'NumericUpDown1
         '
-        Me.NumericUpDown_Weeks.Location = New System.Drawing.Point(15, 38)
-        Me.NumericUpDown_Weeks.Margin = New System.Windows.Forms.Padding(5)
-        Me.NumericUpDown_Weeks.Maximum = New Decimal(New Integer() {8, 0, 0, 0})
-        Me.NumericUpDown_Weeks.Name = "NumericUpDown_Weeks"
-        Me.NumericUpDown_Weeks.Size = New System.Drawing.Size(37, 20)
-        Me.NumericUpDown_Weeks.TabIndex = 6
-        Me.NumericUpDown_Weeks.Value = New Decimal(New Integer() {2, 0, 0, 0})
+        Me.NumericUpDown1.Location = New System.Drawing.Point(15, 38)
+        Me.NumericUpDown1.Margin = New System.Windows.Forms.Padding(5)
+        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {8, 0, 0, 0})
+        Me.NumericUpDown1.Name = "NumericUpDown1"
+        Me.NumericUpDown1.Size = New System.Drawing.Size(37, 20)
+        Me.NumericUpDown1.TabIndex = 6
         '
-        'Button_Confirm
+        'Button2
         '
-        Me.Button_Confirm.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button_Confirm.Location = New System.Drawing.Point(365, 126)
-        Me.Button_Confirm.Margin = New System.Windows.Forms.Padding(5)
-        Me.Button_Confirm.Name = "Button_Confirm"
-        Me.Button_Confirm.Size = New System.Drawing.Size(75, 23)
-        Me.Button_Confirm.TabIndex = 5
-        Me.Button_Confirm.Text = "Borrow"
-        Me.Button_Confirm.UseVisualStyleBackColor = True
+        Me.Button2.Location = New System.Drawing.Point(365, 126)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(5)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 5
+        Me.Button2.Text = "Borrow"
+        Me.Button2.UseVisualStyleBackColor = True
         '
-        'Button_Clear
+        'Button1
         '
-        Me.Button_Clear.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button_Clear.Location = New System.Drawing.Point(450, 126)
-        Me.Button_Clear.Margin = New System.Windows.Forms.Padding(5)
-        Me.Button_Clear.Name = "Button_Clear"
-        Me.Button_Clear.Size = New System.Drawing.Size(75, 23)
-        Me.Button_Clear.TabIndex = 4
-        Me.Button_Clear.Text = "Clear"
-        Me.Button_Clear.UseVisualStyleBackColor = True
+        Me.Button1.Location = New System.Drawing.Point(450, 126)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(5)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 4
+        Me.Button1.Text = "Clear"
+        Me.Button1.UseVisualStyleBackColor = True
         '
-        'Label_DueDate
+        'Label5
         '
-        Me.Label_DueDate.AutoSize = True
-        Me.Label_DueDate.Location = New System.Drawing.Point(173, 15)
-        Me.Label_DueDate.Margin = New System.Windows.Forms.Padding(5)
-        Me.Label_DueDate.Name = "Label_DueDate"
-        Me.Label_DueDate.Size = New System.Drawing.Size(53, 13)
-        Me.Label_DueDate.TabIndex = 3
-        Me.Label_DueDate.Text = "Due Date"
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(173, 15)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(53, 13)
+        Me.Label5.TabIndex = 3
+        Me.Label5.Text = "Due Date"
         '
-        'Label_Duration
+        'DateTimePicker1
         '
-        Me.Label_Duration.AutoSize = True
-        Me.Label_Duration.Location = New System.Drawing.Point(15, 15)
-        Me.Label_Duration.Margin = New System.Windows.Forms.Padding(5)
-        Me.Label_Duration.Name = "Label_Duration"
-        Me.Label_Duration.Size = New System.Drawing.Size(83, 13)
-        Me.Label_Duration.TabIndex = 0
-        Me.Label_Duration.Text = "Borrow Duration"
+        Me.DateTimePicker1.Location = New System.Drawing.Point(176, 38)
+        Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(5)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
+        Me.DateTimePicker1.TabIndex = 1
         '
-        'Label_ID
+        'Label3
         '
-        Me.Label_ID.AutoSize = True
-        Me.Label_ID.Location = New System.Drawing.Point(49, 104)
-        Me.Label_ID.Margin = New System.Windows.Forms.Padding(5)
-        Me.Label_ID.Name = "Label_ID"
-        Me.Label_ID.Size = New System.Drawing.Size(18, 13)
-        Me.Label_ID.TabIndex = 12
-        Me.Label_ID.Text = "ID"
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(15, 15)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(83, 13)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "Borrow Duration"
         '
-        'TextBox_ID
-        '
-        Me.TextBox_ID.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox_ID.Location = New System.Drawing.Point(77, 101)
-        Me.TextBox_ID.Margin = New System.Windows.Forms.Padding(5)
-        Me.TextBox_ID.Name = "TextBox_ID"
-        Me.TextBox_ID.ReadOnly = True
-        Me.TextBox_ID.Size = New System.Drawing.Size(180, 20)
-        Me.TextBox_ID.TabIndex = 13
-        '
-        'Label_Name
-        '
-        Me.Label_Name.AutoSize = True
-        Me.Label_Name.Location = New System.Drawing.Point(32, 134)
-        Me.Label_Name.Margin = New System.Windows.Forms.Padding(5)
-        Me.Label_Name.Name = "Label_Name"
-        Me.Label_Name.Size = New System.Drawing.Size(35, 13)
-        Me.Label_Name.TabIndex = 14
-        Me.Label_Name.Text = "Name"
-        '
-        'TextBox_Name
-        '
-        Me.TextBox_Name.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox_Name.Location = New System.Drawing.Point(77, 131)
-        Me.TextBox_Name.Margin = New System.Windows.Forms.Padding(5)
-        Me.TextBox_Name.Name = "TextBox_Name"
-        Me.TextBox_Name.ReadOnly = True
-        Me.TextBox_Name.Size = New System.Drawing.Size(180, 20)
-        Me.TextBox_Name.TabIndex = 15
-        '
-        'Label_Course
-        '
-        Me.Label_Course.AutoSize = True
-        Me.Label_Course.Location = New System.Drawing.Point(27, 164)
-        Me.Label_Course.Margin = New System.Windows.Forms.Padding(5)
-        Me.Label_Course.Name = "Label_Course"
-        Me.Label_Course.Size = New System.Drawing.Size(40, 13)
-        Me.Label_Course.TabIndex = 16
-        Me.Label_Course.Text = "Course"
-        '
-        'TextBox_Course
-        '
-        Me.TextBox_Course.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox_Course.Location = New System.Drawing.Point(77, 161)
-        Me.TextBox_Course.Margin = New System.Windows.Forms.Padding(5)
-        Me.TextBox_Course.Name = "TextBox_Course"
-        Me.TextBox_Course.ReadOnly = True
-        Me.TextBox_Course.Size = New System.Drawing.Size(180, 20)
-        Me.TextBox_Course.TabIndex = 17
-        '
-        'Label_PhoneNo
-        '
-        Me.Label_PhoneNo.AutoSize = True
-        Me.Label_PhoneNo.Location = New System.Drawing.Point(12, 194)
-        Me.Label_PhoneNo.Margin = New System.Windows.Forms.Padding(5)
-        Me.Label_PhoneNo.Name = "Label_PhoneNo"
-        Me.Label_PhoneNo.Size = New System.Drawing.Size(55, 13)
-        Me.Label_PhoneNo.TabIndex = 18
-        Me.Label_PhoneNo.Text = "Phone No"
-        '
-        'TextBox_PhoneNo
-        '
-        Me.TextBox_PhoneNo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox_PhoneNo.Location = New System.Drawing.Point(77, 191)
-        Me.TextBox_PhoneNo.Margin = New System.Windows.Forms.Padding(5)
-        Me.TextBox_PhoneNo.Name = "TextBox_PhoneNo"
-        Me.TextBox_PhoneNo.ReadOnly = True
-        Me.TextBox_PhoneNo.Size = New System.Drawing.Size(180, 20)
-        Me.TextBox_PhoneNo.TabIndex = 19
-        '
-        'Label_Address
-        '
-        Me.Label_Address.AutoSize = True
-        Me.Label_Address.Location = New System.Drawing.Point(22, 224)
-        Me.Label_Address.Margin = New System.Windows.Forms.Padding(5)
-        Me.Label_Address.Name = "Label_Address"
-        Me.Label_Address.Size = New System.Drawing.Size(45, 13)
-        Me.Label_Address.TabIndex = 20
-        Me.Label_Address.Text = "Address"
-        '
-        'TextBox_Address
-        '
-        Me.TextBox_Address.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox_Address.Location = New System.Drawing.Point(77, 221)
-        Me.TextBox_Address.Margin = New System.Windows.Forms.Padding(5)
-        Me.TextBox_Address.Name = "TextBox_Address"
-        Me.TextBox_Address.ReadOnly = True
-        Me.TextBox_Address.Size = New System.Drawing.Size(180, 20)
-        Me.TextBox_Address.TabIndex = 21
-        '
-        'Label_Email
-        '
-        Me.Label_Email.AutoSize = True
-        Me.Label_Email.Location = New System.Drawing.Point(35, 254)
-        Me.Label_Email.Margin = New System.Windows.Forms.Padding(5)
-        Me.Label_Email.Name = "Label_Email"
-        Me.Label_Email.Size = New System.Drawing.Size(32, 13)
-        Me.Label_Email.TabIndex = 22
-        Me.Label_Email.Text = "Email"
-        '
-        'TextBox_Email
-        '
-        Me.TextBox_Email.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox_Email.Location = New System.Drawing.Point(77, 251)
-        Me.TextBox_Email.Margin = New System.Windows.Forms.Padding(5)
-        Me.TextBox_Email.Name = "TextBox_Email"
-        Me.TextBox_Email.ReadOnly = True
-        Me.TextBox_Email.Size = New System.Drawing.Size(180, 20)
-        Me.TextBox_Email.TabIndex = 23
-        '
-        'TextBox_DueDate
-        '
-        Me.TextBox_DueDate.Location = New System.Drawing.Point(176, 38)
-        Me.TextBox_DueDate.Margin = New System.Windows.Forms.Padding(5)
-        Me.TextBox_DueDate.Name = "TextBox_DueDate"
-        Me.TextBox_DueDate.ReadOnly = True
-        Me.TextBox_DueDate.Size = New System.Drawing.Size(187, 20)
-        Me.TextBox_DueDate.TabIndex = 8
-        '
-        'UserControl_Checkout
+        'Checkout
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.Controls.Add(Me.SplitContainer_Checkout)
-        Me.Name = "UserControl_Checkout"
+        Me.Controls.Add(Me.SplitContainer1)
+        Me.Name = "Checkout"
         Me.Size = New System.Drawing.Size(816, 490)
-        Me.SplitContainer_Checkout.Panel1.ResumeLayout(False)
-        Me.SplitContainer_Checkout.Panel1.PerformLayout()
-        Me.SplitContainer_Checkout.Panel2.ResumeLayout(False)
-        Me.SplitContainer_Checkout.Panel2.PerformLayout()
-        CType(Me.SplitContainer_Checkout, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.SplitContainer_Checkout.ResumeLayout(False)
-        Me.TableLayoutPanel_CheckoutDetails.ResumeLayout(False)
-        Me.TableLayoutPanel_CheckoutDetails.PerformLayout()
-        Me.Panel_Current.ResumeLayout(False)
-        Me.Panel_Current.PerformLayout()
-        Me.Panel_New.ResumeLayout(False)
-        Me.Panel_New.PerformLayout()
-        Me.Panel_Confirmation.ResumeLayout(False)
-        Me.Panel_Confirmation.PerformLayout()
-        CType(Me.NumericUpDown_Weeks, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainer1.Panel1.ResumeLayout(False)
+        Me.SplitContainer1.Panel1.PerformLayout()
+        Me.SplitContainer1.Panel2.ResumeLayout(False)
+        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainer1.ResumeLayout(False)
+        Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.TableLayoutPanel1.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents SplitContainer_Checkout As SplitContainer
-    Friend WithEvents TextBox_PatronID As TextBox
-    Friend WithEvents Label_Patron As Label
-    Friend WithEvents Label_Current As Label
-    Friend WithEvents TableLayoutPanel_CheckoutDetails As TableLayoutPanel
-    Friend WithEvents Panel_Current As Panel
-    Friend WithEvents Panel_New As Panel
-    Friend WithEvents Panel_Confirmation As Panel
-    Friend WithEvents Label_Duration As Label
-    Friend WithEvents Label_New As Label
-    Friend WithEvents ListView_Current As ListView
-    Friend WithEvents ListView_New As ListView
-    Friend WithEvents Label_DueDate As Label
-    Friend WithEvents Label_Weeks As Label
-    Friend WithEvents NumericUpDown_Weeks As NumericUpDown
-    Friend WithEvents Button_Confirm As Button
-    Friend WithEvents Button_Clear As Button
-    Friend WithEvents Button_Search As Button
-    Friend WithEvents Label_ID As Label
-    Friend WithEvents TextBox_ID As TextBox
-    Friend WithEvents Label_Name As Label
-    Friend WithEvents TextBox_Name As TextBox
-    Friend WithEvents Label_Course As Label
-    Friend WithEvents TextBox_Course As TextBox
-    Friend WithEvents Label_PhoneNo As Label
-    Friend WithEvents TextBox_PhoneNo As TextBox
-    Friend WithEvents Label_Address As Label
-    Friend WithEvents TextBox_Address As TextBox
-    Friend WithEvents Label_Email As Label
-    Friend WithEvents TextBox_Email As TextBox
-    Friend WithEvents TextBox_DueDate As TextBox
+    Friend WithEvents SplitContainer1 As SplitContainer
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents ListView1 As ListView
+    Friend WithEvents ListView2 As ListView
+    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents NumericUpDown1 As NumericUpDown
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button1 As Button
 End Class
