@@ -29,7 +29,9 @@ Partial Class Login
         Me.Button_Login = New System.Windows.Forms.Button()
         Me.Panel_Login = New System.Windows.Forms.Panel()
         Me.Label_Message = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel_Login.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label_Username
@@ -74,7 +76,6 @@ Partial Class Login
         Me.TextBox_Passowrd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TextBox_Passowrd.Size = New System.Drawing.Size(180, 24)
         Me.TextBox_Passowrd.TabIndex = 3
-        Me.TextBox_Passowrd.UseSystemPasswordChar = True
         '
         'Button_Login
         '
@@ -90,6 +91,7 @@ Partial Class Login
         '
         Me.Panel_Login.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel_Login.BackColor = System.Drawing.Color.Transparent
+        Me.Panel_Login.Controls.Add(Me.PictureBox1)
         Me.Panel_Login.Controls.Add(Me.Label_Username)
         Me.Panel_Login.Controls.Add(Me.TextBox_Username)
         Me.Panel_Login.Controls.Add(Me.Label_Password)
@@ -100,7 +102,7 @@ Partial Class Login
         Me.Panel_Login.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel_Login.Name = "Panel_Login"
         Me.Panel_Login.Padding = New System.Windows.Forms.Padding(10)
-        Me.Panel_Login.Size = New System.Drawing.Size(306, 152)
+        Me.Panel_Login.Size = New System.Drawing.Size(331, 152)
         Me.Panel_Login.TabIndex = 6
         '
         'Label_Message
@@ -112,6 +114,16 @@ Partial Class Login
         Me.Label_Message.Name = "Label_Message"
         Me.Label_Message.Size = New System.Drawing.Size(0, 13)
         Me.Label_Message.TabIndex = 5
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.BAIT1083_Visual_Programming.My.Resources.Resources.not_visible
+        Me.PictureBox1.Location = New System.Drawing.Point(299, 52)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(19, 15)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 12
+        Me.PictureBox1.TabStop = False
         '
         'Login
         '
@@ -126,6 +138,7 @@ Partial Class Login
         Me.Text = "Login"
         Me.Panel_Login.ResumeLayout(False)
         Me.Panel_Login.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -137,4 +150,5 @@ Partial Class Login
     Friend WithEvents Button_Login As Button
     Friend WithEvents Panel_Login As Panel
     Friend WithEvents Label_Message As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

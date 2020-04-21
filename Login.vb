@@ -26,4 +26,13 @@
         End If
     End Sub
 
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        If (TextBox_Passowrd.PasswordChar = "*") Then
+            PictureBox1.Image = Global.BAIT1083_Visual_Programming.My.Resources.Resources.visible
+            TextBox_Passowrd.PasswordChar = ""
+        Else
+            PictureBox1.Image = Global.BAIT1083_Visual_Programming.My.Resources.Resources.not_visible
+            TextBox_Passowrd.PasswordChar = "*"
+        End If
+    End Sub
 End Class
