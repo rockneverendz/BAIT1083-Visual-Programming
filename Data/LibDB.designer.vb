@@ -750,6 +750,8 @@ Partial Public Class CheckOut
 	
 	Private _CheckOutLists As EntitySet(Of CheckOutList)
 	
+	Private _Copies As EntitySet(Of Copy)
+	
 	Private _Patron As EntityRef(Of Patron)
 	
 	Private _Return As EntityRef(Of [Return])
@@ -786,6 +788,7 @@ Partial Public Class CheckOut
 	Public Sub New()
 		MyBase.New
 		Me._CheckOutLists = New EntitySet(Of CheckOutList)(AddressOf Me.attach_CheckOutLists, AddressOf Me.detach_CheckOutLists)
+		Me._Copies = New EntitySet(Of Copy)(AddressOf Me.attach_Copies, AddressOf Me.detach_Copies)
 		Me._Patron = CType(Nothing, EntityRef(Of Patron))
 		Me._Return = CType(Nothing, EntityRef(Of [Return]))
 		OnCreated
@@ -891,6 +894,16 @@ Partial Public Class CheckOut
 		End Set
 	End Property
 	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="CheckOut_Copy", Storage:="_Copies", ThisKey:="Chk_ID", OtherKey:="CheckOut_ID")>  _
+	Public Property Copies() As EntitySet(Of Copy)
+		Get
+			Return Me._Copies
+		End Get
+		Set
+			Me._Copies.Assign(value)
+		End Set
+	End Property
+	
 	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Patron_CheckOut", Storage:="_Patron", ThisKey:="Patron_ID", OtherKey:="Patron_ID", IsForeignKey:=true)>  _
 	Public Property Patron() As Patron
 		Get
@@ -971,6 +984,16 @@ Partial Public Class CheckOut
 	End Sub
 	
 	Private Sub detach_CheckOutLists(ByVal entity As CheckOutList)
+		Me.SendPropertyChanging
+		entity.CheckOut = Nothing
+	End Sub
+	
+	Private Sub attach_Copies(ByVal entity As Copy)
+		Me.SendPropertyChanging
+		entity.CheckOut = Me
+	End Sub
+	
+	Private Sub detach_Copies(ByVal entity As Copy)
 		Me.SendPropertyChanging
 		entity.CheckOut = Nothing
 	End Sub
@@ -1141,9 +1164,13 @@ Partial Public Class Copy
 	
 	Private _Status As String
 	
+	Private _CheckOut_ID As System.Nullable(Of Integer)
+	
 	Private _CheckOutLists As EntitySet(Of CheckOutList)
 	
 	Private _Book As EntityRef(Of Book)
+	
+	Private _CheckOut As EntityRef(Of CheckOut)
 	
     #Region "Extensibility Method Definitions"
     Partial Private Sub OnLoaded()
@@ -1164,12 +1191,17 @@ Partial Public Class Copy
     End Sub
     Partial Private Sub OnStatusChanged()
     End Sub
+    Partial Private Sub OnCheckOut_IDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnCheckOut_IDChanged()
+    End Sub
     #End Region
 	
 	Public Sub New()
 		MyBase.New
 		Me._CheckOutLists = New EntitySet(Of CheckOutList)(AddressOf Me.attach_CheckOutLists, AddressOf Me.detach_CheckOutLists)
 		Me._Book = CType(Nothing, EntityRef(Of Book))
+		Me._CheckOut = CType(Nothing, EntityRef(Of CheckOut))
 		OnCreated
 	End Sub
 	
@@ -1226,6 +1258,25 @@ Partial Public Class Copy
 		End Set
 	End Property
 	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CheckOut_ID", DbType:="Int")>  _
+	Public Property CheckOut_ID() As System.Nullable(Of Integer)
+		Get
+			Return Me._CheckOut_ID
+		End Get
+		Set
+			If (Me._CheckOut_ID.Equals(value) = false) Then
+				If Me._CheckOut.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnCheckOut_IDChanging(value)
+				Me.SendPropertyChanging
+				Me._CheckOut_ID = value
+				Me.SendPropertyChanged("CheckOut_ID")
+				Me.OnCheckOut_IDChanged
+			End If
+		End Set
+	End Property
+	
 	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Copy_CheckOutList", Storage:="_CheckOutLists", ThisKey:="Copy_ID", OtherKey:="Copy_ID")>  _
 	Public Property CheckOutLists() As EntitySet(Of CheckOutList)
 		Get
@@ -1260,6 +1311,34 @@ Partial Public Class Copy
 					Me._Book_ID = CType(Nothing, Integer)
 				End If
 				Me.SendPropertyChanged("Book")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="CheckOut_Copy", Storage:="_CheckOut", ThisKey:="CheckOut_ID", OtherKey:="Chk_ID", IsForeignKey:=true)>  _
+	Public Property CheckOut() As CheckOut
+		Get
+			Return Me._CheckOut.Entity
+		End Get
+		Set
+			Dim previousValue As CheckOut = Me._CheckOut.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._CheckOut.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._CheckOut.Entity = Nothing
+					previousValue.Copies.Remove(Me)
+				End If
+				Me._CheckOut.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.Copies.Add(Me)
+					Me._CheckOut_ID = value.Chk_ID
+				Else
+					Me._CheckOut_ID = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("CheckOut")
 			End If
 		End Set
 	End Property

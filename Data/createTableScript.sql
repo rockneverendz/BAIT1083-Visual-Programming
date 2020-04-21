@@ -44,8 +44,10 @@ CREATE TABLE [dbo].[Copies] (
     [Copy_ID] INT          IDENTITY (1000, 1) NOT NULL,
     [Book_ID] INT          NOT NULL,
     [Status]  VARCHAR (50) NULL,
+    [CheckOut_ID] INT NULL, 
     PRIMARY KEY CLUSTERED ([Copy_ID] ASC),
-    CONSTRAINT [FK_Copies_Book] FOREIGN KEY ([Book_ID]) REFERENCES [dbo].[Book] ([Book_Id])
+    CONSTRAINT [FK_Copies_Book] FOREIGN KEY ([Book_ID]) REFERENCES [dbo].[Book] ([Book_Id]),
+	CONSTRAINT [FK_Copies_CheckOut] FOREIGN KEY ([CheckOut_ID]) REFERENCES [dbo].[CheckOut] ([Chk_ID])
 );
 
 CREATE TABLE [dbo].[Room] (

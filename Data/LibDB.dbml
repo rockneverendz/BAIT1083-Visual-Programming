@@ -39,6 +39,7 @@
       <Column Name="Due_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="Rtn_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="CheckOut_CheckOutList" Member="CheckOutLists" ThisKey="Chk_ID" OtherKey="Chk_ID" Type="CheckOutList" />
+      <Association Name="CheckOut_Copy" Member="Copies" ThisKey="Chk_ID" OtherKey="CheckOut_ID" Type="Copy" />
       <Association Name="Patron_CheckOut" Member="Patron" ThisKey="Patron_ID" OtherKey="Patron_ID" Type="Patron" IsForeignKey="true" />
       <Association Name="Return_CheckOut" Member="Return" ThisKey="Rtn_ID" OtherKey="Rtn_ID" Type="Return" IsForeignKey="true" />
     </Type>
@@ -56,8 +57,10 @@
       <Column Name="Copy_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Book_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CheckOut_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Copy_CheckOutList" Member="CheckOutLists" ThisKey="Copy_ID" OtherKey="Copy_ID" Type="CheckOutList" />
       <Association Name="Book_Copy" Member="Book" ThisKey="Book_ID" OtherKey="Book_Id" Type="Book" IsForeignKey="true" />
+      <Association Name="CheckOut_Copy" Member="CheckOut" ThisKey="CheckOut_ID" OtherKey="Chk_ID" Type="CheckOut" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Patron" Member="Patrons">
