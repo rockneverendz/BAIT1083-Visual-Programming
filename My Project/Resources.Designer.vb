@@ -1442,6 +1442,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property not_visible() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("not visible", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property notepad_and_pencil() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("notepad_and_pencil", resourceCulture)
@@ -2225,6 +2235,16 @@ Namespace My.Resources
         Friend ReadOnly Property vintage_reading_glasses() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("vintage_reading_glasses", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property visible() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("visible", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
