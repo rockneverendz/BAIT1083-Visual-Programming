@@ -11,6 +11,7 @@
 
         If chkUser.Any() Then
             Label_Message.Text = "Successfully logged in!"
+            'Me.Hide()
             Form_StonksLib.Show()
 
         Else

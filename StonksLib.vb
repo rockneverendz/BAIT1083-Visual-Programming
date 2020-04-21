@@ -15,7 +15,8 @@
         Menu_Checkout.Click,
         Menu_Return.Click,
         Menu_NewRoomBooking.Click, Menu_ViewBookingHistory.Click,
-        Menu_PatronList.Click
+        Menu_PatronList.Click,
+        Menu_Profile.Click
 
         Dim UserControls() As UserControl
 
@@ -48,6 +49,9 @@
 
         ElseIf (sender.Equals(Menu_PatronList)) Then
             UserControls = {New BAIT1083_Visual_Programming.UserControl_PatronList()}
+
+        ElseIf (sender.Equals(Menu_Profile)) Then
+            UserControls = {New BAIT1083_Visual_Programming.UserControl_Profile()}
 
         Else
             'User should not reach here'
