@@ -36,11 +36,11 @@ Partial Class Login
         '
         Me.Label_Username.AutoSize = True
         Me.Label_Username.BackColor = System.Drawing.SystemColors.Control
-        Me.Label_Username.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Username.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label_Username.Location = New System.Drawing.Point(6, 18)
         Me.Label_Username.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_Username.Name = "Label_Username"
-        Me.Label_Username.Size = New System.Drawing.Size(95, 18)
+        Me.Label_Username.Size = New System.Drawing.Size(85, 18)
         Me.Label_Username.TabIndex = 0
         Me.Label_Username.Text = "Username: "
         '
@@ -48,11 +48,11 @@ Partial Class Login
         '
         Me.Label_Password.AutoSize = True
         Me.Label_Password.BackColor = System.Drawing.SystemColors.Control
-        Me.Label_Password.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Password.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label_Password.Location = New System.Drawing.Point(8, 52)
         Me.Label_Password.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_Password.Name = "Label_Password"
-        Me.Label_Password.Size = New System.Drawing.Size(93, 18)
+        Me.Label_Password.Size = New System.Drawing.Size(83, 18)
         Me.Label_Password.TabIndex = 1
         Me.Label_Password.Text = "Password: "
         '
