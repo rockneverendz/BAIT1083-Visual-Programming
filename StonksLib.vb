@@ -23,7 +23,10 @@ Public Class Form_StonksLib
         Dim UserControls() As UserControl
 
         If (sender.Equals(Menu_NewBook)) Then
-            UserControls = {New BAIT1083_Visual_Programming.UserControl_NewBook()}
+            Dim newBook As UserControl_NewBook = New BAIT1083_Visual_Programming.UserControl_NewBook() With {
+                .StonkLib = Me
+            }
+            UserControls = {newBook}
 
         ElseIf (sender.Equals(Menu_BookList)) Then
 
@@ -60,10 +63,27 @@ Public Class Form_StonksLib
             UserControls = {New UserControl()}
         End If
 
+        AddControls(UserControls)
+    End Sub
+
+    Public Sub Jump_BookDetails(book_ID As Integer)
+        Dim UserControls() As UserControl
+
+        Dim bookList As UserControl_BookList = New BAIT1083_Visual_Programming.UserControl_BookList()
+        Dim bookDetails As UserControl_BookDetails = New BAIT1083_Visual_Programming.UserControl_BookDetails()
+        bookList.BookDetails() = bookDetails
+        bookDetails.BookList() = bookList
+        bookDetails.Fill(book_ID)
+
+        UserControls = {bookDetails, bookList}
+
+        AddControls(UserControls)
+    End Sub
+
+    Private Sub AddControls(UserControls() As UserControl)
         Panel_Main.Controls.Clear()
         Panel_Main.Controls.AddRange(UserControls)
         UserControls(0).AutoSize = True
         UserControls(0).Dock = System.Windows.Forms.DockStyle.Fill
     End Sub
-
 End Class
