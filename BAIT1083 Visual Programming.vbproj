@@ -106,9 +106,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LibDB.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Data\LibDB.vb">
-      <DependentUpon>LibDB.dbml</DependentUpon>
-    </Compile>
     <Compile Include="User Controls\UserControl_RoomBookingReport.Designer.vb">
       <DependentUpon>UserControl_RoomBookingReport.vb</DependentUpon>
     </Compile>
