@@ -1,4 +1,7 @@
-﻿Public Class Form_StonksLib
+﻿Imports System.Runtime.Remoting.Channels
+Imports Microsoft.VisualBasic.ApplicationServices
+
+Public Class Form_StonksLib
     Public Sub New()
 
         ' This call is required by the designer.
@@ -14,7 +17,7 @@
         Menu_BookList.Click,
         Menu_Checkout.Click,
         Menu_Return.Click,
-        Menu_NewRoomBooking.Click, Menu_ViewBookingHistory.Click,
+        Menu_NewRoomBooking.Click, Menu_ViewBookingHistory.Click, Menu_RBooking_Report.Click,
         Menu_PatronList.Click
 
         Dim UserControls() As UserControl
@@ -49,6 +52,8 @@
         ElseIf (sender.Equals(Menu_PatronList)) Then
             UserControls = {New BAIT1083_Visual_Programming.UserControl_PatronList()}
 
+        ElseIf (sender.Equals(Menu_RBooking_Report)) Then
+            UserControls = {New BAIT1083_Visual_Programming.UserControl_RoomBookingReport()}
         Else
             'User should not reach here'
             UserControls = {New UserControl()}
