@@ -211,17 +211,14 @@
   <data name="three_rings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Design App UI Icon Pack\three-rings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="center_align" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Design App UI Icon Pack\center-align.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="text_tool" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Design App UI Icon Pack\text-tool.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="desktop_application" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Design App UI Icon Pack\desktop-application.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="gel_tube" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Design App UI Icon Pack\gel-tube.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="text_tool" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Design App UI Icon Pack\text-tool.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="intersect_desing" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Design App UI Icon Pack\intersect-desing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -406,14 +403,23 @@
   <data name="STONKS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\STONKS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="liner_pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Design App UI Icon Pack\liner-pencil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="multiple_files" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Design App UI Icon Pack\multiple-files.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="desktop_lamp_with_desk" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Design App UI Icon Pack\desktop-lamp-with-desk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ai_file" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Design App UI Icon Pack\ai-file.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="drawing_crayon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Design App UI Icon Pack\drawing-crayon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LibBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LibBackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="three_brushes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Design App UI Icon Pack\three-brushes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="break_apart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Design App UI Icon Pack\break-apart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -466,9 +472,6 @@
   <data name="school_pen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Design App UI Icon Pack\school-pen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="erase_lines" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Design App UI Icon Pack\erase-lines.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="favourite_symbol" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Design App UI Icon Pack\favourite-symbol.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -502,14 +505,17 @@
   <data name="open_round_scissors" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Design App UI Icon Pack\open-round-scissors.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="center_align" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Design App UI Icon Pack\center-align.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cancel_sticker" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Design App UI Icon Pack\cancel-sticker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="round_cap" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Design App UI Icon Pack\round-cap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="arrow_and_a_dot" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Design App UI Icon Pack\arrow-and-a-dot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ai_file" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Design App UI Icon Pack\ai-file.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="center_object" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Design App UI Icon Pack\center-object.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -532,11 +538,8 @@
   <data name="writing_feather" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Design App UI Icon Pack\writing-feather.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="liner_pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Design App UI Icon Pack\liner-pencil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="three_brushes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Design App UI Icon Pack\three-brushes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="paint_brush_with_drops" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Design App UI Icon Pack\paint-brush-with-drops.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_3d_design" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Design App UI Icon Pack\3d-design.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -568,6 +571,9 @@
   <data name="align_top" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Design App UI Icon Pack\align-top.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bike-with-yellow-wall-min" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bike-with-yellow-wall-min.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="move_folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Design App UI Icon Pack\move-folder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -589,8 +595,8 @@
   <data name="printing_document" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Design App UI Icon Pack\printing-document.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="drawing_crayon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Design App UI Icon Pack\drawing-crayon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="arrow_and_a_dot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Design App UI Icon Pack\arrow-and-a-dot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fonts_folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Design App UI Icon Pack\fonts-folder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -730,8 +736,8 @@
   <data name="paint_tube_with_drop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Design App UI Icon Pack\paint-tube-with-drop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="paint_brush_with_drops" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Design App UI Icon Pack\paint-brush-with-drops.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="erase_lines" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Design App UI Icon Pack\erase-lines.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="spatula" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Design App UI Icon Pack\spatula.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -778,7 +784,10 @@
   <data name="capital_letters" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Design App UI Icon Pack\capital-letters.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LibBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LibBackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="visible" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\visible.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="not visible" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\not visible.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
