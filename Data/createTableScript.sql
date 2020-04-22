@@ -1,11 +1,11 @@
 /*WARNING!!! RUNNING THIS SCRIPT WILL DELETE ALL YOUR EXISTING DATA!*/
 DROP TABLE [dbo].[CheckOutList];
+DROP TABLE [dbo].[Copies];
 DROP TABLE [dbo].[CheckOut];
 DROP TABLE [dbo].[Return];
 DROP TABLE [dbo].[RoomBooking];
-DROP TABLE [dbo].[Copies];
-DROP TABLE [dbo].[Book];
 DROP TABLE [dbo].[Room];
+DROP TABLE [dbo].[Book];
 DROP TABLE [dbo].[Patron];
 DROP TABLE [dbo].[AdminLib];
 
@@ -39,16 +39,6 @@ CREATE TABLE [dbo].[Book] (
     PRIMARY KEY CLUSTERED ([Book_Id] ASC)
 );
 
-/*Barcode is Copy_ID*/
-CREATE TABLE [dbo].[Copies] (
-    [Copy_ID] INT          IDENTITY (1000, 1) NOT NULL,
-    [Book_ID] INT          NOT NULL,
-    [Status]  VARCHAR (50) NULL,
-    [CheckOut_ID] INT NULL, 
-    PRIMARY KEY CLUSTERED ([Copy_ID] ASC),
-    CONSTRAINT [FK_Copies_Book] FOREIGN KEY ([Book_ID]) REFERENCES [dbo].[Book] ([Book_Id]),
-	CONSTRAINT [FK_Copies_CheckOut] FOREIGN KEY ([CheckOut_ID]) REFERENCES [dbo].[CheckOut] ([Chk_ID])
-);
 
 CREATE TABLE [dbo].[Room] (
     [Room_Id] INT IDENTITY (1000, 1) NOT NULL,
@@ -57,12 +47,12 @@ CREATE TABLE [dbo].[Room] (
 );
 
 CREATE TABLE [dbo].[RoomBooking] (
-    [Patron_ID]     INT      NOT NULL,
-    [Room_ID]       INT      NOT NULL,
-    [Date_Time]     DATE NOT NULL,
-    [CheckIn_Date]  VARCHAR(50) NULL,
-    [CheckOut_Date] VARCHAR(50) NULL,
-    CONSTRAINT [RoomBooking_ID] PRIMARY KEY CLUSTERED ([Patron_ID] ASC, [Room_ID] ASC, [Date_Time] ASC),
+    [Patron_ID]    INT  NOT NULL,
+    [Room_ID]      INT  NOT NULL,
+    [CheckIn_Date] DATE NOT NULL,
+    [Start_Time]   INT  NULL,
+    [End_Time]     INT  NULL,
+    CONSTRAINT [RoomBooking_ID] PRIMARY KEY CLUSTERED ([Patron_ID] ASC, [Room_ID] ASC, [CheckIn_Date] ASC),
     CONSTRAINT [FK_RoomBooking_Patron] FOREIGN KEY ([Patron_ID]) REFERENCES [dbo].[Patron] ([Patron_ID]),
     CONSTRAINT [FK_RoomBooking_Room] FOREIGN KEY ([Room_ID]) REFERENCES [dbo].[Room] ([Room_Id])
 );
@@ -83,6 +73,17 @@ CREATE TABLE [dbo].[CheckOut] (
 	CONSTRAINT [FK_CheckOut_Return] FOREIGN KEY ([Rtn_ID]) REFERENCES [dbo].[Return] ([Rtn_ID]),
     CONSTRAINT [FK_CheckOut_Patron] FOREIGN KEY ([Patron_ID]) REFERENCES [dbo].[Patron] ([Patron_ID]),
     CONSTRAINT [PK_CheckOut] PRIMARY KEY CLUSTERED ([Chk_ID] ASC)
+);
+
+/*Barcode is Copy_ID*/
+CREATE TABLE [dbo].[Copies] (
+    [Copy_ID] INT          IDENTITY (1000, 1) NOT NULL,
+    [Book_ID] INT          NOT NULL,
+    [Status]  VARCHAR (50) NULL,
+    [CheckOut_ID] INT NULL, 
+    PRIMARY KEY CLUSTERED ([Copy_ID] ASC),
+    CONSTRAINT [FK_Copies_Book] FOREIGN KEY ([Book_ID]) REFERENCES [dbo].[Book] ([Book_Id]),
+	CONSTRAINT [FK_Copies_CheckOut] FOREIGN KEY ([CheckOut_ID]) REFERENCES [dbo].[CheckOut] ([Chk_ID])
 );
 
 CREATE TABLE [dbo].[CheckOutList] (
