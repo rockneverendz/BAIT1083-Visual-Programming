@@ -11,9 +11,9 @@
     <Type Name="RoomBooking">
       <Column Name="Patron_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Room_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Date_Time" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="CheckIn_Date" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="CheckOut_Date" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CheckIn_Date" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Start_Time" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="End_Time" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Patron_RoomBooking" Member="Patron" ThisKey="Patron_ID" OtherKey="Patron_ID" Type="Patron" IsForeignKey="true" />
       <Association Name="Room_RoomBooking" Member="Room" ThisKey="Room_ID" OtherKey="Room_Id" Type="Room" IsForeignKey="true" />
     </Type>
