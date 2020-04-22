@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class UserControl_RBookingHistory
 	Inherits System.Windows.Forms.UserControl
 
 	'UserControl overrides dispose to clean up the component list.
-	<System.Diagnostics.DebuggerNonUserCode()> _
+	<System.Diagnostics.DebuggerNonUserCode()>
 	Protected Overrides Sub Dispose(ByVal disposing As Boolean)
 		Try
 			If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class UserControl_RBookingHistory
 	'NOTE: The following procedure is required by the Windows Form Designer
 	'It can be modified using the Windows Form Designer.  
 	'Do not modify it using the code editor.
-	<System.Diagnostics.DebuggerStepThrough()> _
+	<System.Diagnostics.DebuggerStepThrough()>
 	Private Sub InitializeComponent()
 		Me.Panel1 = New System.Windows.Forms.Panel()
 		Me.lstRBookingDetails = New System.Windows.Forms.ListView()
@@ -35,6 +35,9 @@ Partial Class UserControl_RBookingHistory
 		Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
 		Me.dtpSearchDate = New System.Windows.Forms.DateTimePicker()
 		Me.Label1 = New System.Windows.Forms.Label()
+		Me.btnConfirm = New System.Windows.Forms.Button()
+		Me.cmbStartTime = New System.Windows.Forms.ComboBox()
+		Me.txtStartTime = New System.Windows.Forms.TextBox()
 		Me.btnDelete = New System.Windows.Forms.Button()
 		Me.btnEdit = New System.Windows.Forms.Button()
 		Me.txtEndTime = New System.Windows.Forms.TextBox()
@@ -50,10 +53,6 @@ Partial Class UserControl_RBookingHistory
 		Me.Label3 = New System.Windows.Forms.Label()
 		Me.txtPatronID = New System.Windows.Forms.TextBox()
 		Me.Label2 = New System.Windows.Forms.Label()
-		Me.txtStartTime = New System.Windows.Forms.TextBox()
-		Me.cmbStartTime = New System.Windows.Forms.ComboBox()
-		Me.btnConfirm = New System.Windows.Forms.Button()
-		Me.dtpUpdateDate = New System.Windows.Forms.DateTimePicker()
 		Me.Panel1.SuspendLayout()
 		CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SplitContainer1.Panel1.SuspendLayout()
@@ -65,18 +64,20 @@ Partial Class UserControl_RBookingHistory
 		'
 		Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
 		Me.Panel1.Controls.Add(Me.lstRBookingDetails)
-		Me.Panel1.Location = New System.Drawing.Point(3, 3)
+		Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+		Me.Panel1.Location = New System.Drawing.Point(0, 0)
 		Me.Panel1.Name = "Panel1"
-		Me.Panel1.Size = New System.Drawing.Size(730, 597)
+		Me.Panel1.Size = New System.Drawing.Size(1067, 523)
 		Me.Panel1.TabIndex = 0
 		'
 		'lstRBookingDetails
 		'
 		Me.lstRBookingDetails.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.RowNumber, Me.ColRoomID, Me.ColRSize, Me.ColPatronID, Me.ColPatronName, Me.ColDate, Me.ColStartTime, Me.ColEndTime})
+		Me.lstRBookingDetails.Dock = System.Windows.Forms.DockStyle.Fill
 		Me.lstRBookingDetails.HideSelection = False
-		Me.lstRBookingDetails.Location = New System.Drawing.Point(3, 3)
+		Me.lstRBookingDetails.Location = New System.Drawing.Point(0, 0)
 		Me.lstRBookingDetails.Name = "lstRBookingDetails"
-		Me.lstRBookingDetails.Size = New System.Drawing.Size(720, 590)
+		Me.lstRBookingDetails.Size = New System.Drawing.Size(1063, 519)
 		Me.lstRBookingDetails.TabIndex = 0
 		Me.lstRBookingDetails.UseCompatibleStateImageBehavior = False
 		Me.lstRBookingDetails.View = System.Windows.Forms.View.Details
@@ -131,7 +132,8 @@ Partial Class UserControl_RBookingHistory
 		'SplitContainer1
 		'
 		Me.SplitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-		Me.SplitContainer1.Location = New System.Drawing.Point(734, 3)
+		Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Right
+		Me.SplitContainer1.Location = New System.Drawing.Point(707, 0)
 		Me.SplitContainer1.Name = "SplitContainer1"
 		Me.SplitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal
 		'
@@ -142,7 +144,6 @@ Partial Class UserControl_RBookingHistory
 		'
 		'SplitContainer1.Panel2
 		'
-		Me.SplitContainer1.Panel2.Controls.Add(Me.dtpUpdateDate)
 		Me.SplitContainer1.Panel2.Controls.Add(Me.btnConfirm)
 		Me.SplitContainer1.Panel2.Controls.Add(Me.cmbStartTime)
 		Me.SplitContainer1.Panel2.Controls.Add(Me.txtStartTime)
@@ -161,8 +162,8 @@ Partial Class UserControl_RBookingHistory
 		Me.SplitContainer1.Panel2.Controls.Add(Me.Label3)
 		Me.SplitContainer1.Panel2.Controls.Add(Me.txtPatronID)
 		Me.SplitContainer1.Panel2.Controls.Add(Me.Label2)
-		Me.SplitContainer1.Size = New System.Drawing.Size(360, 595)
-		Me.SplitContainer1.SplitterDistance = 90
+		Me.SplitContainer1.Size = New System.Drawing.Size(360, 523)
+		Me.SplitContainer1.SplitterDistance = 79
 		Me.SplitContainer1.TabIndex = 0
 		'
 		'dtpSearchDate
@@ -180,6 +181,34 @@ Partial Class UserControl_RBookingHistory
 		Me.Label1.Size = New System.Drawing.Size(110, 17)
 		Me.Label1.TabIndex = 0
 		Me.Label1.Text = "Search by Date:"
+		'
+		'btnConfirm
+		'
+		Me.btnConfirm.Location = New System.Drawing.Point(23, 304)
+		Me.btnConfirm.Name = "btnConfirm"
+		Me.btnConfirm.Size = New System.Drawing.Size(87, 33)
+		Me.btnConfirm.TabIndex = 18
+		Me.btnConfirm.Text = "Confirm"
+		Me.btnConfirm.UseVisualStyleBackColor = True
+		Me.btnConfirm.Visible = False
+		'
+		'cmbStartTime
+		'
+		Me.cmbStartTime.FormattingEnabled = True
+		Me.cmbStartTime.Items.AddRange(New Object() {"8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM"})
+		Me.cmbStartTime.Location = New System.Drawing.Point(24, 257)
+		Me.cmbStartTime.Name = "cmbStartTime"
+		Me.cmbStartTime.Size = New System.Drawing.Size(121, 24)
+		Me.cmbStartTime.TabIndex = 17
+		Me.cmbStartTime.Visible = False
+		'
+		'txtStartTime
+		'
+		Me.txtStartTime.Location = New System.Drawing.Point(24, 258)
+		Me.txtStartTime.Name = "txtStartTime"
+		Me.txtStartTime.ReadOnly = True
+		Me.txtStartTime.Size = New System.Drawing.Size(121, 22)
+		Me.txtStartTime.TabIndex = 16
 		'
 		'btnDelete
 		'
@@ -310,50 +339,15 @@ Partial Class UserControl_RBookingHistory
 		Me.Label2.TabIndex = 0
 		Me.Label2.Text = "Patron ID:"
 		'
-		'txtStartTime
-		'
-		Me.txtStartTime.Location = New System.Drawing.Point(24, 258)
-		Me.txtStartTime.Name = "txtStartTime"
-		Me.txtStartTime.ReadOnly = True
-		Me.txtStartTime.Size = New System.Drawing.Size(121, 22)
-		Me.txtStartTime.TabIndex = 16
-		'
-		'cmbStartTime
-		'
-		Me.cmbStartTime.FormattingEnabled = True
-		Me.cmbStartTime.Items.AddRange(New Object() {"8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM"})
-		Me.cmbStartTime.Location = New System.Drawing.Point(24, 257)
-		Me.cmbStartTime.Name = "cmbStartTime"
-		Me.cmbStartTime.Size = New System.Drawing.Size(121, 24)
-		Me.cmbStartTime.TabIndex = 17
-		Me.cmbStartTime.Visible = False
-		'
-		'btnConfirm
-		'
-		Me.btnConfirm.Location = New System.Drawing.Point(23, 304)
-		Me.btnConfirm.Name = "btnConfirm"
-		Me.btnConfirm.Size = New System.Drawing.Size(87, 33)
-		Me.btnConfirm.TabIndex = 18
-		Me.btnConfirm.Text = "Confirm"
-		Me.btnConfirm.UseVisualStyleBackColor = True
-		Me.btnConfirm.Visible = False
-		'
-		'dtpUpdateDate
-		'
-		Me.dtpUpdateDate.Location = New System.Drawing.Point(23, 184)
-		Me.dtpUpdateDate.Name = "dtpUpdateDate"
-		Me.dtpUpdateDate.Size = New System.Drawing.Size(200, 22)
-		Me.dtpUpdateDate.TabIndex = 19
-		Me.dtpUpdateDate.Visible = False
-		'
 		'UserControl_RBookingHistory
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.AutoSize = True
 		Me.Controls.Add(Me.SplitContainer1)
 		Me.Controls.Add(Me.Panel1)
 		Me.Name = "UserControl_RBookingHistory"
-		Me.Size = New System.Drawing.Size(1097, 603)
+		Me.Size = New System.Drawing.Size(1067, 523)
 		Me.Panel1.ResumeLayout(False)
 		Me.SplitContainer1.Panel1.ResumeLayout(False)
 		Me.SplitContainer1.Panel1.PerformLayout()
@@ -395,5 +389,4 @@ Partial Class UserControl_RBookingHistory
 	Friend WithEvents txtStartTime As TextBox
 	Friend WithEvents cmbStartTime As ComboBox
 	Friend WithEvents btnConfirm As Button
-	Friend WithEvents dtpUpdateDate As DateTimePicker
 End Class

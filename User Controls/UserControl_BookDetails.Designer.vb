@@ -508,9 +508,9 @@ Partial Class UserControl_BookDetails
         CType(Me.NumericUpDown_YearPublish, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
-    End Sub
+	End Sub
 
-    Friend WithEvents Label_ID As Label
+	Friend WithEvents Label_ID As Label
     Friend WithEvents Button_Cancel As Button
     Friend WithEvents TextBox_ID As TextBox
     Friend WithEvents TextBox_CallNo As TextBox

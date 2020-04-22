@@ -283,11 +283,11 @@ Partial Public Class RoomBooking
 	
 	Private _Room_ID As Integer
 	
-	Private _Date_Time As Date
+	Private _CheckIn_Date As Date
 	
-	Private _CheckIn_Date As String
+	Private _Start_Time As System.Nullable(Of Integer)
 	
-	Private _CheckOut_Date As String
+	Private _End_Time As System.Nullable(Of Integer)
 	
 	Private _Patron As EntityRef(Of Patron)
 	
@@ -308,17 +308,17 @@ Partial Public Class RoomBooking
     End Sub
     Partial Private Sub OnRoom_IDChanged()
     End Sub
-    Partial Private Sub OnDate_TimeChanging(value As Date)
-    End Sub
-    Partial Private Sub OnDate_TimeChanged()
-    End Sub
-    Partial Private Sub OnCheckIn_DateChanging(value As String)
+    Partial Private Sub OnCheckIn_DateChanging(value As Date)
     End Sub
     Partial Private Sub OnCheckIn_DateChanged()
     End Sub
-    Partial Private Sub OnCheckOut_DateChanging(value As String)
+    Partial Private Sub OnStart_TimeChanging(value As System.Nullable(Of Integer))
     End Sub
-    Partial Private Sub OnCheckOut_DateChanged()
+    Partial Private Sub OnStart_TimeChanged()
+    End Sub
+    Partial Private Sub OnEnd_TimeChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnEnd_TimeChanged()
     End Sub
     #End Region
 	
@@ -369,30 +369,14 @@ Partial Public Class RoomBooking
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Date_Time", DbType:="Date NOT NULL", IsPrimaryKey:=true)>  _
-	Public Property Date_Time() As Date
-		Get
-			Return Me._Date_Time
-		End Get
-		Set
-			If ((Me._Date_Time = value)  _
-						= false) Then
-				Me.OnDate_TimeChanging(value)
-				Me.SendPropertyChanging
-				Me._Date_Time = value
-				Me.SendPropertyChanged("Date_Time")
-				Me.OnDate_TimeChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CheckIn_Date", DbType:="VarChar(50)")>  _
-	Public Property CheckIn_Date() As String
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CheckIn_Date", DbType:="Date NOT NULL", IsPrimaryKey:=true)>  _
+	Public Property CheckIn_Date() As Date
 		Get
 			Return Me._CheckIn_Date
 		End Get
 		Set
-			If (String.Equals(Me._CheckIn_Date, value) = false) Then
+			If ((Me._CheckIn_Date = value)  _
+						= false) Then
 				Me.OnCheckIn_DateChanging(value)
 				Me.SendPropertyChanging
 				Me._CheckIn_Date = value
@@ -402,18 +386,34 @@ Partial Public Class RoomBooking
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CheckOut_Date", DbType:="VarChar(50)")>  _
-	Public Property CheckOut_Date() As String
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Start_Time", DbType:="Int")>  _
+	Public Property Start_Time() As System.Nullable(Of Integer)
 		Get
-			Return Me._CheckOut_Date
+			Return Me._Start_Time
 		End Get
 		Set
-			If (String.Equals(Me._CheckOut_Date, value) = false) Then
-				Me.OnCheckOut_DateChanging(value)
+			If (Me._Start_Time.Equals(value) = false) Then
+				Me.OnStart_TimeChanging(value)
 				Me.SendPropertyChanging
-				Me._CheckOut_Date = value
-				Me.SendPropertyChanged("CheckOut_Date")
-				Me.OnCheckOut_DateChanged
+				Me._Start_Time = value
+				Me.SendPropertyChanged("Start_Time")
+				Me.OnStart_TimeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_End_Time", DbType:="Int")>  _
+	Public Property End_Time() As System.Nullable(Of Integer)
+		Get
+			Return Me._End_Time
+		End Get
+		Set
+			If (Me._End_Time.Equals(value) = false) Then
+				Me.OnEnd_TimeChanging(value)
+				Me.SendPropertyChanging
+				Me._End_Time = value
+				Me.SendPropertyChanged("End_Time")
+				Me.OnEnd_TimeChanged
 			End If
 		End Set
 	End Property
