@@ -86,11 +86,12 @@ Partial Class UserControl_NewBook
         'RadioButton_Select
         '
         Me.RadioButton_Select.AutoSize = True
+        Me.RadioButton_Select.Enabled = False
         Me.RadioButton_Select.Location = New System.Drawing.Point(456, 13)
         Me.RadioButton_Select.Margin = New System.Windows.Forms.Padding(5)
         Me.RadioButton_Select.Name = "RadioButton_Select"
         Me.RadioButton_Select.Size = New System.Drawing.Size(69, 17)
-        Me.RadioButton_Select.TabIndex = 5
+        Me.RadioButton_Select.TabIndex = 2
         Me.RadioButton_Select.TabStop = True
         Me.RadioButton_Select.Text = "Selection"
         Me.RadioButton_Select.UseVisualStyleBackColor = True
@@ -98,11 +99,12 @@ Partial Class UserControl_NewBook
         'RadioButton_All
         '
         Me.RadioButton_All.AutoSize = True
+        Me.RadioButton_All.Enabled = False
         Me.RadioButton_All.Location = New System.Drawing.Point(410, 13)
         Me.RadioButton_All.Margin = New System.Windows.Forms.Padding(5)
         Me.RadioButton_All.Name = "RadioButton_All"
         Me.RadioButton_All.Size = New System.Drawing.Size(36, 17)
-        Me.RadioButton_All.TabIndex = 4
+        Me.RadioButton_All.TabIndex = 1
         Me.RadioButton_All.TabStop = True
         Me.RadioButton_All.Text = "All"
         Me.RadioButton_All.UseVisualStyleBackColor = True
@@ -114,7 +116,7 @@ Partial Class UserControl_NewBook
         Me.Label_Panel_History.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_Panel_History.Name = "Label_Panel_History"
         Me.Label_Panel_History.Size = New System.Drawing.Size(39, 13)
-        Me.Label_Panel_History.TabIndex = 3
+        Me.Label_Panel_History.TabIndex = 0
         Me.Label_Panel_History.Text = "History"
         '
         'ListView_History
@@ -129,7 +131,7 @@ Partial Class UserControl_NewBook
         Me.ListView_History.Margin = New System.Windows.Forms.Padding(5)
         Me.ListView_History.Name = "ListView_History"
         Me.ListView_History.Size = New System.Drawing.Size(510, 192)
-        Me.ListView_History.TabIndex = 4
+        Me.ListView_History.TabIndex = 3
         Me.ListView_History.UseCompatibleStateImageBehavior = False
         Me.ListView_History.View = System.Windows.Forms.View.Details
         '
@@ -160,7 +162,7 @@ Partial Class UserControl_NewBook
         Me.Label_Panel_Copies.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_Panel_Copies.Name = "Label_Panel_Copies"
         Me.Label_Panel_Copies.Size = New System.Drawing.Size(39, 13)
-        Me.Label_Panel_Copies.TabIndex = 2
+        Me.Label_Panel_Copies.TabIndex = 0
         Me.Label_Panel_Copies.Text = "Copies"
         '
         'Panel_Copies
@@ -188,7 +190,7 @@ Partial Class UserControl_NewBook
         Me.ListView_Copies.Margin = New System.Windows.Forms.Padding(5)
         Me.ListView_Copies.Name = "ListView_Copies"
         Me.ListView_Copies.Size = New System.Drawing.Size(510, 192)
-        Me.ListView_Copies.TabIndex = 4
+        Me.ListView_Copies.TabIndex = 1
         Me.ListView_Copies.UseCompatibleStateImageBehavior = False
         Me.ListView_Copies.View = System.Windows.Forms.View.Details
         '
@@ -260,7 +262,7 @@ Partial Class UserControl_NewBook
         Me.SplitContainer_Checkout.Panel2.Controls.Add(Me.TableLayoutPanel_CheckoutDetails)
         Me.SplitContainer_Checkout.Size = New System.Drawing.Size(816, 490)
         Me.SplitContainer_Checkout.SplitterDistance = 272
-        Me.SplitContainer_Checkout.TabIndex = 51
+        Me.SplitContainer_Checkout.TabIndex = 0
         '
         'Label_ID
         '
@@ -272,7 +274,7 @@ Partial Class UserControl_NewBook
         Me.Label_ID.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_ID.Name = "Label_ID"
         Me.Label_ID.Size = New System.Drawing.Size(18, 13)
-        Me.Label_ID.TabIndex = 33
+        Me.Label_ID.TabIndex = 0
         Me.Label_ID.Text = "ID"
         '
         'TextBox_ID
@@ -285,7 +287,7 @@ Partial Class UserControl_NewBook
         Me.TextBox_ID.Name = "TextBox_ID"
         Me.TextBox_ID.ReadOnly = True
         Me.TextBox_ID.Size = New System.Drawing.Size(166, 20)
-        Me.TextBox_ID.TabIndex = 34
+        Me.TextBox_ID.TabIndex = 0
         '
         'Label_Title
         '
@@ -297,7 +299,7 @@ Partial Class UserControl_NewBook
         Me.Label_Title.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_Title.Name = "Label_Title"
         Me.Label_Title.Size = New System.Drawing.Size(27, 13)
-        Me.Label_Title.TabIndex = 35
+        Me.Label_Title.TabIndex = 1
         Me.Label_Title.Text = "Title"
         '
         'TextBox_Title
@@ -309,7 +311,7 @@ Partial Class UserControl_NewBook
         Me.TextBox_Title.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_Title.Name = "TextBox_Title"
         Me.TextBox_Title.Size = New System.Drawing.Size(166, 20)
-        Me.TextBox_Title.TabIndex = 36
+        Me.TextBox_Title.TabIndex = 1
         '
         'Label_Author
         '
@@ -321,7 +323,7 @@ Partial Class UserControl_NewBook
         Me.Label_Author.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_Author.Name = "Label_Author"
         Me.Label_Author.Size = New System.Drawing.Size(38, 13)
-        Me.Label_Author.TabIndex = 37
+        Me.Label_Author.TabIndex = 2
         Me.Label_Author.Text = "Author"
         '
         'TextBox_Author
@@ -333,7 +335,7 @@ Partial Class UserControl_NewBook
         Me.TextBox_Author.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_Author.Name = "TextBox_Author"
         Me.TextBox_Author.Size = New System.Drawing.Size(166, 20)
-        Me.TextBox_Author.TabIndex = 38
+        Me.TextBox_Author.TabIndex = 2
         '
         'Label_Category
         '
@@ -345,7 +347,7 @@ Partial Class UserControl_NewBook
         Me.Label_Category.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_Category.Name = "Label_Category"
         Me.Label_Category.Size = New System.Drawing.Size(49, 13)
-        Me.Label_Category.TabIndex = 39
+        Me.Label_Category.TabIndex = 3
         Me.Label_Category.Text = "Category"
         '
         'ComboBox_Category
@@ -358,7 +360,7 @@ Partial Class UserControl_NewBook
         Me.ComboBox_Category.Margin = New System.Windows.Forms.Padding(5)
         Me.ComboBox_Category.Name = "ComboBox_Category"
         Me.ComboBox_Category.Size = New System.Drawing.Size(166, 21)
-        Me.ComboBox_Category.TabIndex = 52
+        Me.ComboBox_Category.TabIndex = 3
         '
         'Label_Publication
         '
@@ -370,7 +372,7 @@ Partial Class UserControl_NewBook
         Me.Label_Publication.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_Publication.Name = "Label_Publication"
         Me.Label_Publication.Size = New System.Drawing.Size(59, 13)
-        Me.Label_Publication.TabIndex = 41
+        Me.Label_Publication.TabIndex = 4
         Me.Label_Publication.Text = "Publication"
         '
         'TextBox_Publication
@@ -382,7 +384,7 @@ Partial Class UserControl_NewBook
         Me.TextBox_Publication.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_Publication.Name = "TextBox_Publication"
         Me.TextBox_Publication.Size = New System.Drawing.Size(166, 20)
-        Me.TextBox_Publication.TabIndex = 42
+        Me.TextBox_Publication.TabIndex = 4
         '
         'Label_YearPublish
         '
@@ -394,7 +396,7 @@ Partial Class UserControl_NewBook
         Me.Label_YearPublish.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_YearPublish.Name = "Label_YearPublish"
         Me.Label_YearPublish.Size = New System.Drawing.Size(66, 13)
-        Me.Label_YearPublish.TabIndex = 43
+        Me.Label_YearPublish.TabIndex = 5
         Me.Label_YearPublish.Text = "Year Publish"
         '
         'NumericUpDown_YearPublish
@@ -408,7 +410,7 @@ Partial Class UserControl_NewBook
         Me.NumericUpDown_YearPublish.Minimum = New Decimal(New Integer() {1000, 0, 0, 0})
         Me.NumericUpDown_YearPublish.Name = "NumericUpDown_YearPublish"
         Me.NumericUpDown_YearPublish.Size = New System.Drawing.Size(166, 20)
-        Me.NumericUpDown_YearPublish.TabIndex = 51
+        Me.NumericUpDown_YearPublish.TabIndex = 5
         Me.NumericUpDown_YearPublish.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left
         Me.NumericUpDown_YearPublish.Value = New Decimal(New Integer() {2000, 0, 0, 0})
         '
@@ -422,7 +424,7 @@ Partial Class UserControl_NewBook
         Me.Label_Copies.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_Copies.Name = "Label_Copies"
         Me.Label_Copies.Size = New System.Drawing.Size(39, 13)
-        Me.Label_Copies.TabIndex = 45
+        Me.Label_Copies.TabIndex = 6
         Me.Label_Copies.Text = "Copies"
         '
         'NumericUpDown_Copies
@@ -436,7 +438,7 @@ Partial Class UserControl_NewBook
         Me.NumericUpDown_Copies.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.NumericUpDown_Copies.Name = "NumericUpDown_Copies"
         Me.NumericUpDown_Copies.Size = New System.Drawing.Size(166, 20)
-        Me.NumericUpDown_Copies.TabIndex = 50
+        Me.NumericUpDown_Copies.TabIndex = 6
         Me.NumericUpDown_Copies.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left
         Me.NumericUpDown_Copies.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
@@ -450,7 +452,7 @@ Partial Class UserControl_NewBook
         Me.Label_CallNo.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_CallNo.Name = "Label_CallNo"
         Me.Label_CallNo.Size = New System.Drawing.Size(42, 13)
-        Me.Label_CallNo.TabIndex = 47
+        Me.Label_CallNo.TabIndex = 7
         Me.Label_CallNo.Text = "Call no."
         '
         'TextBox_CallNo
@@ -463,7 +465,7 @@ Partial Class UserControl_NewBook
         Me.TextBox_CallNo.MaxLength = 15
         Me.TextBox_CallNo.Name = "TextBox_CallNo"
         Me.TextBox_CallNo.Size = New System.Drawing.Size(166, 20)
-        Me.TextBox_CallNo.TabIndex = 48
+        Me.TextBox_CallNo.TabIndex = 7
         '
         'Button_Add
         '
@@ -472,7 +474,7 @@ Partial Class UserControl_NewBook
         Me.Button_Add.Margin = New System.Windows.Forms.Padding(5)
         Me.Button_Add.Name = "Button_Add"
         Me.Button_Add.Size = New System.Drawing.Size(75, 23)
-        Me.Button_Add.TabIndex = 5
+        Me.Button_Add.TabIndex = 8
         Me.Button_Add.Text = "Add"
         Me.Button_Add.UseVisualStyleBackColor = True
         '
@@ -483,7 +485,7 @@ Partial Class UserControl_NewBook
         Me.Button_Clear.Margin = New System.Windows.Forms.Padding(5)
         Me.Button_Clear.Name = "Button_Clear"
         Me.Button_Clear.Size = New System.Drawing.Size(75, 23)
-        Me.Button_Clear.TabIndex = 49
+        Me.Button_Clear.TabIndex = 9
         Me.Button_Clear.Text = "Clear"
         Me.Button_Clear.UseVisualStyleBackColor = True
         '
