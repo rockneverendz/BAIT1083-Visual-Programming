@@ -1,5 +1,6 @@
 ﻿Public Class UserControl_RoomBooking
-	Private time() As String = {"8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM"}
+	'Private time() As String = {"8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM"}
+	Private time() As Integer = {8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19}
 
 	Private Sub SearchPatron()
 		Using db As New LibDBDataContext()
@@ -71,16 +72,16 @@
 		End Using
 	End Sub
 
-	Private Function GetRoomBooking(searchDate As Date, room As Room, time As String) As RoomBooking
+	Private Function GetRoomBooking(searchDate As Date, room As Room, time As Integer) As RoomBooking
 		Using db As New LibDBDataContext()
 			Try
 				'To get the roombooking that is match with the selected date
 				Dim roombooked As RoomBooking = db.RoomBookings.First(
 						Function(o) o.Room_ID = room.Room_Id And
-						o.Date_Time.Day = searchDate.Day And
-						o.Date_Time.Month = searchDate.Month And
-						o.Date_Time.Year = searchDate.Year And
-						o.CheckIn_Date.Equals(time)
+						o.CheckIn_Date.Day = searchDate.Day And
+						o.CheckIn_Date.Month = searchDate.Month And
+						o.CheckIn_Date.Year = searchDate.Year And
+						o.Start_Time.Equals(time)           '<--  BUG MIGHT HAPPEN
 					)
 
 				GetRoomBooking = roombooked
@@ -106,7 +107,7 @@
 	End Sub
 
 	Private Sub cmbStartTime_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbStartTime.SelectedIndexChanged
-		txtEndTime.Text = time(cmbStartTime.SelectedIndex + 2)
+		txtEndTime.Text = parseTimeToString(time(cmbStartTime.SelectedIndex + 2))
 	End Sub
 
 	Private Sub lstAvailabilityChart_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstAvailabilityChart.SelectedIndexChanged
@@ -141,9 +142,9 @@
 				Dim rb As New RoomBooking
 				rb.Patron_ID = Integer.Parse(txtPatronID.Text)
 				rb.Room_ID = Integer.Parse(txtRmID.Text.Substring(1, 4))
-				rb.Date_Time = dateValue
-				rb.CheckIn_Date = cmbStartTime.Text
-				rb.CheckOut_Date = txtEndTime.Text
+				rb.CheckIn_Date = dateValue
+				rb.Start_Time = parseTimeToInt(cmbStartTime.Text)                       '<-------
+				rb.End_Time = parseTimeToInt(txtEndTime.Text)                           '<-------
 
 				db.RoomBookings.InsertOnSubmit(rb)
 				db.SubmitChanges()
@@ -173,4 +174,31 @@
 
 
 	End Sub
+
+	Private Function parseTimeToString(time As Integer) As String
+		'This function is use to parse integer in time to string
+		If time < 12 Then
+			parseTimeToString = time & ":00 AM"
+		ElseIf time.Equals(12) Then
+			parseTimeToString = time & ":00 PM"
+		Else
+			parseTimeToString = (time - 12) & ":00 PM"
+		End If
+	End Function
+
+	Private Function parseTimeToInt(time As String) As Integer
+		'This function is use to parse string in time to integer
+		Dim timeArr() As String = {"8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM"}
+		Dim intTimeArr() As Integer = {8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19}
+		Dim count As Integer = 0
+		Dim result As Integer = 0
+		For Each tArr In timeArr
+			If time.Equals(tArr) Then
+				result = intTimeArr.ElementAt(count)
+			End If
+			count += 1
+		Next
+		parseTimeToInt = result
+	End Function
+
 End Class

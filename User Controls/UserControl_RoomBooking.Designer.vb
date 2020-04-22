@@ -63,10 +63,12 @@ Partial Class UserControl_RoomBooking
 		Me.time700 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.dtpSearch = New System.Windows.Forms.DateTimePicker()
 		Me.Label7 = New System.Windows.Forms.Label()
+		Me.Panel3 = New System.Windows.Forms.Panel()
 		CType(Me.RoomBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RoomBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel2.SuspendLayout()
 		Me.Panel1.SuspendLayout()
+		Me.Panel3.SuspendLayout()
 		Me.SuspendLayout()
 		'
 		'ContextMenuStrip1
@@ -115,9 +117,10 @@ Partial Class UserControl_RoomBooking
 		Me.Panel2.Controls.Add(Me.dtpAddDate)
 		Me.Panel2.Controls.Add(Me.Label4)
 		Me.Panel2.Controls.Add(Me.Label3)
-		Me.Panel2.Location = New System.Drawing.Point(3, 435)
+		Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
+		Me.Panel2.Location = New System.Drawing.Point(0, 358)
 		Me.Panel2.Name = "Panel2"
-		Me.Panel2.Size = New System.Drawing.Size(1082, 165)
+		Me.Panel2.Size = New System.Drawing.Size(1067, 165)
 		Me.Panel2.TabIndex = 4
 		'
 		'txtRmID
@@ -272,21 +275,23 @@ Partial Class UserControl_RoomBooking
 		'
 		Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
 		Me.Panel1.Controls.Add(Me.lstAvailabilityChart)
-		Me.Panel1.Location = New System.Drawing.Point(3, 3)
+		Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+		Me.Panel1.Location = New System.Drawing.Point(0, 0)
 		Me.Panel1.Name = "Panel1"
-		Me.Panel1.Size = New System.Drawing.Size(1082, 380)
+		Me.Panel1.Size = New System.Drawing.Size(1067, 317)
 		Me.Panel1.TabIndex = 3
 		'
 		'lstAvailabilityChart
 		'
 		Me.lstAvailabilityChart.BackColor = System.Drawing.SystemColors.ControlLight
 		Me.lstAvailabilityChart.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.RoomID, Me.time800, Me.time900, Me.time1000, Me.time1100, Me.time1200, Me.time100, Me.time200, Me.time300, Me.time400, Me.time500, Me.time600, Me.time700})
+		Me.lstAvailabilityChart.Dock = System.Windows.Forms.DockStyle.Fill
 		Me.lstAvailabilityChart.GridLines = True
 		Me.lstAvailabilityChart.HideSelection = False
-		Me.lstAvailabilityChart.Location = New System.Drawing.Point(3, 3)
+		Me.lstAvailabilityChart.Location = New System.Drawing.Point(0, 0)
 		Me.lstAvailabilityChart.Name = "lstAvailabilityChart"
 		Me.lstAvailabilityChart.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.lstAvailabilityChart.Size = New System.Drawing.Size(1072, 375)
+		Me.lstAvailabilityChart.Size = New System.Drawing.Size(1063, 313)
 		Me.lstAvailabilityChart.TabIndex = 0
 		Me.lstAvailabilityChart.UseCompatibleStateImageBehavior = False
 		Me.lstAvailabilityChart.View = System.Windows.Forms.View.Details
@@ -370,7 +375,7 @@ Partial Class UserControl_RoomBooking
 		'
 		'dtpSearch
 		'
-		Me.dtpSearch.Location = New System.Drawing.Point(137, 394)
+		Me.dtpSearch.Location = New System.Drawing.Point(139, 9)
 		Me.dtpSearch.Name = "dtpSearch"
 		Me.dtpSearch.Size = New System.Drawing.Size(200, 22)
 		Me.dtpSearch.TabIndex = 5
@@ -378,28 +383,40 @@ Partial Class UserControl_RoomBooking
 		'Label7
 		'
 		Me.Label7.AutoSize = True
-		Me.Label7.Location = New System.Drawing.Point(21, 397)
+		Me.Label7.Location = New System.Drawing.Point(23, 12)
 		Me.Label7.Name = "Label7"
 		Me.Label7.Size = New System.Drawing.Size(110, 17)
 		Me.Label7.TabIndex = 6
 		Me.Label7.Text = "Search by Date:"
+		'
+		'Panel3
+		'
+		Me.Panel3.AutoSize = True
+		Me.Panel3.Controls.Add(Me.dtpSearch)
+		Me.Panel3.Controls.Add(Me.Label7)
+		Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
+		Me.Panel3.Location = New System.Drawing.Point(0, 317)
+		Me.Panel3.Name = "Panel3"
+		Me.Panel3.Size = New System.Drawing.Size(1067, 41)
+		Me.Panel3.TabIndex = 1
 		'
 		'UserControl_RoomBooking
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.AutoSize = True
-		Me.Controls.Add(Me.Label7)
-		Me.Controls.Add(Me.dtpSearch)
+		Me.Controls.Add(Me.Panel3)
 		Me.Controls.Add(Me.Panel2)
 		Me.Controls.Add(Me.Panel1)
 		Me.Name = "UserControl_RoomBooking"
-		Me.Size = New System.Drawing.Size(1097, 603)
+		Me.Size = New System.Drawing.Size(1067, 523)
 		CType(Me.RoomBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RoomBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel2.ResumeLayout(False)
 		Me.Panel2.PerformLayout()
 		Me.Panel1.ResumeLayout(False)
+		Me.Panel3.ResumeLayout(False)
+		Me.Panel3.PerformLayout()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -444,4 +461,5 @@ Partial Class UserControl_RoomBooking
 	Friend WithEvents Label7 As Label
 	Friend WithEvents txtEndTime As TextBox
 	Friend WithEvents txtRmID As TextBox
+	Friend WithEvents Panel3 As Panel
 End Class
