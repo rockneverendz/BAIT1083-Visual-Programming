@@ -162,7 +162,7 @@
         Next
     End Sub
 
-    Private Class HistoryModel
+    Public Class HistoryModel
         Public Sub New(Copy_ID As Integer, Chk_ID As Integer, Issue_Date As Date, Due_Date As Date)
             Me.Copy_ID = Copy_ID
             Me.Chk_ID = Chk_ID
