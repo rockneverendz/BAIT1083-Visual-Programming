@@ -38,7 +38,9 @@
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>BAIT1083 Visual Programming.xml</DocumentationFile>
-    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,7 +50,9 @@
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DocumentationFile>BAIT1083 Visual Programming.xml</DocumentationFile>
-    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -104,9 +108,6 @@
     <Compile Include="Data\LibDB.designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>LibDB.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="Data\LibDB.vb">
       <DependentUpon>LibDB.dbml</DependentUpon>
     </Compile>
     <Compile Include="User Controls\UserControl_RoomBookingReport.Designer.vb">
@@ -864,6 +865,7 @@
     <Content Include="Data\LibDB_log.ldf">
       <DependentUpon>LibDB.mdf</DependentUpon>
     </Content>
+    <Content Include="Data\MostBookingPeriod.sql" />
     <None Include="Resources\LibBackground.jpg" />
     <None Include="Resources\imageedit_4_7602996586.png" />
     <None Include="Resources\circle-cropped.png" />
