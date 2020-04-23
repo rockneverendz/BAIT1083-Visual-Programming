@@ -104,10 +104,10 @@
 						rb.CheckIn_Date.Year.Equals(rbDate.Year)
 					)
 				'Update record
-				Dim format = "dd/MM/yyyy"
+				'Dim format = "dd/MM/yyyy"
 				'Dim dateString As String = dtpUpdateDate.Value.ToString(format)
-				Dim dateValue As Date = Date.ParseExact(dateString, format, Nothing)
-				selectedRBooking.CheckIn_Date = dateValue
+				'Dim dateValue As Date = Date.ParseExact(dateString, format, Nothing)
+				'selectedRBooking.CheckIn_Date = dateValue
 				selectedRBooking.Start_Time = parseTimeToInt(cmbStartTime.Text)         '<----
 				selectedRBooking.End_Time = parseTimeToInt(txtEndTime.Text)             '<----
 
