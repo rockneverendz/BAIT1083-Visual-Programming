@@ -10,7 +10,9 @@ Public Class UserControl_Checkout
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-        Me.TextBox_DueDate.Text = Today.ToLongDateString
+        Dim due_date = Today.AddDays(NumericUpDown_Weeks.Value * 7)
+        TextBox_DueDate.Text = due_date.ToLongDateString
+        TextBox_DueDate.Tag = due_date
     End Sub
 
     Private Sub TextBox_CopyID_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox_CopyID.KeyDown
@@ -46,7 +48,11 @@ Public Class UserControl_Checkout
     Private Sub RetriveCopy(copy_ID As Integer)
         Using database As New LibDBDataContext()
             Dim copy = database.Copies.FirstOrDefault(Function(o) o.Copy_ID = copy_ID)
-            If Not IsNothing(copy) Then
+            If IsNothing(copy) Then
+                Label_Copy_Message.Text = "Copy ID not found!"
+            ElseIf Not copy.Status.Equals("Available") Then
+                Label_Copy_Message.Text = "Copy is not available for loan!"
+            Else
                 Label_Copy_Message.Text = ""
 
                 Dim book = copy.Book
@@ -55,8 +61,6 @@ Public Class UserControl_Checkout
                 listViewItem.SubItems(0).Tag = copy.Copy_ID
 
                 ListView_New.Items.Add(listViewItem)
-            Else
-                Label_Copy_Message.Text = "Copy ID not found!"
             End If
         End Using
     End Sub
@@ -84,6 +88,7 @@ Public Class UserControl_Checkout
                 Label_Patron_Message.Text = ""
 
                 TextBox_ID.Text = patron.Patron_ID
+                TextBox_ID.Tag = patron.Patron_ID ' Will use this tag to skip parsing later
                 TextBox_Name.Text = patron.Name
                 TextBox_Course.Text = patron.Course
                 TextBox_PhoneNo.Text = patron.PhoneNo
@@ -117,11 +122,63 @@ Public Class UserControl_Checkout
     End Sub
 
     Private Sub NumericUpDown_Weeks_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown_Weeks.ValueChanged
-        Me.TextBox_DueDate.Text = Today.AddDays(NumericUpDown_Weeks.Value * 7).ToLongDateString
+        Dim due_date = Today.AddDays(NumericUpDown_Weeks.Value * 7)
+        TextBox_DueDate.Text = due_date.ToLongDateString
+        TextBox_DueDate.Tag = due_date
     End Sub
 
     Private Sub Button_Confirm_Click(sender As Object, e As EventArgs) Handles Button_Confirm.Click
-        Throw New NotImplementedException
+
+        'TODO: Validate TextBox_PatronID.tag and ListView_New
+
+        Using database As New LibDBDataContext()
+
+            ' Get geniune patron object
+            Dim patron_id = DirectCast(TextBox_ID.Tag, Integer)
+            Dim patron = database.Patrons.First(Function(o) o.Patron_ID = patron_id)
+
+            Dim checkout = New CheckOut With {
+                .Patron_ID = patron.Patron_ID,
+                .Issue_Date = Today,
+                .Due_Date = TextBox_DueDate.Tag
+            }
+
+            ' Update database to get an auto-generated Chk_ID
+            database.CheckOuts.InsertOnSubmit(checkout)
+            database.SubmitChanges()
+
+            Dim numberOfCopies = ListView_New.Items.Count
+            Dim checkoutlist(numberOfCopies) As CheckOutList
+            Dim copies(numberOfCopies) As Copy
+
+            ' For every entry on the list, get a geniue copy and update copy status.
+            For index = 0 To numberOfCopies - 1
+                Dim copy_ID = DirectCast(ListView_New.Items(index).SubItems(0).Tag, Integer)
+                Dim copy = database.Copies.First(Function(o) o.Copy_ID = copy_ID)
+                copy.Status = "Loaned"
+                copy.CheckOut_ID = checkout.Chk_ID
+                copies(index) = copy
+            Next
+
+            ' For every copy, add to checkoutlist
+            For index = 0 To numberOfCopies - 1
+                checkoutlist(index) = New CheckOutList With {
+                    .Chk_ID = checkout.Chk_ID,
+                    .Copy_ID = copies(index).Copy_ID
+                }
+                database.CheckOutLists.InsertOnSubmit(checkoutlist(index))
+            Next
+
+            ' Update database
+            database.SubmitChanges()
+
+            ' Inform user
+            MessageBox.Show("Successfully Checkout.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            ' Clear form
+            Button_Clear_Click(Button_Clear, EventArgs.Empty)
+
+        End Using
     End Sub
 
     Private Sub Button_Clear_Click(sender As Object, e As EventArgs) Handles Button_Clear.Click
@@ -133,6 +190,8 @@ Public Class UserControl_Checkout
         TextBox_PhoneNo.Text = ""
         TextBox_Address.Text = ""
         TextBox_Email.Text = ""
+        Label_Copy_Message.Text = ""
+        Label_Patron_Message.Text = ""
         ListView_Current.Items.Clear()
         ListView_New.Items.Clear()
         NumericUpDown_Weeks.Value = 2
