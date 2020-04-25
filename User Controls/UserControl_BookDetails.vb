@@ -8,6 +8,12 @@
         Me.bookID = bookID
         Using database As New LibDBDataContext()
 
+            ' Add distict categories
+            Dim categories = (From bk In database.Books Select bk.Category).Distinct()
+            For Each category In categories
+                ComboBox_Category.Items.Add(category)
+            Next
+
             ' Get the book details
             Dim book = database.Books.First(Function(o) o.Book_Id = bookID)
             TextBox_ID.Text = book.Book_Id
