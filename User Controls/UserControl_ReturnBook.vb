@@ -139,6 +139,42 @@
 
     Private Sub Button_Return_Click(sender As Object, e As EventArgs) Handles Button_Return.Click
 
+        'TODO: Validate if there's at least one book on the list
+
+        Using database As New LibDBDataContext()
+
+            ' Make a new return record
+            Dim totalFines As Integer = TextBox_TotalFines.Tag
+            Dim returns As [Return] = New [Return] With {
+                .Rtn_Date = Today,
+                .Fine_Amount = totalFines
+            }
+
+            ' Submit record to get return_id
+            database.Returns.InsertOnSubmit(returns)
+            database.SubmitChanges()
+
+            ' Using that return_id update checkoutlist of said copy
+            For Each listItemView In ListView_Copies.Items
+                Dim copy_ID As Integer = listItemView.SubItems(0).Tag
+                Dim copy = database.Copies.FirstOrDefault(Function(o) o.Copy_ID = copy_ID)
+                Dim checkoutlist = copy.CheckOutLists.First(Function(o) o.Copy_ID = copy_ID)
+
+                copy.Status = "Available"
+                copy.CheckOut_ID = Nothing
+                checkoutlist.Return_ID = returns.Rtn_ID
+            Next
+
+            ' Save changes
+            database.SubmitChanges()
+
+            ' Inform user
+            MessageBox.Show("Successfully Returned.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            ' Clear form
+            Button_Clear_Click(Button_Clear, EventArgs.Empty)
+
+        End Using
     End Sub
 
     Private Sub Button_Clear_Click(sender As Object, e As EventArgs) Handles Button_Clear.Click
