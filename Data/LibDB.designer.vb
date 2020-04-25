@@ -746,15 +746,11 @@ Partial Public Class CheckOut
 	
 	Private _Due_Date As Date
 	
-	Private _Rtn_ID As System.Nullable(Of Integer)
-	
 	Private _CheckOutLists As EntitySet(Of CheckOutList)
 	
 	Private _Copies As EntitySet(Of Copy)
 	
 	Private _Patron As EntityRef(Of Patron)
-	
-	Private _Return As EntityRef(Of [Return])
 	
     #Region "Extensibility Method Definitions"
     Partial Private Sub OnLoaded()
@@ -779,10 +775,6 @@ Partial Public Class CheckOut
     End Sub
     Partial Private Sub OnDue_DateChanged()
     End Sub
-    Partial Private Sub OnRtn_IDChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnRtn_IDChanged()
-    End Sub
     #End Region
 	
 	Public Sub New()
@@ -790,7 +782,6 @@ Partial Public Class CheckOut
 		Me._CheckOutLists = New EntitySet(Of CheckOutList)(AddressOf Me.attach_CheckOutLists, AddressOf Me.detach_CheckOutLists)
 		Me._Copies = New EntitySet(Of Copy)(AddressOf Me.attach_Copies, AddressOf Me.detach_Copies)
 		Me._Patron = CType(Nothing, EntityRef(Of Patron))
-		Me._Return = CType(Nothing, EntityRef(Of [Return]))
 		OnCreated
 	End Sub
 	
@@ -865,25 +856,6 @@ Partial Public Class CheckOut
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Rtn_ID", DbType:="Int")>  _
-	Public Property Rtn_ID() As System.Nullable(Of Integer)
-		Get
-			Return Me._Rtn_ID
-		End Get
-		Set
-			If (Me._Rtn_ID.Equals(value) = false) Then
-				If Me._Return.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnRtn_IDChanging(value)
-				Me.SendPropertyChanging
-				Me._Rtn_ID = value
-				Me.SendPropertyChanged("Rtn_ID")
-				Me.OnRtn_IDChanged
-			End If
-		End Set
-	End Property
-	
 	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="CheckOut_CheckOutList", Storage:="_CheckOutLists", ThisKey:="Chk_ID", OtherKey:="Chk_ID")>  _
 	Public Property CheckOutLists() As EntitySet(Of CheckOutList)
 		Get
@@ -928,34 +900,6 @@ Partial Public Class CheckOut
 					Me._Patron_ID = CType(Nothing, Integer)
 				End If
 				Me.SendPropertyChanged("Patron")
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Return_CheckOut", Storage:="_Return", ThisKey:="Rtn_ID", OtherKey:="Rtn_ID", IsForeignKey:=true)>  _
-	Public Property [Return]() As [Return]
-		Get
-			Return Me._Return.Entity
-		End Get
-		Set
-			Dim previousValue As [Return] = Me._Return.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._Return.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._Return.Entity = Nothing
-					previousValue.CheckOuts.Remove(Me)
-				End If
-				Me._Return.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.CheckOuts.Add(Me)
-					Me._Rtn_ID = value.Rtn_ID
-				Else
-					Me._Rtn_ID = CType(Nothing, Nullable(Of Integer))
-				End If
-				Me.SendPropertyChanged("[Return]")
 			End If
 		End Set
 	End Property
@@ -1009,9 +953,13 @@ Partial Public Class CheckOutList
 	
 	Private _Copy_ID As Integer
 	
+	Private _Return_ID As System.Nullable(Of Integer)
+	
 	Private _CheckOut As EntityRef(Of CheckOut)
 	
 	Private _Copy As EntityRef(Of Copy)
+	
+	Private _Return As EntityRef(Of [Return])
 	
     #Region "Extensibility Method Definitions"
     Partial Private Sub OnLoaded()
@@ -1028,12 +976,17 @@ Partial Public Class CheckOutList
     End Sub
     Partial Private Sub OnCopy_IDChanged()
     End Sub
+    Partial Private Sub OnReturn_IDChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnReturn_IDChanged()
+    End Sub
     #End Region
 	
 	Public Sub New()
 		MyBase.New
 		Me._CheckOut = CType(Nothing, EntityRef(Of CheckOut))
 		Me._Copy = CType(Nothing, EntityRef(Of Copy))
+		Me._Return = CType(Nothing, EntityRef(Of [Return]))
 		OnCreated
 	End Sub
 	
@@ -1073,6 +1026,25 @@ Partial Public Class CheckOutList
 				Me._Copy_ID = value
 				Me.SendPropertyChanged("Copy_ID")
 				Me.OnCopy_IDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Return_ID", DbType:="Int")>  _
+	Public Property Return_ID() As System.Nullable(Of Integer)
+		Get
+			Return Me._Return_ID
+		End Get
+		Set
+			If (Me._Return_ID.Equals(value) = false) Then
+				If Me._Return.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnReturn_IDChanging(value)
+				Me.SendPropertyChanging
+				Me._Return_ID = value
+				Me.SendPropertyChanged("Return_ID")
+				Me.OnReturn_IDChanged
 			End If
 		End Set
 	End Property
@@ -1129,6 +1101,34 @@ Partial Public Class CheckOutList
 					Me._Copy_ID = CType(Nothing, Integer)
 				End If
 				Me.SendPropertyChanged("Copy")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Return_CheckOutList", Storage:="_Return", ThisKey:="Return_ID", OtherKey:="Rtn_ID", IsForeignKey:=true)>  _
+	Public Property [Return]() As [Return]
+		Get
+			Return Me._Return.Entity
+		End Get
+		Set
+			Dim previousValue As [Return] = Me._Return.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._Return.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._Return.Entity = Nothing
+					previousValue.CheckOutLists.Remove(Me)
+				End If
+				Me._Return.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.CheckOutLists.Add(Me)
+					Me._Return_ID = value.Rtn_ID
+				Else
+					Me._Return_ID = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("[Return]")
 			End If
 		End Set
 	End Property
@@ -1602,7 +1602,7 @@ Partial Public Class [Return]
 	
 	Private _Fine_Amount As System.Nullable(Of Decimal)
 	
-	Private _CheckOuts As EntitySet(Of CheckOut)
+	Private _CheckOutLists As EntitySet(Of CheckOutList)
 	
     #Region "Extensibility Method Definitions"
     Partial Private Sub OnLoaded()
@@ -1627,7 +1627,7 @@ Partial Public Class [Return]
 	
 	Public Sub New()
 		MyBase.New
-		Me._CheckOuts = New EntitySet(Of CheckOut)(AddressOf Me.attach_CheckOuts, AddressOf Me.detach_CheckOuts)
+		Me._CheckOutLists = New EntitySet(Of CheckOutList)(AddressOf Me.attach_CheckOutLists, AddressOf Me.detach_CheckOutLists)
 		OnCreated
 	End Sub
 	
@@ -1680,13 +1680,13 @@ Partial Public Class [Return]
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Return_CheckOut", Storage:="_CheckOuts", ThisKey:="Rtn_ID", OtherKey:="Rtn_ID")>  _
-	Public Property CheckOuts() As EntitySet(Of CheckOut)
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Return_CheckOutList", Storage:="_CheckOutLists", ThisKey:="Rtn_ID", OtherKey:="Return_ID")>  _
+	Public Property CheckOutLists() As EntitySet(Of CheckOutList)
 		Get
-			Return Me._CheckOuts
+			Return Me._CheckOutLists
 		End Get
 		Set
-			Me._CheckOuts.Assign(value)
+			Me._CheckOutLists.Assign(value)
 		End Set
 	End Property
 	
@@ -1708,12 +1708,12 @@ Partial Public Class [Return]
 		End If
 	End Sub
 	
-	Private Sub attach_CheckOuts(ByVal entity As CheckOut)
+	Private Sub attach_CheckOutLists(ByVal entity As CheckOutList)
 		Me.SendPropertyChanging
 		entity.[Return] = Me
 	End Sub
 	
-	Private Sub detach_CheckOuts(ByVal entity As CheckOut)
+	Private Sub detach_CheckOutLists(ByVal entity As CheckOutList)
 		Me.SendPropertyChanging
 		entity.[Return] = Nothing
 	End Sub
