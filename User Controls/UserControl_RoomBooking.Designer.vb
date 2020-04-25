@@ -64,11 +64,13 @@ Partial Class UserControl_RoomBooking
 		Me.dtpSearch = New System.Windows.Forms.DateTimePicker()
 		Me.Label7 = New System.Windows.Forms.Label()
 		Me.Panel3 = New System.Windows.Forms.Panel()
+		Me.Panel4 = New System.Windows.Forms.Panel()
 		CType(Me.RoomBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.RoomBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel2.SuspendLayout()
 		Me.Panel1.SuspendLayout()
 		Me.Panel3.SuspendLayout()
+		Me.Panel4.SuspendLayout()
 		Me.SuspendLayout()
 		'
 		'ContextMenuStrip1
@@ -117,10 +119,10 @@ Partial Class UserControl_RoomBooking
 		Me.Panel2.Controls.Add(Me.dtpAddDate)
 		Me.Panel2.Controls.Add(Me.Label4)
 		Me.Panel2.Controls.Add(Me.Label3)
-		Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-		Me.Panel2.Location = New System.Drawing.Point(0, 358)
+		Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+		Me.Panel2.Location = New System.Drawing.Point(0, 44)
 		Me.Panel2.Name = "Panel2"
-		Me.Panel2.Size = New System.Drawing.Size(1067, 165)
+		Me.Panel2.Size = New System.Drawing.Size(1067, 161)
 		Me.Panel2.TabIndex = 4
 		'
 		'txtRmID
@@ -152,7 +154,7 @@ Partial Class UserControl_RoomBooking
 		'
 		Me.Splitter1.Location = New System.Drawing.Point(0, 0)
 		Me.Splitter1.Name = "Splitter1"
-		Me.Splitter1.Size = New System.Drawing.Size(3, 161)
+		Me.Splitter1.Size = New System.Drawing.Size(3, 157)
 		Me.Splitter1.TabIndex = 16
 		Me.Splitter1.TabStop = False
 		'
@@ -278,7 +280,7 @@ Partial Class UserControl_RoomBooking
 		Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
 		Me.Panel1.Location = New System.Drawing.Point(0, 0)
 		Me.Panel1.Name = "Panel1"
-		Me.Panel1.Size = New System.Drawing.Size(1067, 317)
+		Me.Panel1.Size = New System.Drawing.Size(1067, 320)
 		Me.Panel1.TabIndex = 3
 		'
 		'lstAvailabilityChart
@@ -291,7 +293,7 @@ Partial Class UserControl_RoomBooking
 		Me.lstAvailabilityChart.Location = New System.Drawing.Point(0, 0)
 		Me.lstAvailabilityChart.Name = "lstAvailabilityChart"
 		Me.lstAvailabilityChart.RightToLeft = System.Windows.Forms.RightToLeft.No
-		Me.lstAvailabilityChart.Size = New System.Drawing.Size(1063, 313)
+		Me.lstAvailabilityChart.Size = New System.Drawing.Size(1063, 316)
 		Me.lstAvailabilityChart.TabIndex = 0
 		Me.lstAvailabilityChart.UseCompatibleStateImageBehavior = False
 		Me.lstAvailabilityChart.View = System.Windows.Forms.View.Details
@@ -391,25 +393,33 @@ Partial Class UserControl_RoomBooking
 		'
 		'Panel3
 		'
-		Me.Panel3.AutoSize = True
 		Me.Panel3.Controls.Add(Me.dtpSearch)
 		Me.Panel3.Controls.Add(Me.Label7)
-		Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.Panel3.Location = New System.Drawing.Point(0, 317)
+		Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
+		Me.Panel3.Location = New System.Drawing.Point(0, 0)
 		Me.Panel3.Name = "Panel3"
-		Me.Panel3.Size = New System.Drawing.Size(1067, 41)
+		Me.Panel3.Size = New System.Drawing.Size(1067, 44)
 		Me.Panel3.TabIndex = 1
+		'
+		'Panel4
+		'
+		Me.Panel4.Controls.Add(Me.Panel2)
+		Me.Panel4.Controls.Add(Me.Panel3)
+		Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
+		Me.Panel4.Location = New System.Drawing.Point(0, 320)
+		Me.Panel4.Name = "Panel4"
+		Me.Panel4.Size = New System.Drawing.Size(1067, 205)
+		Me.Panel4.TabIndex = 5
 		'
 		'UserControl_RoomBooking
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.AutoSize = True
-		Me.Controls.Add(Me.Panel3)
-		Me.Controls.Add(Me.Panel2)
+		Me.Controls.Add(Me.Panel4)
 		Me.Controls.Add(Me.Panel1)
 		Me.Name = "UserControl_RoomBooking"
-		Me.Size = New System.Drawing.Size(1067, 523)
+		Me.Size = New System.Drawing.Size(1067, 525)
 		CType(Me.RoomBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.RoomBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel2.ResumeLayout(False)
@@ -417,8 +427,8 @@ Partial Class UserControl_RoomBooking
 		Me.Panel1.ResumeLayout(False)
 		Me.Panel3.ResumeLayout(False)
 		Me.Panel3.PerformLayout()
+		Me.Panel4.ResumeLayout(False)
 		Me.ResumeLayout(False)
-		Me.PerformLayout()
 
 	End Sub
 	Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
@@ -462,4 +472,5 @@ Partial Class UserControl_RoomBooking
 	Friend WithEvents txtEndTime As TextBox
 	Friend WithEvents txtRmID As TextBox
 	Friend WithEvents Panel3 As Panel
+	Friend WithEvents Panel4 As Panel
 End Class
