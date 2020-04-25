@@ -1,4 +1,6 @@
 ﻿Public Class UserControl_PatronList
+
+    Public Property PatronDetails As UserControl_PatronDetails
     Public Sub New()
 
         ' This call is required by the designer.
@@ -56,10 +58,12 @@
         End If
     End Sub
 
-    Public Property BookDetails As UserControl_BookDetails
-
     Private Sub ListView_Patron_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles ListView_Patron.MouseDoubleClick
-        Throw New NotImplementedException()
+        PatronDetails.Fill(ListView_Patron.SelectedItems(0).SubItems(0).Tag)
+        Me.Hide()
+        PatronDetails.Show()
+        PatronDetails.AutoSize = True
+        PatronDetails.Dock = System.Windows.Forms.DockStyle.Fill
     End Sub
 
 End Class
