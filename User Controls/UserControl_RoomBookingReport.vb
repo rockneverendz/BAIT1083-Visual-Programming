@@ -72,7 +72,7 @@ Public Class UserControl_RoomBookingReport
 	Private Sub doc_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles doc.PrintPage
 
 		' (1) Fonts
-		Dim fontHeader As New Font("Calibri", 24, FontStyle.Bold)
+		Dim fontHeader As New Font("Roboto Mono", 24, FontStyle.Bold)
 		Dim fontSubHeader As New Font("Calibri", 12)
 		Dim fontBody As New Font("Arial", 11)
 
@@ -104,8 +104,8 @@ Public Class UserControl_RoomBookingReport
 			Dim timeStr As String = lstQueryRpt.Items(cnt2).SubItems(0).Text
 			Dim countStr As String = lstQueryRpt.Items(cnt2).SubItems(1).Text
 
-			body.AppendFormat("{0, -5}   {1, 20}   {2, 10}" & vbNewLine, cnt, timeStr, countStr)
-			Console.WriteLine("{0, -5}   {1, 20}   {2, 10}" & vbNewLine, cnt, timeStr, countStr)
+			body.AppendFormat("{0, -5}{1, 20}{2, 10}" & vbNewLine, cnt, timeStr, countStr)
+			Console.WriteLine("{0, -5}{1, 20}{2, 10}" & vbNewLine, cnt, timeStr, countStr)
 
 			cnt2 += 1
 		Next
@@ -116,8 +116,8 @@ Public Class UserControl_RoomBookingReport
 		' (4) Print
 		With e.Graphics
 			.DrawImage(My.Resources.circle_cropped, 0, 0, 100, 100) ' Print the image with smaller size 100 x 100
-			.DrawString(header, fontHeader, Brushes.Black, 100, 0)
-			.DrawString(subHeader, fontSubHeader, Brushes.Black, 100, 40)
+			.DrawString(header, fontHeader, Brushes.Black, 150, 0)
+			.DrawString(subHeader, fontSubHeader, Brushes.Black, 150, 40)
 			.DrawString(body.ToString(), fontBody, Brushes.Black, 0, 120)
 		End With
 
