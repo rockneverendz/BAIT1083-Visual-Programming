@@ -107,6 +107,10 @@
 	End Sub
 
 	Private Sub cmbStartTime_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbStartTime.SelectedIndexChanged
+
+
+
+
 		txtEndTime.Text = parseTimeToString(time(cmbStartTime.SelectedIndex + 2))
 	End Sub
 
@@ -145,13 +149,14 @@
 				rb.CheckIn_Date = dateValue
 				rb.Start_Time = parseTimeToInt(cmbStartTime.Text)                       '<-------
 				rb.End_Time = parseTimeToInt(txtEndTime.Text)                           '<-------
-
+				'insert record
 				db.RoomBookings.InsertOnSubmit(rb)
 				db.SubmitChanges()
 
 				SearchRoomByDate(dateValue)
 
 				MessageBox.Show("The room booking details has been successfully added!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
 
 			Catch ex As Exception
 				Console.WriteLine(ex.Message)
@@ -162,7 +167,7 @@
 
 	End Sub
 
-	Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
+	Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click, btnSubmit.Click
 		txtPatronID.Text = ""
 		lblName.Text = ""
 		txtRmID.Text = ""
