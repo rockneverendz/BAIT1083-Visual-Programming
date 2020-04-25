@@ -447,6 +447,18 @@ Partial Class UserControl_RoomBooking
 	Friend WithEvents dtpAddDate As DateTimePicker
 	Friend WithEvents Label4 As Label
 	Friend WithEvents Label3 As Label
+	Friend WithEvents Label6 As Label
+	Friend WithEvents lblName As Label
+	Friend WithEvents Panel2 As Panel
+	Friend WithEvents btnSearchStudent As Button
+	Friend WithEvents Splitter1 As Splitter
+	Friend WithEvents Panel1 As Panel
+	Friend WithEvents dtpSearch As DateTimePicker
+	Friend WithEvents Label7 As Label
+	Friend WithEvents txtEndTime As TextBox
+	Friend WithEvents txtRmID As TextBox
+	Friend WithEvents Panel3 As Panel
+	Friend WithEvents Panel4 As Panel
 	Friend WithEvents lstAvailabilityChart As ListView
 	Friend WithEvents RoomID As ColumnHeader
 	Friend WithEvents time800 As ColumnHeader
@@ -461,16 +473,4 @@ Partial Class UserControl_RoomBooking
 	Friend WithEvents time500 As ColumnHeader
 	Friend WithEvents time600 As ColumnHeader
 	Friend WithEvents time700 As ColumnHeader
-	Friend WithEvents Label6 As Label
-	Friend WithEvents lblName As Label
-	Friend WithEvents Panel2 As Panel
-	Friend WithEvents btnSearchStudent As Button
-	Friend WithEvents Splitter1 As Splitter
-	Friend WithEvents Panel1 As Panel
-	Friend WithEvents dtpSearch As DateTimePicker
-	Friend WithEvents Label7 As Label
-	Friend WithEvents txtEndTime As TextBox
-	Friend WithEvents txtRmID As TextBox
-	Friend WithEvents Panel3 As Panel
-	Friend WithEvents Panel4 As Panel
 End Class

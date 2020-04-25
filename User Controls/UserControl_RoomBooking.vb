@@ -25,6 +25,7 @@
 	End Sub
 
 	Private Sub SearchRoomByDate(searchDate As Date)
+
 		lstAvailabilityChart.Items.Clear()
 		Using db As New LibDBDataContext()
 
@@ -81,7 +82,7 @@
 						o.CheckIn_Date.Day = searchDate.Day And
 						o.CheckIn_Date.Month = searchDate.Month And
 						o.CheckIn_Date.Year = searchDate.Year And
-						o.Start_Time.Equals(time)           '<--  BUG MIGHT HAPPEN
+						o.Start_Time.Equals(time)
 					)
 
 				GetRoomBooking = roombooked
@@ -92,8 +93,11 @@
 	End Function
 
 	Private Sub UserControl_RoomBooking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+		Cursor = Cursors.WaitCursor
 		SearchRoomByDate(Today)
-		dtpAddDate.MinDate = Today
+		dtpAddDate.MinDate = Today                      '<-------------Testing--------
+		Cursor = Cursors.Default
 
 	End Sub
 
@@ -107,9 +111,6 @@
 	End Sub
 
 	Private Sub cmbStartTime_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbStartTime.SelectedIndexChanged
-
-
-
 
 		txtEndTime.Text = parseTimeToString(time(cmbStartTime.SelectedIndex + 2))
 	End Sub
