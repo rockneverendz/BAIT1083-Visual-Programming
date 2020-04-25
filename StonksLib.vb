@@ -17,14 +17,17 @@ Public Class Form_StonksLib
         Menu_NewBook.Click, Menu_BookList.Click,
         Menu_Checkout.Click,
         Menu_Return.Click,
-        Menu_NewRoomBooking.Click, Menu_ViewBookingHistory.Click, Menu_RBooking_Report.Click,
+        Menu_NewRoomBooking.Click, Menu_ViewBookingHistory.Click,
         Menu_NewPatron.Click, Menu_PatronList.Click,
-        Menu_Profile.Click, Menu_MostBorrowedBookReport.Click
+        Menu_Profile.Click,
+        Menu_RBooking_Report.Click, Menu_MostBorrowedBookReport.Click
 
         Dim UserControls() As UserControl
 
         If (sender.Equals(Menu_NewBook)) Then
-            Dim newBook As UserControl_NewBook = New BAIT1083_Visual_Programming.UserControl_NewBook() With {
+
+            ' newBook needs a reference to this form to call Jump_BookDetails
+            Dim newBook = New BAIT1083_Visual_Programming.UserControl_NewBook() With {
                 .StonkLib = Me
             }
             UserControls = {newBook}
@@ -33,8 +36,8 @@ Public Class Form_StonksLib
 
             ' BookList is the first control
             ' BookDetails is be second control which requires parameters from BookList
-            Dim bookList As UserControl_BookList = New BAIT1083_Visual_Programming.UserControl_BookList()
-            Dim bookDetails As UserControl_BookDetails = New BAIT1083_Visual_Programming.UserControl_BookDetails()
+            Dim bookList = New BAIT1083_Visual_Programming.UserControl_BookList()
+            Dim bookDetails = New BAIT1083_Visual_Programming.UserControl_BookDetails()
             ' BookList needs a reference to BookDetails to pass down value.
             ' Both need reference to each other to show and hide each other.
             bookList.BookDetails() = bookDetails
@@ -54,17 +57,26 @@ Public Class Form_StonksLib
         ElseIf (sender.Equals(Menu_ViewBookingHistory)) Then
             UserControls = {New BAIT1083_Visual_Programming.UserControl_RBookingHistory}
 
-        ElseIf (sender.Equals(Menu_PatronList)) Then
-            UserControls = {New BAIT1083_Visual_Programming.UserControl_PatronList()}
+        ElseIf (sender.Equals(Menu_NewPatron)) Then
+            Dim newPatron = New BAIT1083_Visual_Programming.UserControl_NewPatron() With {
+                .StonkLib = Me
+            }
+            UserControls = {newPatron}
 
-        ElseIf (sender.Equals(Menu_RBooking_Report)) Then
-            UserControls = {New BAIT1083_Visual_Programming.UserControl_RoomBookingReport()}
-            
+        ElseIf (sender.Equals(Menu_PatronList)) Then
+
+            Dim patronList = New BAIT1083_Visual_Programming.UserControl_PatronList()
+            Dim patronDetails = New BAIT1083_Visual_Programming.UserControl_PatronDetails()
+            patronList.PatronDetails() = patronDetails
+            patronDetails.PatronList() = patronList
+
+            UserControls = {patronList, patronDetails}
+
         ElseIf (sender.Equals(Menu_Profile)) Then
             UserControls = {New BAIT1083_Visual_Programming.UserControl_Profile()}
 
-        ElseIf (sender.Equals(Menu_NewPatron)) Then
-            UserControls = {New BAIT1083_Visual_Programming.UserControl_NewPatron()}
+        ElseIf (sender.Equals(Menu_RBooking_Report)) Then
+            UserControls = {New BAIT1083_Visual_Programming.UserControl_RoomBookingReport()}
 
         ElseIf (sender.Equals(Menu_MostBorrowedBookReport)) Then
             UserControls = {New BAIT1083_Visual_Programming.UserControl_MostBorrowedBookReport()}
@@ -77,16 +89,30 @@ Public Class Form_StonksLib
         AddControls(UserControls)
     End Sub
 
-    Public Sub Jump_BookDetails(book_ID As Integer)
+    Friend Sub Jump_BookDetails(book_ID As Integer)
         Dim UserControls() As UserControl
 
-        Dim bookList As UserControl_BookList = New BAIT1083_Visual_Programming.UserControl_BookList()
-        Dim bookDetails As UserControl_BookDetails = New BAIT1083_Visual_Programming.UserControl_BookDetails()
+        Dim bookList = New BAIT1083_Visual_Programming.UserControl_BookList()
+        Dim bookDetails = New BAIT1083_Visual_Programming.UserControl_BookDetails()
         bookList.BookDetails() = bookDetails
         bookDetails.BookList() = bookList
         bookDetails.Fill(book_ID)
 
         UserControls = {bookDetails, bookList}
+
+        AddControls(UserControls)
+    End Sub
+
+    Friend Sub Jump_PatronDetails(patron_ID As Integer)
+        Dim UserControls() As UserControl
+
+        Dim patronList = New BAIT1083_Visual_Programming.UserControl_PatronList()
+        Dim patronDetails = New BAIT1083_Visual_Programming.UserControl_PatronDetails()
+        patronList.PatronDetails() = patronDetails
+        patronDetails.PatronList() = patronList
+        patronDetails.Fill(patron_ID)
+
+        UserControls = {patronDetails, patronList}
 
         AddControls(UserControls)
     End Sub
