@@ -58,6 +58,7 @@ Partial Class UserControl_BookDetails
         Me.History_Chk_ID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.History_Issue_Date = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.History_Due_Date = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.History_ReturnID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         CType(Me.SplitContainer_Checkout, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer_Checkout.Panel1.SuspendLayout()
         Me.SplitContainer_Checkout.Panel2.SuspendLayout()
@@ -456,7 +457,7 @@ Partial Class UserControl_BookDetails
         Me.ListView_History.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ListView_History.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.History_Copy_ID, Me.History_Chk_ID, Me.History_Issue_Date, Me.History_Due_Date})
+        Me.ListView_History.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.History_Copy_ID, Me.History_Chk_ID, Me.History_Issue_Date, Me.History_Due_Date, Me.History_ReturnID})
         Me.ListView_History.HideSelection = False
         Me.ListView_History.Location = New System.Drawing.Point(15, 38)
         Me.ListView_History.Margin = New System.Windows.Forms.Padding(5)
@@ -484,6 +485,10 @@ Partial Class UserControl_BookDetails
         '
         Me.History_Due_Date.Text = "Due Date"
         Me.History_Due_Date.Width = 120
+        '
+        'History_ReturnID
+        '
+        Me.History_ReturnID.Text = "Return ID"
         '
         'UserControl_BookDetails
         '
@@ -546,4 +551,5 @@ Partial Class UserControl_BookDetails
     Friend WithEvents ComboBox_Category As ComboBox
     Friend WithEvents Copies_Chkout_ID As ColumnHeader
     Friend WithEvents Copies_Due_Date As ColumnHeader
+    Friend WithEvents History_ReturnID As ColumnHeader
 End Class

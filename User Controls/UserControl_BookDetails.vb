@@ -130,7 +130,7 @@
                       Join c In database.Copies On col.Copy_ID Equals c.Copy_ID
                       Where c.Book_ID = bookID
                       Order By co.Due_Date Descending
-                      Select New HistoryModel(c.Copy_ID, co.Chk_ID, co.Issue_Date, co.Due_Date)
+                      Select New HistoryModel(c.Copy_ID, co.Chk_ID, co.Issue_Date, co.Due_Date, col.Return_ID)
 
         ' Fill the ListView_History
         FillHistory(history)
@@ -145,9 +145,9 @@
                       Join col In database.CheckOutLists On co.Chk_ID Equals col.Chk_ID
                       Join c In database.Copies On col.Copy_ID Equals c.Copy_ID
                       Where c.Book_ID = bookID And
-                          c.Copy_ID = copy_ID
+                            c.Copy_ID = copy_ID
                       Order By co.Due_Date Descending
-                      Select New HistoryModel(c.Copy_ID, co.Chk_ID, co.Issue_Date, co.Due_Date)
+                      Select New HistoryModel(c.Copy_ID, co.Chk_ID, co.Issue_Date, co.Due_Date, col.Return_ID)
 
         ' Fill the ListView_History
         FillHistory(history)
@@ -162,21 +162,30 @@
         Next
     End Sub
 
-    Public Class HistoryModel
-        Public Sub New(Copy_ID As Integer, Chk_ID As Integer, Issue_Date As Date, Due_Date As Date)
+    Private Class HistoryModel
+        Public Sub New(Copy_ID As Integer, Chk_ID As Integer, Issue_Date As Date, Due_Date As Date, Return_ID As Integer?)
             Me.Copy_ID = Copy_ID
             Me.Chk_ID = Chk_ID
             Me.Issue_Date = Issue_Date
             Me.Due_Date = Due_Date
+            Me.Return_ID = Return_ID
+
         End Sub
 
         Public Function ToStringArray() As String()
-            Return {Copy_ID, Chk_ID, Issue_Date, Due_Date}
+            Return {
+                Copy_ID,
+                Chk_ID,
+                Issue_Date,
+                Due_Date,
+                If(Return_ID, "")
+            }
         End Function
 
         Public Property Copy_ID As Integer
         Public Property Chk_ID As Integer
         Public Property Issue_Date As Date
         Public Property Due_Date As Date
+        Public Property Return_ID As Integer?
     End Class
 End Class
