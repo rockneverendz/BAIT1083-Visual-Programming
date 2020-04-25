@@ -119,6 +119,12 @@
     <Compile Include="User Controls\UserControl_NewPatron.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="User Controls\UserControl_PatronDetails.Designer.vb">
+      <DependentUpon>UserControl_PatronDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UserControl_PatronDetails.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="User Controls\UserControl_Profile.Designer.vb">
       <DependentUpon>UserControl_Profile.vb</DependentUpon>
     </Compile>
@@ -223,6 +229,9 @@
   <ItemGroup>
     <EmbeddedResource Include="User Controls\UserControl_NewPatron.resx">
       <DependentUpon>UserControl_NewPatron.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UserControl_PatronDetails.resx">
+      <DependentUpon>UserControl_PatronDetails.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\UserControl_Profile.resx">
       <DependentUpon>UserControl_Profile.vb</DependentUpon>
