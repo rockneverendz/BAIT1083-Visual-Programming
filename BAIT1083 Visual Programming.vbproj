@@ -70,6 +70,9 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EasyHTMLReports, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\EasyHTMLReports.1.0.0\lib\EasyHTMLReports.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System">
@@ -115,6 +118,12 @@
     </Compile>
     <Compile Include="StonksLibSplash.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Controls\UserControl_MostBorrowedBookReport.Designer.vb">
+      <DependentUpon>UserControl_MostBorrowedBookReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UserControl_MostBorrowedBookReport.vb">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="User Controls\UserControl_RoomBookingReport.Designer.vb">
       <DependentUpon>UserControl_RoomBookingReport.vb</DependentUpon>
@@ -203,6 +212,9 @@
     <EmbeddedResource Include="StonksLibSplash.resx">
       <DependentUpon>StonksLibSplash.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UserControl_MostBorrowedBookReport.resx">
+      <DependentUpon>UserControl_MostBorrowedBookReport.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Controls\UserControl_RoomBookingReport.resx">
       <DependentUpon>UserControl_RoomBookingReport.vb</DependentUpon>
     </EmbeddedResource>
@@ -265,6 +277,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\3d-design.png" />
   </ItemGroup>
   <ItemGroup>
@@ -875,6 +888,7 @@
       <DependentUpon>LibDB.mdf</DependentUpon>
     </Content>
     <Content Include="Data\MostBookingPeriod.sql" />
+    <Content Include="Data\MostBorrowedBook.sql" />
     <None Include="Resources\5.gif" />
     <None Include="Resources\hnet.com-image.ico" />
     <None Include="Resources\LibBackground.jpg" />
