@@ -68,10 +68,8 @@ CREATE TABLE [dbo].[CheckOut] (
     [Patron_ID]  INT  NOT NULL,
     [Issue_Date] DATE NOT NULL,
     [Due_Date]   DATE NOT NULL,
-	[Rtn_ID]  INT	  NULL,
-	CONSTRAINT [FK_CheckOut_Return] FOREIGN KEY ([Rtn_ID]) REFERENCES [dbo].[Return] ([Rtn_ID]),
-    CONSTRAINT [FK_CheckOut_Patron] FOREIGN KEY ([Patron_ID]) REFERENCES [dbo].[Patron] ([Patron_ID]),
-    CONSTRAINT [PK_CheckOut] PRIMARY KEY CLUSTERED ([Chk_ID] ASC)
+    CONSTRAINT [PK_CheckOut] PRIMARY KEY CLUSTERED ([Chk_ID] ASC),
+    CONSTRAINT [FK_CheckOut_Patron] FOREIGN KEY ([Patron_ID]) REFERENCES [dbo].[Patron] ([Patron_ID])
 );
 
 /*Barcode is Copy_ID*/
@@ -88,7 +86,9 @@ CREATE TABLE [dbo].[Copies] (
 CREATE TABLE [dbo].[CheckOutList] (
     [Chk_ID]  INT NOT NULL,
     [Copy_ID] INT NOT NULL,
+    [Return_ID] INT NULL, 
     PRIMARY KEY CLUSTERED ([Chk_ID] ASC, [Copy_ID] ASC),
     CONSTRAINT [FK_Chk_ID] FOREIGN KEY ([Chk_ID]) REFERENCES [dbo].[CheckOut] ([Chk_ID]),
-    CONSTRAINT [FK_Copy_ID] FOREIGN KEY ([Copy_ID]) REFERENCES [dbo].[Copies] ([Copy_ID])
+    CONSTRAINT [FK_Copy_ID] FOREIGN KEY ([Copy_ID]) REFERENCES [dbo].[Copies] ([Copy_ID]),
+	CONSTRAINT [FK_CheckOutList_Return] FOREIGN KEY ([Return_ID]) REFERENCES [dbo].[Return] ([Rtn_ID]),
 );

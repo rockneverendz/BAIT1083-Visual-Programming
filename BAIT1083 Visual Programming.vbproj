@@ -122,6 +122,12 @@
     <Compile Include="User Controls\UserControl_Profile.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="StonksLibSplash.Designer.vb">
+      <DependentUpon>StonksLibSplash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StonksLibSplash.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="User Controls\UserControl_RoomBookingReport.Designer.vb">
       <DependentUpon>UserControl_RoomBookingReport.vb</DependentUpon>
     </Compile>
@@ -211,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\UserControl_Profile.resx">
       <DependentUpon>UserControl_Profile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StonksLibSplash.resx">
+      <DependentUpon>StonksLibSplash.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\UserControl_RoomBookingReport.resx">
       <DependentUpon>UserControl_RoomBookingReport.vb</DependentUpon>
@@ -884,6 +893,8 @@
       <DependentUpon>LibDB.mdf</DependentUpon>
     </Content>
     <Content Include="Data\MostBookingPeriod.sql" />
+    <None Include="Resources\5.gif" />
+    <None Include="Resources\hnet.com-image.ico" />
     <None Include="Resources\LibBackground.jpg" />
     <None Include="Resources\imageedit_4_7602996586.png" />
     <None Include="Resources\circle-cropped.png" />

@@ -790,4 +790,7 @@
   <data name="not visible" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\not visible.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="hnet_com_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hnet.com-image.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -22,9 +22,9 @@ Partial Class UserControl_RoomBookingReport
 	'Do not modify it using the code editor.
 	<System.Diagnostics.DebuggerStepThrough()> _
 	Private Sub InitializeComponent()
-		Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-		Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-		Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+		Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+		Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+		Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UserControl_RoomBookingReport))
 		Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
 		Me.Panel5 = New System.Windows.Forms.Panel()
@@ -86,30 +86,30 @@ Partial Class UserControl_RoomBookingReport
 		Me.chartTimeCount.BackColor = System.Drawing.Color.WhiteSmoke
 		Me.chartTimeCount.BackSecondaryColor = System.Drawing.Color.Gray
 		Me.chartTimeCount.BorderSkin.PageColor = System.Drawing.Color.WhiteSmoke
-		ChartArea1.AxisX.Title = "Time"
-		ChartArea1.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far
-		ChartArea1.AxisX.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		ChartArea1.AxisY.Title = "Count"
-		ChartArea1.AxisY.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		ChartArea1.BackColor = System.Drawing.Color.PaleTurquoise
-		ChartArea1.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal
-		ChartArea1.BackSecondaryColor = System.Drawing.Color.White
-		ChartArea1.BorderColor = System.Drawing.Color.Transparent
-		ChartArea1.Name = "Time Count Chart "
-		Me.chartTimeCount.ChartAreas.Add(ChartArea1)
+		ChartArea2.AxisX.Title = "Time"
+		ChartArea2.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far
+		ChartArea2.AxisX.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		ChartArea2.AxisY.Title = "Count"
+		ChartArea2.AxisY.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		ChartArea2.BackColor = System.Drawing.Color.PaleTurquoise
+		ChartArea2.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal
+		ChartArea2.BackSecondaryColor = System.Drawing.Color.White
+		ChartArea2.BorderColor = System.Drawing.Color.Transparent
+		ChartArea2.Name = "Time Count Chart "
+		Me.chartTimeCount.ChartAreas.Add(ChartArea2)
 		Me.chartTimeCount.Dock = System.Windows.Forms.DockStyle.Fill
-		Legend1.Name = "Legend1"
-		Me.chartTimeCount.Legends.Add(Legend1)
+		Legend2.Name = "Legend1"
+		Me.chartTimeCount.Legends.Add(Legend2)
 		Me.chartTimeCount.Location = New System.Drawing.Point(0, 0)
 		Me.chartTimeCount.Name = "chartTimeCount"
-		Series1.BorderWidth = 3
-		Series1.ChartArea = "Time Count Chart "
-		Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-		Series1.Legend = "Legend1"
-		Series1.MarkerSize = 10
-		Series1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle
-		Series1.Name = "Count"
-		Me.chartTimeCount.Series.Add(Series1)
+		Series2.BorderWidth = 3
+		Series2.ChartArea = "Time Count Chart "
+		Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+		Series2.Legend = "Legend1"
+		Series2.MarkerSize = 10
+		Series2.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle
+		Series2.Name = "Count"
+		Me.chartTimeCount.Series.Add(Series2)
 		Me.chartTimeCount.Size = New System.Drawing.Size(787, 462)
 		Me.chartTimeCount.TabIndex = 0
 		Me.chartTimeCount.Text = "Chart Count Time"
@@ -128,10 +128,10 @@ Partial Class UserControl_RoomBookingReport
 		'Label1
 		'
 		Me.Label1.AutoSize = True
-		Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label1.Font = New System.Drawing.Font("Segoe UI", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label1.Location = New System.Drawing.Point(102, 17)
 		Me.Label1.Name = "Label1"
-		Me.Label1.Size = New System.Drawing.Size(533, 29)
+		Me.Label1.Size = New System.Drawing.Size(538, 32)
 		Me.Label1.TabIndex = 0
 		Me.Label1.Text = "Peak period for patron making room booking" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
 		'
@@ -219,6 +219,7 @@ Partial Class UserControl_RoomBookingReport
 		'
 		'doc
 		'
+		Me.doc.OriginAtMargins = True
 		'
 		'dlgPreview
 		'

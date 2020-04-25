@@ -25,6 +25,7 @@
 	End Sub
 
 	Private Sub SearchRoomByDate(searchDate As Date)
+
 		lstAvailabilityChart.Items.Clear()
 		Using db As New LibDBDataContext()
 
@@ -81,7 +82,7 @@
 						o.CheckIn_Date.Day = searchDate.Day And
 						o.CheckIn_Date.Month = searchDate.Month And
 						o.CheckIn_Date.Year = searchDate.Year And
-						o.Start_Time.Equals(time)           '<--  BUG MIGHT HAPPEN
+						o.Start_Time.Equals(time)
 					)
 
 				GetRoomBooking = roombooked
@@ -92,8 +93,11 @@
 	End Function
 
 	Private Sub UserControl_RoomBooking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+		Cursor = Cursors.WaitCursor
 		SearchRoomByDate(Today)
-		dtpAddDate.MinDate = Today
+		dtpAddDate.MinDate = Today                      '<-------------Testing--------
+		Cursor = Cursors.Default
 
 	End Sub
 
@@ -107,6 +111,7 @@
 	End Sub
 
 	Private Sub cmbStartTime_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbStartTime.SelectedIndexChanged
+
 		txtEndTime.Text = parseTimeToString(time(cmbStartTime.SelectedIndex + 2))
 	End Sub
 
@@ -145,13 +150,14 @@
 				rb.CheckIn_Date = dateValue
 				rb.Start_Time = parseTimeToInt(cmbStartTime.Text)                       '<-------
 				rb.End_Time = parseTimeToInt(txtEndTime.Text)                           '<-------
-
+				'insert record
 				db.RoomBookings.InsertOnSubmit(rb)
 				db.SubmitChanges()
 
 				SearchRoomByDate(dateValue)
 
 				MessageBox.Show("The room booking details has been successfully added!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
 
 			Catch ex As Exception
 				Console.WriteLine(ex.Message)
@@ -162,7 +168,7 @@
 
 	End Sub
 
-	Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
+	Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click, btnSubmit.Click
 		txtPatronID.Text = ""
 		lblName.Text = ""
 		txtRmID.Text = ""

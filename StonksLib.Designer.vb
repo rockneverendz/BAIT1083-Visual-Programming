@@ -22,6 +22,7 @@ Partial Class Form_StonksLib
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_StonksLib))
 		Me.Panel_Main = New System.Windows.Forms.Panel()
 		Me.MenuStrip = New System.Windows.Forms.MenuStrip()
 		Me.Menu_Book = New System.Windows.Forms.ToolStripMenuItem()
@@ -204,6 +205,7 @@ Partial Class Form_StonksLib
 		Me.ClientSize = New System.Drawing.Size(1067, 554)
 		Me.Controls.Add(Me.Panel_Main)
 		Me.Controls.Add(Me.MenuStrip)
+		Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
 		Me.MainMenuStrip = Me.MenuStrip
 		Me.Margin = New System.Windows.Forms.Padding(4)
 		Me.Name = "Form_StonksLib"
