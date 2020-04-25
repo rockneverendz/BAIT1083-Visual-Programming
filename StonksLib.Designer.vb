@@ -42,6 +42,7 @@ Partial Class Form_StonksLib
 		Me.Menu_Log = New System.Windows.Forms.ToolStripMenuItem()
 		Me.Menu_RBooking_Report = New System.Windows.Forms.ToolStripMenuItem()
 		Me.Menu_Profile = New System.Windows.Forms.ToolStripMenuItem()
+		Me.Menu_MostBorrowedBookReport = New System.Windows.Forms.ToolStripMenuItem()
 		Me.MenuStrip.SuspendLayout()
 		Me.SuspendLayout()
 		'
@@ -174,7 +175,7 @@ Partial Class Form_StonksLib
 		'
 		'Menu_Log
 		'
-		Me.Menu_Log.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Menu_RBooking_Report})
+		Me.Menu_Log.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Menu_RBooking_Report, Me.Menu_MostBorrowedBookReport})
 		Me.Menu_Log.Image = Global.BAIT1083_Visual_Programming.My.Resources.Resources.empty_paper
 		Me.Menu_Log.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
 		Me.Menu_Log.Margin = New System.Windows.Forms.Padding(5, 1, 5, 2)
@@ -185,7 +186,7 @@ Partial Class Form_StonksLib
 		'Menu_RBooking_Report
 		'
 		Me.Menu_RBooking_Report.Name = "Menu_RBooking_Report"
-		Me.Menu_RBooking_Report.Size = New System.Drawing.Size(240, 26)
+		Me.Menu_RBooking_Report.Size = New System.Drawing.Size(281, 26)
 		Me.Menu_RBooking_Report.Text = "Room Booking Report"
 		'
 		'Menu_Profile
@@ -197,6 +198,12 @@ Partial Class Form_StonksLib
 		Me.Menu_Profile.Name = "Menu_Profile"
 		Me.Menu_Profile.Size = New System.Drawing.Size(86, 24)
 		Me.Menu_Profile.Text = "Pro&file"
+		'
+		'Menu_MostBorrowedBookReport
+		'
+		Me.Menu_MostBorrowedBookReport.Name = "Menu_MostBorrowedBookReport"
+		Me.Menu_MostBorrowedBookReport.Size = New System.Drawing.Size(281, 26)
+		Me.Menu_MostBorrowedBookReport.Text = "Most Borrowed Book Report"
 		'
 		'Form_StonksLib
 		'
@@ -235,4 +242,5 @@ Partial Class Form_StonksLib
     Friend WithEvents Menu_NewRoomBooking As ToolStripMenuItem
     Friend WithEvents Menu_ViewBookingHistory As ToolStripMenuItem
     Friend WithEvents Menu_RBooking_Report As ToolStripMenuItem
+	Friend WithEvents Menu_MostBorrowedBookReport As ToolStripMenuItem
 End Class

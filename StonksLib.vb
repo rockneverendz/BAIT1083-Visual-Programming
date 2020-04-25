@@ -19,7 +19,7 @@ Public Class Form_StonksLib
         Menu_Return.Click,
         Menu_NewRoomBooking.Click, Menu_ViewBookingHistory.Click, Menu_RBooking_Report.Click,
         Menu_NewPatron.Click, Menu_PatronList.Click,
-        Menu_Profile.Click
+        Menu_Profile.Click, Menu_MostBorrowedBookReport.Click
 
         Dim UserControls() As UserControl
 
@@ -65,6 +65,9 @@ Public Class Form_StonksLib
 
         ElseIf (sender.Equals(Menu_NewPatron)) Then
             UserControls = {New BAIT1083_Visual_Programming.UserControl_NewPatron()}
+
+        ElseIf (sender.Equals(Menu_MostBorrowedBookReport)) Then
+            UserControls = {New BAIT1083_Visual_Programming.UserControl_MostBorrowedBookReport()}
 
         Else
             'User should not reach here'

@@ -20,10 +20,10 @@
         <elementListCompartment Id="c2a17c01-b7b2-4612-80a1-7ec981c7b727" absoluteBounds="7.0150000000000006, 3.9600000000000009, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="834e0dae-b3ae-4790-b5a5-adeaf44805d8" absoluteBounds="4.125, 0.875, 2, 1.5785953776041666">
+    <classShape Id="834e0dae-b3ae-4790-b5a5-adeaf44805d8" absoluteBounds="3.875, 0.875, 2, 1.5785953776041666">
       <DataClassMoniker Name="/LibDBDataContext/CheckOut" />
       <nestedChildShapes>
-        <elementListCompartment Id="cfe02617-4b94-4562-b9a1-ddaac934dd78" absoluteBounds="4.1400000000000006, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="cfe02617-4b94-4562-b9a1-ddaac934dd78" absoluteBounds="3.8900000000000006, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="fdeca9fa-dfff-4e16-9321-f8732307b074" absoluteBounds="3.875, 3.5, 2, 1.3862939453125005">
@@ -56,56 +56,56 @@
         <elementListCompartment Id="d83999f6-7bff-4b77-ad90-99f6627bf646" absoluteBounds="1.2650000000000001, 6.7100000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5 : 2.45359537760417); (5 : 3.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.79302423920323 : 2.45359537760417); (4.79302423920323 : 3.5)]" fixedFrom="Caller" fixedTo="Algorithm">
       <AssociationMoniker Name="/LibDBDataContext/CheckOut/CheckOut_CheckOutList" />
       <nodes>
         <classShapeMoniker Id="834e0dae-b3ae-4790-b5a5-adeaf44805d8" />
         <classShapeMoniker Id="fdeca9fa-dfff-4e16-9321-f8732307b074" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(6.875 : 2.56321924558274); (6.5 : 2.56321924558274); (6.5 : 3.55381734736297); (5.875 : 3.55381734736297)]" fixedFrom="Caller" fixedTo="Caller">
+    <associationConnector edgePoints="[(6.875 : 2.57761645309324); (6.5 : 2.57761645309324); (6.5 : 4.17770274060838); (5.875 : 4.17770274060838)]" fixedFrom="Caller" fixedTo="Caller">
       <AssociationMoniker Name="/LibDBDataContext/Copy/Copy_CheckOutList" />
       <nodes>
         <classShapeMoniker Id="3ce782ba-cba9-44ec-8d4d-a577cbe6dcd0" />
         <classShapeMoniker Id="fdeca9fa-dfff-4e16-9321-f8732307b074" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7.62718949696996 : 3.5); (7.62718949696996 : 2.57859537760417)]" fixedFrom="Algorithm" fixedTo="Caller">
+    <associationConnector edgePoints="[(7.62718949696996 : 3.5); (7.62718949696996 : 2.57859537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LibDBDataContext/Book/Book_Copy" />
       <nodes>
         <classShapeMoniker Id="8c253dfb-6ea6-441b-b8c6-e3bfb867855c" />
         <classShapeMoniker Id="3ce782ba-cba9-44ec-8d4d-a577cbe6dcd0" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(6.125 : 1.72679768880208); (6.875 : 1.72679768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.875 : 1.72679768880208); (6.875 : 1.72679768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/LibDBDataContext/CheckOut/CheckOut_Copy" />
       <nodes>
         <classShapeMoniker Id="834e0dae-b3ae-4790-b5a5-adeaf44805d8" />
         <classShapeMoniker Id="3ce782ba-cba9-44ec-8d4d-a577cbe6dcd0" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2 : 2.7131982421875); (2 : 3.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2 : 2.7131982421875); (2 : 3.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LibDBDataContext/Patron/Patron_RoomBooking" />
       <nodes>
         <classShapeMoniker Id="87f0d341-aff7-46dc-9f5b-07b4933c107f" />
         <classShapeMoniker Id="e3ad71ce-4bfb-4edf-94bb-4e0a982192fb" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(3 : 1.66429768880208); (4.125 : 1.66429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(3 : 1.66429768880208); (3.875 : 1.66429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/LibDBDataContext/Patron/Patron_CheckOut" />
       <nodes>
         <classShapeMoniker Id="87f0d341-aff7-46dc-9f5b-07b4933c107f" />
         <classShapeMoniker Id="834e0dae-b3ae-4790-b5a5-adeaf44805d8" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.80629871892246 : 6.125); (4.79850666867167 : 4.8862939453125)]" manuallyRouted="true" fixedFrom="Caller" fixedTo="Caller">
+    <associationConnector edgePoints="[(4.80629871892246 : 6.125); (4.79850666867167 : 4.8862939453125)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LibDBDataContext/Return/Return_CheckOutList" />
       <nodes>
         <classShapeMoniker Id="c6afde10-9806-4e72-b5fb-32320cb90416" />
         <classShapeMoniker Id="fdeca9fa-dfff-4e16-9321-f8732307b074" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.125 : 6.25); (2.125 : 5.27089680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.125 : 6.25); (2.125 : 5.27089680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LibDBDataContext/Room/Room_RoomBooking" />
       <nodes>
         <classShapeMoniker Id="4fcfb694-b71e-44ff-8768-ba1902800b00" />

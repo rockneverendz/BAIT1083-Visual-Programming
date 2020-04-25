@@ -22,9 +22,10 @@ Partial Class UserControl_RoomBookingReport
 	'Do not modify it using the code editor.
 	<System.Diagnostics.DebuggerStepThrough()> _
 	Private Sub InitializeComponent()
-		Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-		Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-		Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+		Me.components = New System.ComponentModel.Container()
+		Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+		Dim Legend4 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+		Dim Series4 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UserControl_RoomBookingReport))
 		Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
 		Me.Panel5 = New System.Windows.Forms.Panel()
@@ -42,6 +43,8 @@ Partial Class UserControl_RoomBookingReport
 		Me.Count = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.doc = New System.Drawing.Printing.PrintDocument()
 		Me.dlgPreview = New System.Windows.Forms.PrintPreviewDialog()
+		Me.easyRpt = New KimToo.EasyHTMLReports(Me.components)
+		Me.btnEasyRpt = New System.Windows.Forms.Button()
 		CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SplitContainer1.Panel1.SuspendLayout()
 		Me.SplitContainer1.Panel2.SuspendLayout()
@@ -86,30 +89,30 @@ Partial Class UserControl_RoomBookingReport
 		Me.chartTimeCount.BackColor = System.Drawing.Color.WhiteSmoke
 		Me.chartTimeCount.BackSecondaryColor = System.Drawing.Color.Gray
 		Me.chartTimeCount.BorderSkin.PageColor = System.Drawing.Color.WhiteSmoke
-		ChartArea2.AxisX.Title = "Time"
-		ChartArea2.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far
-		ChartArea2.AxisX.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		ChartArea2.AxisY.Title = "Count"
-		ChartArea2.AxisY.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		ChartArea2.BackColor = System.Drawing.Color.PaleTurquoise
-		ChartArea2.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal
-		ChartArea2.BackSecondaryColor = System.Drawing.Color.White
-		ChartArea2.BorderColor = System.Drawing.Color.Transparent
-		ChartArea2.Name = "Time Count Chart "
-		Me.chartTimeCount.ChartAreas.Add(ChartArea2)
+		ChartArea4.AxisX.Title = "Time"
+		ChartArea4.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far
+		ChartArea4.AxisX.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		ChartArea4.AxisY.Title = "Count"
+		ChartArea4.AxisY.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		ChartArea4.BackColor = System.Drawing.Color.PaleTurquoise
+		ChartArea4.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal
+		ChartArea4.BackSecondaryColor = System.Drawing.Color.White
+		ChartArea4.BorderColor = System.Drawing.Color.Transparent
+		ChartArea4.Name = "Time Count Chart "
+		Me.chartTimeCount.ChartAreas.Add(ChartArea4)
 		Me.chartTimeCount.Dock = System.Windows.Forms.DockStyle.Fill
-		Legend2.Name = "Legend1"
-		Me.chartTimeCount.Legends.Add(Legend2)
+		Legend4.Name = "Legend1"
+		Me.chartTimeCount.Legends.Add(Legend4)
 		Me.chartTimeCount.Location = New System.Drawing.Point(0, 0)
 		Me.chartTimeCount.Name = "chartTimeCount"
-		Series2.BorderWidth = 3
-		Series2.ChartArea = "Time Count Chart "
-		Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-		Series2.Legend = "Legend1"
-		Series2.MarkerSize = 10
-		Series2.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle
-		Series2.Name = "Count"
-		Me.chartTimeCount.Series.Add(Series2)
+		Series4.BorderWidth = 3
+		Series4.ChartArea = "Time Count Chart "
+		Series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+		Series4.Legend = "Legend1"
+		Series4.MarkerSize = 10
+		Series4.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle
+		Series4.Name = "Count"
+		Me.chartTimeCount.Series.Add(Series4)
 		Me.chartTimeCount.Size = New System.Drawing.Size(787, 462)
 		Me.chartTimeCount.TabIndex = 0
 		Me.chartTimeCount.Text = "Chart Count Time"
@@ -149,6 +152,7 @@ Partial Class UserControl_RoomBookingReport
 		'
 		'Panel3
 		'
+		Me.Panel3.Controls.Add(Me.btnEasyRpt)
 		Me.Panel3.Controls.Add(Me.lblSelectDate)
 		Me.Panel3.Controls.Add(Me.dtpSelectDate)
 		Me.Panel3.Controls.Add(Me.btnPrint)
@@ -178,9 +182,9 @@ Partial Class UserControl_RoomBookingReport
 		'
 		'btnPrint
 		'
-		Me.btnPrint.Location = New System.Drawing.Point(72, 68)
+		Me.btnPrint.Location = New System.Drawing.Point(14, 68)
 		Me.btnPrint.Name = "btnPrint"
-		Me.btnPrint.Size = New System.Drawing.Size(130, 37)
+		Me.btnPrint.Size = New System.Drawing.Size(118, 37)
 		Me.btnPrint.TabIndex = 0
 		Me.btnPrint.Text = "Print"
 		Me.btnPrint.UseVisualStyleBackColor = True
@@ -231,6 +235,26 @@ Partial Class UserControl_RoomBookingReport
 		Me.dlgPreview.Name = "dlgPreview"
 		Me.dlgPreview.Visible = False
 		'
+		'easyRpt
+		'
+		Me.easyRpt.AlternativeRowBackgroundColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer))
+		Me.easyRpt.AlternativeRowGridColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(65, Byte), Integer))
+		Me.easyRpt.HeaderBackgroundColor = System.Drawing.Color.FromArgb(CType(CType(170, Byte), Integer), CType(CType(183, Byte), Integer), CType(CType(197, Byte), Integer))
+		Me.easyRpt.HeaderFontColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(46, Byte), Integer))
+		Me.easyRpt.HeaderGridColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(65, Byte), Integer))
+		Me.easyRpt.RowDefaultBackgroudColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+		Me.easyRpt.RowDefaultFontColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(46, Byte), Integer))
+		Me.easyRpt.RowDefaultGridColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(65, Byte), Integer))
+		'
+		'btnEasyRpt
+		'
+		Me.btnEasyRpt.Location = New System.Drawing.Point(142, 68)
+		Me.btnEasyRpt.Name = "btnEasyRpt"
+		Me.btnEasyRpt.Size = New System.Drawing.Size(118, 37)
+		Me.btnEasyRpt.TabIndex = 3
+		Me.btnEasyRpt.Text = "Print with Easy"
+		Me.btnEasyRpt.UseVisualStyleBackColor = True
+		'
 		'UserControl_RoomBookingReport
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -271,4 +295,6 @@ Partial Class UserControl_RoomBookingReport
 	Friend WithEvents Label1 As Label
 	Friend WithEvents doc As Printing.PrintDocument
 	Friend WithEvents dlgPreview As PrintPreviewDialog
+	Friend WithEvents btnEasyRpt As Button
+	Friend WithEvents easyRpt As KimToo.EasyHTMLReports
 End Class
