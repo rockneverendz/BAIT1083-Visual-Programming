@@ -1,8 +1,4 @@
-﻿Imports BAIT1083_Visual_Programming.UserControl_BookDetails
-
-Public Class UserControl_Checkout
-
-    Dim Today As Date = Date.Today
+﻿Public Class UserControl_Checkout
 
     Public Sub New()
 
@@ -109,9 +105,9 @@ Public Class UserControl_Checkout
                       Join col In database.CheckOutLists On co.Chk_ID Equals col.Chk_ID
                       Join c In database.Copies On col.Copy_ID Equals c.Copy_ID
                       Where co.Patron_ID = Patron_ID And
-                          co.Rtn_ID Is Nothing
+                          col.Return_ID Is Nothing
                       Order By co.Due_Date Descending
-                      Select New HistoryModel(c.Copy_ID, co.Chk_ID, co.Issue_Date, co.Due_Date)
+                      Select New CurrentModel(c.Copy_ID, co.Chk_ID, co.Issue_Date, co.Due_Date)
 
         For Each record In current
             Dim listViewItem = New ListViewItem(record.ToStringArray)
@@ -196,4 +192,22 @@ Public Class UserControl_Checkout
         ListView_New.Items.Clear()
         NumericUpDown_Weeks.Value = 2
     End Sub
+
+    Private Class CurrentModel
+        Public Sub New(Copy_ID As Integer, Chk_ID As Integer, Issue_Date As Date, Due_Date As Date)
+            Me.Copy_ID = Copy_ID
+            Me.Chk_ID = Chk_ID
+            Me.Issue_Date = Issue_Date
+            Me.Due_Date = Due_Date
+        End Sub
+
+        Public Function ToStringArray() As String()
+            Return {Copy_ID, Chk_ID, Issue_Date, Due_Date}
+        End Function
+
+        Public Property Copy_ID As Integer
+        Public Property Chk_ID As Integer
+        Public Property Issue_Date As Date
+        Public Property Due_Date As Date
+    End Class
 End Class
