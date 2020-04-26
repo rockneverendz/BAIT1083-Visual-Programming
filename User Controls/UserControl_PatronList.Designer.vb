@@ -35,13 +35,16 @@ Partial Class UserControl_PatronList
         Me.Label_Name = New System.Windows.Forms.Label()
         Me.TextBox_Name = New System.Windows.Forms.TextBox()
         Me.Label_Course = New System.Windows.Forms.Label()
-        Me.TextBox_Course = New System.Windows.Forms.TextBox()
+        Me.ComboBox_Course = New System.Windows.Forms.ComboBox()
         Me.Label_PhoneNo = New System.Windows.Forms.Label()
         Me.TextBox_PhoneNo = New System.Windows.Forms.TextBox()
-        Me.Label_Address = New System.Windows.Forms.Label()
-        Me.TextBox_Address = New System.Windows.Forms.TextBox()
         Me.Label_Email = New System.Windows.Forms.Label()
         Me.TextBox_Email = New System.Windows.Forms.TextBox()
+        Me.Label_Address = New System.Windows.Forms.Label()
+        Me.TextBox_Address = New System.Windows.Forms.TextBox()
+        Me.Label_Search_Message = New System.Windows.Forms.Label()
+        Me.Button_Search = New System.Windows.Forms.Button()
+        Me.Button_Clear = New System.Windows.Forms.Button()
         Me.MenuStrip_Footer = New System.Windows.Forms.MenuStrip()
         Me.Footer_PatronList = New System.Windows.Forms.ToolStripButton()
         Me.Footer_Status = New System.Windows.Forms.ToolStripLabel()
@@ -56,7 +59,6 @@ Partial Class UserControl_PatronList
         '
         Me.SplitContainer_PatronList.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainer_PatronList.FixedPanel = System.Windows.Forms.FixedPanel.Panel2
-        Me.SplitContainer_PatronList.IsSplitterFixed = True
         Me.SplitContainer_PatronList.Location = New System.Drawing.Point(0, 0)
         Me.SplitContainer_PatronList.Name = "SplitContainer_PatronList"
         '
@@ -71,13 +73,16 @@ Partial Class UserControl_PatronList
         Me.SplitContainer_PatronList.Panel2.Controls.Add(Me.Label_Name)
         Me.SplitContainer_PatronList.Panel2.Controls.Add(Me.TextBox_Name)
         Me.SplitContainer_PatronList.Panel2.Controls.Add(Me.Label_Course)
-        Me.SplitContainer_PatronList.Panel2.Controls.Add(Me.TextBox_Course)
+        Me.SplitContainer_PatronList.Panel2.Controls.Add(Me.ComboBox_Course)
         Me.SplitContainer_PatronList.Panel2.Controls.Add(Me.Label_PhoneNo)
         Me.SplitContainer_PatronList.Panel2.Controls.Add(Me.TextBox_PhoneNo)
-        Me.SplitContainer_PatronList.Panel2.Controls.Add(Me.Label_Address)
-        Me.SplitContainer_PatronList.Panel2.Controls.Add(Me.TextBox_Address)
         Me.SplitContainer_PatronList.Panel2.Controls.Add(Me.Label_Email)
         Me.SplitContainer_PatronList.Panel2.Controls.Add(Me.TextBox_Email)
+        Me.SplitContainer_PatronList.Panel2.Controls.Add(Me.Label_Address)
+        Me.SplitContainer_PatronList.Panel2.Controls.Add(Me.TextBox_Address)
+        Me.SplitContainer_PatronList.Panel2.Controls.Add(Me.Label_Search_Message)
+        Me.SplitContainer_PatronList.Panel2.Controls.Add(Me.Button_Search)
+        Me.SplitContainer_PatronList.Panel2.Controls.Add(Me.Button_Clear)
         Me.SplitContainer_PatronList.Panel2.Padding = New System.Windows.Forms.Padding(10)
         Me.SplitContainer_PatronList.Panel2MinSize = 200
         Me.SplitContainer_PatronList.Size = New System.Drawing.Size(816, 462)
@@ -95,7 +100,7 @@ Partial Class UserControl_PatronList
         Me.ListView_Patron.MultiSelect = False
         Me.ListView_Patron.Name = "ListView_Patron"
         Me.ListView_Patron.Size = New System.Drawing.Size(612, 462)
-        Me.ListView_Patron.TabIndex = 3
+        Me.ListView_Patron.TabIndex = 0
         Me.ListView_Patron.UseCompatibleStateImageBehavior = False
         Me.ListView_Patron.View = System.Windows.Forms.View.Details
         '
@@ -140,11 +145,14 @@ Partial Class UserControl_PatronList
         '
         'TextBox_ID
         '
+        Me.TextBox_ID.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBox_ID.Location = New System.Drawing.Point(85, 15)
         Me.TextBox_ID.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_ID.Name = "TextBox_ID"
         Me.TextBox_ID.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_ID.TabIndex = 1
+        Me.TextBox_ID.TabIndex = 0
         '
         'Label_Name
         '
@@ -158,11 +166,14 @@ Partial Class UserControl_PatronList
         '
         'TextBox_Name
         '
+        Me.TextBox_Name.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBox_Name.Location = New System.Drawing.Point(85, 45)
         Me.TextBox_Name.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_Name.Name = "TextBox_Name"
         Me.TextBox_Name.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_Name.TabIndex = 3
+        Me.TextBox_Name.TabIndex = 1
         '
         'Label_Course
         '
@@ -174,18 +185,22 @@ Partial Class UserControl_PatronList
         Me.Label_Course.TabIndex = 4
         Me.Label_Course.Text = "Course"
         '
-        'TextBox_Course
+        'ComboBox_Course
         '
-        Me.TextBox_Course.Location = New System.Drawing.Point(85, 75)
-        Me.TextBox_Course.Margin = New System.Windows.Forms.Padding(5)
-        Me.TextBox_Course.Name = "TextBox_Course"
-        Me.TextBox_Course.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_Course.TabIndex = 5
+        Me.ComboBox_Course.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ComboBox_Course.FormattingEnabled = True
+        Me.ComboBox_Course.Location = New System.Drawing.Point(85, 75)
+        Me.ComboBox_Course.Margin = New System.Windows.Forms.Padding(5)
+        Me.ComboBox_Course.Name = "ComboBox_Course"
+        Me.ComboBox_Course.Size = New System.Drawing.Size(100, 21)
+        Me.ComboBox_Course.TabIndex = 2
         '
         'Label_PhoneNo
         '
         Me.Label_PhoneNo.AutoSize = True
-        Me.Label_PhoneNo.Location = New System.Drawing.Point(20, 108)
+        Me.Label_PhoneNo.Location = New System.Drawing.Point(20, 109)
         Me.Label_PhoneNo.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_PhoneNo.Name = "Label_PhoneNo"
         Me.Label_PhoneNo.Size = New System.Drawing.Size(55, 13)
@@ -194,34 +209,19 @@ Partial Class UserControl_PatronList
         '
         'TextBox_PhoneNo
         '
-        Me.TextBox_PhoneNo.Location = New System.Drawing.Point(85, 105)
+        Me.TextBox_PhoneNo.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox_PhoneNo.Location = New System.Drawing.Point(85, 106)
         Me.TextBox_PhoneNo.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_PhoneNo.Name = "TextBox_PhoneNo"
         Me.TextBox_PhoneNo.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_PhoneNo.TabIndex = 7
-        '
-        'Label_Address
-        '
-        Me.Label_Address.AutoSize = True
-        Me.Label_Address.Location = New System.Drawing.Point(30, 138)
-        Me.Label_Address.Margin = New System.Windows.Forms.Padding(5)
-        Me.Label_Address.Name = "Label_Address"
-        Me.Label_Address.Size = New System.Drawing.Size(45, 13)
-        Me.Label_Address.TabIndex = 8
-        Me.Label_Address.Text = "Address"
-        '
-        'TextBox_Address
-        '
-        Me.TextBox_Address.Location = New System.Drawing.Point(85, 135)
-        Me.TextBox_Address.Margin = New System.Windows.Forms.Padding(5)
-        Me.TextBox_Address.Name = "TextBox_Address"
-        Me.TextBox_Address.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_Address.TabIndex = 9
+        Me.TextBox_PhoneNo.TabIndex = 3
         '
         'Label_Email
         '
         Me.Label_Email.AutoSize = True
-        Me.Label_Email.Location = New System.Drawing.Point(43, 168)
+        Me.Label_Email.Location = New System.Drawing.Point(43, 139)
         Me.Label_Email.Margin = New System.Windows.Forms.Padding(5)
         Me.Label_Email.Name = "Label_Email"
         Me.Label_Email.Size = New System.Drawing.Size(32, 13)
@@ -230,11 +230,68 @@ Partial Class UserControl_PatronList
         '
         'TextBox_Email
         '
-        Me.TextBox_Email.Location = New System.Drawing.Point(85, 165)
+        Me.TextBox_Email.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox_Email.Location = New System.Drawing.Point(85, 136)
         Me.TextBox_Email.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_Email.Name = "TextBox_Email"
         Me.TextBox_Email.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_Email.TabIndex = 11
+        Me.TextBox_Email.TabIndex = 4
+        '
+        'Label_Address
+        '
+        Me.Label_Address.AutoSize = True
+        Me.Label_Address.Location = New System.Drawing.Point(30, 169)
+        Me.Label_Address.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label_Address.Name = "Label_Address"
+        Me.Label_Address.Size = New System.Drawing.Size(45, 13)
+        Me.Label_Address.TabIndex = 8
+        Me.Label_Address.Text = "Address"
+        '
+        'TextBox_Address
+        '
+        Me.TextBox_Address.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox_Address.Location = New System.Drawing.Point(85, 166)
+        Me.TextBox_Address.Margin = New System.Windows.Forms.Padding(5)
+        Me.TextBox_Address.Multiline = True
+        Me.TextBox_Address.Name = "TextBox_Address"
+        Me.TextBox_Address.Size = New System.Drawing.Size(100, 80)
+        Me.TextBox_Address.TabIndex = 5
+        '
+        'Label_Search_Message
+        '
+        Me.Label_Search_Message.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label_Search_Message.ForeColor = System.Drawing.Color.Red
+        Me.Label_Search_Message.Location = New System.Drawing.Point(25, 391)
+        Me.Label_Search_Message.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label_Search_Message.Name = "Label_Search_Message"
+        Me.Label_Search_Message.Size = New System.Drawing.Size(160, 23)
+        Me.Label_Search_Message.TabIndex = 27
+        Me.Label_Search_Message.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Button_Search
+        '
+        Me.Button_Search.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button_Search.Location = New System.Drawing.Point(25, 424)
+        Me.Button_Search.Margin = New System.Windows.Forms.Padding(5)
+        Me.Button_Search.Name = "Button_Search"
+        Me.Button_Search.Size = New System.Drawing.Size(75, 23)
+        Me.Button_Search.TabIndex = 6
+        Me.Button_Search.Text = "Search"
+        Me.Button_Search.UseVisualStyleBackColor = True
+        '
+        'Button_Clear
+        '
+        Me.Button_Clear.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button_Clear.Location = New System.Drawing.Point(110, 424)
+        Me.Button_Clear.Margin = New System.Windows.Forms.Padding(5)
+        Me.Button_Clear.Name = "Button_Clear"
+        Me.Button_Clear.Size = New System.Drawing.Size(75, 23)
+        Me.Button_Clear.TabIndex = 7
+        Me.Button_Clear.Text = "Clear"
+        Me.Button_Clear.UseVisualStyleBackColor = True
         '
         'MenuStrip_Footer
         '
@@ -300,11 +357,14 @@ Partial Class UserControl_PatronList
     Friend WithEvents Label_Name As Label
     Friend WithEvents TextBox_Name As TextBox
     Friend WithEvents Label_Course As Label
-    Friend WithEvents TextBox_Course As TextBox
     Friend WithEvents Label_PhoneNo As Label
     Friend WithEvents TextBox_PhoneNo As TextBox
     Friend WithEvents Label_Address As Label
     Friend WithEvents TextBox_Address As TextBox
     Friend WithEvents Label_Email As Label
     Friend WithEvents TextBox_Email As TextBox
+    Friend WithEvents Button_Search As Button
+    Friend WithEvents Button_Clear As Button
+    Friend WithEvents ComboBox_Course As ComboBox
+    Friend WithEvents Label_Search_Message As Label
 End Class
