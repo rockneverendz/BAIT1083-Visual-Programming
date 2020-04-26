@@ -13,9 +13,8 @@
 
         Using database As New LibDBDataContext()
 
-            '' Add categories
+            ' Add distict categories
             Dim categories = (From bk In database.Books Select bk.Category).Distinct()
-
             For Each category In categories
                 ComboBox_Category.Items.Add(category)
             Next
@@ -50,7 +49,10 @@
 
             ' Insert copies into database
             For Each copy In copies
-                copy = New Copy With {.Book_ID = book.Book_Id}
+                copy = New Copy With {
+                    .Book_ID = book.Book_Id,
+                    .Status = "Available"
+                }
                 database.Copies.InsertOnSubmit(copy)
             Next
             database.SubmitChanges()
