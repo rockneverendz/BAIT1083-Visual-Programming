@@ -37,11 +37,12 @@ Partial Class Form_StonksLib
 		Me.Menu_NewPatron = New System.Windows.Forms.ToolStripMenuItem()
 		Me.Menu_PatronList = New System.Windows.Forms.ToolStripMenuItem()
 		Me.Menu_Log = New System.Windows.Forms.ToolStripMenuItem()
+		Me.Menu_PatronInsightReport = New System.Windows.Forms.ToolStripMenuItem()
 		Me.Menu_RBooking_Report = New System.Windows.Forms.ToolStripMenuItem()
 		Me.Menu_MostBorrowedBookReport = New System.Windows.Forms.ToolStripMenuItem()
-		Me.Menu_PatronInsightReport = New System.Windows.Forms.ToolStripMenuItem()
-		Me.Menu_Profile = New System.Windows.Forms.ToolStripMenuItem()
 		Me.Menu_MostCheckoutsPatronReport = New System.Windows.Forms.ToolStripMenuItem()
+		Me.Menu_Profile = New System.Windows.Forms.ToolStripMenuItem()
+		Me.Menu_FineReport = New System.Windows.Forms.ToolStripMenuItem()
 		Me.MenuStrip.SuspendLayout()
 		Me.SuspendLayout()
 		'
@@ -153,13 +154,19 @@ Partial Class Form_StonksLib
 		'
 		'Menu_Log
 		'
-		Me.Menu_Log.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Menu_PatronInsightReport, Me.Menu_RBooking_Report, Me.Menu_MostBorrowedBookReport, Me.Menu_MostCheckoutsPatronReport})
+		Me.Menu_Log.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Menu_PatronInsightReport, Me.Menu_RBooking_Report, Me.Menu_MostBorrowedBookReport, Me.Menu_MostCheckoutsPatronReport, Me.Menu_FineReport})
 		Me.Menu_Log.Image = Global.BAIT1083_Visual_Programming.My.Resources.Resources.empty_paper
 		Me.Menu_Log.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
 		Me.Menu_Log.Margin = New System.Windows.Forms.Padding(5, 1, 5, 2)
 		Me.Menu_Log.Name = "Menu_Log"
 		Me.Menu_Log.Size = New System.Drawing.Size(88, 24)
 		Me.Menu_Log.Text = "R&eport"
+		'
+		'Menu_PatronInsightReport
+		'
+		Me.Menu_PatronInsightReport.Name = "Menu_PatronInsightReport"
+		Me.Menu_PatronInsightReport.Size = New System.Drawing.Size(291, 26)
+		Me.Menu_PatronInsightReport.Text = "Patron Insight Report"
 		'
 		'Menu_RBooking_Report
 		'
@@ -173,11 +180,11 @@ Partial Class Form_StonksLib
 		Me.Menu_MostBorrowedBookReport.Size = New System.Drawing.Size(291, 26)
 		Me.Menu_MostBorrowedBookReport.Text = "Most Borrowed Book Report"
 		'
-		'Menu_PatronInsightReport
+		'Menu_MostCheckoutsPatronReport
 		'
-		Me.Menu_PatronInsightReport.Name = "Menu_PatronInsightReport"
-		Me.Menu_PatronInsightReport.Size = New System.Drawing.Size(291, 26)
-		Me.Menu_PatronInsightReport.Text = "Patron Insight Report"
+		Me.Menu_MostCheckoutsPatronReport.Name = "Menu_MostCheckoutsPatronReport"
+		Me.Menu_MostCheckoutsPatronReport.Size = New System.Drawing.Size(291, 26)
+		Me.Menu_MostCheckoutsPatronReport.Text = "Most Checkouts Patron Report"
 		'
 		'Menu_Profile
 		'
@@ -189,11 +196,11 @@ Partial Class Form_StonksLib
 		Me.Menu_Profile.Size = New System.Drawing.Size(86, 24)
 		Me.Menu_Profile.Text = "Pro&file"
 		'
-		'Menu_MostCheckoutsPatronReport
+		'Menu_FineReport
 		'
-		Me.Menu_MostCheckoutsPatronReport.Name = "Menu_MostCheckoutsPatronReport"
-		Me.Menu_MostCheckoutsPatronReport.Size = New System.Drawing.Size(291, 26)
-		Me.Menu_MostCheckoutsPatronReport.Text = "Most Checkouts Patron Report"
+		Me.Menu_FineReport.Name = "Menu_FineReport"
+		Me.Menu_FineReport.Size = New System.Drawing.Size(291, 26)
+		Me.Menu_FineReport.Text = "Fine Report"
 		'
 		'Form_StonksLib
 		'
@@ -232,4 +239,5 @@ Partial Class Form_StonksLib
 	Friend WithEvents Menu_MostBorrowedBookReport As ToolStripMenuItem
     Friend WithEvents Menu_PatronInsightReport As ToolStripMenuItem
 	Friend WithEvents Menu_MostCheckoutsPatronReport As ToolStripMenuItem
+	Friend WithEvents Menu_FineReport As ToolStripMenuItem
 End Class

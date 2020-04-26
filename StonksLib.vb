@@ -16,7 +16,7 @@ Public Class Form_StonksLib
     Private Sub ToolStrip_Button_Click(sender As Object, e As EventArgs) Handles _
         Menu_NewBook.Click, Menu_BookList.Click,
         Menu_Checkout.Click, Menu_MostCheckoutsPatronReport.Click,
-        Menu_Return.Click,
+        Menu_Return.Click, Menu_FineReport.Click,
         Menu_NewRoomBooking.Click, Menu_ViewBookingHistory.Click,
         Menu_NewPatron.Click, Menu_PatronList.Click, Menu_PatronInsightReport.Click,
         Menu_Profile.Click,
@@ -86,6 +86,9 @@ Public Class Form_StonksLib
 
         ElseIf (sender.Equals(Menu_MostCheckoutsPatronReport)) Then
             UserControls = {New BAIT1083_Visual_Programming.UserControl_MostChkOutPatronReport()}
+
+        ElseIf (sender.Equals(Menu_FineReport)) Then
+            UserControls = {New BAIT1083_Visual_Programming.UserControl_FineReport()}
 
         Else
             'User should not reach here'
