@@ -113,6 +113,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LibDB.dbml</DependentUpon>
     </Compile>
+    <Compile Include="User Controls\UserControl_MostChkOutPatronReport.Designer.vb">
+      <DependentUpon>UserControl_MostChkOutPatronReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UserControl_MostChkOutPatronReport.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="User Controls\UserControl_NewPatron.Designer.vb">
       <DependentUpon>UserControl_NewPatron.vb</DependentUpon>
     </Compile>
@@ -233,6 +239,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="User Controls\UserControl_MostChkOutPatronReport.resx">
+      <DependentUpon>UserControl_MostChkOutPatronReport.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Controls\UserControl_NewPatron.resx">
       <DependentUpon>UserControl_NewPatron.vb</DependentUpon>
     </EmbeddedResource>
@@ -925,6 +934,7 @@
     </Content>
     <Content Include="Data\MostBookingPeriod.sql" />
     <Content Include="Data\MostBorrowedBook.sql" />
+    <Content Include="Data\TopMostCheckOutStudent.sql" />
     <None Include="Resources\5.gif" />
     <None Include="Resources\hnet.com-image.ico" />
     <None Include="Resources\LibBackground.jpg" />
