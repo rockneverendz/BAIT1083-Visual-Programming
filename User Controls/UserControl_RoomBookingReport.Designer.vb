@@ -23,15 +23,21 @@ Partial Class UserControl_RoomBookingReport
 	<System.Diagnostics.DebuggerStepThrough()> _
 	Private Sub InitializeComponent()
 		Me.components = New System.ComponentModel.Container()
-		Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-		Dim Legend4 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-		Dim Series4 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UserControl_RoomBookingReport))
+		Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+		Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+		Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
 		Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
 		Me.Panel5 = New System.Windows.Forms.Panel()
 		Me.chartTimeCount = New System.Windows.Forms.DataVisualization.Charting.Chart()
+		Me.panForPrintHeader = New System.Windows.Forms.Panel()
+		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+		Me.lblPrintedBy = New System.Windows.Forms.Label()
+		Me.lbl3 = New System.Windows.Forms.Label()
+		Me.lblDateNow = New System.Windows.Forms.Label()
+		Me.lblPrint = New System.Windows.Forms.Label()
+		Me.Label2 = New System.Windows.Forms.Label()
 		Me.Panel4 = New System.Windows.Forms.Panel()
-		Me.Label1 = New System.Windows.Forms.Label()
+		Me.lblChartTitle = New System.Windows.Forms.Label()
 		Me.Panel1 = New System.Windows.Forms.Panel()
 		Me.Panel3 = New System.Windows.Forms.Panel()
 		Me.lblSelectDate = New System.Windows.Forms.Label()
@@ -41,20 +47,24 @@ Partial Class UserControl_RoomBookingReport
 		Me.lstQueryRpt = New System.Windows.Forms.ListView()
 		Me.Time = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.Count = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-		Me.doc = New System.Drawing.Printing.PrintDocument()
-		Me.dlgPreview = New System.Windows.Forms.PrintPreviewDialog()
+		Me.dgvForPrint = New System.Windows.Forms.DataGridView()
+		Me.colNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.colTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.colCount = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		Me.easyRpt = New KimToo.EasyHTMLReports(Me.components)
-		Me.btnEasyRpt = New System.Windows.Forms.Button()
 		CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SplitContainer1.Panel1.SuspendLayout()
 		Me.SplitContainer1.Panel2.SuspendLayout()
 		Me.SplitContainer1.SuspendLayout()
 		Me.Panel5.SuspendLayout()
 		CType(Me.chartTimeCount, System.ComponentModel.ISupportInitialize).BeginInit()
+		Me.panForPrintHeader.SuspendLayout()
+		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel4.SuspendLayout()
 		Me.Panel1.SuspendLayout()
 		Me.Panel3.SuspendLayout()
 		Me.Panel2.SuspendLayout()
+		CType(Me.dgvForPrint, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'SplitContainer1
@@ -78,6 +88,7 @@ Partial Class UserControl_RoomBookingReport
 		'Panel5
 		'
 		Me.Panel5.Controls.Add(Me.chartTimeCount)
+		Me.Panel5.Controls.Add(Me.panForPrintHeader)
 		Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
 		Me.Panel5.Location = New System.Drawing.Point(0, 61)
 		Me.Panel5.Name = "Panel5"
@@ -86,41 +97,113 @@ Partial Class UserControl_RoomBookingReport
 		'
 		'chartTimeCount
 		'
-		Me.chartTimeCount.BackColor = System.Drawing.Color.WhiteSmoke
-		Me.chartTimeCount.BackSecondaryColor = System.Drawing.Color.Gray
+		Me.chartTimeCount.BackSecondaryColor = System.Drawing.Color.LightGray
 		Me.chartTimeCount.BorderSkin.PageColor = System.Drawing.Color.WhiteSmoke
-		ChartArea4.AxisX.Title = "Time"
-		ChartArea4.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far
-		ChartArea4.AxisX.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		ChartArea4.AxisY.Title = "Count"
-		ChartArea4.AxisY.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		ChartArea4.BackColor = System.Drawing.Color.PaleTurquoise
-		ChartArea4.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal
-		ChartArea4.BackSecondaryColor = System.Drawing.Color.White
-		ChartArea4.BorderColor = System.Drawing.Color.Transparent
-		ChartArea4.Name = "Time Count Chart "
-		Me.chartTimeCount.ChartAreas.Add(ChartArea4)
+		ChartArea2.AxisX.Title = "Time"
+		ChartArea2.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far
+		ChartArea2.AxisX.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		ChartArea2.AxisY.Title = "Count"
+		ChartArea2.AxisY.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		ChartArea2.BackColor = System.Drawing.Color.PaleTurquoise
+		ChartArea2.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal
+		ChartArea2.BackSecondaryColor = System.Drawing.Color.White
+		ChartArea2.BorderColor = System.Drawing.Color.Transparent
+		ChartArea2.Name = "Time Count Chart "
+		Me.chartTimeCount.ChartAreas.Add(ChartArea2)
 		Me.chartTimeCount.Dock = System.Windows.Forms.DockStyle.Fill
-		Legend4.Name = "Legend1"
-		Me.chartTimeCount.Legends.Add(Legend4)
+		Legend2.Name = "Legend1"
+		Me.chartTimeCount.Legends.Add(Legend2)
 		Me.chartTimeCount.Location = New System.Drawing.Point(0, 0)
 		Me.chartTimeCount.Name = "chartTimeCount"
-		Series4.BorderWidth = 3
-		Series4.ChartArea = "Time Count Chart "
-		Series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-		Series4.Legend = "Legend1"
-		Series4.MarkerSize = 10
-		Series4.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle
-		Series4.Name = "Count"
-		Me.chartTimeCount.Series.Add(Series4)
+		Series2.BorderWidth = 3
+		Series2.ChartArea = "Time Count Chart "
+		Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+		Series2.Legend = "Legend1"
+		Series2.MarkerSize = 10
+		Series2.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle
+		Series2.Name = "Count"
+		Me.chartTimeCount.Series.Add(Series2)
 		Me.chartTimeCount.Size = New System.Drawing.Size(787, 462)
 		Me.chartTimeCount.TabIndex = 0
 		Me.chartTimeCount.Text = "Chart Count Time"
 		'
+		'panForPrintHeader
+		'
+		Me.panForPrintHeader.BackColor = System.Drawing.Color.White
+		Me.panForPrintHeader.Controls.Add(Me.PictureBox1)
+		Me.panForPrintHeader.Controls.Add(Me.lblPrintedBy)
+		Me.panForPrintHeader.Controls.Add(Me.lbl3)
+		Me.panForPrintHeader.Controls.Add(Me.lblDateNow)
+		Me.panForPrintHeader.Controls.Add(Me.lblPrint)
+		Me.panForPrintHeader.Controls.Add(Me.Label2)
+		Me.panForPrintHeader.Location = New System.Drawing.Point(3, 304)
+		Me.panForPrintHeader.Name = "panForPrintHeader"
+		Me.panForPrintHeader.Size = New System.Drawing.Size(784, 153)
+		Me.panForPrintHeader.TabIndex = 1
+		'
+		'PictureBox1
+		'
+		Me.PictureBox1.Image = Global.BAIT1083_Visual_Programming.My.Resources.Resources.circle_cropped
+		Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
+		Me.PictureBox1.Name = "PictureBox1"
+		Me.PictureBox1.Size = New System.Drawing.Size(155, 146)
+		Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+		Me.PictureBox1.TabIndex = 5
+		Me.PictureBox1.TabStop = False
+		'
+		'lblPrintedBy
+		'
+		Me.lblPrintedBy.BackColor = System.Drawing.Color.Transparent
+		Me.lblPrintedBy.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.lblPrintedBy.Location = New System.Drawing.Point(274, 102)
+		Me.lblPrintedBy.Name = "lblPrintedBy"
+		Me.lblPrintedBy.Size = New System.Drawing.Size(113, 23)
+		Me.lblPrintedBy.TabIndex = 4
+		'
+		'lbl3
+		'
+		Me.lbl3.BackColor = System.Drawing.Color.Transparent
+		Me.lbl3.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.lbl3.Location = New System.Drawing.Point(182, 102)
+		Me.lbl3.Name = "lbl3"
+		Me.lbl3.Size = New System.Drawing.Size(84, 23)
+		Me.lbl3.TabIndex = 3
+		Me.lbl3.Text = "Printed by:"
+		'
+		'lblDateNow
+		'
+		Me.lblDateNow.BackColor = System.Drawing.Color.Transparent
+		Me.lblDateNow.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.lblDateNow.Location = New System.Drawing.Point(274, 79)
+		Me.lblDateNow.Name = "lblDateNow"
+		Me.lblDateNow.Size = New System.Drawing.Size(113, 23)
+		Me.lblDateNow.TabIndex = 2
+		'
+		'lblPrint
+		'
+		Me.lblPrint.BackColor = System.Drawing.Color.Transparent
+		Me.lblPrint.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.lblPrint.Location = New System.Drawing.Point(182, 79)
+		Me.lblPrint.Name = "lblPrint"
+		Me.lblPrint.Size = New System.Drawing.Size(98, 23)
+		Me.lblPrint.TabIndex = 1
+		Me.lblPrint.Text = "Printed on:"
+		'
+		'Label2
+		'
+		Me.Label2.AutoSize = True
+		Me.Label2.BackColor = System.Drawing.Color.Transparent
+		Me.Label2.Font = New System.Drawing.Font("Segoe UI", 13.8!, System.Drawing.FontStyle.Bold)
+		Me.Label2.Location = New System.Drawing.Point(180, 43)
+		Me.Label2.Name = "Label2"
+		Me.Label2.Size = New System.Drawing.Size(269, 32)
+		Me.Label2.TabIndex = 0
+		Me.Label2.Text = "Room Booking Report"
+		'
 		'Panel4
 		'
-		Me.Panel4.BackColor = System.Drawing.Color.WhiteSmoke
-		Me.Panel4.Controls.Add(Me.Label1)
+		Me.Panel4.BackColor = System.Drawing.Color.White
+		Me.Panel4.Controls.Add(Me.lblChartTitle)
 		Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
 		Me.Panel4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Panel4.Location = New System.Drawing.Point(0, 0)
@@ -128,15 +211,15 @@ Partial Class UserControl_RoomBookingReport
 		Me.Panel4.Size = New System.Drawing.Size(787, 61)
 		Me.Panel4.TabIndex = 1
 		'
-		'Label1
+		'lblChartTitle
 		'
-		Me.Label1.AutoSize = True
-		Me.Label1.Font = New System.Drawing.Font("Segoe UI", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label1.Location = New System.Drawing.Point(102, 17)
-		Me.Label1.Name = "Label1"
-		Me.Label1.Size = New System.Drawing.Size(538, 32)
-		Me.Label1.TabIndex = 0
-		Me.Label1.Text = "Peak period for patron making room booking" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+		Me.lblChartTitle.AutoSize = True
+		Me.lblChartTitle.Font = New System.Drawing.Font("Segoe UI", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.lblChartTitle.Location = New System.Drawing.Point(102, 17)
+		Me.lblChartTitle.Name = "lblChartTitle"
+		Me.lblChartTitle.Size = New System.Drawing.Size(538, 32)
+		Me.lblChartTitle.TabIndex = 0
+		Me.lblChartTitle.Text = "Peak period for patron making room booking" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
 		'
 		'Panel1
 		'
@@ -152,7 +235,6 @@ Partial Class UserControl_RoomBookingReport
 		'
 		'Panel3
 		'
-		Me.Panel3.Controls.Add(Me.btnEasyRpt)
 		Me.Panel3.Controls.Add(Me.lblSelectDate)
 		Me.Panel3.Controls.Add(Me.dtpSelectDate)
 		Me.Panel3.Controls.Add(Me.btnPrint)
@@ -182,7 +264,7 @@ Partial Class UserControl_RoomBookingReport
 		'
 		'btnPrint
 		'
-		Me.btnPrint.Location = New System.Drawing.Point(14, 68)
+		Me.btnPrint.Location = New System.Drawing.Point(77, 63)
 		Me.btnPrint.Name = "btnPrint"
 		Me.btnPrint.Size = New System.Drawing.Size(118, 37)
 		Me.btnPrint.TabIndex = 0
@@ -192,6 +274,7 @@ Partial Class UserControl_RoomBookingReport
 		'Panel2
 		'
 		Me.Panel2.Controls.Add(Me.lstQueryRpt)
+		Me.Panel2.Controls.Add(Me.dgvForPrint)
 		Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
 		Me.Panel2.Location = New System.Drawing.Point(0, 0)
 		Me.Panel2.Name = "Panel2"
@@ -221,19 +304,38 @@ Partial Class UserControl_RoomBookingReport
 		Me.Count.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		Me.Count.Width = 100
 		'
-		'doc
+		'dgvForPrint
 		'
-		Me.doc.OriginAtMargins = True
+		Me.dgvForPrint.BackgroundColor = System.Drawing.SystemColors.Control
+		Me.dgvForPrint.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.dgvForPrint.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colNo, Me.colTime, Me.colCount})
+		Me.dgvForPrint.Location = New System.Drawing.Point(3, 3)
+		Me.dgvForPrint.Name = "dgvForPrint"
+		Me.dgvForPrint.RowHeadersWidth = 51
+		Me.dgvForPrint.RowTemplate.Height = 24
+		Me.dgvForPrint.Size = New System.Drawing.Size(266, 399)
+		Me.dgvForPrint.TabIndex = 2
 		'
-		'dlgPreview
+		'colNo
 		'
-		Me.dlgPreview.AutoScrollMargin = New System.Drawing.Size(0, 0)
-		Me.dlgPreview.AutoScrollMinSize = New System.Drawing.Size(0, 0)
-		Me.dlgPreview.ClientSize = New System.Drawing.Size(400, 300)
-		Me.dlgPreview.Enabled = True
-		Me.dlgPreview.Icon = CType(resources.GetObject("dlgPreview.Icon"), System.Drawing.Icon)
-		Me.dlgPreview.Name = "dlgPreview"
-		Me.dlgPreview.Visible = False
+		Me.colNo.HeaderText = "No"
+		Me.colNo.MinimumWidth = 6
+		Me.colNo.Name = "colNo"
+		Me.colNo.Width = 125
+		'
+		'colTime
+		'
+		Me.colTime.HeaderText = "Time"
+		Me.colTime.MinimumWidth = 6
+		Me.colTime.Name = "colTime"
+		Me.colTime.Width = 125
+		'
+		'colCount
+		'
+		Me.colCount.HeaderText = "Total Booking"
+		Me.colCount.MinimumWidth = 6
+		Me.colCount.Name = "colCount"
+		Me.colCount.Width = 125
 		'
 		'easyRpt
 		'
@@ -245,15 +347,6 @@ Partial Class UserControl_RoomBookingReport
 		Me.easyRpt.RowDefaultBackgroudColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
 		Me.easyRpt.RowDefaultFontColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(46, Byte), Integer))
 		Me.easyRpt.RowDefaultGridColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(65, Byte), Integer))
-		'
-		'btnEasyRpt
-		'
-		Me.btnEasyRpt.Location = New System.Drawing.Point(142, 68)
-		Me.btnEasyRpt.Name = "btnEasyRpt"
-		Me.btnEasyRpt.Size = New System.Drawing.Size(118, 37)
-		Me.btnEasyRpt.TabIndex = 3
-		Me.btnEasyRpt.Text = "Print with Easy"
-		Me.btnEasyRpt.UseVisualStyleBackColor = True
 		'
 		'UserControl_RoomBookingReport
 		'
@@ -270,12 +363,16 @@ Partial Class UserControl_RoomBookingReport
 		Me.SplitContainer1.ResumeLayout(False)
 		Me.Panel5.ResumeLayout(False)
 		CType(Me.chartTimeCount, System.ComponentModel.ISupportInitialize).EndInit()
+		Me.panForPrintHeader.ResumeLayout(False)
+		Me.panForPrintHeader.PerformLayout()
+		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel4.ResumeLayout(False)
 		Me.Panel4.PerformLayout()
 		Me.Panel1.ResumeLayout(False)
 		Me.Panel3.ResumeLayout(False)
 		Me.Panel3.PerformLayout()
 		Me.Panel2.ResumeLayout(False)
+		CType(Me.dgvForPrint, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 
 	End Sub
@@ -292,9 +389,17 @@ Partial Class UserControl_RoomBookingReport
 	Friend WithEvents chartTimeCount As DataVisualization.Charting.Chart
 	Friend WithEvents Panel5 As Panel
 	Friend WithEvents Panel4 As Panel
-	Friend WithEvents Label1 As Label
-	Friend WithEvents doc As Printing.PrintDocument
-	Friend WithEvents dlgPreview As PrintPreviewDialog
-	Friend WithEvents btnEasyRpt As Button
+	Friend WithEvents lblChartTitle As Label
 	Friend WithEvents easyRpt As KimToo.EasyHTMLReports
+	Friend WithEvents panForPrintHeader As Panel
+	Friend WithEvents Label2 As Label
+	Friend WithEvents lblDateNow As Label
+	Friend WithEvents lblPrint As Label
+	Friend WithEvents lbl3 As Label
+	Friend WithEvents lblPrintedBy As Label
+	Friend WithEvents PictureBox1 As PictureBox
+	Friend WithEvents dgvForPrint As DataGridView
+	Friend WithEvents colNo As DataGridViewTextBoxColumn
+	Friend WithEvents colTime As DataGridViewTextBoxColumn
+	Friend WithEvents colCount As DataGridViewTextBoxColumn
 End Class

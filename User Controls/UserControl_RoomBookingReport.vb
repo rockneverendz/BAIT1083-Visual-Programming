@@ -8,6 +8,9 @@ Public Class UserControl_RoomBookingReport
 	Private Sub UserControl_RoomBookingReport_Load(sender As Object, e As EventArgs) Handles Me.Load
 		GetQueryReport()
 
+		lblDateNow.Text = String.Format("{0:dd-MMMM-yyyy hh:mm:ss tt}", DateTime.Now)
+		lblPrintedBy.Text = "Admin"
+
 	End Sub
 
 	Private Sub GetQueryReport()
@@ -64,119 +67,44 @@ Public Class UserControl_RoomBookingReport
 
 	Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
 
-		dlgPreview.Document = doc
-		dlgPreview.ShowDialog(Me)
-
-	End Sub
-
-	Private Sub doc_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles doc.PrintPage
-
-		' (1) Fonts
-		Dim fontHeader As New Font("Roboto Mono", 24, FontStyle.Bold)
-		Dim fontSubHeader As New Font("Calibri", 12)
-		Dim fontBody As New Font("Arial", 11)
-
-		' (2) Prepare header and sub-header
-		Dim header As String = "Room Booking Report"
-		Dim subHeader As String = String.Format(
-			"Printed on {0:dd-MMMM-yyyy hh:mm:ss tt}" & vbNewLine &
-			"Prepared by Admin", DateTime.Now
-		)
-
-		' (3) Prepare body
-		Dim body As New StringBuilder()
-
-		Dim headerStr() As String = {"No", "Time", "Count"}
-		Dim headerStr2() As String = {"--", "----", "-----"}
-
-		body.AppendFormat("{0,-5}   {1, 20}   {2, 10}" & vbNewLine,
-						  headerStr(0), headerStr(1), headerStr(2))
-		body.AppendFormat("{0,-5}   {1, 20}   {2, 10}" & vbNewLine,
-						  headerStr2(0), headerStr2(1), headerStr2(2))
-
-		Dim cnt As Integer = 0 ' Keep track of the line count
-		Dim cnt2 As Integer = 0
-		For Each item In lstQueryRpt.Items
-			cnt += 1
-
-			'parts = CStr(lstItem).Split(CChar(vbTab)) ' parts(0) is Time Column, parts(1) is Count Column
-			'lstQueryRpt.Items(0).SubItems.ToString()
-			Dim timeStr As String = lstQueryRpt.Items(cnt2).SubItems(0).Text
-			Dim countStr As String = lstQueryRpt.Items(cnt2).SubItems(1).Text
-
-			body.AppendFormat("{0, -5}{1, 20}{2, 10}" & vbNewLine, cnt, timeStr, countStr)
-			Console.WriteLine("{0, -5}{1, 20}{2, 10}" & vbNewLine, cnt, timeStr, countStr)
-
-			cnt2 += 1
-		Next
-
-		body.AppendLine()
-		body.AppendFormat("{0,2} record(s)", cnt)
-
-		' (4) Print
-		With e.Graphics
-			.DrawImage(My.Resources.circle_cropped, 0, 0, 100, 100) ' Print the image with smaller size 100 x 100
-			.DrawString(header, fontHeader, Brushes.Black, 150, 0)
-			.DrawString(subHeader, fontSubHeader, Brushes.Black, 150, 40)
-			.DrawString(body.ToString(), fontBody, Brushes.Black, 0, 120)
-		End With
-
-
-	End Sub
-
-	Private Sub btnEasyRpt_Click(sender As Object, e As EventArgs) Handles btnEasyRpt.Click
-
-
-		' (3) Prepare body
-		Dim body As New StringBuilder()
-
-		Dim headerStr() As String = {"No", "Time", "Count"}
-		Dim headerStr2() As String = {"--", "----", "-----"}
-
-		body.AppendFormat("{0,-5}   {1, 20}   {2, 10}" & vbNewLine,
-						  headerStr(0), headerStr(1), headerStr(2))
-		body.AppendFormat("{0,-5}   {1, 20}   {2, 10}" & vbNewLine,
-						  headerStr2(0), headerStr2(1), headerStr2(2))
-
-		Dim cnt As Integer = 0 ' Keep track of the line count
-		Dim cnt2 As Integer = 0
-		For Each item In lstQueryRpt.Items
-			cnt += 1
-
-			'parts = CStr(lstItem).Split(CChar(vbTab)) ' parts(0) is Time Column, parts(1) is Count Column
-			'lstQueryRpt.Items(0).SubItems.ToString()
-			Dim timeStr As String = lstQueryRpt.Items(cnt2).SubItems(0).Text
-			Dim countStr As String = lstQueryRpt.Items(cnt2).SubItems(1).Text
-
-			body.AppendFormat("{0, -5}{1, 20}{2, 10}" & vbNewLine, cnt, timeStr, countStr)
-			Console.WriteLine("{0, -5}{1, 20}{2, 10}" & vbNewLine, cnt, timeStr, countStr)
-
-			cnt2 += 1
-		Next
-
-		body.AppendLine()
-		body.AppendFormat("{0,2} record(s)", cnt)
+		'Clear the control 1st to erase previous data
+		easyRpt.Clear()
 
 		'---Adding resources to Print Preview---
 
-		'Add logo
-		Dim header As String = "Room Booking Report"
-		Dim subHeader As String = String.Format(
-			"Printed on {0:dd-MMMM-yyyy hh:mm:ss tt}" & "</br>" &
-			"Prepared by Admin", DateTime.Now
-		)
-		easyRpt.AddImage(My.Resources.circle_cropped, "width='120' float: left")
-		easyRpt.AddString("<h2>Room Booking Report</h2>", "float: left")
-		easyRpt.AddString("<h2>" & subHeader & "</h2>", "float: left")
+		' (1) Prepare Header
+		easyRpt.AddControl(panForPrintHeader, )
+		easyRpt.AddHorizontalRule()
+		panForPrintHeader.Visible = False
 
-
-		easyRpt.AddString("</div>")
-
-		'Add Chart
-		easyRpt.AddControl(chartTimeCount)
-
+		' (2) Prepare Chart
+		easyRpt.AddControl(SplitContainer1.Panel1, "width='100%'")
+		panForPrintHeader.Visible = True
+		easyRpt.AddLineBreak()
+		easyRpt.AddLineBreak()
 		'Add ListView
-		easyRpt.AddString(body.ToString)
+
+
+		' (3) Prepare Table View
+		Dim cnt As Integer = 0 ' Keep track of the line count
+		Dim cnt2 As Integer = 0
+		For Each item In lstQueryRpt.Items
+			cnt += 1
+			'Retrieve Data frm List View
+			Dim timeStr As String = lstQueryRpt.Items(cnt2).SubItems(0).Text
+			Dim countStr As String = lstQueryRpt.Items(cnt2).SubItems(1).Text
+			'Transfer Data to DataGridView
+			dgvForPrint.Rows.Add(cnt, timeStr, countStr)
+			'Console.WriteLine("{0, -5}{1, 20}{2, 10}" & vbNewLine, cnt, timeStr, countStr)
+			cnt2 += 1
+		Next
+		easyRpt.AddDatagridView(dgvForPrint)
+		easyRpt.AddLineBreak()
+		easyRpt.AddString(cnt & " record(s)")
+		easyRpt.AddLineBreak()
+
+		' (4) Show print dialog
 		easyRpt.ShowPrintPreviewDialog()
+
 	End Sub
 End Class
