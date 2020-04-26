@@ -65,7 +65,6 @@ Partial Class UserControl_BookList
         '
         Me.SplitContainer_BookList.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainer_BookList.FixedPanel = System.Windows.Forms.FixedPanel.Panel2
-        Me.SplitContainer_BookList.IsSplitterFixed = True
         Me.SplitContainer_BookList.Location = New System.Drawing.Point(0, 0)
         Me.SplitContainer_BookList.Name = "SplitContainer_BookList"
         '
@@ -98,7 +97,7 @@ Partial Class UserControl_BookList
         Me.SplitContainer_BookList.Panel2MinSize = 200
         Me.SplitContainer_BookList.Size = New System.Drawing.Size(816, 462)
         Me.SplitContainer_BookList.SplitterDistance = 612
-        Me.SplitContainer_BookList.TabIndex = 3
+        Me.SplitContainer_BookList.TabIndex = 0
         '
         'ListView_Book
         '
@@ -111,7 +110,7 @@ Partial Class UserControl_BookList
         Me.ListView_Book.MultiSelect = False
         Me.ListView_Book.Name = "ListView_Book"
         Me.ListView_Book.Size = New System.Drawing.Size(612, 462)
-        Me.ListView_Book.TabIndex = 3
+        Me.ListView_Book.TabIndex = 0
         Me.ListView_Book.UseCompatibleStateImageBehavior = False
         Me.ListView_Book.View = System.Windows.Forms.View.Details
         '
@@ -165,11 +164,14 @@ Partial Class UserControl_BookList
         '
         'TextBox_ID
         '
+        Me.TextBox_ID.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBox_ID.Location = New System.Drawing.Point(85, 15)
         Me.TextBox_ID.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_ID.Name = "TextBox_ID"
         Me.TextBox_ID.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_ID.TabIndex = 1
+        Me.TextBox_ID.TabIndex = 0
         '
         'Label_Title
         '
@@ -183,11 +185,14 @@ Partial Class UserControl_BookList
         '
         'TextBox_Title
         '
+        Me.TextBox_Title.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBox_Title.Location = New System.Drawing.Point(85, 45)
         Me.TextBox_Title.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_Title.Name = "TextBox_Title"
         Me.TextBox_Title.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_Title.TabIndex = 3
+        Me.TextBox_Title.TabIndex = 1
         '
         'Label_Author
         '
@@ -201,11 +206,14 @@ Partial Class UserControl_BookList
         '
         'TextBox_Author
         '
+        Me.TextBox_Author.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBox_Author.Location = New System.Drawing.Point(85, 75)
         Me.TextBox_Author.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_Author.Name = "TextBox_Author"
         Me.TextBox_Author.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_Author.TabIndex = 5
+        Me.TextBox_Author.TabIndex = 2
         '
         'Label_Category
         '
@@ -227,7 +235,7 @@ Partial Class UserControl_BookList
         Me.ComboBox_Category.Margin = New System.Windows.Forms.Padding(5)
         Me.ComboBox_Category.Name = "ComboBox_Category"
         Me.ComboBox_Category.Size = New System.Drawing.Size(100, 21)
-        Me.ComboBox_Category.TabIndex = 18
+        Me.ComboBox_Category.TabIndex = 3
         '
         'Label_Publication
         '
@@ -241,11 +249,14 @@ Partial Class UserControl_BookList
         '
         'TextBox_Publication
         '
+        Me.TextBox_Publication.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBox_Publication.Location = New System.Drawing.Point(85, 136)
         Me.TextBox_Publication.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_Publication.Name = "TextBox_Publication"
         Me.TextBox_Publication.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_Publication.TabIndex = 9
+        Me.TextBox_Publication.TabIndex = 4
         '
         'Label_YearPublish
         '
@@ -259,11 +270,14 @@ Partial Class UserControl_BookList
         '
         'TextBox_YearPublish
         '
+        Me.TextBox_YearPublish.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBox_YearPublish.Location = New System.Drawing.Point(85, 166)
         Me.TextBox_YearPublish.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_YearPublish.Name = "TextBox_YearPublish"
         Me.TextBox_YearPublish.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_YearPublish.TabIndex = 11
+        Me.TextBox_YearPublish.TabIndex = 5
         '
         'Label_Copies
         '
@@ -277,11 +291,14 @@ Partial Class UserControl_BookList
         '
         'TextBox_Copies
         '
+        Me.TextBox_Copies.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBox_Copies.Location = New System.Drawing.Point(85, 196)
         Me.TextBox_Copies.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_Copies.Name = "TextBox_Copies"
         Me.TextBox_Copies.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_Copies.TabIndex = 13
+        Me.TextBox_Copies.TabIndex = 6
         '
         'Label_CallNo
         '
@@ -295,11 +312,13 @@ Partial Class UserControl_BookList
         '
         'TextBox_CallNo
         '
+        Me.TextBox_CallNo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBox_CallNo.Location = New System.Drawing.Point(85, 226)
         Me.TextBox_CallNo.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox_CallNo.Name = "TextBox_CallNo"
         Me.TextBox_CallNo.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_CallNo.TabIndex = 15
+        Me.TextBox_CallNo.TabIndex = 7
         '
         'Label_Search_Message
         '
@@ -319,7 +338,7 @@ Partial Class UserControl_BookList
         Me.Button_Search.Margin = New System.Windows.Forms.Padding(5)
         Me.Button_Search.Name = "Button_Search"
         Me.Button_Search.Size = New System.Drawing.Size(75, 23)
-        Me.Button_Search.TabIndex = 16
+        Me.Button_Search.TabIndex = 8
         Me.Button_Search.Text = "Search"
         Me.Button_Search.UseVisualStyleBackColor = True
         '
@@ -330,7 +349,7 @@ Partial Class UserControl_BookList
         Me.Button_Clear.Margin = New System.Windows.Forms.Padding(5)
         Me.Button_Clear.Name = "Button_Clear"
         Me.Button_Clear.Size = New System.Drawing.Size(75, 23)
-        Me.Button_Clear.TabIndex = 17
+        Me.Button_Clear.TabIndex = 9
         Me.Button_Clear.Text = "Clear"
         Me.Button_Clear.UseVisualStyleBackColor = True
         '
