@@ -202,7 +202,7 @@
         End Sub
 
         Public Function ToStringArray() As String()
-            Return {Copy_ID, Chk_ID, Issue_Date, Due_Date}
+            Return {Copy_ID, Chk_ID, Issue_Date, Due_Date, If(Due_Date < Today, "Overdue", "")}
         End Function
 
         Public Property Copy_ID As Integer

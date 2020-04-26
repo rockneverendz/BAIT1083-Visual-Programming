@@ -24,9 +24,15 @@ Partial Class UserControl_Checkout
     Private Sub InitializeComponent()
         Me.SplitContainer_Checkout = New System.Windows.Forms.SplitContainer()
         Me.TableLayoutPanel_Input = New System.Windows.Forms.TableLayoutPanel()
+        Me.Panel_Copy = New System.Windows.Forms.Panel()
+        Me.Label_Copy = New System.Windows.Forms.Label()
+        Me.TextBox_CopyID = New System.Windows.Forms.TextBox()
+        Me.Label_Copy_Message = New System.Windows.Forms.Label()
+        Me.Button_Add = New System.Windows.Forms.Button()
         Me.Panel_Patron = New System.Windows.Forms.Panel()
         Me.Label_Patron = New System.Windows.Forms.Label()
         Me.TextBox_PatronID = New System.Windows.Forms.TextBox()
+        Me.Label_Patron_Message = New System.Windows.Forms.Label()
         Me.Button_Search = New System.Windows.Forms.Button()
         Me.Label_ID = New System.Windows.Forms.Label()
         Me.TextBox_ID = New System.Windows.Forms.TextBox()
@@ -40,14 +46,22 @@ Partial Class UserControl_Checkout
         Me.TextBox_Address = New System.Windows.Forms.TextBox()
         Me.Label_Email = New System.Windows.Forms.Label()
         Me.TextBox_Email = New System.Windows.Forms.TextBox()
-        Me.Panel_Copy = New System.Windows.Forms.Panel()
-        Me.Label_Copy = New System.Windows.Forms.Label()
-        Me.TextBox_CopyID = New System.Windows.Forms.TextBox()
-        Me.Button_Add = New System.Windows.Forms.Button()
         Me.TableLayoutPanel_CheckoutDetails = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel_New = New System.Windows.Forms.Panel()
         Me.ListView_New = New System.Windows.Forms.ListView()
+        Me.Checkout_CopyID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Checkout_Status = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Checkout_BookID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Checkout_BookTitle = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Checkout_CallNo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label_New = New System.Windows.Forms.Label()
+        Me.Panel_Current = New System.Windows.Forms.Panel()
+        Me.Label_Current = New System.Windows.Forms.Label()
+        Me.ListView_Current = New System.Windows.Forms.ListView()
+        Me.Current_CopyID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Current_ChkID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Current_IssueDate = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Current_DueDate = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel_Confirmation = New System.Windows.Forms.Panel()
         Me.Label_Duration = New System.Windows.Forms.Label()
         Me.NumericUpDown_Weeks = New System.Windows.Forms.NumericUpDown()
@@ -56,32 +70,19 @@ Partial Class UserControl_Checkout
         Me.TextBox_DueDate = New System.Windows.Forms.TextBox()
         Me.Button_Confirm = New System.Windows.Forms.Button()
         Me.Button_Clear = New System.Windows.Forms.Button()
-        Me.Panel_Current = New System.Windows.Forms.Panel()
-        Me.ListView_Current = New System.Windows.Forms.ListView()
-        Me.Label_Current = New System.Windows.Forms.Label()
-        Me.Label_Copy_Message = New System.Windows.Forms.Label()
-        Me.Label_Patron_Message = New System.Windows.Forms.Label()
-        Me.Checkout_CopyID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Checkout_Status = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Checkout_BookID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Checkout_BookTitle = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Checkout_CallNo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Current_CopyID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Current_ChkID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Current_IssueDate = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Current_DueDate = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Current_Status = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         CType(Me.SplitContainer_Checkout, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer_Checkout.Panel1.SuspendLayout()
         Me.SplitContainer_Checkout.Panel2.SuspendLayout()
         Me.SplitContainer_Checkout.SuspendLayout()
         Me.TableLayoutPanel_Input.SuspendLayout()
-        Me.Panel_Patron.SuspendLayout()
         Me.Panel_Copy.SuspendLayout()
+        Me.Panel_Patron.SuspendLayout()
         Me.TableLayoutPanel_CheckoutDetails.SuspendLayout()
         Me.Panel_New.SuspendLayout()
+        Me.Panel_Current.SuspendLayout()
         Me.Panel_Confirmation.SuspendLayout()
         CType(Me.NumericUpDown_Weeks, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel_Current.SuspendLayout()
         Me.SuspendLayout()
         '
         'SplitContainer_Checkout
@@ -116,6 +117,63 @@ Partial Class UserControl_Checkout
         Me.TableLayoutPanel_Input.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.67!))
         Me.TableLayoutPanel_Input.Size = New System.Drawing.Size(272, 490)
         Me.TableLayoutPanel_Input.TabIndex = 24
+        '
+        'Panel_Copy
+        '
+        Me.Panel_Copy.Controls.Add(Me.Label_Copy)
+        Me.Panel_Copy.Controls.Add(Me.TextBox_CopyID)
+        Me.Panel_Copy.Controls.Add(Me.Label_Copy_Message)
+        Me.Panel_Copy.Controls.Add(Me.Button_Add)
+        Me.Panel_Copy.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel_Copy.Location = New System.Drawing.Point(0, 0)
+        Me.Panel_Copy.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel_Copy.Name = "Panel_Copy"
+        Me.Panel_Copy.Padding = New System.Windows.Forms.Padding(10)
+        Me.Panel_Copy.Size = New System.Drawing.Size(272, 163)
+        Me.Panel_Copy.TabIndex = 0
+        '
+        'Label_Copy
+        '
+        Me.Label_Copy.AutoSize = True
+        Me.Label_Copy.Location = New System.Drawing.Point(15, 15)
+        Me.Label_Copy.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label_Copy.Name = "Label_Copy"
+        Me.Label_Copy.Size = New System.Drawing.Size(45, 13)
+        Me.Label_Copy.TabIndex = 24
+        Me.Label_Copy.Text = "Copy ID"
+        '
+        'TextBox_CopyID
+        '
+        Me.TextBox_CopyID.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox_CopyID.Location = New System.Drawing.Point(15, 38)
+        Me.TextBox_CopyID.Margin = New System.Windows.Forms.Padding(5)
+        Me.TextBox_CopyID.Name = "TextBox_CopyID"
+        Me.TextBox_CopyID.Size = New System.Drawing.Size(242, 20)
+        Me.TextBox_CopyID.TabIndex = 0
+        '
+        'Label_Copy_Message
+        '
+        Me.Label_Copy_Message.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label_Copy_Message.ForeColor = System.Drawing.Color.Red
+        Me.Label_Copy_Message.Location = New System.Drawing.Point(15, 68)
+        Me.Label_Copy_Message.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label_Copy_Message.Name = "Label_Copy_Message"
+        Me.Label_Copy_Message.Size = New System.Drawing.Size(157, 23)
+        Me.Label_Copy_Message.TabIndex = 25
+        Me.Label_Copy_Message.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Button_Add
+        '
+        Me.Button_Add.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button_Add.Location = New System.Drawing.Point(182, 68)
+        Me.Button_Add.Margin = New System.Windows.Forms.Padding(5)
+        Me.Button_Add.Name = "Button_Add"
+        Me.Button_Add.Size = New System.Drawing.Size(75, 23)
+        Me.Button_Add.TabIndex = 1
+        Me.Button_Add.Text = "Add"
+        Me.Button_Add.UseVisualStyleBackColor = True
         '
         'Panel_Patron
         '
@@ -162,6 +220,18 @@ Partial Class UserControl_Checkout
         Me.TextBox_PatronID.Name = "TextBox_PatronID"
         Me.TextBox_PatronID.Size = New System.Drawing.Size(242, 20)
         Me.TextBox_PatronID.TabIndex = 0
+        '
+        'Label_Patron_Message
+        '
+        Me.Label_Patron_Message.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label_Patron_Message.ForeColor = System.Drawing.Color.Red
+        Me.Label_Patron_Message.Location = New System.Drawing.Point(15, 68)
+        Me.Label_Patron_Message.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label_Patron_Message.Name = "Label_Patron_Message"
+        Me.Label_Patron_Message.Size = New System.Drawing.Size(157, 23)
+        Me.Label_Patron_Message.TabIndex = 26
+        Me.Label_Patron_Message.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Button_Search
         '
@@ -306,51 +376,6 @@ Partial Class UserControl_Checkout
         Me.TextBox_Email.TabIndex = 9
         Me.TextBox_Email.TabStop = False
         '
-        'Panel_Copy
-        '
-        Me.Panel_Copy.Controls.Add(Me.Label_Copy)
-        Me.Panel_Copy.Controls.Add(Me.TextBox_CopyID)
-        Me.Panel_Copy.Controls.Add(Me.Label_Copy_Message)
-        Me.Panel_Copy.Controls.Add(Me.Button_Add)
-        Me.Panel_Copy.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel_Copy.Location = New System.Drawing.Point(0, 0)
-        Me.Panel_Copy.Margin = New System.Windows.Forms.Padding(0)
-        Me.Panel_Copy.Name = "Panel_Copy"
-        Me.Panel_Copy.Padding = New System.Windows.Forms.Padding(10)
-        Me.Panel_Copy.Size = New System.Drawing.Size(272, 163)
-        Me.Panel_Copy.TabIndex = 0
-        '
-        'Label_Copy
-        '
-        Me.Label_Copy.AutoSize = True
-        Me.Label_Copy.Location = New System.Drawing.Point(15, 15)
-        Me.Label_Copy.Margin = New System.Windows.Forms.Padding(5)
-        Me.Label_Copy.Name = "Label_Copy"
-        Me.Label_Copy.Size = New System.Drawing.Size(45, 13)
-        Me.Label_Copy.TabIndex = 24
-        Me.Label_Copy.Text = "Copy ID"
-        '
-        'TextBox_CopyID
-        '
-        Me.TextBox_CopyID.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox_CopyID.Location = New System.Drawing.Point(15, 38)
-        Me.TextBox_CopyID.Margin = New System.Windows.Forms.Padding(5)
-        Me.TextBox_CopyID.Name = "TextBox_CopyID"
-        Me.TextBox_CopyID.Size = New System.Drawing.Size(242, 20)
-        Me.TextBox_CopyID.TabIndex = 0
-        '
-        'Button_Add
-        '
-        Me.Button_Add.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button_Add.Location = New System.Drawing.Point(182, 68)
-        Me.Button_Add.Margin = New System.Windows.Forms.Padding(5)
-        Me.Button_Add.Name = "Button_Add"
-        Me.Button_Add.Size = New System.Drawing.Size(75, 23)
-        Me.Button_Add.TabIndex = 1
-        Me.Button_Add.Text = "Add"
-        Me.Button_Add.UseVisualStyleBackColor = True
-        '
         'TableLayoutPanel_CheckoutDetails
         '
         Me.TableLayoutPanel_CheckoutDetails.AutoSize = True
@@ -399,6 +424,29 @@ Partial Class UserControl_Checkout
         Me.ListView_New.UseCompatibleStateImageBehavior = False
         Me.ListView_New.View = System.Windows.Forms.View.Details
         '
+        'Checkout_CopyID
+        '
+        Me.Checkout_CopyID.Text = "Copy ID"
+        '
+        'Checkout_Status
+        '
+        Me.Checkout_Status.Text = "Status"
+        Me.Checkout_Status.Width = 90
+        '
+        'Checkout_BookID
+        '
+        Me.Checkout_BookID.Text = "Book ID"
+        '
+        'Checkout_BookTitle
+        '
+        Me.Checkout_BookTitle.Text = "Book Title"
+        Me.Checkout_BookTitle.Width = 180
+        '
+        'Checkout_CallNo
+        '
+        Me.Checkout_CallNo.Text = "Call No"
+        Me.Checkout_CallNo.Width = 90
+        '
         'Label_New
         '
         Me.Label_New.AutoSize = True
@@ -408,6 +456,62 @@ Partial Class UserControl_Checkout
         Me.Label_New.Size = New System.Drawing.Size(75, 13)
         Me.Label_New.TabIndex = 3
         Me.Label_New.Text = "Checkout Cart"
+        '
+        'Panel_Current
+        '
+        Me.Panel_Current.Controls.Add(Me.Label_Current)
+        Me.Panel_Current.Controls.Add(Me.ListView_Current)
+        Me.Panel_Current.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel_Current.Location = New System.Drawing.Point(0, 163)
+        Me.Panel_Current.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel_Current.Name = "Panel_Current"
+        Me.Panel_Current.Padding = New System.Windows.Forms.Padding(10)
+        Me.Panel_Current.Size = New System.Drawing.Size(540, 163)
+        Me.Panel_Current.TabIndex = 1
+        '
+        'Label_Current
+        '
+        Me.Label_Current.AutoSize = True
+        Me.Label_Current.Location = New System.Drawing.Point(15, 15)
+        Me.Label_Current.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label_Current.Name = "Label_Current"
+        Me.Label_Current.Size = New System.Drawing.Size(123, 13)
+        Me.Label_Current.TabIndex = 0
+        Me.Label_Current.Text = "Parton Current Borrowed"
+        '
+        'ListView_Current
+        '
+        Me.ListView_Current.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ListView_Current.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Current_CopyID, Me.Current_ChkID, Me.Current_IssueDate, Me.Current_DueDate, Me.Current_Status})
+        Me.ListView_Current.HideSelection = False
+        Me.ListView_Current.Location = New System.Drawing.Point(15, 38)
+        Me.ListView_Current.Margin = New System.Windows.Forms.Padding(5)
+        Me.ListView_Current.Name = "ListView_Current"
+        Me.ListView_Current.Size = New System.Drawing.Size(510, 110)
+        Me.ListView_Current.TabIndex = 3
+        Me.ListView_Current.TabStop = False
+        Me.ListView_Current.UseCompatibleStateImageBehavior = False
+        Me.ListView_Current.View = System.Windows.Forms.View.Details
+        '
+        'Current_CopyID
+        '
+        Me.Current_CopyID.Text = "Copy ID"
+        '
+        'Current_ChkID
+        '
+        Me.Current_ChkID.Text = "Chk ID"
+        '
+        'Current_IssueDate
+        '
+        Me.Current_IssueDate.Text = "Issue Date"
+        Me.Current_IssueDate.Width = 120
+        '
+        'Current_DueDate
+        '
+        Me.Current_DueDate.Text = "Due Date"
+        Me.Current_DueDate.Width = 120
         '
         'Panel_Confirmation
         '
@@ -499,108 +603,9 @@ Partial Class UserControl_Checkout
         Me.Button_Clear.Text = "Clear"
         Me.Button_Clear.UseVisualStyleBackColor = True
         '
-        'Panel_Current
+        'Current_Status
         '
-        Me.Panel_Current.Controls.Add(Me.Label_Current)
-        Me.Panel_Current.Controls.Add(Me.ListView_Current)
-        Me.Panel_Current.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel_Current.Location = New System.Drawing.Point(0, 163)
-        Me.Panel_Current.Margin = New System.Windows.Forms.Padding(0)
-        Me.Panel_Current.Name = "Panel_Current"
-        Me.Panel_Current.Padding = New System.Windows.Forms.Padding(10)
-        Me.Panel_Current.Size = New System.Drawing.Size(540, 163)
-        Me.Panel_Current.TabIndex = 1
-        '
-        'ListView_Current
-        '
-        Me.ListView_Current.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ListView_Current.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Current_CopyID, Me.Current_ChkID, Me.Current_IssueDate, Me.Current_DueDate})
-        Me.ListView_Current.HideSelection = False
-        Me.ListView_Current.Location = New System.Drawing.Point(15, 38)
-        Me.ListView_Current.Margin = New System.Windows.Forms.Padding(5)
-        Me.ListView_Current.Name = "ListView_Current"
-        Me.ListView_Current.Size = New System.Drawing.Size(510, 110)
-        Me.ListView_Current.TabIndex = 3
-        Me.ListView_Current.TabStop = False
-        Me.ListView_Current.UseCompatibleStateImageBehavior = False
-        Me.ListView_Current.View = System.Windows.Forms.View.Details
-        '
-        'Label_Current
-        '
-        Me.Label_Current.AutoSize = True
-        Me.Label_Current.Location = New System.Drawing.Point(15, 15)
-        Me.Label_Current.Margin = New System.Windows.Forms.Padding(5)
-        Me.Label_Current.Name = "Label_Current"
-        Me.Label_Current.Size = New System.Drawing.Size(123, 13)
-        Me.Label_Current.TabIndex = 0
-        Me.Label_Current.Text = "Parton Current Borrowed"
-        '
-        'Label_Copy_Message
-        '
-        Me.Label_Copy_Message.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label_Copy_Message.ForeColor = System.Drawing.Color.Red
-        Me.Label_Copy_Message.Location = New System.Drawing.Point(15, 68)
-        Me.Label_Copy_Message.Margin = New System.Windows.Forms.Padding(5)
-        Me.Label_Copy_Message.Name = "Label_Copy_Message"
-        Me.Label_Copy_Message.Size = New System.Drawing.Size(157, 23)
-        Me.Label_Copy_Message.TabIndex = 25
-        Me.Label_Copy_Message.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'Label_Patron_Message
-        '
-        Me.Label_Patron_Message.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label_Patron_Message.ForeColor = System.Drawing.Color.Red
-        Me.Label_Patron_Message.Location = New System.Drawing.Point(15, 68)
-        Me.Label_Patron_Message.Margin = New System.Windows.Forms.Padding(5)
-        Me.Label_Patron_Message.Name = "Label_Patron_Message"
-        Me.Label_Patron_Message.Size = New System.Drawing.Size(157, 23)
-        Me.Label_Patron_Message.TabIndex = 26
-        Me.Label_Patron_Message.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'Checkout_CopyID
-        '
-        Me.Checkout_CopyID.Text = "Copy ID"
-        '
-        'Checkout_Status
-        '
-        Me.Checkout_Status.Text = "Status"
-        Me.Checkout_Status.Width = 90
-        '
-        'Checkout_BookID
-        '
-        Me.Checkout_BookID.Text = "Book ID"
-        '
-        'Checkout_BookTitle
-        '
-        Me.Checkout_BookTitle.Text = "Book Title"
-        Me.Checkout_BookTitle.Width = 180
-        '
-        'Checkout_CallNo
-        '
-        Me.Checkout_CallNo.Text = "Call No"
-        Me.Checkout_CallNo.Width = 90
-        '
-        'Current_CopyID
-        '
-        Me.Current_CopyID.Text = "Copy ID"
-        '
-        'Current_ChkID
-        '
-        Me.Current_ChkID.Text = "Chk ID"
-        '
-        'Current_IssueDate
-        '
-        Me.Current_IssueDate.Text = "Issue Date"
-        Me.Current_IssueDate.Width = 120
-        '
-        'Current_DueDate
-        '
-        Me.Current_DueDate.Text = "Due Date"
-        Me.Current_DueDate.Width = 120
+        Me.Current_Status.Text = "Status"
         '
         'UserControl_Checkout
         '
@@ -616,19 +621,19 @@ Partial Class UserControl_Checkout
         CType(Me.SplitContainer_Checkout, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer_Checkout.ResumeLayout(False)
         Me.TableLayoutPanel_Input.ResumeLayout(False)
-        Me.Panel_Patron.ResumeLayout(False)
-        Me.Panel_Patron.PerformLayout()
         Me.Panel_Copy.ResumeLayout(False)
         Me.Panel_Copy.PerformLayout()
+        Me.Panel_Patron.ResumeLayout(False)
+        Me.Panel_Patron.PerformLayout()
         Me.TableLayoutPanel_CheckoutDetails.ResumeLayout(False)
         Me.TableLayoutPanel_CheckoutDetails.PerformLayout()
         Me.Panel_New.ResumeLayout(False)
         Me.Panel_New.PerformLayout()
+        Me.Panel_Current.ResumeLayout(False)
+        Me.Panel_Current.PerformLayout()
         Me.Panel_Confirmation.ResumeLayout(False)
         Me.Panel_Confirmation.PerformLayout()
         CType(Me.NumericUpDown_Weeks, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel_Current.ResumeLayout(False)
-        Me.Panel_Current.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -681,4 +686,5 @@ Partial Class UserControl_Checkout
     Friend WithEvents Current_ChkID As ColumnHeader
     Friend WithEvents Current_IssueDate As ColumnHeader
     Friend WithEvents Current_DueDate As ColumnHeader
+    Friend WithEvents Current_Status As ColumnHeader
 End Class
