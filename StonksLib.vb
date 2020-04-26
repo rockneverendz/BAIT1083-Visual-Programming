@@ -15,7 +15,7 @@ Public Class Form_StonksLib
     'TODO: Add instance into each class so we don't have to construct them everytime.
     Private Sub ToolStrip_Button_Click(sender As Object, e As EventArgs) Handles _
         Menu_NewBook.Click, Menu_BookList.Click,
-        Menu_Checkout.Click,
+        Menu_Checkout.Click, Menu_MostCheckoutsPatronReport.Click,
         Menu_Return.Click,
         Menu_NewRoomBooking.Click, Menu_ViewBookingHistory.Click,
         Menu_NewPatron.Click, Menu_PatronList.Click, Menu_PatronInsightReport.Click,
@@ -83,6 +83,9 @@ Public Class Form_StonksLib
 
         ElseIf (sender.Equals(Menu_PatronInsightReport)) Then
             UserControls = {New BAIT1083_Visual_Programming.UserControl_PatronInsightReport()}
+
+        ElseIf (sender.Equals(Menu_MostCheckoutsPatronReport)) Then
+            UserControls = {New BAIT1083_Visual_Programming.UserControl_MostChkOutPatronReport()}
 
         Else
             'User should not reach here'
