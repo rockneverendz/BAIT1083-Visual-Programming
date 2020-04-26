@@ -18,7 +18,7 @@ Public Class Form_StonksLib
         Menu_Checkout.Click,
         Menu_Return.Click,
         Menu_NewRoomBooking.Click, Menu_ViewBookingHistory.Click,
-        Menu_NewPatron.Click, Menu_PatronList.Click,
+        Menu_NewPatron.Click, Menu_PatronList.Click, Menu_PatronInsightReport.Click,
         Menu_Profile.Click,
         Menu_RBooking_Report.Click, Menu_MostBorrowedBookReport.Click
 
@@ -80,6 +80,9 @@ Public Class Form_StonksLib
 
         ElseIf (sender.Equals(Menu_MostBorrowedBookReport)) Then
             UserControls = {New BAIT1083_Visual_Programming.UserControl_MostBorrowedBookReport()}
+
+        ElseIf (sender.Equals(Menu_PatronInsightReport)) Then
+            UserControls = {New BAIT1083_Visual_Programming.UserControl_PatronInsightReport()}
 
         Else
             'User should not reach here'
