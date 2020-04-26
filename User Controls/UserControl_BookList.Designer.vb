@@ -32,22 +32,25 @@ Partial Class UserControl_BookList
         Me.Year_Publish = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Copies = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Call_no = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.TextBox_CallNo = New System.Windows.Forms.TextBox()
-        Me.Label_CallNo = New System.Windows.Forms.Label()
-        Me.TextBox_Copies = New System.Windows.Forms.TextBox()
-        Me.Label_Copies = New System.Windows.Forms.Label()
-        Me.TextBox_YearPublish = New System.Windows.Forms.TextBox()
-        Me.Label_YearPublish = New System.Windows.Forms.Label()
-        Me.TextBox_Publication = New System.Windows.Forms.TextBox()
-        Me.Label_Publication = New System.Windows.Forms.Label()
-        Me.TextBox_Category = New System.Windows.Forms.TextBox()
-        Me.Label_Category = New System.Windows.Forms.Label()
-        Me.TextBox_Author = New System.Windows.Forms.TextBox()
-        Me.Label_Author = New System.Windows.Forms.Label()
-        Me.TextBox_Title = New System.Windows.Forms.TextBox()
-        Me.Label_Title = New System.Windows.Forms.Label()
-        Me.TextBox_ID = New System.Windows.Forms.TextBox()
         Me.Label_ID = New System.Windows.Forms.Label()
+        Me.TextBox_ID = New System.Windows.Forms.TextBox()
+        Me.Label_Title = New System.Windows.Forms.Label()
+        Me.TextBox_Title = New System.Windows.Forms.TextBox()
+        Me.Label_Author = New System.Windows.Forms.Label()
+        Me.TextBox_Author = New System.Windows.Forms.TextBox()
+        Me.Label_Category = New System.Windows.Forms.Label()
+        Me.ComboBox_Category = New System.Windows.Forms.ComboBox()
+        Me.Label_Publication = New System.Windows.Forms.Label()
+        Me.TextBox_Publication = New System.Windows.Forms.TextBox()
+        Me.Label_YearPublish = New System.Windows.Forms.Label()
+        Me.TextBox_YearPublish = New System.Windows.Forms.TextBox()
+        Me.Label_Copies = New System.Windows.Forms.Label()
+        Me.TextBox_Copies = New System.Windows.Forms.TextBox()
+        Me.Label_CallNo = New System.Windows.Forms.Label()
+        Me.TextBox_CallNo = New System.Windows.Forms.TextBox()
+        Me.Label_Search_Message = New System.Windows.Forms.Label()
+        Me.Button_Search = New System.Windows.Forms.Button()
+        Me.Button_Clear = New System.Windows.Forms.Button()
         Me.MenuStrip_Footer = New System.Windows.Forms.MenuStrip()
         Me.Footer_BookList = New System.Windows.Forms.ToolStripButton()
         Me.Footer_Status = New System.Windows.Forms.ToolStripLabel()
@@ -79,7 +82,7 @@ Partial Class UserControl_BookList
         Me.SplitContainer_BookList.Panel2.Controls.Add(Me.Label_Author)
         Me.SplitContainer_BookList.Panel2.Controls.Add(Me.TextBox_Author)
         Me.SplitContainer_BookList.Panel2.Controls.Add(Me.Label_Category)
-        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.TextBox_Category)
+        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.ComboBox_Category)
         Me.SplitContainer_BookList.Panel2.Controls.Add(Me.Label_Publication)
         Me.SplitContainer_BookList.Panel2.Controls.Add(Me.TextBox_Publication)
         Me.SplitContainer_BookList.Panel2.Controls.Add(Me.Label_YearPublish)
@@ -88,6 +91,9 @@ Partial Class UserControl_BookList
         Me.SplitContainer_BookList.Panel2.Controls.Add(Me.TextBox_Copies)
         Me.SplitContainer_BookList.Panel2.Controls.Add(Me.Label_CallNo)
         Me.SplitContainer_BookList.Panel2.Controls.Add(Me.TextBox_CallNo)
+        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.Label_Search_Message)
+        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.Button_Search)
+        Me.SplitContainer_BookList.Panel2.Controls.Add(Me.Button_Clear)
         Me.SplitContainer_BookList.Panel2.Padding = New System.Windows.Forms.Padding(10)
         Me.SplitContainer_BookList.Panel2MinSize = 200
         Me.SplitContainer_BookList.Size = New System.Drawing.Size(816, 462)
@@ -147,121 +153,23 @@ Partial Class UserControl_BookList
         Me.Call_no.Text = "Call number"
         Me.Call_no.Width = 90
         '
-        'TextBox_CallNo
+        'Label_ID
         '
-        Me.TextBox_CallNo.Location = New System.Drawing.Point(85, 225)
-        Me.TextBox_CallNo.Margin = New System.Windows.Forms.Padding(5)
-        Me.TextBox_CallNo.Name = "TextBox_CallNo"
-        Me.TextBox_CallNo.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_CallNo.TabIndex = 15
+        Me.Label_ID.AutoSize = True
+        Me.Label_ID.Location = New System.Drawing.Point(57, 18)
+        Me.Label_ID.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label_ID.Name = "Label_ID"
+        Me.Label_ID.Size = New System.Drawing.Size(18, 13)
+        Me.Label_ID.TabIndex = 0
+        Me.Label_ID.Text = "ID"
         '
-        'Label_CallNo
+        'TextBox_ID
         '
-        Me.Label_CallNo.AutoSize = True
-        Me.Label_CallNo.Location = New System.Drawing.Point(33, 228)
-        Me.Label_CallNo.Margin = New System.Windows.Forms.Padding(5)
-        Me.Label_CallNo.Name = "Label_CallNo"
-        Me.Label_CallNo.Size = New System.Drawing.Size(42, 13)
-        Me.Label_CallNo.TabIndex = 14
-        Me.Label_CallNo.Text = "Call no."
-        '
-        'TextBox_Copies
-        '
-        Me.TextBox_Copies.Location = New System.Drawing.Point(85, 195)
-        Me.TextBox_Copies.Margin = New System.Windows.Forms.Padding(5)
-        Me.TextBox_Copies.Name = "TextBox_Copies"
-        Me.TextBox_Copies.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_Copies.TabIndex = 13
-        '
-        'Label_Copies
-        '
-        Me.Label_Copies.AutoSize = True
-        Me.Label_Copies.Location = New System.Drawing.Point(36, 198)
-        Me.Label_Copies.Margin = New System.Windows.Forms.Padding(5)
-        Me.Label_Copies.Name = "Label_Copies"
-        Me.Label_Copies.Size = New System.Drawing.Size(39, 13)
-        Me.Label_Copies.TabIndex = 12
-        Me.Label_Copies.Text = "Copies"
-        '
-        'TextBox_YearPublish
-        '
-        Me.TextBox_YearPublish.Location = New System.Drawing.Point(85, 165)
-        Me.TextBox_YearPublish.Margin = New System.Windows.Forms.Padding(5)
-        Me.TextBox_YearPublish.Name = "TextBox_YearPublish"
-        Me.TextBox_YearPublish.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_YearPublish.TabIndex = 11
-        '
-        'Label_YearPublish
-        '
-        Me.Label_YearPublish.AutoSize = True
-        Me.Label_YearPublish.Location = New System.Drawing.Point(9, 168)
-        Me.Label_YearPublish.Margin = New System.Windows.Forms.Padding(5)
-        Me.Label_YearPublish.Name = "Label_YearPublish"
-        Me.Label_YearPublish.Size = New System.Drawing.Size(66, 13)
-        Me.Label_YearPublish.TabIndex = 10
-        Me.Label_YearPublish.Text = "Year Publish"
-        '
-        'TextBox_Publication
-        '
-        Me.TextBox_Publication.Location = New System.Drawing.Point(85, 135)
-        Me.TextBox_Publication.Margin = New System.Windows.Forms.Padding(5)
-        Me.TextBox_Publication.Name = "TextBox_Publication"
-        Me.TextBox_Publication.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_Publication.TabIndex = 9
-        '
-        'Label_Publication
-        '
-        Me.Label_Publication.AutoSize = True
-        Me.Label_Publication.Location = New System.Drawing.Point(16, 138)
-        Me.Label_Publication.Margin = New System.Windows.Forms.Padding(5)
-        Me.Label_Publication.Name = "Label_Publication"
-        Me.Label_Publication.Size = New System.Drawing.Size(59, 13)
-        Me.Label_Publication.TabIndex = 8
-        Me.Label_Publication.Text = "Publication"
-        '
-        'TextBox_Category
-        '
-        Me.TextBox_Category.Location = New System.Drawing.Point(85, 105)
-        Me.TextBox_Category.Margin = New System.Windows.Forms.Padding(5)
-        Me.TextBox_Category.Name = "TextBox_Category"
-        Me.TextBox_Category.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_Category.TabIndex = 7
-        '
-        'Label_Category
-        '
-        Me.Label_Category.AutoSize = True
-        Me.Label_Category.Location = New System.Drawing.Point(26, 108)
-        Me.Label_Category.Margin = New System.Windows.Forms.Padding(5)
-        Me.Label_Category.Name = "Label_Category"
-        Me.Label_Category.Size = New System.Drawing.Size(49, 13)
-        Me.Label_Category.TabIndex = 6
-        Me.Label_Category.Text = "Category"
-        '
-        'TextBox_Author
-        '
-        Me.TextBox_Author.Location = New System.Drawing.Point(85, 75)
-        Me.TextBox_Author.Margin = New System.Windows.Forms.Padding(5)
-        Me.TextBox_Author.Name = "TextBox_Author"
-        Me.TextBox_Author.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_Author.TabIndex = 5
-        '
-        'Label_Author
-        '
-        Me.Label_Author.AutoSize = True
-        Me.Label_Author.Location = New System.Drawing.Point(37, 78)
-        Me.Label_Author.Margin = New System.Windows.Forms.Padding(5)
-        Me.Label_Author.Name = "Label_Author"
-        Me.Label_Author.Size = New System.Drawing.Size(38, 13)
-        Me.Label_Author.TabIndex = 4
-        Me.Label_Author.Text = "Author"
-        '
-        'TextBox_Title
-        '
-        Me.TextBox_Title.Location = New System.Drawing.Point(85, 45)
-        Me.TextBox_Title.Margin = New System.Windows.Forms.Padding(5)
-        Me.TextBox_Title.Name = "TextBox_Title"
-        Me.TextBox_Title.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_Title.TabIndex = 3
+        Me.TextBox_ID.Location = New System.Drawing.Point(85, 15)
+        Me.TextBox_ID.Margin = New System.Windows.Forms.Padding(5)
+        Me.TextBox_ID.Name = "TextBox_ID"
+        Me.TextBox_ID.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox_ID.TabIndex = 1
         '
         'Label_Title
         '
@@ -273,23 +181,158 @@ Partial Class UserControl_BookList
         Me.Label_Title.TabIndex = 2
         Me.Label_Title.Text = "Title"
         '
-        'TextBox_ID
+        'TextBox_Title
         '
-        Me.TextBox_ID.Location = New System.Drawing.Point(85, 15)
-        Me.TextBox_ID.Margin = New System.Windows.Forms.Padding(5)
-        Me.TextBox_ID.Name = "TextBox_ID"
-        Me.TextBox_ID.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox_ID.TabIndex = 1
+        Me.TextBox_Title.Location = New System.Drawing.Point(85, 45)
+        Me.TextBox_Title.Margin = New System.Windows.Forms.Padding(5)
+        Me.TextBox_Title.Name = "TextBox_Title"
+        Me.TextBox_Title.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox_Title.TabIndex = 3
         '
-        'Label_ID
+        'Label_Author
         '
-        Me.Label_ID.AutoSize = True
-        Me.Label_ID.Location = New System.Drawing.Point(57, 18)
-        Me.Label_ID.Margin = New System.Windows.Forms.Padding(5)
-        Me.Label_ID.Name = "Label_ID"
-        Me.Label_ID.Size = New System.Drawing.Size(18, 13)
-        Me.Label_ID.TabIndex = 0
-        Me.Label_ID.Text = "ID"
+        Me.Label_Author.AutoSize = True
+        Me.Label_Author.Location = New System.Drawing.Point(37, 78)
+        Me.Label_Author.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label_Author.Name = "Label_Author"
+        Me.Label_Author.Size = New System.Drawing.Size(38, 13)
+        Me.Label_Author.TabIndex = 4
+        Me.Label_Author.Text = "Author"
+        '
+        'TextBox_Author
+        '
+        Me.TextBox_Author.Location = New System.Drawing.Point(85, 75)
+        Me.TextBox_Author.Margin = New System.Windows.Forms.Padding(5)
+        Me.TextBox_Author.Name = "TextBox_Author"
+        Me.TextBox_Author.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox_Author.TabIndex = 5
+        '
+        'Label_Category
+        '
+        Me.Label_Category.AutoSize = True
+        Me.Label_Category.Location = New System.Drawing.Point(26, 108)
+        Me.Label_Category.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label_Category.Name = "Label_Category"
+        Me.Label_Category.Size = New System.Drawing.Size(49, 13)
+        Me.Label_Category.TabIndex = 6
+        Me.Label_Category.Text = "Category"
+        '
+        'ComboBox_Category
+        '
+        Me.ComboBox_Category.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ComboBox_Category.FormattingEnabled = True
+        Me.ComboBox_Category.Location = New System.Drawing.Point(85, 105)
+        Me.ComboBox_Category.Margin = New System.Windows.Forms.Padding(5)
+        Me.ComboBox_Category.Name = "ComboBox_Category"
+        Me.ComboBox_Category.Size = New System.Drawing.Size(100, 21)
+        Me.ComboBox_Category.TabIndex = 18
+        '
+        'Label_Publication
+        '
+        Me.Label_Publication.AutoSize = True
+        Me.Label_Publication.Location = New System.Drawing.Point(16, 139)
+        Me.Label_Publication.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label_Publication.Name = "Label_Publication"
+        Me.Label_Publication.Size = New System.Drawing.Size(59, 13)
+        Me.Label_Publication.TabIndex = 8
+        Me.Label_Publication.Text = "Publication"
+        '
+        'TextBox_Publication
+        '
+        Me.TextBox_Publication.Location = New System.Drawing.Point(85, 136)
+        Me.TextBox_Publication.Margin = New System.Windows.Forms.Padding(5)
+        Me.TextBox_Publication.Name = "TextBox_Publication"
+        Me.TextBox_Publication.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox_Publication.TabIndex = 9
+        '
+        'Label_YearPublish
+        '
+        Me.Label_YearPublish.AutoSize = True
+        Me.Label_YearPublish.Location = New System.Drawing.Point(9, 169)
+        Me.Label_YearPublish.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label_YearPublish.Name = "Label_YearPublish"
+        Me.Label_YearPublish.Size = New System.Drawing.Size(66, 13)
+        Me.Label_YearPublish.TabIndex = 10
+        Me.Label_YearPublish.Text = "Year Publish"
+        '
+        'TextBox_YearPublish
+        '
+        Me.TextBox_YearPublish.Location = New System.Drawing.Point(85, 166)
+        Me.TextBox_YearPublish.Margin = New System.Windows.Forms.Padding(5)
+        Me.TextBox_YearPublish.Name = "TextBox_YearPublish"
+        Me.TextBox_YearPublish.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox_YearPublish.TabIndex = 11
+        '
+        'Label_Copies
+        '
+        Me.Label_Copies.AutoSize = True
+        Me.Label_Copies.Location = New System.Drawing.Point(36, 199)
+        Me.Label_Copies.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label_Copies.Name = "Label_Copies"
+        Me.Label_Copies.Size = New System.Drawing.Size(39, 13)
+        Me.Label_Copies.TabIndex = 12
+        Me.Label_Copies.Text = "Copies"
+        '
+        'TextBox_Copies
+        '
+        Me.TextBox_Copies.Location = New System.Drawing.Point(85, 196)
+        Me.TextBox_Copies.Margin = New System.Windows.Forms.Padding(5)
+        Me.TextBox_Copies.Name = "TextBox_Copies"
+        Me.TextBox_Copies.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox_Copies.TabIndex = 13
+        '
+        'Label_CallNo
+        '
+        Me.Label_CallNo.AutoSize = True
+        Me.Label_CallNo.Location = New System.Drawing.Point(33, 229)
+        Me.Label_CallNo.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label_CallNo.Name = "Label_CallNo"
+        Me.Label_CallNo.Size = New System.Drawing.Size(42, 13)
+        Me.Label_CallNo.TabIndex = 14
+        Me.Label_CallNo.Text = "Call no."
+        '
+        'TextBox_CallNo
+        '
+        Me.TextBox_CallNo.Location = New System.Drawing.Point(85, 226)
+        Me.TextBox_CallNo.Margin = New System.Windows.Forms.Padding(5)
+        Me.TextBox_CallNo.Name = "TextBox_CallNo"
+        Me.TextBox_CallNo.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox_CallNo.TabIndex = 15
+        '
+        'Label_Search_Message
+        '
+        Me.Label_Search_Message.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label_Search_Message.ForeColor = System.Drawing.Color.Red
+        Me.Label_Search_Message.Location = New System.Drawing.Point(25, 391)
+        Me.Label_Search_Message.Margin = New System.Windows.Forms.Padding(5)
+        Me.Label_Search_Message.Name = "Label_Search_Message"
+        Me.Label_Search_Message.Size = New System.Drawing.Size(160, 23)
+        Me.Label_Search_Message.TabIndex = 26
+        Me.Label_Search_Message.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Button_Search
+        '
+        Me.Button_Search.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button_Search.Location = New System.Drawing.Point(25, 424)
+        Me.Button_Search.Margin = New System.Windows.Forms.Padding(5)
+        Me.Button_Search.Name = "Button_Search"
+        Me.Button_Search.Size = New System.Drawing.Size(75, 23)
+        Me.Button_Search.TabIndex = 16
+        Me.Button_Search.Text = "Search"
+        Me.Button_Search.UseVisualStyleBackColor = True
+        '
+        'Button_Clear
+        '
+        Me.Button_Clear.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button_Clear.Location = New System.Drawing.Point(110, 424)
+        Me.Button_Clear.Margin = New System.Windows.Forms.Padding(5)
+        Me.Button_Clear.Name = "Button_Clear"
+        Me.Button_Clear.Size = New System.Drawing.Size(75, 23)
+        Me.Button_Clear.TabIndex = 17
+        Me.Button_Clear.Text = "Clear"
+        Me.Button_Clear.UseVisualStyleBackColor = True
         '
         'MenuStrip_Footer
         '
@@ -351,13 +394,10 @@ Partial Class UserControl_BookList
     Friend WithEvents Call_no As ColumnHeader
     Friend WithEvents TextBox_CallNo As TextBox
     Friend WithEvents Label_CallNo As Label
-    Friend WithEvents TextBox_Copies As TextBox
     Friend WithEvents Label_Copies As Label
-    Friend WithEvents TextBox_YearPublish As TextBox
     Friend WithEvents Label_YearPublish As Label
     Friend WithEvents TextBox_Publication As TextBox
     Friend WithEvents Label_Publication As Label
-    Friend WithEvents TextBox_Category As TextBox
     Friend WithEvents Label_Category As Label
     Friend WithEvents TextBox_Author As TextBox
     Friend WithEvents Label_Author As Label
@@ -368,4 +408,10 @@ Partial Class UserControl_BookList
     Friend WithEvents MenuStrip_Footer As MenuStrip
     Friend WithEvents Footer_BookList As ToolStripButton
     Friend WithEvents Footer_Status As ToolStripLabel
+    Friend WithEvents Button_Search As Button
+    Friend WithEvents Button_Clear As Button
+    Friend WithEvents ComboBox_Category As ComboBox
+    Friend WithEvents TextBox_YearPublish As TextBox
+    Friend WithEvents TextBox_Copies As TextBox
+    Friend WithEvents Label_Search_Message As Label
 End Class
