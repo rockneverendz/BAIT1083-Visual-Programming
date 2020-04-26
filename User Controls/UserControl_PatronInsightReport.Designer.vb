@@ -33,6 +33,13 @@ Partial Class UserControl_PatronInsightReport
 		Me.colAddress = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.colEmail = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.Panel2 = New System.Windows.Forms.Panel()
+		Me.dgvPatronList = New System.Windows.Forms.DataGridView()
+		Me.dgvCol1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.dgvCol2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.dgvCol3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.dgvCol4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.dgvCol5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.dgvCol6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		Me.Panel3 = New System.Windows.Forms.Panel()
 		Me.btnPrint = New System.Windows.Forms.Button()
 		Me.panForPrintHeader = New System.Windows.Forms.Panel()
@@ -43,19 +50,12 @@ Partial Class UserControl_PatronInsightReport
 		Me.lblPrint = New System.Windows.Forms.Label()
 		Me.Label2 = New System.Windows.Forms.Label()
 		Me.easyRpt = New KimToo.EasyHTMLReports(Me.components)
-		Me.dgvPatronList = New System.Windows.Forms.DataGridView()
-		Me.dgvCol1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-		Me.dgvCol2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-		Me.dgvCol3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-		Me.dgvCol4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-		Me.dgvCol5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-		Me.dgvCol6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		Me.Panel1.SuspendLayout()
 		Me.Panel2.SuspendLayout()
+		CType(Me.dgvPatronList, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel3.SuspendLayout()
 		Me.panForPrintHeader.SuspendLayout()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.dgvPatronList, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'Panel1
@@ -130,6 +130,59 @@ Partial Class UserControl_PatronInsightReport
 		Me.Panel2.Name = "Panel2"
 		Me.Panel2.Size = New System.Drawing.Size(1067, 463)
 		Me.Panel2.TabIndex = 2
+		'
+		'dgvPatronList
+		'
+		Me.dgvPatronList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.dgvPatronList.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgvCol1, Me.dgvCol2, Me.dgvCol3, Me.dgvCol4, Me.dgvCol5, Me.dgvCol6})
+		Me.dgvPatronList.Location = New System.Drawing.Point(117, 54)
+		Me.dgvPatronList.Name = "dgvPatronList"
+		Me.dgvPatronList.RowHeadersWidth = 51
+		Me.dgvPatronList.RowTemplate.Height = 24
+		Me.dgvPatronList.Size = New System.Drawing.Size(728, 279)
+		Me.dgvPatronList.TabIndex = 4
+		'
+		'dgvCol1
+		'
+		Me.dgvCol1.HeaderText = "ID"
+		Me.dgvCol1.MinimumWidth = 6
+		Me.dgvCol1.Name = "dgvCol1"
+		Me.dgvCol1.Width = 125
+		'
+		'dgvCol2
+		'
+		Me.dgvCol2.HeaderText = "Name"
+		Me.dgvCol2.MinimumWidth = 6
+		Me.dgvCol2.Name = "dgvCol2"
+		Me.dgvCol2.Width = 125
+		'
+		'dgvCol3
+		'
+		Me.dgvCol3.HeaderText = "Course"
+		Me.dgvCol3.MinimumWidth = 6
+		Me.dgvCol3.Name = "dgvCol3"
+		Me.dgvCol3.Width = 125
+		'
+		'dgvCol4
+		'
+		Me.dgvCol4.HeaderText = "Phone Number"
+		Me.dgvCol4.MinimumWidth = 6
+		Me.dgvCol4.Name = "dgvCol4"
+		Me.dgvCol4.Width = 125
+		'
+		'dgvCol5
+		'
+		Me.dgvCol5.HeaderText = "Address"
+		Me.dgvCol5.MinimumWidth = 6
+		Me.dgvCol5.Name = "dgvCol5"
+		Me.dgvCol5.Width = 125
+		'
+		'dgvCol6
+		'
+		Me.dgvCol6.HeaderText = "Email"
+		Me.dgvCol6.MinimumWidth = 6
+		Me.dgvCol6.Name = "dgvCol6"
+		Me.dgvCol6.Width = 125
 		'
 		'Panel3
 		'
@@ -233,59 +286,6 @@ Partial Class UserControl_PatronInsightReport
 		Me.easyRpt.RowDefaultFontColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(46, Byte), Integer))
 		Me.easyRpt.RowDefaultGridColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(65, Byte), Integer))
 		'
-		'dgvPatronList
-		'
-		Me.dgvPatronList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.dgvPatronList.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgvCol1, Me.dgvCol2, Me.dgvCol3, Me.dgvCol4, Me.dgvCol5, Me.dgvCol6})
-		Me.dgvPatronList.Location = New System.Drawing.Point(117, 54)
-		Me.dgvPatronList.Name = "dgvPatronList"
-		Me.dgvPatronList.RowHeadersWidth = 51
-		Me.dgvPatronList.RowTemplate.Height = 24
-		Me.dgvPatronList.Size = New System.Drawing.Size(728, 279)
-		Me.dgvPatronList.TabIndex = 4
-		'
-		'dgvCol1
-		'
-		Me.dgvCol1.HeaderText = "ID"
-		Me.dgvCol1.MinimumWidth = 6
-		Me.dgvCol1.Name = "dgvCol1"
-		Me.dgvCol1.Width = 125
-		'
-		'dgvCol2
-		'
-		Me.dgvCol2.HeaderText = "Name"
-		Me.dgvCol2.MinimumWidth = 6
-		Me.dgvCol2.Name = "dgvCol2"
-		Me.dgvCol2.Width = 125
-		'
-		'dgvCol3
-		'
-		Me.dgvCol3.HeaderText = "Course"
-		Me.dgvCol3.MinimumWidth = 6
-		Me.dgvCol3.Name = "dgvCol3"
-		Me.dgvCol3.Width = 125
-		'
-		'dgvCol4
-		'
-		Me.dgvCol4.HeaderText = "Phone Number"
-		Me.dgvCol4.MinimumWidth = 6
-		Me.dgvCol4.Name = "dgvCol4"
-		Me.dgvCol4.Width = 125
-		'
-		'dgvCol5
-		'
-		Me.dgvCol5.HeaderText = "Address"
-		Me.dgvCol5.MinimumWidth = 6
-		Me.dgvCol5.Name = "dgvCol5"
-		Me.dgvCol5.Width = 125
-		'
-		'dgvCol6
-		'
-		Me.dgvCol6.HeaderText = "Email"
-		Me.dgvCol6.MinimumWidth = 6
-		Me.dgvCol6.Name = "dgvCol6"
-		Me.dgvCol6.Width = 125
-		'
 		'UserControl_PatronInsightReport
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -297,11 +297,11 @@ Partial Class UserControl_PatronInsightReport
 		Me.Panel1.ResumeLayout(False)
 		Me.Panel1.PerformLayout()
 		Me.Panel2.ResumeLayout(False)
+		CType(Me.dgvPatronList, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel3.ResumeLayout(False)
 		Me.panForPrintHeader.ResumeLayout(False)
 		Me.panForPrintHeader.PerformLayout()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.dgvPatronList, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 
 	End Sub
