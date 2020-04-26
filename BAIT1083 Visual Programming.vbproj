@@ -113,6 +113,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LibDB.dbml</DependentUpon>
     </Compile>
+    <Compile Include="User Controls\UserControl_FineReport.Designer.vb">
+      <DependentUpon>UserControl_FineReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UserControl_FineReport.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="User Controls\UserControl_MostChkOutPatronReport.Designer.vb">
       <DependentUpon>UserControl_MostChkOutPatronReport.vb</DependentUpon>
     </Compile>
@@ -239,6 +245,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="User Controls\UserControl_FineReport.resx">
+      <DependentUpon>UserControl_FineReport.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Controls\UserControl_MostChkOutPatronReport.resx">
       <DependentUpon>UserControl_MostChkOutPatronReport.vb</DependentUpon>
     </EmbeddedResource>
@@ -927,6 +936,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\createTableScript.sql" />
+    <Content Include="Data\fineReport.sql" />
     <Content Include="Data\insertBookData.sql" />
     <Content Include="Data\LibDB.mdf" />
     <Content Include="Data\LibDB_log.ldf">
