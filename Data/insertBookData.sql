@@ -98,7 +98,7 @@ INSERT INTO [dbo].[CheckOut] ([Chk_ID], [Patron_ID], [Issue_Date], [Due_Date]) V
 INSERT INTO [dbo].[CheckOut] ([Chk_ID], [Patron_ID], [Issue_Date], [Due_Date]) VALUES (1013, 1003, N'2019-11-26', N'2019-11-26')
 INSERT INTO [dbo].[CheckOut] ([Chk_ID], [Patron_ID], [Issue_Date], [Due_Date]) VALUES (1014, 1003, N'2019-05-07', N'2019-05-07')
 INSERT INTO [dbo].[CheckOut] ([Chk_ID], [Patron_ID], [Issue_Date], [Due_Date]) VALUES (1015, 1003, N'2020-03-17', N'2020-03-17')
-INSERT INTO [dbo].[CheckOut] ([Chk_ID], [Patron_ID], [Issue_Date], [Due_Date]) VALUES (1016, 1004, N'2019-09-25', N'2019-09-25')
+INSERT INTO [dbo].[CheckOut] ([Chk_ID], [Patron_ID], [Issue_Date], [Due_Date]) VALUES (1016, 1004, N'2019-09-25', N'2019-10-09')
 INSERT INTO [dbo].[CheckOut] ([Chk_ID], [Patron_ID], [Issue_Date], [Due_Date]) VALUES (1017, 1004, N'2019-05-21', N'2019-05-21')
 INSERT INTO [dbo].[CheckOut] ([Chk_ID], [Patron_ID], [Issue_Date], [Due_Date]) VALUES (1018, 1004, N'2019-12-19', N'2019-12-19')
 INSERT INTO [dbo].[CheckOut] ([Chk_ID], [Patron_ID], [Issue_Date], [Due_Date]) VALUES (1019, 1005, N'2019-10-15', N'2019-10-15')
@@ -202,53 +202,67 @@ INSERT INTO [dbo].[Copies] ([Copy_ID], [Book_ID], [Status]) VALUES (1082, 1020, 
 INSERT INTO [dbo].[Copies] ([Copy_ID], [Book_ID], [Status]) VALUES (1083, 1020, N'Available')
 SET IDENTITY_INSERT [dbo].[Copies] OFF
 
+/*Insert Return*/
+SET IDENTITY_INSERT [dbo].[Return] ON
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1001, N'2020-01-05', 0)
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1002, N'2020-01-10', 0)
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1003, N'2020-01-15', 0)
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1004, N'2020-01-20', 0)
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1005, N'2020-01-25', 0)
+
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1006, N'2020-02-05', 10)
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1007, N'2020-02-10', 20)
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1008, N'2020-02-15', 30)
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1009, N'2020-02-20', 40)
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1010, N'2020-02-25', 50)
+SET IDENTITY_INSERT [dbo].[Return] OFF
 
 /*Insert CheckOutList*/
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1001, 1029)
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1001, 1002)
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1001, 1080)
 
-INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1002, 1054)
-INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1002, 1033)
-INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1002, 1020)
-INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1002, 1001)
+INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID], [Return_ID]) VALUES (1002, 1054, 1001)
+INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID], [Return_ID]) VALUES (1002, 1033, 1001)
+INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID], [Return_ID]) VALUES (1002, 1020, 1001)
+INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID], [Return_ID]) VALUES (1002, 1001, 1001)
 
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1003, 1032)
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1003, 1012)
 
-INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1004, 1035)
-INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1004, 1044)
+INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID], [Return_ID]) VALUES (1004, 1035, 1002)
+INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID], [Return_ID]) VALUES (1004, 1044, 1002)
 
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1005, 1047)
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1005, 1009)
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1005, 1015)
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1005, 1068)
 
-INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1006, 1055)
+INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID], [Return_ID]) VALUES (1006, 1055, 1003)
 
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1007, 1026)
 
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1008, 1001)
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1008, 1065)
 
-INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1009, 1061)
-INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1009, 1002)
+INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID], [Return_ID]) VALUES (1009, 1061, 1004)
+INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID], [Return_ID]) VALUES (1009, 1002, 1004)
 
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1010, 1031)
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1010, 1078)
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1010, 1060)
 
-INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1011, 1009)
-INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1011, 1012)
+INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID], [Return_ID]) VALUES (1011, 1009, 1005)
+INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID], [Return_ID]) VALUES (1011, 1012, 1005)
 
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1012, 1003)
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1012, 1055)
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1012, 1036)
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1012, 1065)
 
-INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1013, 1047)
+INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID], [Return_ID]) VALUES (1013, 1047, 1006)
 
-INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1014, 1068)
+INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID], [Return_ID]) VALUES (1014, 1068, 1006)
 
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1015, 1013)
 
@@ -256,14 +270,14 @@ INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1016, 1065)
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1016, 1037)
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1016, 1041)
 
-INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1017, 1024)
-INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1017, 1004)
-INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1017, 1076)
+INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID], [Return_ID]) VALUES (1017, 1024, 1007)
+INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID], [Return_ID]) VALUES (1017, 1004, 1007)
+INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID], [Return_ID]) VALUES (1017, 1076, 1007)
 
-INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1018, 1081)
-INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1018, 1066)
-INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1018, 1036)
-INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1018, 1048)
+INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID], [Return_ID]) VALUES (1018, 1081, 1008)
+INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID], [Return_ID]) VALUES (1018, 1066, 1008)
+INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID], [Return_ID]) VALUES (1018, 1036, 1008)
+INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID], [Return_ID]) VALUES (1018, 1048, 1008)
 
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1019, 1017)
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1019, 1047)
@@ -271,14 +285,14 @@ INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1019, 1047)
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1020, 1046)
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1020, 1036)
 
-INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1021, 1083)
-INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1021, 1050)
-INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1021, 1060)
-INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1021, 1012)
+INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID], [Return_ID]) VALUES (1021, 1083, 1009)
+INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID], [Return_ID]) VALUES (1021, 1050, 1009)
+INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID], [Return_ID]) VALUES (1021, 1060, 1009)
+INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID], [Return_ID]) VALUES (1021, 1012, 1009)
 
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1022, 1045)
 
-INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1023, 1050)
+INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID], [Return_ID]) VALUES (1023, 1050, 1010)
 
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1024, 1035)
 INSERT INTO [dbo].[CheckOutList] ([Chk_ID], [Copy_ID]) VALUES (1024, 1029)
