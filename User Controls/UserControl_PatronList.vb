@@ -135,4 +135,8 @@
             FillPatrons(patrons)
         End Using
     End Sub
+
+    Private Sub Button_Clear_Click(sender As Object, e As EventArgs) Handles Button_Clear.Click
+        UpdateList()
+    End Sub
 End Class
