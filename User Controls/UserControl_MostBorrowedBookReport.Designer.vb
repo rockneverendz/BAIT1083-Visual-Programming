@@ -23,13 +23,13 @@ Partial Class UserControl_MostBorrowedBookReport
 	<System.Diagnostics.DebuggerStepThrough()>
 	Private Sub InitializeComponent()
 		Me.components = New System.ComponentModel.Container()
-		Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-		Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-		Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+		Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+		Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+		Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
 		Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
-		Me.chartMostBorrowedBook = New System.Windows.Forms.DataVisualization.Charting.Chart()
 		Me.Panel4 = New System.Windows.Forms.Panel()
 		Me.Label1 = New System.Windows.Forms.Label()
+		Me.chartMostBorrowedBook = New System.Windows.Forms.DataVisualization.Charting.Chart()
 		Me.panForPrintHeader = New System.Windows.Forms.Panel()
 		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
 		Me.lblPrintedBy = New System.Windows.Forms.Label()
@@ -37,29 +37,29 @@ Partial Class UserControl_MostBorrowedBookReport
 		Me.lblDateNow = New System.Windows.Forms.Label()
 		Me.lblPrint = New System.Windows.Forms.Label()
 		Me.Label2 = New System.Windows.Forms.Label()
-		Me.dgvForPrint = New System.Windows.Forms.DataGridView()
 		Me.Panel3 = New System.Windows.Forms.Panel()
 		Me.lblSelectDate = New System.Windows.Forms.Label()
 		Me.dtpSelectDate = New System.Windows.Forms.DateTimePicker()
 		Me.btnPrint = New System.Windows.Forms.Button()
 		Me.lstMostBorrowedBook = New System.Windows.Forms.ListView()
+		Me.col0 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.col1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.col2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-		Me.easyRpt = New KimToo.EasyHTMLReports(Me.components)
+		Me.dgvForPrint = New System.Windows.Forms.DataGridView()
 		Me.colNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		Me.colTitle = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		Me.colTotalCount = New System.Windows.Forms.DataGridViewTextBoxColumn()
-		Me.col0 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+		Me.easyRpt = New KimToo.EasyHTMLReports(Me.components)
 		CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SplitContainer1.Panel1.SuspendLayout()
 		Me.SplitContainer1.Panel2.SuspendLayout()
 		Me.SplitContainer1.SuspendLayout()
-		CType(Me.chartMostBorrowedBook, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel4.SuspendLayout()
+		CType(Me.chartMostBorrowedBook, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.panForPrintHeader.SuspendLayout()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.dgvForPrint, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Panel3.SuspendLayout()
+		CType(Me.dgvForPrint, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'SplitContainer1
@@ -70,47 +70,18 @@ Partial Class UserControl_MostBorrowedBookReport
 		'
 		'SplitContainer1.Panel1
 		'
-		Me.SplitContainer1.Panel1.Controls.Add(Me.Panel4)
 		Me.SplitContainer1.Panel1.Controls.Add(Me.chartMostBorrowedBook)
+		Me.SplitContainer1.Panel1.Controls.Add(Me.Panel4)
 		Me.SplitContainer1.Panel1.Controls.Add(Me.panForPrintHeader)
 		'
 		'SplitContainer1.Panel2
 		'
-		Me.SplitContainer1.Panel2.Controls.Add(Me.Panel3)
 		Me.SplitContainer1.Panel2.Controls.Add(Me.lstMostBorrowedBook)
+		Me.SplitContainer1.Panel2.Controls.Add(Me.Panel3)
 		Me.SplitContainer1.Panel2.Controls.Add(Me.dgvForPrint)
 		Me.SplitContainer1.Size = New System.Drawing.Size(1067, 523)
 		Me.SplitContainer1.SplitterDistance = 756
 		Me.SplitContainer1.TabIndex = 0
-		'
-		'chartMostBorrowedBook
-		'
-		Me.chartMostBorrowedBook.BackSecondaryColor = System.Drawing.Color.Gray
-		Me.chartMostBorrowedBook.BorderSkin.PageColor = System.Drawing.Color.WhiteSmoke
-		ChartArea3.AxisX.Title = "Book Title"
-		ChartArea3.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far
-		ChartArea3.AxisX.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		ChartArea3.AxisY.Title = "Count"
-		ChartArea3.AxisY.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		ChartArea3.BackColor = System.Drawing.Color.PaleTurquoise
-		ChartArea3.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal
-		ChartArea3.BackSecondaryColor = System.Drawing.Color.White
-		ChartArea3.BorderColor = System.Drawing.Color.Transparent
-		ChartArea3.Name = "Time Count Chart "
-		Me.chartMostBorrowedBook.ChartAreas.Add(ChartArea3)
-		Legend3.Name = "Legend1"
-		Me.chartMostBorrowedBook.Legends.Add(Legend3)
-		Me.chartMostBorrowedBook.Location = New System.Drawing.Point(0, 61)
-		Me.chartMostBorrowedBook.Name = "chartMostBorrowedBook"
-		Series3.BorderWidth = 3
-		Series3.ChartArea = "Time Count Chart "
-		Series3.Legend = "Legend1"
-		Series3.MarkerSize = 10
-		Series3.Name = "Count"
-		Me.chartMostBorrowedBook.Series.Add(Series3)
-		Me.chartMostBorrowedBook.Size = New System.Drawing.Size(756, 462)
-		Me.chartMostBorrowedBook.TabIndex = 3
-		Me.chartMostBorrowedBook.Text = " Chart "
 		'
 		'Panel4
 		'
@@ -132,6 +103,35 @@ Partial Class UserControl_MostBorrowedBookReport
 		Me.Label1.Size = New System.Drawing.Size(375, 32)
 		Me.Label1.TabIndex = 0
 		Me.Label1.Text = "Most Borrowed Book by Patron" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+		'
+		'chartMostBorrowedBook
+		'
+		Me.chartMostBorrowedBook.BackSecondaryColor = System.Drawing.Color.Gray
+		Me.chartMostBorrowedBook.BorderSkin.PageColor = System.Drawing.Color.WhiteSmoke
+		ChartArea2.AxisX.Title = "Book Title"
+		ChartArea2.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far
+		ChartArea2.AxisX.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		ChartArea2.AxisY.Title = "Count"
+		ChartArea2.AxisY.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		ChartArea2.BackColor = System.Drawing.Color.PaleTurquoise
+		ChartArea2.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal
+		ChartArea2.BackSecondaryColor = System.Drawing.Color.White
+		ChartArea2.BorderColor = System.Drawing.Color.Transparent
+		ChartArea2.Name = "Time Count Chart "
+		Me.chartMostBorrowedBook.ChartAreas.Add(ChartArea2)
+		Legend2.Name = "Legend1"
+		Me.chartMostBorrowedBook.Legends.Add(Legend2)
+		Me.chartMostBorrowedBook.Location = New System.Drawing.Point(0, 61)
+		Me.chartMostBorrowedBook.Name = "chartMostBorrowedBook"
+		Series2.BorderWidth = 3
+		Series2.ChartArea = "Time Count Chart "
+		Series2.Legend = "Legend1"
+		Series2.MarkerSize = 10
+		Series2.Name = "Count"
+		Me.chartMostBorrowedBook.Series.Add(Series2)
+		Me.chartMostBorrowedBook.Size = New System.Drawing.Size(756, 462)
+		Me.chartMostBorrowedBook.TabIndex = 3
+		Me.chartMostBorrowedBook.Text = " Chart "
 		'
 		'panForPrintHeader
 		'
@@ -206,18 +206,6 @@ Partial Class UserControl_MostBorrowedBookReport
 		Me.Label2.TabIndex = 0
 		Me.Label2.Text = "Book Management Report"
 		'
-		'dgvForPrint
-		'
-		Me.dgvForPrint.BackgroundColor = System.Drawing.SystemColors.Control
-		Me.dgvForPrint.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.dgvForPrint.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colNo, Me.colTitle, Me.colTotalCount})
-		Me.dgvForPrint.Location = New System.Drawing.Point(3, 3)
-		Me.dgvForPrint.Name = "dgvForPrint"
-		Me.dgvForPrint.RowHeadersWidth = 51
-		Me.dgvForPrint.RowTemplate.Height = 24
-		Me.dgvForPrint.Size = New System.Drawing.Size(301, 396)
-		Me.dgvForPrint.TabIndex = 4
-		'
 		'Panel3
 		'
 		Me.Panel3.Controls.Add(Me.lblSelectDate)
@@ -263,10 +251,15 @@ Partial Class UserControl_MostBorrowedBookReport
 		Me.lstMostBorrowedBook.HideSelection = False
 		Me.lstMostBorrowedBook.Location = New System.Drawing.Point(0, 0)
 		Me.lstMostBorrowedBook.Name = "lstMostBorrowedBook"
-		Me.lstMostBorrowedBook.Size = New System.Drawing.Size(307, 523)
+		Me.lstMostBorrowedBook.Size = New System.Drawing.Size(307, 405)
 		Me.lstMostBorrowedBook.TabIndex = 0
 		Me.lstMostBorrowedBook.UseCompatibleStateImageBehavior = False
 		Me.lstMostBorrowedBook.View = System.Windows.Forms.View.Details
+		'
+		'col0
+		'
+		Me.col0.Text = "No."
+		Me.col0.Width = 51
 		'
 		'col1
 		'
@@ -278,16 +271,17 @@ Partial Class UserControl_MostBorrowedBookReport
 		Me.col2.Text = "Number of Borrowed"
 		Me.col2.Width = 154
 		'
-		'easyRpt
+		'dgvForPrint
 		'
-		Me.easyRpt.AlternativeRowBackgroundColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer))
-		Me.easyRpt.AlternativeRowGridColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(65, Byte), Integer))
-		Me.easyRpt.HeaderBackgroundColor = System.Drawing.Color.FromArgb(CType(CType(170, Byte), Integer), CType(CType(183, Byte), Integer), CType(CType(197, Byte), Integer))
-		Me.easyRpt.HeaderFontColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(46, Byte), Integer))
-		Me.easyRpt.HeaderGridColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(65, Byte), Integer))
-		Me.easyRpt.RowDefaultBackgroudColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-		Me.easyRpt.RowDefaultFontColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(46, Byte), Integer))
-		Me.easyRpt.RowDefaultGridColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(65, Byte), Integer))
+		Me.dgvForPrint.BackgroundColor = System.Drawing.SystemColors.Control
+		Me.dgvForPrint.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.dgvForPrint.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colNo, Me.colTitle, Me.colTotalCount})
+		Me.dgvForPrint.Location = New System.Drawing.Point(3, 3)
+		Me.dgvForPrint.Name = "dgvForPrint"
+		Me.dgvForPrint.RowHeadersWidth = 51
+		Me.dgvForPrint.RowTemplate.Height = 24
+		Me.dgvForPrint.Size = New System.Drawing.Size(301, 396)
+		Me.dgvForPrint.TabIndex = 4
 		'
 		'colNo
 		'
@@ -310,10 +304,16 @@ Partial Class UserControl_MostBorrowedBookReport
 		Me.colTotalCount.Name = "colTotalCount"
 		Me.colTotalCount.Width = 125
 		'
-		'col0
+		'easyRpt
 		'
-		Me.col0.Text = "No."
-		Me.col0.Width = 51
+		Me.easyRpt.AlternativeRowBackgroundColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer))
+		Me.easyRpt.AlternativeRowGridColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(65, Byte), Integer))
+		Me.easyRpt.HeaderBackgroundColor = System.Drawing.Color.FromArgb(CType(CType(170, Byte), Integer), CType(CType(183, Byte), Integer), CType(CType(197, Byte), Integer))
+		Me.easyRpt.HeaderFontColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(46, Byte), Integer))
+		Me.easyRpt.HeaderGridColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(65, Byte), Integer))
+		Me.easyRpt.RowDefaultBackgroudColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+		Me.easyRpt.RowDefaultFontColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(46, Byte), Integer))
+		Me.easyRpt.RowDefaultGridColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(65, Byte), Integer))
 		'
 		'UserControl_MostBorrowedBookReport
 		'
@@ -326,15 +326,15 @@ Partial Class UserControl_MostBorrowedBookReport
 		Me.SplitContainer1.Panel2.ResumeLayout(False)
 		CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.SplitContainer1.ResumeLayout(False)
-		CType(Me.chartMostBorrowedBook, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel4.ResumeLayout(False)
 		Me.Panel4.PerformLayout()
+		CType(Me.chartMostBorrowedBook, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.panForPrintHeader.ResumeLayout(False)
 		Me.panForPrintHeader.PerformLayout()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.dgvForPrint, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.Panel3.ResumeLayout(False)
 		Me.Panel3.PerformLayout()
+		CType(Me.dgvForPrint, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 
 	End Sub
