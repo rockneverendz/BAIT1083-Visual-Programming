@@ -211,7 +211,7 @@ Partial Class UserControl_RoomBooking
 		'
 		'btnReset
 		'
-		Me.btnReset.Location = New System.Drawing.Point(863, 123)
+		Me.btnReset.Location = New System.Drawing.Point(963, 118)
 		Me.btnReset.Name = "btnReset"
 		Me.btnReset.Size = New System.Drawing.Size(95, 32)
 		Me.btnReset.TabIndex = 8
@@ -220,7 +220,7 @@ Partial Class UserControl_RoomBooking
 		'
 		'btnSubmit
 		'
-		Me.btnSubmit.Location = New System.Drawing.Point(964, 123)
+		Me.btnSubmit.Location = New System.Drawing.Point(862, 117)
 		Me.btnSubmit.Name = "btnSubmit"
 		Me.btnSubmit.Size = New System.Drawing.Size(95, 32)
 		Me.btnSubmit.TabIndex = 7
