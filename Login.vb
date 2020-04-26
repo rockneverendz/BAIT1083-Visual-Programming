@@ -7,8 +7,8 @@
             Dim password As String = TextBox_Passowrd.Text
 
             Dim chkUser = From a In database.AdminLibs
-                          Where a.Name.Contains(username) And
-                          a.Password.Contains(password)
+                          Where a.Name.Equals(username) And
+                          a.Password.Equals(password)
 
             If chkUser.Any() Then
                 Label_Message.Text = "Successfully logged in!"
