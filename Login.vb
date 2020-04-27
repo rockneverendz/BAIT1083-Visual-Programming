@@ -1,5 +1,16 @@
 ﻿Public Class Login
 
+    Private _userid As String
+
+    Public Property Userid As String
+        Get
+            Return _userid
+        End Get
+        Set(value As String)
+            _userid = value
+        End Set
+    End Property
+
     Private Sub Button_Login_Click(sender As Object, e As EventArgs) Handles Button_Login.Click
         Using database As New LibDBDataContext()
 
@@ -12,7 +23,10 @@
 
             If chkUser.Any() Then
                 Label_Message.Text = "Successfully logged in!"
+                Label_Message.ForeColor = Color.Green
+                Userid = chkUser.First.Admin_ID
                 Form_StonksLib.Show()
+                Me.Hide()
 
             Else
                 Label_Message.Text = "Invalid user name or password!"
