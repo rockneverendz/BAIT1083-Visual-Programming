@@ -2,6 +2,7 @@
 Imports Microsoft.VisualBasic.ApplicationServices
 
 Public Class Form_StonksLib
+
     Public Sub New()
 
         ' This call is required by the designer.
@@ -131,5 +132,10 @@ Public Class Form_StonksLib
         Panel_Main.Controls.AddRange(UserControls)
         UserControls(0).AutoSize = True
         UserControls(0).Dock = System.Windows.Forms.DockStyle.Fill
+    End Sub
+
+    Private Sub Form_StonksLib_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        Login.Close()
+
     End Sub
 End Class
