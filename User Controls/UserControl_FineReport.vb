@@ -1,4 +1,5 @@
-﻿Public Class UserControl_FineReport
+﻿
+Public Class UserControl_FineReport
 	Private Sub UserControl_FineReport_Load(sender As Object, e As EventArgs) Handles Me.Load
 
 		GetQueryReport()
@@ -21,12 +22,14 @@
 			'INNER Join [Patron] ON [Patron].Patron_ID = [CheckOut].Patron_ID
 			'Group By [Patron].Patron_ID, [Patron].[Name]
 
-			Dim rs = From cl In db.CheckOutLists
-					 Join r In db.Returns On r.Rtn_ID Equals cl.Return_ID
-					 Join co In db.CheckOuts On co.Chk_ID Equals cl.Chk_ID
-					 Join p In db.Patrons On p.Patron_ID Equals co.Patron_ID
-					 Group By PatronID = p.Patron_ID, PatronName = p.Name
-					 Into FineRpt = Group, Count(r.Fine_Amount), Sum(r.Fine_Amount)
+
+			Dim format = "dd/MM/yyyy"
+			Dim dateString As String = dtpSelectDate.Value.ToString(format)
+			Dim dateValue As Date = Date.ParseExact(dateString, format, Nothing)
+
+			Dim rs = From r In db.Returns
+					 Where r.Rtn_Date.Value.Date.Month.Equals(dateValue.Month) And
+						 r.Rtn_Date.Value.Date.Year.Equals(dateValue.Year)
 
 			Dim cnt As Integer = 0 ' Keep track of the line count
 
@@ -34,15 +37,27 @@
 				cnt += 1
 				Dim row() As String = {
 					cnt.ToString,
-					record.PatronID,
-					record.PatronName,
-					record.Count,
-					record.Sum.ToString
+					record.Rtn_ID,
+					record.Rtn_Date,
+					String.Format(record.Fine_Amount, "N2")
 				}
 				Dim lvi = New ListViewItem(row)
 				'Insert ListView
 				lstFineReport.Items.Add(lvi)
 			Next
+
+			'Display Total Amount of Fines
+			'Select Case SUM([Return].Fine_Amount) As Total
+			'From [Return]
+			'ProductList.Sum(Function(item) item.Cost)
+
+			Dim totalFineAmount As Decimal = db.Returns.Sum(
+					Function(r) r.Fine_Amount And
+					r.Rtn_Date.Value.Month.Equals(dateValue.Month) And
+					r.Rtn_Date.Value.Year.Equals(dateValue.Year)
+			)
+
+			lblTotalFineAmount.Text = String.Format(totalFineAmount, "N2")
 
 		End Using
 	End Sub
@@ -51,6 +66,7 @@
 
 		'Clear the control 1st to erase previous data
 		easyRpt.Clear()
+		dgvFineRpt.Rows.Clear()
 
 		'---Adding resources to Print Preview---
 
@@ -65,13 +81,12 @@
 		For Each item In lstFineReport.Items
 			cnt += 1
 			'Retrieve Data frm List View
-			Dim pID As String = lstFineReport.Items(cnt2).SubItems(1).Text
-			Dim pName As String = lstFineReport.Items(cnt2).SubItems(2).Text
-			Dim pTotalFineRecords As String = lstFineReport.Items(cnt2).SubItems(3).Text
-			Dim pTotalFines As String = lstFineReport.Items(cnt2).SubItems(4).Text
+			Dim rID As String = lstFineReport.Items(cnt2).SubItems(1).Text
+			Dim rDate As String = lstFineReport.Items(cnt2).SubItems(2).Text
+			Dim rAmount As String = lstFineReport.Items(cnt2).SubItems(3).Text
 
 			'Transfer Data to DataGridView
-			dgvFineRpt.Rows.Add(cnt, pID, pName, pTotalFineRecords, pTotalFines)
+			dgvFineRpt.Rows.Add(cnt, rID, rDate, rAmount)
 
 			cnt2 += 1
 		Next
@@ -79,10 +94,21 @@
 		easyRpt.AddLineBreak()
 		easyRpt.AddString(cnt & " record(s)")
 		easyRpt.AddLineBreak()
+		easyRpt.AddLineBreak()
+		easyRpt.AddString("<h3>" & Label1.Text & "&nbsp;&nbsp;&nbsp;" & lblTotalFineAmount.Text & "</h3>")
+		easyRpt.AddLineBreak()
 
 		' (4) Show print dialog
 		easyRpt.ShowPrintPreviewDialog()
 
+
+
+	End Sub
+
+	Private Sub dtpSelectDate_ValueChanged(sender As Object, e As EventArgs) Handles dtpSelectDate.ValueChanged
+
+		lstFineReport.Items.Clear()
+		GetQueryReport()
 
 
 	End Sub

@@ -26,17 +26,16 @@ Partial Class UserControl_FineReport
 		Me.Panel1 = New System.Windows.Forms.Panel()
 		Me.lblChartTitle = New System.Windows.Forms.Label()
 		Me.lstFineReport = New System.Windows.Forms.ListView()
-		Me.Panel3 = New System.Windows.Forms.Panel()
-		Me.btnPrint = New System.Windows.Forms.Button()
-		Me.Panel2 = New System.Windows.Forms.Panel()
-		Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
 		Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
 		Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-		Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+		Me.Panel3 = New System.Windows.Forms.Panel()
+		Me.lblTotalFineAmount = New System.Windows.Forms.Label()
+		Me.btnPrint = New System.Windows.Forms.Button()
+		Me.Panel2 = New System.Windows.Forms.Panel()
+		Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
 		Me.Panel4 = New System.Windows.Forms.Panel()
-		Me.easyRpt = New KimToo.EasyHTMLReports(Me.components)
 		Me.panForPrintHeader = New System.Windows.Forms.Panel()
 		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
 		Me.lblPrintedBy = New System.Windows.Forms.Label()
@@ -45,11 +44,14 @@ Partial Class UserControl_FineReport
 		Me.lblPrint = New System.Windows.Forms.Label()
 		Me.Label2 = New System.Windows.Forms.Label()
 		Me.dgvFineRpt = New System.Windows.Forms.DataGridView()
+		Me.easyRpt = New KimToo.EasyHTMLReports(Me.components)
+		Me.Label1 = New System.Windows.Forms.Label()
 		Me.Colunm1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
 		Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-		Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+		Me.lblSelectDate = New System.Windows.Forms.Label()
+		Me.dtpSelectDate = New System.Windows.Forms.DateTimePicker()
 		Me.Panel1.SuspendLayout()
 		Me.Panel3.SuspendLayout()
 		Me.Panel4.SuspendLayout()
@@ -80,7 +82,7 @@ Partial Class UserControl_FineReport
 		'
 		'lstFineReport
 		'
-		Me.lstFineReport.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5})
+		Me.lstFineReport.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4})
 		Me.lstFineReport.Dock = System.Windows.Forms.DockStyle.Fill
 		Me.lstFineReport.HideSelection = False
 		Me.lstFineReport.Location = New System.Drawing.Point(0, 0)
@@ -90,14 +92,47 @@ Partial Class UserControl_FineReport
 		Me.lstFineReport.UseCompatibleStateImageBehavior = False
 		Me.lstFineReport.View = System.Windows.Forms.View.Details
 		'
+		'ColumnHeader1
+		'
+		Me.ColumnHeader1.Text = "No."
+		Me.ColumnHeader1.Width = 48
+		'
+		'ColumnHeader2
+		'
+		Me.ColumnHeader2.Text = "Return ID"
+		Me.ColumnHeader2.Width = 100
+		'
+		'ColumnHeader3
+		'
+		Me.ColumnHeader3.Text = "Date"
+		Me.ColumnHeader3.Width = 160
+		'
+		'ColumnHeader4
+		'
+		Me.ColumnHeader4.Text = "Fine Amount"
+		Me.ColumnHeader4.Width = 132
+		'
 		'Panel3
 		'
+		Me.Panel3.Controls.Add(Me.lblSelectDate)
+		Me.Panel3.Controls.Add(Me.dtpSelectDate)
+		Me.Panel3.Controls.Add(Me.Label1)
+		Me.Panel3.Controls.Add(Me.lblTotalFineAmount)
 		Me.Panel3.Controls.Add(Me.btnPrint)
 		Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
 		Me.Panel3.Location = New System.Drawing.Point(0, 450)
 		Me.Panel3.Name = "Panel3"
 		Me.Panel3.Size = New System.Drawing.Size(1067, 73)
 		Me.Panel3.TabIndex = 3
+		'
+		'lblTotalFineAmount
+		'
+		Me.lblTotalFineAmount.BackColor = System.Drawing.Color.Transparent
+		Me.lblTotalFineAmount.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.lblTotalFineAmount.Location = New System.Drawing.Point(375, 17)
+		Me.lblTotalFineAmount.Name = "lblTotalFineAmount"
+		Me.lblTotalFineAmount.Size = New System.Drawing.Size(140, 37)
+		Me.lblTotalFineAmount.TabIndex = 2
 		'
 		'btnPrint
 		'
@@ -126,31 +161,6 @@ Partial Class UserControl_FineReport
 		Me.FlowLayoutPanel1.Size = New System.Drawing.Size(119, 390)
 		Me.FlowLayoutPanel1.TabIndex = 5
 		'
-		'ColumnHeader1
-		'
-		Me.ColumnHeader1.Text = "No."
-		Me.ColumnHeader1.Width = 48
-		'
-		'ColumnHeader2
-		'
-		Me.ColumnHeader2.Text = "Patron ID"
-		Me.ColumnHeader2.Width = 100
-		'
-		'ColumnHeader3
-		'
-		Me.ColumnHeader3.Text = "Name"
-		Me.ColumnHeader3.Width = 160
-		'
-		'ColumnHeader4
-		'
-		Me.ColumnHeader4.Text = "Total Fine Records"
-		Me.ColumnHeader4.Width = 130
-		'
-		'ColumnHeader5
-		'
-		Me.ColumnHeader5.Text = "Total Fines"
-		Me.ColumnHeader5.Width = 130
-		'
 		'Panel4
 		'
 		Me.Panel4.Controls.Add(Me.lstFineReport)
@@ -161,17 +171,6 @@ Partial Class UserControl_FineReport
 		Me.Panel4.Name = "Panel4"
 		Me.Panel4.Size = New System.Drawing.Size(840, 390)
 		Me.Panel4.TabIndex = 6
-		'
-		'easyRpt
-		'
-		Me.easyRpt.AlternativeRowBackgroundColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer))
-		Me.easyRpt.AlternativeRowGridColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(65, Byte), Integer))
-		Me.easyRpt.HeaderBackgroundColor = System.Drawing.Color.FromArgb(CType(CType(170, Byte), Integer), CType(CType(183, Byte), Integer), CType(CType(197, Byte), Integer))
-		Me.easyRpt.HeaderFontColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(46, Byte), Integer))
-		Me.easyRpt.HeaderGridColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(65, Byte), Integer))
-		Me.easyRpt.RowDefaultBackgroudColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-		Me.easyRpt.RowDefaultFontColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(46, Byte), Integer))
-		Me.easyRpt.RowDefaultGridColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(65, Byte), Integer))
 		'
 		'panForPrintHeader
 		'
@@ -250,13 +249,34 @@ Partial Class UserControl_FineReport
 		'
 		Me.dgvFineRpt.BackgroundColor = System.Drawing.SystemColors.Control
 		Me.dgvFineRpt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.dgvFineRpt.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Colunm1, Me.Column1, Me.Column2, Me.Column3, Me.Column4})
+		Me.dgvFineRpt.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Colunm1, Me.Column1, Me.Column2, Me.Column3})
 		Me.dgvFineRpt.Location = New System.Drawing.Point(92, 51)
 		Me.dgvFineRpt.Name = "dgvFineRpt"
 		Me.dgvFineRpt.RowHeadersWidth = 51
 		Me.dgvFineRpt.RowTemplate.Height = 24
 		Me.dgvFineRpt.Size = New System.Drawing.Size(678, 149)
 		Me.dgvFineRpt.TabIndex = 5
+		'
+		'easyRpt
+		'
+		Me.easyRpt.AlternativeRowBackgroundColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer))
+		Me.easyRpt.AlternativeRowGridColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(65, Byte), Integer))
+		Me.easyRpt.HeaderBackgroundColor = System.Drawing.Color.FromArgb(CType(CType(170, Byte), Integer), CType(CType(183, Byte), Integer), CType(CType(197, Byte), Integer))
+		Me.easyRpt.HeaderFontColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(46, Byte), Integer))
+		Me.easyRpt.HeaderGridColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(65, Byte), Integer))
+		Me.easyRpt.RowDefaultBackgroudColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+		Me.easyRpt.RowDefaultFontColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(46, Byte), Integer))
+		Me.easyRpt.RowDefaultGridColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(65, Byte), Integer))
+		'
+		'Label1
+		'
+		Me.Label1.BackColor = System.Drawing.Color.Transparent
+		Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label1.Location = New System.Drawing.Point(103, 17)
+		Me.Label1.Name = "Label1"
+		Me.Label1.Size = New System.Drawing.Size(239, 37)
+		Me.Label1.TabIndex = 3
+		Me.Label1.Text = "Total Fines Amount: RM"
 		'
 		'Colunm1
 		'
@@ -267,31 +287,42 @@ Partial Class UserControl_FineReport
 		'
 		'Column1
 		'
-		Me.Column1.HeaderText = "Patron ID"
+		Me.Column1.HeaderText = "Return ID"
 		Me.Column1.MinimumWidth = 6
 		Me.Column1.Name = "Column1"
 		Me.Column1.Width = 125
 		'
 		'Column2
 		'
-		Me.Column2.HeaderText = "Name"
+		Me.Column2.HeaderText = "Return Date"
 		Me.Column2.MinimumWidth = 6
 		Me.Column2.Name = "Column2"
 		Me.Column2.Width = 125
 		'
 		'Column3
 		'
-		Me.Column3.HeaderText = "Total Fine Record"
+		Me.Column3.HeaderText = "Fines"
 		Me.Column3.MinimumWidth = 6
 		Me.Column3.Name = "Column3"
 		Me.Column3.Width = 125
 		'
-		'Column4
+		'lblSelectDate
 		'
-		Me.Column4.HeaderText = "Total Fines"
-		Me.Column4.MinimumWidth = 6
-		Me.Column4.Name = "Column4"
-		Me.Column4.Width = 125
+		Me.lblSelectDate.AutoSize = True
+		Me.lblSelectDate.Location = New System.Drawing.Point(649, 12)
+		Me.lblSelectDate.Name = "lblSelectDate"
+		Me.lblSelectDate.Size = New System.Drawing.Size(83, 17)
+		Me.lblSelectDate.TabIndex = 5
+		Me.lblSelectDate.Text = "Select date:"
+		'
+		'dtpSelectDate
+		'
+		Me.dtpSelectDate.CustomFormat = "MM/yyyy"
+		Me.dtpSelectDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+		Me.dtpSelectDate.Location = New System.Drawing.Point(652, 32)
+		Me.dtpSelectDate.Name = "dtpSelectDate"
+		Me.dtpSelectDate.Size = New System.Drawing.Size(246, 22)
+		Me.dtpSelectDate.TabIndex = 4
 		'
 		'UserControl_FineReport
 		'
@@ -307,6 +338,7 @@ Partial Class UserControl_FineReport
 		Me.Panel1.ResumeLayout(False)
 		Me.Panel1.PerformLayout()
 		Me.Panel3.ResumeLayout(False)
+		Me.Panel3.PerformLayout()
 		Me.Panel4.ResumeLayout(False)
 		Me.panForPrintHeader.ResumeLayout(False)
 		Me.panForPrintHeader.PerformLayout()
@@ -326,8 +358,6 @@ Partial Class UserControl_FineReport
 	Friend WithEvents ColumnHeader1 As ColumnHeader
 	Friend WithEvents ColumnHeader2 As ColumnHeader
 	Friend WithEvents ColumnHeader3 As ColumnHeader
-	Friend WithEvents ColumnHeader4 As ColumnHeader
-	Friend WithEvents ColumnHeader5 As ColumnHeader
 	Friend WithEvents Panel4 As Panel
 	Friend WithEvents easyRpt As KimToo.EasyHTMLReports
 	Friend WithEvents panForPrintHeader As Panel
@@ -338,9 +368,13 @@ Partial Class UserControl_FineReport
 	Friend WithEvents lblPrint As Label
 	Friend WithEvents Label2 As Label
 	Friend WithEvents dgvFineRpt As DataGridView
+	Friend WithEvents ColumnHeader4 As ColumnHeader
+	Friend WithEvents lblTotalFineAmount As Label
+	Friend WithEvents Label1 As Label
 	Friend WithEvents Colunm1 As DataGridViewTextBoxColumn
 	Friend WithEvents Column1 As DataGridViewTextBoxColumn
 	Friend WithEvents Column2 As DataGridViewTextBoxColumn
 	Friend WithEvents Column3 As DataGridViewTextBoxColumn
-	Friend WithEvents Column4 As DataGridViewTextBoxColumn
+	Friend WithEvents lblSelectDate As Label
+	Friend WithEvents dtpSelectDate As DateTimePicker
 End Class
