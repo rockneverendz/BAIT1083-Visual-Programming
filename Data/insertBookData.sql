@@ -204,17 +204,37 @@ SET IDENTITY_INSERT [dbo].[Copies] OFF
 
 /*Insert Return*/
 SET IDENTITY_INSERT [dbo].[Return] ON
-INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1001, N'2020-01-05', 0)
-INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1002, N'2020-01-10', 0)
-INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1003, N'2020-01-15', 0)
-INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1004, N'2020-01-20', 0)
-INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1005, N'2020-01-25', 0)
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1001, N'2020-02-03', CAST(3.0000 AS SmallMoney))
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1002, N'2020-02-01', CAST(4.0000 AS SmallMoney))
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1003, N'2020-02-13', CAST(4.0000 AS SmallMoney))
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1004, N'2020-02-15', CAST(2.0000 AS SmallMoney))
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1005, N'2020-02-16', CAST(3.0000 AS SmallMoney))
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1006, N'2020-02-26', CAST(5.0000 AS SmallMoney))
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1007, N'2020-02-07', CAST(5.0000 AS SmallMoney))
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1008, N'2020-02-05', CAST(5.0000 AS SmallMoney))
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1009, N'2020-02-02', CAST(5.0000 AS SmallMoney))
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1010, N'2020-03-09', CAST(5.0000 AS SmallMoney))
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1011, N'2020-03-07', CAST(1.0000 AS SmallMoney))
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1012, N'2020-03-13', CAST(1.0000 AS SmallMoney))
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1013, N'2020-03-12', CAST(2.0000 AS SmallMoney))
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1014, N'2020-03-04', CAST(4.0000 AS SmallMoney))
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1015, N'2020-03-08', CAST(5.0000 AS SmallMoney))
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1016, N'2020-03-05', CAST(3.0000 AS SmallMoney))
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1017, N'2020-03-09', CAST(1.0000 AS SmallMoney))
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1018, N'2020-03-22', CAST(1.0000 AS SmallMoney))
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1019, N'2020-03-06', CAST(2.0000 AS SmallMoney))
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1020, N'2020-03-09', CAST(2.0000 AS SmallMoney))
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1021, N'2020-03-10', CAST(2.0000 AS SmallMoney))
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1022, N'2020-03-20', CAST(3.0000 AS SmallMoney))
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1023, N'2020-03-02', CAST(1.0000 AS SmallMoney))
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1024, N'2020-03-14', CAST(5.0000 AS SmallMoney))
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1025, N'2020-03-15', CAST(1.0000 AS SmallMoney))
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1026, N'2020-03-15', CAST(5.0000 AS SmallMoney))
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1027, N'2020-03-04', CAST(5.0000 AS SmallMoney))
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1028, N'2020-03-25', CAST(5.0000 AS SmallMoney))
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1029, N'2020-04-15', CAST(4.0000 AS SmallMoney))
+INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1030, N'2020-04-11', CAST(2.0000 AS SmallMoney))
 
-INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1006, N'2020-02-05', 10)
-INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1007, N'2020-02-10', 20)
-INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1008, N'2020-02-15', 30)
-INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1009, N'2020-02-20', 40)
-INSERT INTO [dbo].[Return] ([Rtn_ID], [Rtn_Date], [Fine_Amount]) VALUES (1010, N'2020-02-25', 50)
 SET IDENTITY_INSERT [dbo].[Return] OFF
 
 /*Insert CheckOutList*/
@@ -355,7 +375,5 @@ INSERT INTO [dbo].[RoomBooking] ([Patron_ID], [Room_ID], [CheckIn_Date], [Start_
 
 /*Insert Return*/
 /*In Progress...*/
-
-
 
 /****/
